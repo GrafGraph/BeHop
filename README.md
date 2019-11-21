@@ -20,7 +20,7 @@ Prüfer: Prof. R. Kruse und K. Friess
 
 ### Konzept
 - HipHop als Lifestyle: Knallige Muster+Farben, Streetlook(Beton, Grafitti, Neon), Bedeutungsschwangere Slogans um HipHop als Lifestyle darzustellen(...), ...
-- Schlichte Menüs, Unicolor, HipHop-Akzente in Sidebars (und Hintergrund?)
+- Schlichte Menüs, Unicolor, HipHop-Akzente in Sidebars (und Hintergrund?)Grafitti
 - Upperbar-Navigation mit Mega-Menüs
 
 ### Referenzen, Inspirationen, Vorlagen und Beispiele
