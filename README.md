@@ -1,4 +1,4 @@
-# README des Online HipHop-Lifestyle Shops BeHop
+# README des Online HipHop Shops BeHop
 Erstellt von Anton Bespalov und Michael Hopp im Rahmen des Website-Projekts in GWP und DWP an der Fachhochschule Erfurt.
 Prüfer: Prof. R. Kruse und K. Friess
 
