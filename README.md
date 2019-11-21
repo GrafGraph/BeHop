@@ -3,6 +3,7 @@ Erstellt von Anton Bespalov und Michael Hopp im Rahmen des Website-Projekts in G
 Prüfer: Prof. R. Kruse und K. Friess
 
 ## Getting Started / HowTo
+...
 
 ## Aufgabenstellung
 "Aufgabe"
@@ -18,6 +19,7 @@ Prüfer: Prof. R. Kruse und K. Friess
 
 ## Über das Produkt
 ### Funktionalität
+...
 
 ### Konzept
 - HipHop-Look: Knallige Muster+Farben, Streetlook(Beton, Grafitti, Neon)
