@@ -27,13 +27,13 @@ Prüfer: Prof. R. Kruse und K. Friess
 - Upperbar-Navigation mit Mega-Menüs (Nicht weiß)
 - Logo als Homebutton
 - (Newsletter-Antrag dezent am unteren Ende der Seite oder extra menüpunkt -> Kein Pop-up)
-- Landingpage orientiert an asos(https://www.asos.de/?crd=true): Bild mit Auswahl der Shopkategorie Herren/Damen
-- Sale-, Neuheiten-Blöcke usw. so wie bei DefShop(https://www.def-shop.com/)
-- Produktdarstellung so wie bei Snipes(https://www.snipes.com/adword=google/brand/de&gclid=EAIaIQobChMI9cymmcD75QIVR5SyCh2v2AjHEAAYASAAEgJmn_D_BwE)
-- Negativbeispiel Footlocker(https://www.footlocker.de/de/startseite) wirkt überladen und langweilig -> Kaum Fokus, Thema oder Akzente...
+- Landingpage orientiert an[asos](https://www.asos.de/?crd=true): Bild mit Auswahl der Shopkategorie Herren/Damen
+- Sale-, Neuheiten-Blöcke usw. so wie bei [DefShop](https://www.def-shop.com/)
+- Produktdarstellung so wie bei [Snipes](https://www.snipes.com/adword=google/brand/de&gclid=EAIaIQobChMI9cymmcD75QIVR5SyCh2v2AjHEAAYASAAEgJmn_D_BwE)
+- Negativbeispiel [Footlocker](https://www.footlocker.de/de/startseite) wirkt überladen und langweilig -> Kaum Fokus, Thema oder Akzente...
 
 ### Referenzen, Inspirationen, Vorlagen und Beispiele
-- asos(https://www.asos.de/?crd=true)
-- DEFSHOP(https://www.def-shop.com/)
-- Snipes(https://www.snipes.com/?adword=google/brand/de&gclid=EAIaIQobChMI9cymmcD75QIVR5SyCh2v2AjHEAAYASAAEgJmn_D_BwE)
-- Negativbeispiel Footlocker(https://www.footlocker.de/de/startseite)
+- [asos](https://www.asos.de/?crd=true)
+- [DEFSHOP](https://www.def-shop.com/)
+- [Snipes](https://www.snipes.com/?adword=google/brand/de&gclid=EAIaIQobChMI9cymmcD75QIVR5SyCh2v2AjHEAAYASAAEgJmn_D_BwE)
+- Negativbeispiel [Footlocker](https://www.footlocker.de/de/startseite)
