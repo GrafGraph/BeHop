@@ -18,6 +18,8 @@ Prüfer: Prof. R. Kruse und K. Friess
 
 
 ## Über das Produkt
+
+### [SiteMap](https://www.lucidchart.com/documents/edit/e87e3d23-c766-449c-b5f3-91ac348669f5/0_0?beaconFlowId=F8C85347C7656FFB)
 ### Funktionalität
 ...
 
