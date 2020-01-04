@@ -62,6 +62,15 @@ class PagesController extends \app\core\Controller
 		}
 	}
 
+	public function actionSignUp()
+	{
+		if($_SESSION['loggedIn'] === false)
+		{
+
+		}
+		
+	}
+
 	public function actionError404()
 	{
 		

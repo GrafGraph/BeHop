@@ -1,7 +1,7 @@
 <?php
 
-
-$dns = 'mysql:host=localhost;dbname=dwp-pdo';
+$dbName = 'beHop';
+$dns = 'mysql:dbname='.$dbName.';host=localhost';
 $dbuser = 'root';
 $dbpassword = 'root';
 $options    = [
@@ -19,4 +19,4 @@ try
 catch(\PDOException $e)
 {
 	die( 'Database connection failed: ' . $e->getMessage() );
-}
+} 
