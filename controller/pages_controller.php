@@ -7,9 +7,9 @@ class PagesController extends \app\core\Controller
 
 	public function actionIndex()
 	{
-		$myValue = 4 * 4;
+		$myValue = 'BeHop - Startseite' ;
 
-		$this->_params['myValue'] = $myValue;
+		$this->_params['title'] = $myValue;
 	}
 
 	public function actionLogin()
