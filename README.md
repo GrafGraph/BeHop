@@ -1,6 +1,6 @@
 # README des Online HipHop Shops BeHop
 Erstellt von Anton Bespalov und Michael Hopp im Rahmen des Website-Projekts in GWP und DWP an der Fachhochschule Erfurt.
-[Aufgabenstellung]()
+[Aufgabenstellung](WEB-WS1920-Projektaufgabe-1.pdf)
 Prüfer: Prof. R. Kruse und K. Friess
 
 ## Getting Started / HowTo
