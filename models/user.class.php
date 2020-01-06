@@ -29,6 +29,59 @@ class User
     public static function find($where = '')
     {
         $database = $GLOBALS['database'];
+        $result = null;
+        try 
+        {
+            $sql = 'SELECT * FROM' . self::TBALENAME;
+            if(!empty($where))
+            {
+                $sql .= 'WHERE' .$where . ';';
+            }
+            $result =$database->query($sql)->fetchAll();
+        }
+        catch(\PDOException $e)
+        {
+            die('Select statement failed: ' , $e->getMessage());
+        }
+        return $result;
+    }
+    public function insert()
+    {
+        $database = $GLOBALS['database'];
+        try 
+        {
+            $sql = 'INSERT INTO ' . self::TBALENAME . '(username, email, password, firstName, lastName) VALUES(:username, :email, :password, :firstName, :lastName)';
+            $statement = $database->prepare($sql);
+            $statement->bindParam(':username', $this->username);
+            $statement->bindParam(':email', $this->email);
+            $statement->bindParam(':password', $this->password);
+            $statement->bindParam(':firstname', $this->firstname);
+            $statement->bindParam(':lastname', $this->lastname);
+
+            $statement->execute();
+            return true;
+        }
+        catch(\PDOException $e)
+        {
+            die(('Error inserting user: ' . $e->getMessage()));
+        }
+        return false;
+    }
+    public function delete()
+    {
+        $database = $GLOBALS['database'];
+
+        try
+        {
+            $sql = 'DELETE FROM ' .self::TBALENAME . ' WHERE id = ' .$this->id;
+            $database->exec($sql);
+            return true;
+        }
+        catch(\PDOException $e)
+        {
+            die('Error deleting user '.$e->getMessage());
+        }
+        return false;
     }
 }
 
