@@ -34,7 +34,7 @@ class Order
         }
         catch(\PDOException $e)
         {
-            die('Select statement failed: ' , $e->getMessage());
+            die('Select statement failed: ' . $e->getMessage());
         }
         return $result;
     }

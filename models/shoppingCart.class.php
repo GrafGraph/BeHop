@@ -10,7 +10,7 @@ class ShoppingCart
         $this->data[`id`] = $id;
         $this->data[`createdAt`] = $createdAt;
         $this->data[`updatedAt`] = $updatedAt;
-        $this->data[`totalAmount`] = $name;
+        $this->data[`totalAmount`] = $totalAmount;
         $this->data[`user_id`] = $user_id;
     }
     public function __get($key)
@@ -35,7 +35,7 @@ class ShoppingCart
         }
         catch(\PDOException $e)
         {
-            die('Select statement failed: ' , $e->getMessage());
+            die('Select statement failed: ' . $e->getMessage());
         }
         return $result;
     }
