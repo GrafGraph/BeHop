@@ -3,7 +3,7 @@
 $dbName = 'beHop';
 $dns = 'mysql:dbname='.$dbName.';host=localhost';
 $dbuser = 'root';
-$dbpassword = 'root';
+$dbpassword = '';
 $options    = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC

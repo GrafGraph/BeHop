@@ -9,4 +9,4 @@
 	<input type="submit" name="submit" value="Login now!" /><br />
 </form>
 <br>
-<a href="index.php?a=signUp">Registrieren</a>
+<a href="index.php?a=signUp"><button>Registrierung</button></a>
