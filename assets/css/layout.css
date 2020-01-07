@@ -1,7 +1,4 @@
-* {
-	margin: 0;
-	padding: 0;
-}
+
 
 body {
 	background: rgb(255, 255, 255);
@@ -44,5 +41,106 @@ footer {
 	height: 60px;
 	text-align: center;
 	line-height: 60px;
-	color: #666666;
+	color: #000000;
+}
+:root {
+    --red: #bf0a00;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+}
+
+body,
+body * {
+    font-family: calibri, 'sans-serif';
+    font-weight: 600;
+    color: dimgrey;
+}
+
+.left,
+.right {
+    width: 49.5%;
+    float: left;
+    padding: 10% 30px;
+    top: 0;
+}
+
+.right::after {
+    clear: both;
+}
+
+label,
+select {
+    display: block;
+}
+
+form>div {
+    width: 49.5%;
+    display: inline-block;
+}
+
+input {
+    width: 30%;
+}
+
+input[type=submit] {
+    margin: 16px 0;
+    padding: 8px;
+    border-radius: 0;
+    border: 3px solid dimgrey;
+    background: none;
+    font-size: 14px;
+    transition: color .25s ease-in, background .25s ease-in;
+    cursor: pointer;
+}
+
+input[type=submit].del-btn {
+    width: 150px;
+    color: var(--red);
+    border-color: var(--red);
+}
+
+input[type=submit]:hover {
+    color: white;
+    background: dimgrey;
+}
+
+input[type=submit].del-btn:hover {
+    background: var(--red);
+}
+
+input[type=text],
+input[type=email],
+select {
+    padding: 8px;
+}
+
+.error {
+    border: 2px solid var(--red);
+    color: var(--red);
+    width: 50%;
+    margin: 0 auto;
+    padding: 16px;
+    text-align: center;
+}
+
+table {
+    max-width: 100%;
+}
+.button{
+	display:inline-block;
+	margin:20px;
+	text-decoration:none;
+	font-family:Arial;
+	font-size:16px;
+	border:1px solid dimgrey;
+	color:dimgrey;
+	background-color:white;
+	padding:3px 7px;
+}
+.button:hover{
+	background-color:white;
 }

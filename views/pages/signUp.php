@@ -10,6 +10,7 @@
    <input type="text" name="lastName" placeholder="Nachname"><br>
    <input type="password" name="password" placeholder ="Passwort"><br>
    <input type="password" name="password" placeholder ="Passwort widerholen"><br>
+   <br>
    <button type="submit" name="submit">Registrieren</button>
 </form>
 
