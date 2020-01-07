@@ -1,22 +1,21 @@
 <?php
 
-class User
+class Address
 {
-    const TBALENAME ='`user`';
+    const TBALENAME ='`address`';
     private $data;
 
-    public function __construct($id, $createdAt, $updatedAt, $email, $password, 
-                                $firstName, $lastName, $adress_id, $shoppingCart_id)
+    public function __construct($id, $createdAt, $updatedAt, $city, $street, $number, 
+    $zip, $country)
     {
         $this->data[`id`] = $id;
         $this->data[`createdAt`] = $createdAt;
         $this->data[`updatedAt`] = $updatedAt;
-        $this->data[`email`] = $email;
-        $this->data[`password`] = $password;
-        $this->data[`firstName`] =  $firstName;
-        $this->data[`lastName`] = $lastName;
-        $this->data[`address_id`] = $adress_id;
-        $this->data[`shoppingCart_id`] = $shoppingCart_id;
+        $this->data[`city`] = $city;
+        $this->data[`street`] = $street;
+        $this->data[`number`] = $number;
+        $this->data[`zip`] =  $zip;
+        $this->data[`country`] = $country;
     }
     public function __get($key)
     {
@@ -49,19 +48,20 @@ class User
         $database = $GLOBALS['database'];
         try 
         {
-            $sql = 'INSERT INTO ' . self::TBALENAME . '(email, password, firstName, lastName) VALUES(:username, :email, :password, :firstName, :lastName)';
+            $sql = 'INSERT INTO ' . self::TBALENAME . '(city, street, number, zip, country) VALUES(:city, :street, :number, :zip, :country)';
             $statement = $database->prepare($sql);
-            $statement->bindParam(':email', $this->email);
-            $statement->bindParam(':password', $this->password);
-            $statement->bindParam(':firstname', $this->firstname);
-            $statement->bindParam(':lastname', $this->lastname);
+            $statement->bindParam(':city', $this->city);
+            $statement->bindParam(':street', $this->street);
+            $statement->bindParam(':number', $this->number);
+            $statement->bindParam(':zip', $this->zip);
+            $statement->bindParam(':country', $this->country);
 
             $statement->execute();
             return true;
         }
         catch(\PDOException $e)
         {
-            die(('Error inserting user: ' . $e->getMessage()));
+            die(('Error inserting address: ' . $e->getMessage()));
         }
         return false;
     }
@@ -77,13 +77,8 @@ class User
         }
         catch(\PDOException $e)
         {
-            die('Error deleting user '.$e->getMessage());
+            die('Error deleting address '.$e->getMessage());
         }
         return false;
     }
 }
-
-
-
-
-

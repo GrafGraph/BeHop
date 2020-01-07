@@ -1,22 +1,16 @@
 <?php
 
-class User
+class ShoppingCart_has_product
 {
-    const TBALENAME ='`user`';
+    const TBALENAME ='`shoppingCart_has_product`';
     private $data;
 
-    public function __construct($id, $createdAt, $updatedAt, $email, $password, 
-                                $firstName, $lastName, $adress_id, $shoppingCart_id)
+    public function __construct($shoppingCart_id, $product_id, $quantity, $name, $price, 
+                                $description)
     {
-        $this->data[`id`] = $id;
-        $this->data[`createdAt`] = $createdAt;
-        $this->data[`updatedAt`] = $updatedAt;
-        $this->data[`email`] = $email;
-        $this->data[`password`] = $password;
-        $this->data[`firstName`] =  $firstName;
-        $this->data[`lastName`] = $lastName;
-        $this->data[`address_id`] = $adress_id;
         $this->data[`shoppingCart_id`] = $shoppingCart_id;
+        $this->data[`product_id`] = $product_id;
+        $this->data[`quantity`] = $quantity;
     }
     public function __get($key)
     {
@@ -49,19 +43,19 @@ class User
         $database = $GLOBALS['database'];
         try 
         {
-            $sql = 'INSERT INTO ' . self::TBALENAME . '(email, password, firstName, lastName) VALUES(:username, :email, :password, :firstName, :lastName)';
+            $sql = 'INSERT INTO ' . self::TBALENAME . '(shoppingCart_id, product_id, quantity) VALUES(:shoppingCart_id, :product_id, :quantity)';
             $statement = $database->prepare($sql);
-            $statement->bindParam(':email', $this->email);
-            $statement->bindParam(':password', $this->password);
-            $statement->bindParam(':firstname', $this->firstname);
-            $statement->bindParam(':lastname', $this->lastname);
+            $statement->bindParam(':shoppingCart_id', $this->shoppingCart_id);
+            $statement->bindParam(':product_id', $this->product_id);
+            $statement->bindParam(':quantity', $this->quantity);
+
 
             $statement->execute();
             return true;
         }
         catch(\PDOException $e)
         {
-            die(('Error inserting user: ' . $e->getMessage()));
+            die(('Error inserting shoppingCart_has_product: ' . $e->getMessage()));
         }
         return false;
     }
@@ -77,13 +71,8 @@ class User
         }
         catch(\PDOException $e)
         {
-            die('Error deleting user '.$e->getMessage());
+            die('Error deleting shoppingCart_has_product '.$e->getMessage());
         }
         return false;
     }
 }
-
-
-
-
-

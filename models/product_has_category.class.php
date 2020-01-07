@@ -1,22 +1,14 @@
 <?php
 
-class User
+class Product_has_category
 {
-    const TBALENAME ='`user`';
+    const TBALENAME ='`product_has_category`';
     private $data;
 
-    public function __construct($id, $createdAt, $updatedAt, $email, $password, 
-                                $firstName, $lastName, $adress_id, $shoppingCart_id)
+    public function __construct($product_id, $category_id)
     {
-        $this->data[`id`] = $id;
-        $this->data[`createdAt`] = $createdAt;
-        $this->data[`updatedAt`] = $updatedAt;
-        $this->data[`email`] = $email;
-        $this->data[`password`] = $password;
-        $this->data[`firstName`] =  $firstName;
-        $this->data[`lastName`] = $lastName;
-        $this->data[`address_id`] = $adress_id;
-        $this->data[`shoppingCart_id`] = $shoppingCart_id;
+        $this->data[`product_id`] = $product_id;
+        $this->data[`category_id`] = $category_id;
     }
     public function __get($key)
     {
@@ -49,19 +41,18 @@ class User
         $database = $GLOBALS['database'];
         try 
         {
-            $sql = 'INSERT INTO ' . self::TBALENAME . '(email, password, firstName, lastName) VALUES(:username, :email, :password, :firstName, :lastName)';
+            $sql = 'INSERT INTO ' . self::TBALENAME . '(product_id ,category_id) VALUES(:product_id, :category_id)';
             $statement = $database->prepare($sql);
-            $statement->bindParam(':email', $this->email);
-            $statement->bindParam(':password', $this->password);
-            $statement->bindParam(':firstname', $this->firstname);
-            $statement->bindParam(':lastname', $this->lastname);
+            $statement->bindParam(':product_id', $this->product_id);
+            $statement->bindParam(':category_id', $this->category_id);
+
 
             $statement->execute();
             return true;
         }
         catch(\PDOException $e)
         {
-            die(('Error inserting user: ' . $e->getMessage()));
+            die(('Error inserting product_has_category: ' . $e->getMessage()));
         }
         return false;
     }
@@ -77,13 +68,8 @@ class User
         }
         catch(\PDOException $e)
         {
-            die('Error deleting user '.$e->getMessage());
+            die('Error deleting product_has_category '.$e->getMessage());
         }
         return false;
     }
 }
-
-
-
-
-
