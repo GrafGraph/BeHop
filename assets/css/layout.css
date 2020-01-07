@@ -4,7 +4,7 @@
 }
 
 body {
-	background: #F0F0F0;
+	background: rgb(255, 255, 255);
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -24,8 +24,8 @@ nav ul li a{
 	display: inline-block;
 	padding: 6px 8px;
 	text-decoration: none;
-	color: #FFFFFF;
-	background: #F04D32;
+	color: rgb(255, 255, 255);
+	background: rgb(0, 0, 0);
 }
 
 nav ul li a:hover {
