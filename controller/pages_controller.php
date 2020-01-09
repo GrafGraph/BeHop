@@ -85,4 +85,17 @@ class PagesController extends \app\core\Controller
 	{
 		$this->_params['title'] = 'BeHop - Contact' ;
 	}
+	public function actionproducts()
+	{
+		$this->_params['title'] = 'BeHop - Products' ;
+	}
+	public function actionshoppingcart()
+	{
+		$this->_params['title'] = 'BeHop - Shoppingcart' ;
+	}
+	public function actionimpressum()
+	{
+		$this->_params['title'] = 'BeHop - Impressum' ;
+	}
+
 }
