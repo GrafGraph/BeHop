@@ -13,8 +13,8 @@
 			<header>
 				<nav>
 					<ul>
-						<li><a href="?a=index"><img src=""
-						alt="Marken-Logo" style="background-color:black"></a></li>
+						<li><a href="?a=index" title="Home"><img src=""
+						alt="BeHop-Logo" style="background-color:black"></a></li>
 						<li><a href="index.php?a=sales">Sales</a></li>
 						<li><a href="index.php?a=products">Products</a></li>
 						<li><a href="index.php?a=contact">Contact</a></li>
@@ -25,7 +25,7 @@
 						<?php else : ?>
 						<li><a href="?a=login">Login</a></li>
 						<?php endif; ?>
-						<li><a href="index.php?a=shoppingcart">Shoppingcart</a></li>
+						<li><a href="index.php?a=shoppingcart" title="Shoppingcart"><img src="" alt="Einkaufswagen Bild"></a></li>
 					</ul>
 				</nav>
 			</header>
@@ -34,7 +34,7 @@
 			</main>
 		</div>
 		<footer>
-			&copy; BEHOP.
+			BEHOP &copy; 
 			<a href="index.php?a=impressum">Impressum</a>
 		</footer>
 	</body>
