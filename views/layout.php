@@ -13,17 +13,19 @@
 			<header>
 				<nav>
 					<ul>
-						<li><a href="?a=index">Home</a></li>
+						<li><a href="?a=index"><img src=""
+						alt="Marken-Logo" style="background-color:black"></a></li>
 						<li><a href="index.php?a=sales">Sales</a></li>
-						<li><a href="index.php?a=shop">Shop</a></li>
 						<li><a href="index.php?a=products">Products</a></li>
-						<li><a href="index.php?a=shoppingcart">Shoppingcart</a></li>
+						<li><a href="index.php?a=contact">Contact</a></li>
+						<li><a href="index.php?a=aboutus">About Us</a></li>
 						<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>
+						<li><a href="?a=logout">Logout</a></li>
 						<li><a href="?a=profile">Profile</a></li>
-						<li><a href="?a=logout">Abmelden</a></li>
 						<?php else : ?>
 						<li><a href="?a=login">Login</a></li>
-						<?php endif; ?>	
+						<?php endif; ?>
+						<li><a href="index.php?a=shoppingcart">Shoppingcart</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -32,6 +34,7 @@
 			</main>
 		</div>
 		<footer>
+			<p>Newsletter abonnieren?</p>
 			&copy; IMPRESSUM.
 		</footer>
 	</body>
