@@ -1,9 +1,9 @@
 <h1>Kontaktformular</h1>
 <form method="POST">
    <input type="text" name="email" placeholder="E-Mail...">
-   <br>
+   <br><br>
    <input type="text" name="firstName" placeholder="Vorname...">
-   <br>
+   <br><br>
    <input type="text" name="lastName" placeholder="Nachname...">
    <br>
    <br>
