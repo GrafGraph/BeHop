@@ -106,7 +106,7 @@ abstract class BaseModel
             {
                 if($this->data[$key] !== null)
                 {
-                    $sql .= $key . ' = ' .$database->quote($this->[$key]).',';
+                    $sql .= $key . ' = ' .$database->quote($this->data[$key]).',';
                 }
             }
             $sql =trim($sql, ','); 
