@@ -1,5 +1,5 @@
 <h1>Impressum</h1>
-
+<p><a href="index.php?a=projectDocumentation">Projektdokumentation</a></p>
 <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
 <p>Fachhochschule Erfurt<br />
 Musterstra&szlig;e 111<br />
@@ -19,7 +19,7 @@ Telefax: +49 (0) 123 44 55 99<br />
 E-Mail: mustermann@musterfirma.de</p>
 
 <h2>Umsatzsteuer-ID</h2>
-<p>Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect;27 a Umsatzsteuergesetz:<br />
+<p>Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect;27 a Umsatzsteuergesetz:<br/>
 DE 999 999 999</p>
 
 <h2>EU-Streitschlichtung</h2>

@@ -23,6 +23,7 @@ class PagesController extends \app\core\Controller
 				if($email === 'max@fh-erfurt.de' && $password === '12345678')
 				{
 					$_SESSION['loggedIn'] = true;
+					// $_SESSION['userID'] = User::find('email = '. $email);
 					header('Location: index.php');
 				}
 				else
@@ -49,12 +50,12 @@ class PagesController extends \app\core\Controller
 	}
 
 
-	public function actionProfile()
+	public function actionAccount()
 	{
-		$this->_params['title'] = 'BeHop - Profile' ;
+		$this->_params['title'] = 'BeHop - Account' ;
 		if($_SESSION['loggedIn'] === true)
 		{
-
+		
 		}
 		else
 		{
@@ -64,38 +65,45 @@ class PagesController extends \app\core\Controller
 
 	public function actionSignUp()
 	{
-		$this->_params['title'] = 'BeHop - SignUp' ;
+		$this->_params['title'] = 'BeHop - Registrierung' ;
 		if($_SESSION['loggedIn'] === false)
 		{
-
 		}
 		
 	}
 
 	public function actionError404()
 	{
-		$this->_params['title'] = 'BeHop - Error404: Not Found' ;
+		$this->_params['title'] = 'BeHop - Fehler404: Nicht gefunden' ;
 	}
 
-	public function actionaboutUs()
+	public function actionAboutUs()
 	{
-		$this->_params['title'] = 'BeHop - About Us' ;
+		$this->_params['title'] = 'BeHop - Über uns' ;
 	}
-	public function actioncontact()
+
+	public function actionContact()
 	{
-		$this->_params['title'] = 'BeHop - Contact' ;
+		$this->_params['title'] = 'BeHop - Kontakt' ;
 	}
-	public function actionproducts()
+
+	public function actionProducts()
 	{
-		$this->_params['title'] = 'BeHop - Products' ;
+		$this->_params['title'] = 'BeHop - Produkte' ;
 	}
-	public function actionshoppingcart()
+
+	public function actionShoppingcart()
 	{
-		$this->_params['title'] = 'BeHop - Shoppingcart' ;
+		$this->_params['title'] = 'BeHop - Einkaufswagen' ;
 	}
-	public function actionimpressum()
+
+	public function actionImpressum()
 	{
 		$this->_params['title'] = 'BeHop - Impressum' ;
 	}
-
+	
+	public function actionProjectDocumentation()
+	{
+		$this->_params['title'] = 'BeHop - Projektdokumentation' ;
+	}
 }
