@@ -1,6 +1,6 @@
 <h1>Mein Account</h1>
 
-<table style="width:100%">
+<table style="width:30%">
 <tr>
     <td>Vorname</td>
     <td>

@@ -49,7 +49,8 @@ class User
         $database = $GLOBALS['database'];
         try 
         {
-            $sql = 'INSERT INTO ' . self::TBALENAME . '(email, password, firstName, lastName) VALUES(:email, :password, :firstName, :lastName)';
+            $sql = 'INSERT INTO ' . self::TBALENAME . '(email, password, firstName, lastName) 
+            VALUES(:email, :password, :firstName, :lastName)';
             $statement = $database->prepare($sql);
             $statement->bindParam(':email', $this->email);
             $statement->bindParam(':password', $this->password);

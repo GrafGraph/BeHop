@@ -21,7 +21,7 @@
 						<li><a href="index.php?a=aboutus">About Us</a></li>
 						<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>
 						<li><a href="?a=logout">Logout</a></li>
-						<li><a href="?a=profile">Profile</a></li>
+						<li><a href="?a=account">Mein Konto</a></li>
 						<?php else : ?>
 						<li><a href="?a=login">Login</a></li>
 						<?php endif; ?>
