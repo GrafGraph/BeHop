@@ -28,7 +28,7 @@
 			</main>
 		</div>
 		<footer>
-			&copy; Kristof Friess for DWP FH Erfurt.
+			&copy; IMPRESSUM.
 		</footer>
 	</body>
 </html>
