@@ -7,13 +7,12 @@ class PagesController extends \app\core\Controller
 
 	public function actionIndex()
 	{
-		$myValue = 'BeHop - Startseite' ;
-
-		$this->_params['title'] = $myValue;
+		$this->_params['title'] = 'BeHop - Startseite' ;
 	}
 
 	public function actionLogin()
 	{
+		$this->_params['title'] = 'BeHop - Login' ;
 		if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] === false)
 		{
 			if(isset($_POST['submit']))
@@ -52,6 +51,7 @@ class PagesController extends \app\core\Controller
 
 	public function actionProfile()
 	{
+		$this->_params['title'] = 'BeHop - Profile' ;
 		if($_SESSION['loggedIn'] === true)
 		{
 
@@ -64,6 +64,7 @@ class PagesController extends \app\core\Controller
 
 	public function actionSignUp()
 	{
+		$this->_params['title'] = 'BeHop - SignUp' ;
 		if($_SESSION['loggedIn'] === false)
 		{
 
@@ -73,6 +74,6 @@ class PagesController extends \app\core\Controller
 
 	public function actionError404()
 	{
-		
+		$this->_params['title'] = 'BeHop - Error404: Not Found' ;
 	}
 }
