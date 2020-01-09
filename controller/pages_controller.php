@@ -76,4 +76,13 @@ class PagesController extends \app\core\Controller
 	{
 		$this->_params['title'] = 'BeHop - Error404: Not Found' ;
 	}
+
+	public function actionaboutUs()
+	{
+		$this->_params['title'] = 'BeHop - About Us' ;
+	}
+	public function actioncontact()
+	{
+		$this->_params['title'] = 'BeHop - Contact' ;
+	}
 }

@@ -1,7 +1,7 @@
 <html>
-   <head>
+   <!-- <head>
      <title>Registrieren</title>
-   </head>
+   </head> -->
 <body>
 <h1>Registrierungsformular</h1>
 <form method="POST">
