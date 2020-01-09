@@ -7,7 +7,7 @@
    <input type="text" name="lastName" placeholder="Nachname...">
    <br>
    <br>
-   <input type="textarea" name="anliegen" placeholder ="Ihr Anliegen..." style="width: 40%; height: 20%;">
+   <input type="textarea" name="anliegen" placeholder ="Ihr Anliegen..." style="width: 30%; height: 20%;">
    <br>
    <br>
    <button type="submit" name="submit">Absenden</button>
