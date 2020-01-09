@@ -4,7 +4,7 @@ Erstellt von Anton Bespalov und Michael Hopp im Rahmen des Website-Projekts in G
 Prüfer: Prof. R. Kruse und K. Friess
 
 ## Getting Started / HowTo
-...
+- TODO: Der Ordner BeHop braucht aktuell noch übergeordnet den Order "Git"...
 
 
 ### Für Entwickler besonders zu beachten:

@@ -34,8 +34,8 @@
 			</main>
 		</div>
 		<footer>
-			<p>Newsletter abonnieren?</p>
-			&copy; IMPRESSUM.
+			&copy; BEHOP.
+			<a href="index.php?a=impressum">Impressum</a>
 		</footer>
 	</body>
 </html>
