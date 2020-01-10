@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Meine PDO Welt</title>
+		<title></title>
 		<link rel="stylesheet" type="text/css" href="assets/css/layout.css">
 		<?php if(isset($css) && is_array($css)) : ?>
 			<?php foreach($css as $index => $file) : ?>

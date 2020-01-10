@@ -66,7 +66,11 @@ class PagesController extends \app\core\Controller
 	{
 		if($_SESSION['loggedIn'] === false)
 		{
-
+			$email    = $_POST['email'] ?? null;
+			$firstName = $_POST['firstname'] ?? null;
+			$lastName = $_POST['lastName'] ?? null;
+			$password = $_POST['password'] ?? null;
+			$password = $_POST['password'] ?? null;
 		}
 		
 	}
