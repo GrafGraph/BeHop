@@ -246,7 +246,7 @@ abstract class BaseModel
             $sql .= 'Order by ' . $sortBy;
             if($decending)
             {
-                $sql .= 'desc'
+                $sql .= ['desc'];
             }
             $sql .= ';';
             $result = $db->query($sql)->fetchAll();

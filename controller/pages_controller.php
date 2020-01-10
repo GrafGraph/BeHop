@@ -2,8 +2,10 @@
 
 namespace app\controller;
 require_once 'models/address.class.php';
+require_once 'models/user.class.php';
 
 use Address;
+use User;
 
 class PagesController extends \app\core\Controller
 {
@@ -36,12 +38,12 @@ class PagesController extends \app\core\Controller
 					else
 					{
 						$_SESSION['loggedIn'] = false;
-						$this->params['registerError]'] ='Email und Passwort stimmen nicht überein.'
+						$this->params['registerError]'] = ('Email und Passwort stimmen nicht überein.');
 					}
 				}
 				else
 				{
-					$this->params['registerError]'] ='Bitte Email und Passwort eingeben.'
+					$this->params['registerError]'] = ('Bitte Email und Passwort eingeben.');
 				}
 			}
 		}
@@ -77,7 +79,7 @@ class PagesController extends \app\core\Controller
 				$this->params['createdAt'] = $user[0]['createdAt'];
 				$this->params['updatedAt'] = $user[0]['updatedAt'];
 
-				$address = Address::find('id =' $user[0]['address_id']);
+				$address = Address::find('id =' . $user[0]['address_id']);
 				$this->params['street'] = $address[0]['street'];
 				$this->params['number'] = $address[0]['number'];
 				$this->params['city'] = $address[0]['city'];
@@ -103,7 +105,8 @@ class PagesController extends \app\core\Controller
 		$this->_params['title'] = 'BeHop - Registrierung' ;
 		if($_SESSION['loggedIn'] === false)
 		{
-			
+			if(isset($_POST['submit']))
+			{
 			$firstName = $_POST['firstname'] ?? null;
 			$lastName = $_POST['lastName'] ?? null;
 			$street = $_POST['street'] ?? null;
@@ -111,17 +114,20 @@ class PagesController extends \app\core\Controller
 			$city = $_POST['city'] ?? null;
 			$zip = $_POST['zip'] ?? null;
 			$country = $_POST['country'] ?? null;
-			$password = $_POST['password'] ?? null;
-			$password = $_POST['password'] ?? null;
 			$email    = $_POST['email'] ?? null;
+			$password = $_POST['password'] ?? null;
+			$password = $_POST['password'] ?? null;
+			
 
 			$addressData = ['city', 'street', 'number', 'zip', 'country'];
 			$address = new Address($addressData);
 			$address->save();
 			
-
+			$userData = ['email', 'password', 'firstName', 'lastName'];
+			$user = new User($userData);
+			$user->save();
+			}
 		}
-		
 	}
 
 	public function actionError404()
