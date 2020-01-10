@@ -1,4 +1,4 @@
-<h2>Startseite BeHop</h2>
+<h2>Willkommen!</h2>
 
 Content
-<?=$this->_params['myValue']?> 
+<!-- <?=$this->_params['title']?>  -->

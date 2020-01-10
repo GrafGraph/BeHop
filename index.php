@@ -3,7 +3,7 @@
 session_start();
 
 // all require stuff to work!!
-require_once 'init/10_database.php';
+require_once 'init/database_connection_beHop.php';
 require_once 'init/20_imports.php';
 
 
