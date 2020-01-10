@@ -3,39 +3,30 @@
 <table style="width:30%">
 <tr>
     <td>Vorname</td>
-    <td>
-    </td>
+    <td><?=$firstname?></td>
   </tr>
   <tr>
     <td>Nachname</td>
-    <td>
-    </td>
+    <td><?=$lastname?></td>
   </tr>
   <tr>
     <td>Email</td>
-    <td>
-    </td>
+    <td><?=$email?></td>
   </tr>
   <tr>
     <td>Anschrift</td>
-    <td>
-    ....
-    </td>
+    <td rowspan="3"><?=$country . $street . $number . $city . $zip?></td>
   </tr>
   <tr>
     <td>Letzte Bestellung</td>
-    <td>
-    ?
-    </td>
+    <td><?=$latestOrder?></td>
   </tr>
   <tr>
     <td>Account erstellt</td>
-    <td>
-    </td>
+    <td><?=$createdAt?></td>
   </tr>
   <tr>
     <td>Letzte Aktualisierung</td>
-    <td>
-    </td>
+    <td><?=$updatedAt?></td>
   </tr>
 </table>
