@@ -30,8 +30,8 @@ class PagesController extends \app\core\Controller
 					$email    = $_POST['email'];
 					$password = $_POST['password'];
 					$users = User::find('email = ' . $email);
-
-					if(password_verify($password, $users[0]['password']))
+					// if(password_verify($password, $users[0]['password']))
+					if($password == $users[0]['password'])
 					{
 						$_SESSION['loggedIn'] = true;
 						$_SESSION['userMail'] = $users[0]['email'];
