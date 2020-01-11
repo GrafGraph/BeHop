@@ -1,3 +1,4 @@
+<article>
 <h1>About Us</h1>
 <img src="/Git/BeHop/assets/images/aboutUs/happyWorkers.jpg" alt="Arbeitsplatz in Textilfabrik" style="width:40%;height:30%">
 <figcaption>Happy Workers?</figcaption>
@@ -20,3 +21,4 @@ dapibus in, viverra quis, feugiat a, tellus. Phasellus
 viverra nulla ut metus varius laoreet. Quisque rutrum. 
 Aenean imperdiet. Etiam ultricies nisi vel augue. 
 Curabitur ullamcorper ultricies nisi.</p>
+</article>

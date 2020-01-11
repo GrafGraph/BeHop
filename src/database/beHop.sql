@@ -6,7 +6,8 @@
 -- Erstellungszeit: 11. Jan 2020 um 17:12
 -- Server-Version: 10.4.8-MariaDB
 -- PHP-Version: 7.3.10
-
+create database beHop;
+use beHop;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;

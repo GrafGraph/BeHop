@@ -153,3 +153,9 @@
 [2020-01-11 17:39:00 ]grüße aus __set
 >>>>>>> 864eb593d8b01efe52acea1eff920ac5010135f8
 [2020-01-11 17:54:37 ]grüße aus __set
+[2020-01-11 19:10:09 ]anton ist der allercoolste
+[2020-01-11 19:10:09 ]Hippie
+[2020-01-11 19:11:00 ]anton ist der allercoolste
+[2020-01-11 19:11:00 ]Hippie
+[2020-01-11 19:12:22 ]grüße aus __set
+[2020-01-11 19:12:38 ]grüße aus __set

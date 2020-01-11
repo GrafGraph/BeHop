@@ -116,7 +116,7 @@ input[type=submit].del-btn {
     border-color: var(--red);
 }
 
-input[type=submit]:hover { 
+input[type=submit]:hover {
     color: white;
     background: rgb(0, 0, 0);
 }
@@ -158,4 +158,9 @@ table {
 
 .button:hover {
     background-color: white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
