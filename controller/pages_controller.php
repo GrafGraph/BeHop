@@ -1,13 +1,10 @@
 <?php
+require_once 'models/baseModel.class.php';
+require_once 'models/address.class.php';
+require_once 'models/user.class.php';
+require_once 'models/order.class.php';
 
 namespace beHop;
-// require_once 'models/address.class.php';
-// require_once 'models/user.class.php';
-// require_once 'models/order.class.php';
-
-// use Address;
-// use User;
-// use Order;
 
 class PagesController extends Controller
 {
@@ -80,7 +77,6 @@ class PagesController extends Controller
 				$this->_params['user'] = $user;
 
 				$address = Address::findOne('id = ' . $user['address_id']);
-				debug_to_logFile($address['id']);
 				$this->_params['address'] = $address;
 
 				$latestOrder = Order::findOne('user_id = ' .$_SESSION['userID']);
