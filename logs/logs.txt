@@ -121,3 +121,20 @@
 [2020-01-11 15:14:57 ]SELECT * FROM `order` WHERE user_id = 1;
 [2020-01-11 15:44:30 ]SELECT * FROM `user` WHERE email = 'hip.hop@fh-erfurt.de';
 [2020-01-11 15:45:12 ]SELECT * FROM `user` WHERE email = 'hip.hop@fh-erfurt.de';
+[2020-01-11 15:55:47 ]anton ist der allercoolste
+[2020-01-11 15:55:47 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:55:47 ]Hippie
+[2020-01-11 15:55:47 ]SELECT * FROM `address` WHERE id = 1;
+[2020-01-11 15:55:47 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:55:50 ]anton ist der allercoolste
+[2020-01-11 15:55:50 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:55:50 ]Hippie
+[2020-01-11 15:55:50 ]SELECT * FROM `address` WHERE id = 1;
+[2020-01-11 15:55:50 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:56:02 ]anton ist der allercoolste
+[2020-01-11 15:56:02 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:56:02 ]Hippie
+[2020-01-11 15:56:02 ]SELECT * FROM `address` WHERE id = 1;
+[2020-01-11 15:56:02 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 17:20:24 ]SELECT * FROM `user` WHERE email = 'hip.hop@fh-erfurt.de';
+[2020-01-11 17:39:00 ]grüße aus __set
