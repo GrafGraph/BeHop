@@ -78,20 +78,10 @@ class PagesController extends Controller
 				$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
 				debug_to_logFile($user['firstName']);
 				$this->_params['user'] = $user;
-				// $this->params['firstname'] = $user['firstName'];
-				// $this->params['lastname'] = $user['lastName'];
-				// $this->params['email'] = $user['email'];
-				// $this->params['createdAt'] = $user['createdAt'];
-				// $this->params['updatedAt'] = $user['updatedAt'];
 
 				$address = Address::findOne('id = ' . $user['address_id']);
 				debug_to_logFile($address['id']);
 				$this->_params['address'] = $address;
-				// ['street'];
-				// $this->params['number'] = $address['number'];
-				// $this->params['city'] = $address['city'];
-				// $this->params['zip'] = $address['zip'];
-				// $this->params['country'] = $address['country'];
 
 				$latestOrder = Order::findOne('user_id = ' .$_SESSION['userID']);
 				// $latestOrder = Order::findSorted('createdAt',
