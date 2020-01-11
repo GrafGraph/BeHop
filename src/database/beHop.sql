@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 11. Jan 2020 um 13:37
+-- Erstellungszeit: 11. Jan 2020 um 17:12
 -- Server-Version: 10.4.8-MariaDB
 -- PHP-Version: 7.3.10
 
@@ -27,8 +27,6 @@ SET time_zone = "+00:00";
 --
 -- Tabellenstruktur für Tabelle `address`
 --
-create database behop;
-use behop;
 
 CREATE TABLE `address` (
   `id` int(11) NOT NULL,
@@ -61,6 +59,16 @@ CREATE TABLE `category` (
   `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Daten für Tabelle `category`
+--
+
+INSERT INTO `category` (`id`, `createdAt`, `updatedAt`, `name`) VALUES
+(1, '2020-01-11 16:06:26', NULL, 'schuhe'),
+(2, '2020-01-11 16:06:26', NULL, 'sale'),
+(3, '2020-01-11 16:06:33', NULL, 'schuhe'),
+(4, '2020-01-11 16:06:33', NULL, 'sale');
+
 -- --------------------------------------------------------
 
 --
@@ -86,8 +94,16 @@ CREATE TABLE `product` (
   `updatedAt` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `name` varchar(45) NOT NULL,
   `price` decimal(7,2) NOT NULL,
-  `description` varchar(255) DEFAULT NULL
+  `description` varchar(255) DEFAULT NULL,
+  `imageUrl` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `product`
+--
+
+INSERT INTO `product` (`id`, `createdAt`, `updatedAt`, `name`, `price`, `description`, `imageUrl`) VALUES
+(1, '2020-01-11 16:07:50', NULL, 'Jordans', '69.99', 'Weiße Jordans', 'assets/images/products/jordans.jpg');
 
 -- --------------------------------------------------------
 
@@ -99,6 +115,13 @@ CREATE TABLE `product_has_category` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `product_has_category`
+--
+
+INSERT INTO `product_has_category` (`product_id`, `category_id`) VALUES
+(1, 1);
 
 -- --------------------------------------------------------
 
@@ -223,7 +246,7 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT für Tabelle `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `order`
@@ -235,7 +258,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT für Tabelle `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT für Tabelle `shoppingcart`
