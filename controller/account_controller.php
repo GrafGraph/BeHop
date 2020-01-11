@@ -102,14 +102,29 @@ class AccountController extends Controller
 			$password = $_POST['password'] ?? null;
 			
 
-			$addressData = ['city', 'street', 'number', 'zip', 'country'];
+			$addressData = [
+			'city' => $city, 
+			'street' => $street, 
+			'number' => $number, 
+			'zip' => $zip, 
+			'country' => $country];
+
 			$address = new Address($addressData);
 			$address->save();
 			
-			$userData = ['email', 'password', 'firstName', 'lastName'];
+			$userData = [
+			'email' => $email, 
+			'password' => $password, 
+			'firstName' => $firstName, 
+			'lastName' => $lastName];
+
 			$user = new User($userData);
 			$user->save();
 			}
+		}
+		else
+		{
+			header('Location: index.php');
 		}
     }
 
