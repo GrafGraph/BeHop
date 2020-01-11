@@ -1,4 +1,5 @@
 <?php
+namespace beHop;
 
 abstract class BaseModel
 {
@@ -204,7 +205,7 @@ abstract class BaseModel
 
     public static function find($where = '')
     {
-        $db  = $GLOBALS['db'];
+        $db  = $GLOBALS['database'];
         $result = null;
 
         try
@@ -215,8 +216,33 @@ abstract class BaseModel
             {
                 $sql .= ' WHERE ' . $where .  ';';
             }
-                    
+            debug_to_logFile($sql);
             $result = $db->query($sql)->fetchAll();
+        }
+        catch(\PDOException $e)
+        {
+            die('Select statment failed: ' . $e->getMessage());
+        }
+
+        return $result;
+    }
+
+    // Specialization of method find, which returns only one DataRow
+    public static function findOne($where = '')
+    {
+        $db  = $GLOBALS['database'];
+        $result = null;
+
+        try
+        {
+            $sql = 'SELECT * FROM ' . self::tablename();
+                
+            if(!empty($where))
+            {
+                $sql .= ' WHERE ' . $where .  ';';
+            }
+            debug_to_logFile($sql);
+            $result = $db->query($sql)->fetch();
         }
         catch(\PDOException $e)
         {
@@ -230,32 +256,34 @@ abstract class BaseModel
     in either ascending or descending order, given by bool $descending.
     If $descending is false, the list will by default be orderd ascending.
     */
-    public static function findSorted($sortBy, $where = '', $descending = false)
-    {
-        $db  = $GLOBALS['db'];
-        $result = null;
+    
+    // public static function findSorted($sortBy, $where = '', $descending = false)
+    // {
+    //     $db  = $GLOBALS['database'];
+    //     $result = null;
 
-        try
-        {
-            $sql = 'SELECT * FROM ' . self::tablename();
+    //     try
+    //     {
+    //         $sql = 'SELECT * FROM ' . self::tablename();
                 
-            if(!empty($where))
-            {
-                $sql .= ' WHERE ' . $where .  ';';
-            }
-            $sql .= 'Order by ' . $sortBy;
-            if($descending)
-            {
-                $sql .= ['desc'];
-            }
-            $sql .= ';';
-            $result = $db->query($sql)->fetchAll();
-        }
-        catch(\PDOException $e)
-        {
-            die('Select statment failed: ' . $e->getMessage());
-        }
+    //         if(!empty($where))
+    //         {
+    //             $sql .= ' WHERE ' . $where .  ';';
+    //         }
+    //         $sql .= 'Order by ' . "'".$sortBy."'";
+    //         if($descending)
+    //         {
+    //             $sql .= ' desc';
+    //         }
+    //         $sql .= ';';
+    //         debug_to_logFile($sql);
+    //         $result = $db->query($sql)->fetchAll();
+    //     }
+    //     catch(\PDOException $e)
+    //     {
+    //         die('Select statment failed: ' . $e->getMessage());
+    //     }
 
-        return $result;
-    }
+    //     return $result;
+    // }
 }

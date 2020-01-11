@@ -1,32 +1,33 @@
 <h1>Mein Account</h1>
-
+<!-- TODO: Nicht als Tabelle, sondern als Formularfeldern realisieren -->
 <table style="width:30%">
 <tr>
     <td>Vorname</td>
-    <td><?=$firstname?></td>
+    <td><?=$user['firstName']?></td>
   </tr>
   <tr>
     <td>Nachname</td>
-    <td><?=$lastname?></td>
+    <td><?=$user['lastName']?></td>
   </tr>
   <tr>
     <td>Email</td>
-    <td><?=$email?></td>
+    <td><?=$user['email']?></td>
   </tr>
   <tr>
     <td>Anschrift</td>
-    <td rowspan="3"><?=$country . $street . $number . $city . $zip?></td>
+    <td><?=$address['country'] . $address['street'] . $address['number'] 
+    . $address['city'] . $address['zip']?></td>
   </tr>
   <tr>
     <td>Letzte Bestellung</td>
-    <td><?=$latestOrder?></td>
+    <td><?=$latestOrder['createdAt']?></td>
   </tr>
   <tr>
     <td>Account erstellt</td>
-    <td><?=$createdAt?></td>
+    <td><?=$user['createdAt']?></td>
   </tr>
   <tr>
     <td>Letzte Aktualisierung</td>
-    <td><?=$updatedAt?></td>
+    <td><?=$user['updatedAt']?></td>
   </tr>
 </table>

@@ -1,5 +1,5 @@
 <?php
-
+namespace beHop;
 class Order extends BaseModel
 {
     const TABLENAME ='`order`';
