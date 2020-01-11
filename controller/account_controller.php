@@ -14,13 +14,13 @@ class AccountController extends Controller
 				{
 					$email    = $_POST['email'];
 					$password = $_POST['password'];
-					$users = User::find('email = ' . "'".$email."'");
-					// if(password_verify($password, $users[0]['password']))
-					if($password == $users['password'])
+					$user = User::findOne('email = ' . "'".$email."'");
+					// if(password_verify($password, $user['password']))
+					if($password == $user['password'])
 					{
 						$_SESSION['loggedIn'] = true;
-						$_SESSION['userMail'] = $users['email'];
-						$_SESSION['userID'] = $users['id'];
+						$_SESSION['userMail'] = $user['email'];
+						$_SESSION['userID'] = $user['id'];
 						header('Location: index.php');
 					}
 					else
