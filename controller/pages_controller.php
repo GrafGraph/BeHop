@@ -1,6 +1,7 @@
 <?php
 
 namespace app\controller;
+require_once 'models/baseModel.class.php';
 require_once 'models/address.class.php';
 require_once 'models/user.class.php';
 require_once 'models/order.class.php';
@@ -121,7 +122,7 @@ class PagesController extends \app\core\Controller
 			$password = $_POST['password'] ?? null;
 			
 
-			$addressData = ['city', 'street', 'number', 'zip', 'country'];
+			$addressData = __construct(); //['city', 'street', 'number', 'zip', 'country'];
 			$address = new Address($addressData);
 			$address->save();
 			
