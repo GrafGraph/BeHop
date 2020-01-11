@@ -1,5 +1,5 @@
 <?php
-
+namespace beHop;
 class Category extends BaseModel
 {
     const TABLENAME ='`category`';

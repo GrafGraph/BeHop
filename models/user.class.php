@@ -1,6 +1,10 @@
 <?php
 
+
 require_once 'models/baseModel.class.php';
+
+
+namespace beHop;
 
 class User extends BaseModel
 {

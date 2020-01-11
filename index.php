@@ -26,7 +26,7 @@ if(file_exists($controllerPath))
 	include_once $controllerPath;
 
 	// example of included controller name is PagesController in default
-	$controllerClassName = '\\app\\controller\\'.ucfirst($controllerName).'Controller';
+	$controllerClassName = '\\beHop\\'.ucfirst($controllerName).'Controller';
 
 	// is the class name a valid name in our context?
 	if(class_exists($controllerClassName))
@@ -50,10 +50,10 @@ if(file_exists($controllerPath))
 	}
 	else
 	{
-		header('Location: index.php?c=pages&a=error404');
+		header('Location: index.php?c=pages&a=error405');
 	}
 }
 else
 {
-	header('Location: index.php?c=pages&a=error404');
+	header('Location: index.php?c=pages&a=error406');
 }

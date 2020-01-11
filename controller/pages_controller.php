@@ -1,16 +1,12 @@
 <?php
-
-namespace app\controller;
 require_once 'models/baseModel.class.php';
 require_once 'models/address.class.php';
 require_once 'models/user.class.php';
 require_once 'models/order.class.php';
 
-use Address;
-use User;
-use Order;
+namespace beHop;
 
-class PagesController extends \app\core\Controller
+class PagesController extends Controller
 {
 
 	public function actionIndex()
@@ -29,13 +25,13 @@ class PagesController extends \app\core\Controller
 				{
 					$email    = $_POST['email'];
 					$password = $_POST['password'];
-					$users = User::find('email = ' . $email);
+					$users = User::find('email = ' . "'".$email."'");
 					// if(password_verify($password, $users[0]['password']))
-					if($password == $users[0]['password'])
+					if($password == $users['password'])
 					{
 						$_SESSION['loggedIn'] = true;
-						$_SESSION['userMail'] = $users[0]['email'];
-						$_SESSION['userID'] = $users[0]['id'];
+						$_SESSION['userMail'] = $users['email'];
+						$_SESSION['userID'] = $users['id'];
 						header('Location: index.php');
 					}
 					else
@@ -75,25 +71,18 @@ class PagesController extends \app\core\Controller
 		{
 			if(isset($_SESSION['userID']))
 			{
-				$user = User::find('ID =' . $_SESSION['userID']);
-				$this->params['firstname'] = $user[0]['firstname'];
-				$this->params['lastname'] = $user[0]['lastname'];
-				$this->params['email'] = $user[0]['email'];
-				$this->params['createdAt'] = $user[0]['createdAt'];
-				$this->params['updatedAt'] = $user[0]['updatedAt'];
-
-				$address = Address::find('id =' . $user[0]['address_id']);
-				$this->params['street'] = $address[0]['street'];
-				$this->params['number'] = $address[0]['number'];
-				$this->params['city'] = $address[0]['city'];
-				$this->params['zip'] = $address[0]['zip'];
-				$this->params['country'] = $address[0]['country'];
-
-				$latestOrder = Order::findSorted('createdAt',
-										 'user_id =' .$_SESSION['userID'], true);
-				if(isset($newestOrder))
+				debug_to_logFile('anton ist der allercoolste');
+				$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
+				debug_to_logFile($user['firstName']);
+				$this->_params['user'] = $user;
+				$address = Address::findOne('id = ' . $user['address_id']);
+				$this->_params['address'] = $address;
+				$latestOrder = Order::findOne('user_id = ' .$_SESSION['userID']);
+				// $latestOrder = Order::findSorted('createdAt',
+				// 						 'user_id = ' ."'".$_SESSION['userID']."'", true);
+				if(isset($latestOrder))
 				{
-					$this->params['latestOrder'] = $latestOrder[0]['createdAt'];
+					$this->_params['latestOrder'] = $latestOrder;
 				}
 			}
 		}

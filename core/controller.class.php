@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core;
+namespace beHop;
 
 class Controller
 {
@@ -21,6 +21,8 @@ class Controller
 		// generate view by callend controller name and called action name
 		$viewPath = $this->viewPath($this->_controllerName, $this->_action);
 
+		// TODO: if file exists viewpath
+		
 		// flat the assoc array to variables so that the correct names availible in our view rending
 		extract($this->_params);
 

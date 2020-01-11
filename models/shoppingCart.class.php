@@ -1,5 +1,5 @@
 <?php
-
+namespace beHop;
 class ShoppingCart extends BaseModel
 {
     const TABLENAME ='`shoppingCart`';

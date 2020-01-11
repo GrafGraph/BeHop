@@ -1,5 +1,5 @@
 <?php
-
+namespace beHop;
 class Address extends BaseModel
 {
     const TABLENAME ='`address`';
