@@ -68,7 +68,7 @@ class PagesController extends \app\core\Controller
 	public function actionAccount()
 	{
 		$this->_params['title'] = 'BeHop - Account' ;
-		if($_SESSION['loggedIn'] === true)
+		if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true)
 		{
 			if(isset($_SESSION['userID']))
 			{
