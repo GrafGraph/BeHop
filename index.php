@@ -34,7 +34,7 @@ if(file_exists($controllerPath))
 		// generate the controller as an object from the class name
 		$controllerInstance = new $controllerClassName($actionName, $controllerName);
 
-		// check index action is availible
+		// check index action is available
 		$actionMethodName = 'action'.ucfirst($actionName);
 
 		if(method_exists($controllerInstance, $actionMethodName))

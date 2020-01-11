@@ -1,9 +1,9 @@
 <?php
 namespace beHop;
-require_once 'models/baseModel.class.php';
-require_once 'models/address.class.php';
-require_once 'models/user.class.php';
-require_once 'models/order.class.php';
+// require_once 'models/baseModel.class.php';
+// require_once 'models/address.class.php';
+// require_once 'models/user.class.php';
+// require_once 'models/order.class.php';
 
 
 class PagesController extends Controller
@@ -27,11 +27,6 @@ class PagesController extends Controller
 	public function actionContact()
 	{
 		$this->_params['title'] = 'BeHop - Kontakt' ;
-	}
-
-	public function actionProducts()
-	{
-		$this->_params['title'] = 'BeHop - Produkte' ;
 	}
 
 	public function actionImpressum()
