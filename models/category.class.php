@@ -8,6 +8,6 @@ class Category extends BaseModel
         'id' => ['type' => BaseModel::TYPE_INT],
         'createdAt' => ['type' => BaseModel::TYPE_STRING],
         'updatedAt' => ['type' => BaseModel::TYPE_STRING], 
-        'name' => ['type'=> BaseModel::TYPE_STRING]
+        'name' => ['type'=> BaseModel::TYPE_STRING, 'max' => 50]
     ];
 }

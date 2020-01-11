@@ -8,9 +8,9 @@ class Product extends BaseModel
         'id' => ['type' => BaseModel::TYPE_INT],
         'createdAt' => ['type' => BaseModel::TYPE_STRING],
         'updatedAt' => ['type' => BaseMOdel::TYPE_STRING],
-        'name' => ['type' => BaseModel::TYPE_STRING],
+        'name' => ['type' => BaseModel::TYPE_STRING, 'max' => 45],
         'price' => ['type' => BaseModel::TYPE_FLOAT],
-        'description' => ['type' => BaseModel::TYPE_STRING]
+        'description' => ['type' => BaseModel::TYPE_STRING, 'max' => 255]
     ];
    
 }

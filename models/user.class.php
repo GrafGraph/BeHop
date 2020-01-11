@@ -10,10 +10,10 @@ class User extends BaseModel
         'id' => ['type' => BaseModel::TYPE_INT],
         'createdAt' => ['type' => BaseModel::TYPE_STRING],
         'updatedAt' => ['type' => BaseModel::TYPE_STRING], 
-        'email' => ['type' => BaseModel::TYPE_STRING],
-        'password' => ['type' => BaseModel::TYPE_STRING],
-        'firstName' => ['type' => BaseModel::TYPE_STRING],
-        'lastName' => ['type' => BaseModel::TYPE_STRING],
+        'email' => ['type' => BaseModel::TYPE_STRING, 'max' => 70],
+        'password' => ['type' => BaseModel::TYPE_STRING, 'max' => 255],
+        'firstName' => ['type' => BaseModel::TYPE_STRING, 'max' => 50],
+        'lastName' => ['type' => BaseModel::TYPE_STRING, 'max' => 70],
         'address_id' => ['type' => BaseModel::TYPE_INT],
         'shoppingCart_id' => ['type' => BaseModel::TYPE_INT]
     ];

@@ -122,7 +122,7 @@ class PagesController extends \app\core\Controller
 			$password = $_POST['password'] ?? null;
 			
 
-			$addressData = __construct(); //['city', 'street', 'number', 'zip', 'country'];
+			$addressData = ['city', 'street', 'number', 'zip', 'country'];
 			$address = new Address($addressData);
 			$address->save();
 			
