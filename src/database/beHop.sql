@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 create database behop;
 use behop;
-, 'max' =>
+
 CREATE TABLE `address` (
   `id` int(11) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
