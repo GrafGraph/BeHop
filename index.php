@@ -50,10 +50,10 @@ if(file_exists($controllerPath))
 	}
 	else
 	{
-		header('Location: index.php?c=pages&a=error405');
+		header('Location: index.php?c=pages&a=error404');
 	}
 }
 else
 {
-	header('Location: index.php?c=pages&a=error406');
+	header('Location: index.php?c=pages&a=error404');
 }

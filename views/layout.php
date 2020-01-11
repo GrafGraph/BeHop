@@ -20,12 +20,12 @@
 						<li><a href="index.php?a=contact">Contact</a></li>
 						<li><a href="index.php?a=aboutus">About Us</a></li>
 						<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>
-						<li><a href="?a=logout">Logout</a></li>
-						<li><a href="?a=account">Mein Konto</a></li>
+						<li><a href="?c=account&a=logout">Logout</a></li>
+						<li><a href="?c=account&a=account">Mein Konto</a></li>
 						<?php else : ?>
-						<li><a href="?a=login">Login</a></li>
+						<li><a href="?c=account&a=login">Login</a></li>
 						<?php endif; ?>
-						<li><a href="index.php?a=shoppingcart" title="Shoppingcart"><img src="" alt="Einkaufswagen Bild"></a></li>
+						<li><a href="index.php?c=account&a=shoppingcart" title="Shoppingcart"><img src="" alt="Einkaufswagen Bild"></a></li>
 					</ul>
 				</nav>
 			</header>
