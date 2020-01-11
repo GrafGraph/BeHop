@@ -244,7 +244,7 @@ abstract class BaseModel
                 $sql .= ' WHERE ' . $where .  ';';
             }
             $sql .= 'Order by ' . $sortBy;
-            if($decending)
+            if($descending)
             {
                 $sql .= ['desc'];
             }
