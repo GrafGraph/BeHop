@@ -3,9 +3,11 @@
 namespace app\controller;
 require_once 'models/address.class.php';
 require_once 'models/user.class.php';
+require_once 'models/order.class.php';
 
 use Address;
 use User;
+use Order;
 
 class PagesController extends \app\core\Controller
 {
@@ -28,7 +30,7 @@ class PagesController extends \app\core\Controller
 					$password = $_POST['password'];
 					$users = User::find('email = ' . $email);
 
-					if(password_verifiy($password, $users[0]['password']))
+					if(password_verify($password, $users[0]['password']))
 					{
 						$_SESSION['loggedIn'] = true;
 						$_SESSION['userMail'] = $users[0]['email'];
