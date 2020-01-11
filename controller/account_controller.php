@@ -117,6 +117,7 @@ class AccountController extends Controller
 			'password' => $password, 
 			'firstName' => $firstName, 
 			'lastName' => $lastName];
+			// TODO: AdressID muss mit übergeben werden!
 
 			$user = new User($userData);
 			$user->save();

@@ -217,7 +217,6 @@ abstract class BaseModel
             {
                 $sql .= ' WHERE ' . $where .  ';';
             }
-            debug_to_logFile($sql);
             $result = $db->query($sql)->fetchAll();
         }
         catch(\PDOException $e)
@@ -242,7 +241,6 @@ abstract class BaseModel
             {
                 $sql .= ' WHERE ' . $where .  ';';
             }
-            debug_to_logFile($sql);
             $result = $db->query($sql)->fetch();
         }
         catch(\PDOException $e)

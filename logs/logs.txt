@@ -152,3 +152,4 @@
 [2020-01-11 17:20:24 ]SELECT * FROM `user` WHERE email = 'hip.hop@fh-erfurt.de';
 [2020-01-11 17:39:00 ]grüße aus __set
 >>>>>>> 864eb593d8b01efe52acea1eff920ac5010135f8
+[2020-01-11 17:54:37 ]grüße aus __set
