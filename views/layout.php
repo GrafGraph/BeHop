@@ -16,7 +16,7 @@
 						<li><a href="?a=index" title="Home"><img src=""
 						alt="BeHop-Logo" style="background-color:black"></a></li>
 						<li><a href="index.php?a=sales">Sales</a></li>
-						<li><a href="index.php?a=products">Products</a></li>
+						<li><a href="index.php?c=products&a=products">Products</a></li>
 						<li><a href="index.php?a=contact">Contact</a></li>
 						<li><a href="index.php?a=aboutus">About Us</a></li>
 						<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>
