@@ -119,3 +119,5 @@
 [2020-01-11 15:14:57 ]SELECT * FROM `address` WHERE id = 1;
 [2020-01-11 15:14:57 ]1
 [2020-01-11 15:14:57 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:44:30 ]SELECT * FROM `user` WHERE email = 'hip.hop@fh-erfurt.de';
+[2020-01-11 15:45:12 ]SELECT * FROM `user` WHERE email = 'hip.hop@fh-erfurt.de';
