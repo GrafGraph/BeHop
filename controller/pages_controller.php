@@ -1,10 +1,10 @@
 <?php
+namespace beHop;
 require_once 'models/baseModel.class.php';
 require_once 'models/address.class.php';
 require_once 'models/user.class.php';
 require_once 'models/order.class.php';
 
-namespace beHop;
 
 class PagesController extends Controller
 {

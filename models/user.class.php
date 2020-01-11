@@ -1,14 +1,8 @@
 <?php
-
-
-require_once 'models/baseModel.class.php';
-
-
 namespace beHop;
-
 class User extends BaseModel
 {
-    const TABLENAME ='`user`';
+    const TABLENAME = '`user`';
 
     protected $schema =[
         'id' => ['type' => BaseModel::TYPE_INT],
