@@ -37,7 +37,7 @@ abstract class BaseModel
 
     public function __set($key, $value)
     {
-        debug_to_logFile('grüße aus __set');
+        debug_to_logFile('grüße aus ');
         if(array_key_exists($key, $value))
         {
             $this->data[$key] = $value;
