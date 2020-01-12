@@ -9,4 +9,8 @@ function debug_to_logFile($message, $class = null){
         file_put_contents ( __DIR__.'/../logs/logs.txt', $message,FILE_APPEND);
     }
 }
+
+function getImagesToProductID($productID){
+    return Image::find('product_id = ' . $productID);
+}
 ?>

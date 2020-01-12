@@ -13,7 +13,7 @@ class User extends BaseModel
         'firstName' => ['type' => BaseModel::TYPE_STRING, 'max' => 50],
         'lastName' => ['type' => BaseModel::TYPE_STRING, 'max' => 70],
         'address_id' => ['type' => BaseModel::TYPE_INT],
-        'shoppingCart_id' => ['type' => BaseModel::TYPE_INT]
+        // 'shoppingCart_id' => ['type' => BaseModel::TYPE_INT]
     ];
 }
 

@@ -4,6 +4,8 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.products {}
+
 select {
     width: 30%;
     height: 40px;
