@@ -86,6 +86,8 @@ class AccountController extends Controller
 	public function actionSignUp()
 	{
 		$this->_params['title'] = 'BeHop - Registrierung' ;
+		session_start();
+		$errors = array(); 
 		if($_SESSION['loggedIn'] === false)
 		{
 			if(isset($_POST['submit']))
@@ -98,19 +100,48 @@ class AccountController extends Controller
 			$zip = $_POST['zip'] ?? null;
 			$country = $_POST['country'] ?? null;
 			$email    = $_POST['email'] ?? null;
-			$password = $_POST['password'] ?? null;
-			$password = $_POST['password'] ?? null;
+			$password1 = $_POST['password1'] ?? null;
+			$password2 = $_POST['password2'] ?? null;
+			
+			if (empty($firstName)) { array_push($errors, "Vornahme wird benötigt!"); }
+			if (empty($lastName)) { array_push($errors, "Nachnahme wird benötigt!"); }
+			if (empty($street)) { array_push($errors, "Straße wird benötigt!"); }
+			if (empty($number)) { array_push($errors, "Hausnummer wird benötigt!"); }
+			if (empty($city)) { array_push($errors, "Stadt wird benötigt!"); }
+			if (empty($zip)) { array_push($errors, "Postleitzahl wird benötigt!"); }
+			if (empty($country)) { array_push($errors, "Stadt wird benötigt!"); }
+			if (empty($email)) { array_push($errors, "Email is required"); }
+			if (empty($password1)) { array_push($errors, "Passwort wird benötigt!"); }
+			if (empty($password2)) { array_push($errors, "Passwort muss richtig widerholt werden!"); }
+			if($password1 != $password2)
+			{
+				array_push($errors, "Passwort stimmt nicht überein!");
+
+			}
+
+			$user_check_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
+
+			if($user_check_query != null)
+			{
+				array_push($errors, "Email existiert schon.");
+			}
+			if (count($errors) == 0) 
+			{
+				$password = password_hash($password1, PASSWORD_DEFAULT);
+				$addressData = [
+					'city' => $city, 
+					'street' => $street, 
+					'number' => $number, 
+					'zip' => $zip, 
+					'country' => $country];
+		
+					$address = new Address($addressData);
+					$address->save();
+					$user_check_query = "SELECT 'id' FROM address WHERE email='$email' LIMIT 1";
+			}
 			
 
-			$addressData = [
-			'city' => $city, 
-			'street' => $street, 
-			'number' => $number, 
-			'zip' => $zip, 
-			'country' => $country];
-
-			$address = new Address($addressData);
-			$address->save();
+			
 			
 			$userData = [
 			'email' => $email, 
@@ -118,6 +149,10 @@ class AccountController extends Controller
 			'firstName' => $firstName, 
 			'lastName' => $lastName];
 			// TODO: AdressID muss mit übergeben werden!
+			if($errors = null)
+			{
+				header('Location: login.php');
+			}
 
 			$user = new User($userData);
 			$user->save();
@@ -127,11 +162,19 @@ class AccountController extends Controller
 		{
 			header('Location: index.php');
 		}
+		
     }
 
     public function actionShoppingcart()
 	{
 		$this->_params['title'] = 'BeHop - Einkaufswagen' ;
-    }
+	}
+
+	//TODO: Logout Seite erstellen, funktion schon da :)
+	// public function actionLogout()
+	// {
+	// 	session_destroy();
+	// 	header('Location: index.php?c=pages&a=login');
+	// }
 }
 ?>

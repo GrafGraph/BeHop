@@ -197,3 +197,5 @@
 [2020-01-12 11:04:04 ]
 [2020-01-12 11:05:25 ]Array
 [2020-01-12 11:06:06 ]/assets/images/products/mainImage-1.jpg
+[2020-01-12 15:26:45 ]anton ist der allercoolste
+[2020-01-12 15:26:45 ]Hippie
