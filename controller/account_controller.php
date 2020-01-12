@@ -55,7 +55,7 @@ class AccountController extends Controller
 
 	public function actionAccount()
 	{
-		$this->_params['title'] = 'BeHop - Account' ;
+		$this->_params['title'] = 'BeHop - Mein Account' ;
 		if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true)
 		{
 			if(isset($_SESSION['userID']))
@@ -131,7 +131,40 @@ class AccountController extends Controller
 
     public function actionShoppingcart()
 	{
-		$this->_params['title'] = 'BeHop - Einkaufswagen' ;
+		$this->_params['title'] = 'BeHop - Mein Warenkorb' ;
+		$shoppingCartItems = array();
+		// IF: Nutzer eingeloggt -> eigener warenkorb aus Datenbank
+		if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true)
+		{
+			$userID = $_SESSION['userID'];
+			$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
+			$shoppingCartHasProducts = ShoppingCart_Has_Product::find('shoppingCart_id = '. $shoppingCart['id']);
+
+			
+			foreach($shoppingCartHasProducts as $OrderItem)
+			{
+				$product = Product::findOne('id = '. $OrderItem['product_id']);
+				$product['quantity'] = $OrderItem['quantity'];
+				$product['image'] = Image::findOne('product_id = '. $product['id']);
+				array_push($shoppingCartItems, $product);
+			}	
+		}
+		//	ELSE: Warenkorb ergibt sich aus Session
+		/*	TODO: Beim Hinzufügen von Produkten zum Warenkorb diese Information in $_SESSION schreiben.
+			TODO: Bei Login den Warenkorb der Session nicht verwerfen, wenn der Datenbank-Warenkorb leer ist.
+		*/
+		else
+		{
+			if(isset($_SESSION['shoppingCartItems']) && !empty($_SESSION['shoppingCartItems']))
+			{
+				$shoppingCartItems = $_SESSION['shoppingCartItems'];
+			}
+			else
+			{
+				$shoppingCartItems = null;
+			}
+		}
+		$this->_params['shoppingCartItems'] = $shoppingCartItems;
     }
 }
 ?>
