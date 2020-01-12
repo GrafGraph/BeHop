@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 12. Jan 2020 um 09:14
+-- Erstellungszeit: 12. Jan 2020 um 12:32
 -- Server-Version: 10.4.11-MariaDB
 -- PHP-Version: 7.4.1
 
@@ -87,7 +87,8 @@ CREATE TABLE `image` (
 --
 
 INSERT INTO `image` (`id`, `createdAt`, `updatedAt`, `imageUrl`, `altText`, `product_id`) VALUES
-(1, '2020-01-12 08:14:02', NULL, '/assets/images/products/mainImage-1.jpg', '', 1);
+(1, '2020-01-12 08:14:02', NULL, '/Git/BeHop/assets/images/products/mainImage-1.jpg', '', 1),
+(2, '2020-01-12 10:37:47', NULL, '/Git/BeHop/assets/images/products/mainImage-2.jpg', 'Schwarze Harem-Jogginghose', 2);
 
 -- --------------------------------------------------------
 
@@ -116,7 +117,7 @@ CREATE TABLE `product` (
   `price` decimal(7,2) NOT NULL,
   `color` varchar(50) NOT NULL,
   `numberInStock` int(11) NOT NULL,
-  `description` varchar(255) DEFAULT NULL,
+  `description` varchar(500) DEFAULT NULL,
   `category_id` int(11) NOT NULL,
   `sales_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -126,7 +127,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `createdAt`, `updatedAt`, `name`, `price`, `color`, `numberInStock`, `description`, `category_id`, `sales_id`) VALUES
-(1, '2020-01-12 08:04:22', NULL, 'Jordans Supercool', '69.99', 'White', 5, 'Das Brandneue Jordans Modell SUPERCOOL: Noch mehr Tragekomfort und das im bisher coolsten Look!', 1, NULL);
+(1, '2020-01-12 08:04:22', NULL, 'Jordans Supercool', '69.99', 'White', 5, 'Das Brandneue Jordans Modell SUPERCOOL: Noch mehr Tragekomfort und das im bisher coolsten Look!', 1, NULL),
+(2, '2020-01-12 10:23:28', NULL, 'Harem Jogginghose', '19.99', 'Schwarz', 2, 'Verschluss: Tunnelzug.\r\nPolyester.\r\nHarem.\r\nBreiter, weicher Gummibund mit innenliegendem Kordelzug für komfortablen, sicheren Halt.\r\nPerfekt für einen aktiven Lebensstil und geeignet zum Laufen, Laufen, Yoga und den meisten Sportarten.', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -290,7 +292,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT für Tabelle `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT für Tabelle `order`
@@ -302,7 +304,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT für Tabelle `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT für Tabelle `sales`
