@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 12. Jan 2020 um 12:32
+-- Erstellungszeit: 12. Jan 2020 um 12:56
 -- Server-Version: 10.4.11-MariaDB
 -- PHP-Version: 7.4.1
 
@@ -164,9 +164,16 @@ CREATE TABLE `shoppingcart` (
   `id` int(11) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
   `updatedAt` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
-  `totalAmount` decimal(7,2) NOT NULL,
+  `totalPrice` decimal(7,2) DEFAULT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `shoppingcart`
+--
+
+INSERT INTO `shoppingcart` (`id`, `createdAt`, `updatedAt`, `totalPrice`, `user_id`) VALUES
+(1, '2020-01-12 11:53:38', NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -179,6 +186,13 @@ CREATE TABLE `shoppingcart_has_product` (
   `product_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `shoppingcart_has_product`
+--
+
+INSERT INTO `shoppingcart_has_product` (`shoppingCart_id`, `product_id`, `quantity`) VALUES
+(1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -318,7 +332,7 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT für Tabelle `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT für Tabelle `user`
