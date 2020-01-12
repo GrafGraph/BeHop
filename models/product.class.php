@@ -10,7 +10,11 @@ class Product extends BaseModel
         'updatedAt' => ['type' => BaseMOdel::TYPE_STRING],
         'name' => ['type' => BaseModel::TYPE_STRING, 'max' => 45],
         'price' => ['type' => BaseModel::TYPE_FLOAT],
-        'description' => ['type' => BaseModel::TYPE_STRING, 'max' => 255]
+        'color' => ['type' => BaseModel::TYPE_STRING, 'max' => 50],
+        'numberInStock' => ['type' => BaseModel::TYPE_INT],
+        'description' => ['type' => BaseModel::TYPE_STRING, 'max' => 255],
+        'category_id' => ['type' => BaseModel::TYPE_INT],
+        'sales_id' => ['type' => BaseModel::TYPE_INT]
     ];
    
 }

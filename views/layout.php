@@ -1,6 +1,7 @@
-<html>
+<html lang="de">
 	<head>
-	<?= '<title>'.$title.'</title>'?>
+		<title><?=$title?></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="assets/css/layout.css">
 		<?php if(isset($css) && is_array($css)) : ?>
 			<?php foreach($css as $index => $file) : ?>
@@ -15,10 +16,16 @@
 					<ul>
 						<li><a href="?a=index" title="Home"><img src=""
 						alt="BeHop-Logo" style="background-color:black"></a></li>
-						<li><a href="index.php?a=sales">Sales</a></li>
-						<li><a href="index.php?c=products&a=products">Products</a></li>
-						<li><a href="index.php?a=contact">Contact</a></li>
-						<li><a href="index.php?a=aboutus">About Us</a></li>
+						<li>
+
+						<ul>
+							<li><a href="index.php?c=products&a=sales">Sales</a></li>
+							<li><a href="index.php?c=products&a=products">Products</a></li>
+							<li><a href="index.php?a=contact">Contact</a></li>
+							<li><a href="index.php?a=aboutus">About Us</a></li>
+						</ul>
+						
+						</li>
 						<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>
 						<li><a href="?c=account&a=logout">Logout</a></li>
 						<li><a href="?c=account&a=account">Mein Konto</a></li>
@@ -34,7 +41,7 @@
 			</main>
 		</div>
 		<footer>
-			BEHOP &copy; 
+			<a href="?a=index" title="Home" style="text-decoration:none;">BEHOP</a> &copy; 
 			<a href="index.php?a=impressum">Impressum</a>
 		</footer>
 	</body>
