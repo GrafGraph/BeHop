@@ -11,7 +11,7 @@
    <input type="text" name="city" placeholder="Ort"><br>
    <input type="text" name="zip" placeholder="PLZ"><br>
    <input type="text" name="country" placeholder="Land"><br>
-   <select name="countryChoice">
+   <!-- <select name="countryChoice">
    <option value="Afghanistan">Afghanistan (Afghanistan)</option>
    <option value="Ägypten">Ägypten (Egypt)</option>
    <option value="Aland">Aland (Åland Islands)</option>
@@ -254,14 +254,14 @@
    <option value="Westsahara">Westsahara (Western Sahara)</option>
    <option value="Zentralafrikanische Republik">Zentralafrikanische Republik (Central African Republic)</option>
    <option value="Zypern">Zypern (Cyprus)</option>
-   </select>
+   </select> -->
    </fieldset>
 
    <fieldset>
    <legend>Anmeldedaten</legend>
    <input type="text" name="email" placeholder="E-Mail"><br><br>
-   <input type="password1" name="password1" placeholder ="Passwort"><br><br>
-   <input type="password2" name="password2" placeholder ="Passwort wiederholen"><br><br>
+   <input type="password" name="password1" placeholder ="Passwort"><br><br>
+   <input type="password" name="password2" placeholder ="Passwort wiederholen"><br><br>
    </fieldset>
    <br>
    <button type="submit" name="submit">Registrieren</button>
