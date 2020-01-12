@@ -10,4 +10,7 @@
 <p><?=$product['price']?>&euro;</p>
 <p>Beschreibung:</br>
 <q><?=$product['description']?></q></p>
+</br>
+<h2>TODO:</h2>
+<button title="Kümmer dich um mich!">Zum Warenkorb hinzufügen</button>
 </div>

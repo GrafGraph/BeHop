@@ -30,4 +30,9 @@ class ProductsController extends Controller
 		$this->_params['images'] = Image::find('product_id = ' . $product['id']);
 		$this->_params['product'] = $product;
 	}
+
+	public function actionSales()
+	{
+		$this->_params['title'] = 'Behop - Sales';
+	}
 }

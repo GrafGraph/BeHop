@@ -19,7 +19,7 @@
 						<li>
 
 						<ul>
-							<li><a href="index.php?a=sales">Sales</a></li>
+							<li><a href="index.php?c=products&a=sales">Sales</a></li>
 							<li><a href="index.php?c=products&a=products">Products</a></li>
 							<li><a href="index.php?a=contact">Contact</a></li>
 							<li><a href="index.php?a=aboutus">About Us</a></li>
@@ -41,7 +41,7 @@
 			</main>
 		</div>
 		<footer>
-			BEHOP &copy; 
+			<a href="?a=index" title="Home" style="text-decoration:none;">BEHOP</a> &copy; 
 			<a href="index.php?a=impressum">Impressum</a>
 		</footer>
 	</body>
