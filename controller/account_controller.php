@@ -42,15 +42,15 @@ class AccountController extends Controller
 		}
 	}
 
+	//TODO: Logout Seite erstellen, funktion schon da :)
 	public function actionLogout()
 	{
 		if($_SESSION['loggedIn'] === true)
 		{
 			$_SESSION['loggedIn'] = false;
 		}
-
-		header('Location: index.php');
-		exit();
+		// TODO: Soll das hier bleiben? Wann wird Session noch zu löschen sein?
+		session_destroy();
 	}
 
 
@@ -61,9 +61,7 @@ class AccountController extends Controller
 		{
 			if(isset($_SESSION['userID']))
 			{
-				debug_to_logFile('anton ist der allercoolste');
 				$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
-				debug_to_logFile($user['firstName']);
 				$this->_params['user'] = $user;
 
 				$address = Address::findOne('id = ' . $user['address_id']);
@@ -88,7 +86,7 @@ class AccountController extends Controller
 	{
 		$this->_params['title'] = 'BeHop - Registrierung' ;
 		$errors = array(); 
-		if($_SESSION['loggedIn'] === false)
+		if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] === false)
 		{
 			if(isset($_POST['submit']))
 			{
@@ -138,7 +136,7 @@ class AccountController extends Controller
 				$shoppingCartData = ['user_id' => $user_id];
 				$shoppingCart = new ShoppingCart($shoppingCartData);
 				$shoppingCart->save();
-				
+
 				$this->_params['errors'] = $errors;
 				// if($errors === null)
 				// {
@@ -151,18 +149,14 @@ class AccountController extends Controller
 			}
 			// $_SESSION['errors'] = $errors;
 		}
-	else
-	{
-		header('Location: index.php');
-	}
+		else
+		{
+			header('Location: index.php');
+		}
 }
 
-	//TODO: Logout Seite erstellen, funktion schon da :)
-	// public function actionLogout()
-	// {
-	// 	session_destroy();
-	// 	header('Location: index.php?c=pages&a=login');
-	// }
+
+
 
     public function actionShoppingcart()
 	{
@@ -178,7 +172,7 @@ class AccountController extends Controller
 			{
 				$userID = $_SESSION['userID'];
 				$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
-				$shoppingCartHasProducts = ShoppingCart_Has_Product::find('shoppingCart_id = '. $shoppingCart['id']);
+				$shoppingCartHasProducts = ShoppingCart_has_product::find('shoppingCart_id = '. $shoppingCart['id']);
 			}		
 			//	ELSE: Warenkorb ergibt sich aus Session
 			else

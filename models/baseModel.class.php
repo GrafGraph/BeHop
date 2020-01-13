@@ -38,7 +38,6 @@ abstract class BaseModel
 
     public function __set($key, $value)
     {
-        // debug_to_logFile('grüße aus ');
         if(array_key_exists($key, $this->schema))
         {
             $this->data[$key] = $value;
@@ -78,6 +77,7 @@ abstract class BaseModel
                 }
                 else
                 {
+                    // debug_to_logFile($this->data[$key]);
                     $valueString .= $database->quote($this->data[$key]).',';
                 }
                 

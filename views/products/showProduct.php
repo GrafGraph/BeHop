@@ -14,6 +14,6 @@
 <form method="POST">
     <label for="quantity">Anzahl:</label>
     <input type="number" name="quantity" min="1" max=<?=$product['numberInStock']?> value="1">
-    <input type="submit" value="Zum Warenkorb hinzufügen">
+    <button type="submit" name="submit">Zum Warenkorb hinzufügen</button>
 </form>
 </div>

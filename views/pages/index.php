@@ -1,4 +1,4 @@
 <h2>Willkommen!</h2>
 
 Content
-<!-- <?=$this->_params['title']?>  -->
+<?=var_dump($_SESSION);?>
