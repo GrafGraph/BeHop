@@ -8,7 +8,7 @@
    }
   ?>
    <legend>Zu Ihrer Person</legend>
-   <input type="text" name="firstName" required placeholder="Vorname" values = <?if(isset($_POST['firstname']))?$_POST['firstname']:''?><br><br>
+   <input type="text" name="firstName" required value = "<?=isset($_POST['firstname']) ? $_POST['firstname'] : ''?>" placeholder="Vorname"/><br><br>
    <input type="text" name="lastName" placeholder="Nachname"><br><br>
    
    <input type="text" name="street" required placeholder="Straße"><br>
