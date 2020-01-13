@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 12. Jan 2020 um 12:56
+-- Erstellungszeit: 13. Jan 2020 um 21:09
 -- Server-Version: 10.4.11-MariaDB
 -- PHP-Version: 7.4.1
 
@@ -27,8 +27,6 @@ SET time_zone = "+00:00";
 --
 -- Tabellenstruktur für Tabelle `address`
 --
-create database behop;
-use behop;
 
 CREATE TABLE `address` (
   `id` int(11) NOT NULL,
@@ -46,7 +44,9 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`id`, `createdAt`, `updatedAt`, `city`, `street`, `number`, `zip`, `country`) VALUES
-(1, '2020-01-12 07:50:28', NULL, 'Erfurt', 'Altonaer Straße', '25', '99085', 'Deutschland');
+(1, '2020-01-12 07:50:28', NULL, 'Erfurt', 'Altonaer Straße', '25', '99085', 'Deutschland'),
+(2, '2020-01-13 16:39:12', NULL, 'Erfurt', 'Grolmannstraße', '13', '99085', 'Deutschland'),
+(3, '2020-01-13 16:39:15', NULL, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -171,8 +171,9 @@ CREATE TABLE `shoppingcart` (
 -- Daten für Tabelle `shoppingcart`
 --
 
-INSERT INTO `shoppingcart` (`id`, `createdAt`, `updatedAt`, `totalPrice`, `user_id`) VALUES
-(1, '2020-01-12 11:53:38', NULL, NULL, 2);
+INSERT INTO `shoppingcart` (`id`, `createdAt`, `updatedAt`, `user_id`) VALUES
+(5, '2020-01-13 19:35:25', NULL, 5),
+(6, '2020-01-13 19:35:25', NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -181,6 +182,7 @@ INSERT INTO `shoppingcart` (`id`, `createdAt`, `updatedAt`, `totalPrice`, `user_
 --
 
 CREATE TABLE `shoppingcart_has_product` (
+  `id` int(11) NOT NULL,
   `shoppingCart_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL DEFAULT 1
@@ -190,8 +192,9 @@ CREATE TABLE `shoppingcart_has_product` (
 -- Daten für Tabelle `shoppingcart_has_product`
 --
 
-INSERT INTO `shoppingcart_has_product` (`shoppingCart_id`, `product_id`, `quantity`) VALUES
-(1, 1, 2);
+INSERT INTO `shoppingcart_has_product` (`id`, `shoppingCart_id`, `product_id`, `quantity`) VALUES
+(1, 5, 2, 1),
+(2, 5, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -215,8 +218,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `createdAt`, `updatedAt`, `email`, `password`, `firstName`, `lastName`, `address_id`) VALUES
-(1, '2020-01-12 07:53:41', NULL, 'admin@fh-erfurt.de', 'root', 'Chuck', 'Norris', 1),
-(2, '2020-01-12 07:53:41', NULL, 'hip.hop@fh-erfurt.de', '1234', 'Hippie', 'Hopster', 1);
+(3, '2020-01-13 16:39:12', NULL, 'MarieS.H@web.de', '$2y$10$Xj1rNHe6SHS20ptb1HbL2Oq4yXXGnFuHA2Qi4r5IEIwIzDSGsgzqe', 'Marie', 'Hartmann', 2),
+(5, '2020-01-13 19:00:33', NULL, 'admin@fh-erfurt.de', '$2y$10$Y6.w6mpMlZioRLUrlw/ETOj7AhktY4ajnWX3TTD/f7D7S.hN9Z76C', 'admin', 'root', 1);
 
 --
 -- Indizes der exportierten Tabellen
@@ -275,7 +278,7 @@ ALTER TABLE `shoppingcart`
 -- Indizes für die Tabelle `shoppingcart_has_product`
 --
 ALTER TABLE `shoppingcart_has_product`
-  ADD PRIMARY KEY (`shoppingCart_id`,`product_id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `fk_shoppingCart_has_product_product1_idx` (`product_id`),
   ADD KEY `fk_shoppingCart_has_product_shoppingCart1_idx` (`shoppingCart_id`);
 
@@ -295,7 +298,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT für Tabelle `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT für Tabelle `category`
@@ -331,13 +334,19 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT für Tabelle `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT für Tabelle `shoppingcart_has_product`
+--
+ALTER TABLE `shoppingcart_has_product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints der exportierten Tabellen
