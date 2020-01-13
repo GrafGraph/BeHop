@@ -106,8 +106,11 @@ class AccountController extends Controller
 				}
 				else
 				{
-				// $user_data= User::findOne('email = "' . $email . '"');
-				// if($emailFindOne = $user_data['email']){ array_push($errors, "Email wird bereits verwendet!"); }
+				$user_data = User::findOne('email = "' . $email . '"');
+				if($user_data != null)
+				{ 
+					$this->params['errors'] = "Email wird bereits verwendet!"; 
+				}
 				$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
 				if($address_data == null)
 				{
@@ -132,11 +135,8 @@ class AccountController extends Controller
 						
 						$user = new User($userData);
 						$user->save();
-				$this->_params['errors'] = $errors;
-				if($this->params['errors'] == null)
-				{
-					header('Location: ?c=account&a=login');
-				}
+
+					header('Location: ?c=account&a=login');		
 				}
 			}
 			// $_SESSION['errors'] = $errors;
