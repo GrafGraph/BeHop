@@ -102,37 +102,27 @@ class AccountController extends Controller
 				$email    = $_POST['email'] ?? null;
 				$password1 = $_POST['password1'] ?? null;
 				$password2 = $_POST['password2'] ?? null;
-			
-				if (empty($firstName)) { array_push($errors, "Vorname wird benötigt!"); }
-				if (empty($lastName)) { array_push($errors, "Nachname wird benötigt!"); }
-				if (empty($street)) { array_push($errors, "Straße wird benötigt!"); }
-				if (empty($number)) { array_push($errors, "Hausnummer wird benötigt!"); }
-				if (empty($city)) { array_push($errors, "Stadt wird benötigt!"); }
-				if (empty($zip)) { array_push($errors, "Postleitzahl wird benötigt!"); }
-				if (empty($country)) { array_push($errors, "Stadt wird benötigt!"); }
-				if (empty($email)) { array_push($errors, "Email is required"); }
-				if (empty($password1)) { array_push($errors, "Passwort wird benötigt!"); }
-				if (empty($password2)) { array_push($errors, "Passwort muss richtig widerholt werden!"); }
-				if($password1 !== $password2) {array_push($errors, "Passwort stimmt nicht überein!");}
-				// $emailFindOne= User::findOne('email = "' . $email . '"');
-				// if($emailFindOne !== null){ array_push($errors, "Email wird bereits verwendet!"); }
-				// $addressFindOne = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '" and country = "' . $country . '";');
-				// if($addressFindOne === null) 
+				// if($password1 !== $password2) 
 				// {
+				// 	$this->params['errors'] = "Passwort stimmt nicht überein!";
+				// 	header('Location: ?c=account&a=signUp');
+				// }
+				// $user_data= User::findOne('email = "' . $email . '"');
+				// if($emailFindOne = $user_data['email']){ array_push($errors, "Email wird bereits verwendet!"); }
+				$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
+				if($address_data == null)
+				{
 					$addressData = [
 						'city' => $city, 
 						'street' => $street, 
 						'number' => $number, 
-						'zip' => $zip, 
-						'country' => $country];
+						'zip' => $zip];
 			
 						$address = new Address($addressData);
-						$address->save();
-				// }
-					$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '" and country = "' . $country . '";');
+						$address->save();		
+				}	
 					$address_id = $address_data['id'];
 					$password = password_hash($password1, PASSWORD_DEFAULT);
-
 					$userData = [
 						'email' => $email, 
 						'password' => $password, 
@@ -142,7 +132,7 @@ class AccountController extends Controller
 						
 						$user = new User($userData);
 						$user->save();
-				
+				$this->_params['errors'] = $errors;
 				// if($errors === null)
 				// {
 				// 	header('Location: login.php');
