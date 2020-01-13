@@ -113,11 +113,11 @@ class AccountController extends Controller
 				if (empty($password1)) { array_push($errors, "Passwort wird benötigt!"); }
 				if (empty($password2)) { array_push($errors, "Passwort muss richtig widerholt werden!"); }
 				if($password1 !== $password2) {array_push($errors, "Passwort stimmt nicht überein!");}
-				$emailFindOne= User::findOne('email = "' . $email . '"');
-				if($emailFindOne !== null){ array_push($errors, "Email wird bereits verwendet!"); }
-				$addressFindOne = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '" and country = "' . $country . '";');
-				if($addressFindOne === null) 
-				{
+				// $emailFindOne= User::findOne('email = "' . $email . '"');
+				// if($emailFindOne !== null){ array_push($errors, "Email wird bereits verwendet!"); }
+				// $addressFindOne = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '" and country = "' . $country . '";');
+				// if($addressFindOne === null) 
+				// {
 					$addressData = [
 						'city' => $city, 
 						'street' => $street, 
@@ -127,7 +127,7 @@ class AccountController extends Controller
 			
 						$address = new Address($addressData);
 						$address->save();
-				}
+				// }
 					$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '" and country = "' . $country . '";');
 					$address_id = $address_data['id'];
 					$password = password_hash($password1, PASSWORD_DEFAULT);
@@ -142,16 +142,16 @@ class AccountController extends Controller
 						$user = new User($userData);
 						$user->save();
 				
-				if($errors === null)
-				{
-					header('Location: login.php');
-				} 
-				else
-				{
+				// if($errors === null)
+				// {
+				// 	header('Location: login.php');
+				// } 
+				// else
+				// {
 					
-				}
+				// }
 			}
-			$_SESSION['errors'] = $errors;
+			// $_SESSION['errors'] = $errors;
 		}
 	else
 	{
