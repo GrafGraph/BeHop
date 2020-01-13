@@ -15,8 +15,8 @@ class AccountController extends Controller
 					$email    = $_POST['email'];
 					$password = $_POST['password'];
 					$user = User::findOne('email = ' . "'".$email."'");
-					// if(password_verify($password, $user['password']))
-					if($password == $user['password'])
+					if(password_verify($password, $user['password']))
+					//if($password == $user['password'])
 					{
 						$_SESSION['loggedIn'] = true;
 						$_SESSION['userMail'] = $user['email'];
@@ -91,7 +91,7 @@ class AccountController extends Controller
 		{
 			if(isset($_POST['submit']))
 			{
-				$firstName = $_POST['firstname'] ?? null;
+				$firstName = $_POST['firstName'] ?? null;
 				$lastName = $_POST['lastName'] ?? null;
 				$street = $_POST['street'] ?? null;
 				$number = $_POST['number'] ?? null;
@@ -102,8 +102,8 @@ class AccountController extends Controller
 				$password1 = $_POST['password1'] ?? null;
 				$password2 = $_POST['password2'] ?? null;
 			
-				if (empty($firstName)) { array_push($errors, "Vornahme wird benötigt!"); }
-				if (empty($lastName)) { array_push($errors, "Nachnahme wird benötigt!"); }
+				if (empty($firstName)) { array_push($errors, "Vorname wird benötigt!"); }
+				if (empty($lastName)) { array_push($errors, "Nachname wird benötigt!"); }
 				if (empty($street)) { array_push($errors, "Straße wird benötigt!"); }
 				if (empty($number)) { array_push($errors, "Hausnummer wird benötigt!"); }
 				if (empty($city)) { array_push($errors, "Stadt wird benötigt!"); }
@@ -112,19 +112,12 @@ class AccountController extends Controller
 				if (empty($email)) { array_push($errors, "Email is required"); }
 				if (empty($password1)) { array_push($errors, "Passwort wird benötigt!"); }
 				if (empty($password2)) { array_push($errors, "Passwort muss richtig widerholt werden!"); }
-				if($password1 != $password2)
+				if($password1 !== $password2) {array_push($errors, "Passwort stimmt nicht überein!");}
+				$emailFindOne= User::findOne('email = "' . $email . '"');
+				if($emailFindOne !== null){ array_push($errors, "Email wird bereits verwendet!"); }
+				$addressFindOne = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '" and country = "' . $country . '";');
+				if($addressFindOne === null) 
 				{
-					array_push($errors, "Passwort stimmt nicht überein!");
-
-				}
-
-				$user_check_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
-
-				if($user_check_query != null)
-				{
-					array_push($errors, "Email existiert schon.");
-				}
-				
 					$addressData = [
 						'city' => $city, 
 						'street' => $street, 
@@ -134,8 +127,9 @@ class AccountController extends Controller
 			
 						$address = new Address($addressData);
 						$address->save();
-						$address_id =$address->__get('id');
-						
+				}
+					$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '" and country = "' . $country . '";');
+					$address_id = $address_data['id'];
 					$password = password_hash($password1, PASSWORD_DEFAULT);
 
 					$userData = [
@@ -147,14 +141,17 @@ class AccountController extends Controller
 						
 						$user = new User($userData);
 						$user->save();
-						debug_to_logFile('warum funktioniert es nicht?');
 				
-		
-				if($errors = null)
+				if($errors === null)
 				{
 					header('Location: login.php');
+				} 
+				else
+				{
+					
 				}
 			}
+			$_SESSION['errors'] = $errors;
 		}
 	else
 	{

@@ -1,5 +1,6 @@
 <?php
 namespace beHop;
+require_once 'core/functions.php';
 
 abstract class BaseModel
 {
@@ -17,7 +18,7 @@ abstract class BaseModel
         {
             if(isset($params[$key]))
             {
-                $this->{$key = $params[$key]};
+                $this->{$key} = $params[$key];
             }
             else
             {
@@ -37,8 +38,8 @@ abstract class BaseModel
 
     public function __set($key, $value)
     {
-        debug_to_logFile('grüße aus ');
-        if(array_key_exists($key, $value))
+        // debug_to_logFile('grüße aus ');
+        if(array_key_exists($key, $this->schema))
         {
             $this->data[$key] = $value;
             return;
@@ -61,7 +62,7 @@ abstract class BaseModel
     protected function insert(&$errors)
     {
         $database = $GLOBALS['database'];
-
+        
         try
         {
             $sql = 'INSERT INTO ' . self::tablename() . ' (';
@@ -70,7 +71,7 @@ abstract class BaseModel
             foreach($this->schema as $key => $schemaOptions)
             {
                 $sql .= '`'.$key.'`,';
-
+                
                 if($this->data[$key] === null)
                 {
                     $valueString .= 'NULL,';
@@ -79,11 +80,11 @@ abstract class BaseModel
                 {
                     $valueString .= $database->quote($this->data[$key]).',';
                 }
-            }
+                
+            }   
             $sql =trim($sql, ',');
             $valueString = trim($valueString, ',');
-            $sql .= ')'.$valueString.');';
-
+            $sql .= ')' . $valueString . ');';
             $statement = $database->prepare($sql);
             $statement->execute();
 
@@ -206,7 +207,7 @@ abstract class BaseModel
 
     public static function find($where = '')
     {
-        $db  = $GLOBALS['database'];
+        $database  = $GLOBALS['database'];
         $result = null;
 
         try
@@ -217,11 +218,11 @@ abstract class BaseModel
             {
                 $sql .= ' WHERE ' . $where .  ';';
             }
-            $result = $db->query($sql)->fetchAll();
+            $result = $database->query($sql)->fetchAll();
         }
         catch(\PDOException $e)
         {
-            die('Select statment failed: ' . $e->getMessage());
+            die('Select statement failed: ' . $e->getMessage());
         }
 
         return $result;
@@ -230,7 +231,7 @@ abstract class BaseModel
     // Specialization of method find, which returns only one DataRow
     public static function findOne($where = '')
     {
-        $db  = $GLOBALS['database'];
+        $database  = $GLOBALS['database'];
         $result = null;
 
         try
@@ -241,11 +242,11 @@ abstract class BaseModel
             {
                 $sql .= ' WHERE ' . $where .  ';';
             }
-            $result = $db->query($sql)->fetch();
+            $result = $database->query($sql)->fetch();
         }
         catch(\PDOException $e)
         {
-            die('Select statment failed: ' . $e->getMessage());
+            die('Select statement failed: ' . $e->getMessage());
         }
 
         return $result;
