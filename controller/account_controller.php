@@ -106,37 +106,41 @@ class AccountController extends Controller
 				}
 				else
 				{
-				$user_data = User::findOne('email = "' . $email . '"');
-				if($user_data != null)
-				{ 
-					$this->params['errors'] = "Email wird bereits verwendet!"; 
-				}
-				$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
-				if($address_data == null)
-				{
-					$addressData = [
-						'city' => $city, 
-						'street' => $street, 
-						'number' => $number, 
-						'zip' => $zip];
-			
-						$address = new Address($addressData);
-						$address->save();		
-				}	
-				$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
-					$address_id = $address_data['id'];
-					$password = password_hash($password1, PASSWORD_DEFAULT);
-					$userData = [
-						'email' => $email, 
-						'password' => $password, 
-						'firstName' => $firstName, 
-						'lastName' => $lastName,
-						'address_id' => $address_id];
-						
-						$user = new User($userData);
-						$user->save();
+					$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
+					if($address_data == null)
+					{
+						$addressData = [
+							'city' => $city, 
+							'street' => $street, 
+							'number' => $number, 
+							'zip' => $zip];
+				
+							$address = new Address($addressData);
+							$address->save();		
+					}	
+					$user_data = User::findOne('email = "' . $email . '"');
+					if($user_data != null)
+					{ 
+						$this->params['errors'] = "Email wird bereits verwendet!"; 
+						header('Location: ?c=account&a=signUp');
+					}
+					else
+					{
+					$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
+						$address_id = $address_data['id'];
+						$password = password_hash($password1, PASSWORD_DEFAULT);
+						$userData = [
+							'email' => $email, 
+							'password' => $password, 
+							'firstName' => $firstName, 
+							'lastName' => $lastName,
+							'address_id' => $address_id];
+							
+							$user = new User($userData);
+							$user->save();
 
-					header('Location: ?c=account&a=login');		
+						header('Location: ?c=account&a=login');		
+					}
 				}
 			}
 			// $_SESSION['errors'] = $errors;
