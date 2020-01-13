@@ -86,7 +86,6 @@ class AccountController extends Controller
 	public function actionSignUp()
 	{
 		$this->_params['title'] = 'BeHop - Registrierung' ;
-		$errors = array(); 
 		if($_SESSION['loggedIn'] === false)
 		{
 			if(isset($_POST['submit']))
@@ -97,15 +96,16 @@ class AccountController extends Controller
 				$number = $_POST['number'] ?? null;
 				$city = $_POST['city'] ?? null;
 				$zip = $_POST['zip'] ?? null;
-				$country = $_POST['country'] ?? null;
 				$email    = $_POST['email'] ?? null;
 				$password1 = $_POST['password1'] ?? null;
 				$password2 = $_POST['password2'] ?? null;
-				// if($password1 !== $password2) 
-				// {
-				// 	$this->params['errors'] = "Passwort stimmt nicht überein!";
-				// 	header('Location: ?c=account&a=signUp');
-				// }
+				if($password1 != $password2) 
+				{
+					$this->params['errors'] = "Passwort stimmt nicht überein!";
+					header('Location: ?c=account&a=signUp');
+				}
+				else
+				{
 				// $user_data= User::findOne('email = "' . $email . '"');
 				// if($emailFindOne = $user_data['email']){ array_push($errors, "Email wird bereits verwendet!"); }
 				$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
@@ -120,6 +120,7 @@ class AccountController extends Controller
 						$address = new Address($addressData);
 						$address->save();		
 				}	
+				$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
 					$address_id = $address_data['id'];
 					$password = password_hash($password1, PASSWORD_DEFAULT);
 					$userData = [
@@ -132,14 +133,11 @@ class AccountController extends Controller
 						$user = new User($userData);
 						$user->save();
 				$this->_params['errors'] = $errors;
-				// if($errors === null)
-				// {
-				// 	header('Location: login.php');
-				// } 
-				// else
-				// {
-					
-				// }
+				if($this->params['errors'] == null)
+				{
+					header('Location: ?c=account&a=login');
+				}
+				}
 			}
 			// $_SESSION['errors'] = $errors;
 		}
