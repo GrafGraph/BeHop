@@ -121,17 +121,24 @@ class AccountController extends Controller
 						$address = new Address($addressData);
 						$address->save();		
 				}	
-					$address_id = $address_data['id'];
-					$password = password_hash($password1, PASSWORD_DEFAULT);
-					$userData = [
-						'email' => $email, 
-						'password' => $password, 
-						'firstName' => $firstName, 
-						'lastName' => $lastName,
-						'address_id' => $address_id];
-						
-						$user = new User($userData);
-						$user->save();
+				$address_id = $address_data['id'];
+				$password = password_hash($password1, PASSWORD_DEFAULT);
+				$userData = [
+					'email' => $email, 
+					'password' => $password, 
+					'firstName' => $firstName, 
+					'lastName' => $lastName,
+					'address_id' => $address_id];
+					
+				$user = new User($userData);
+				$user->save();
+				
+				// Create new ShoppingCart for User
+				$user_id = User::findOne('email = "'. $email.'"');
+				$shoppingCartData = ['user_id' => $user_id];
+				$shoppingCart = new ShoppingCart($shoppingCartData);
+				$shoppingCart->save();
+				
 				$this->_params['errors'] = $errors;
 				// if($errors === null)
 				// {

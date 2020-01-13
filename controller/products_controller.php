@@ -37,7 +37,19 @@ class ProductsController extends Controller
 			$cartItem = array();
 			$cartItem['product_id'] = $product['id'];
 			$cartItem['quantity'] = $quantity;
-			if(isset($_SESSION['shoppingCartItems']) && !empty($_SESSION['shoppingCartItems']))
+			if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true)
+			{
+				// New Entry in table shoppingcart_has_product
+				$shoppingCart_id = ShoppingCart::findOne('user_id = '.$_SESSION['userID']);
+				$shoppingCart_has_productData = [
+					'shoppingCart_id' => $shoppingCart_id,
+					'product_id' => $cartItem['product_id'],
+					'quantity' => $cartItem['quantity']
+				];
+				$shoppingCart_has_product = new ShoppingCart_has_product($shoppingCart_has_productData);
+				$shoppingCart_has_product->save();
+			}
+			elseif(isset($_SESSION['shoppingCartItems']) && !empty($_SESSION['shoppingCartItems']))
 			{
 				array_push($shoppingCartItems, $cartItem);
 			}
