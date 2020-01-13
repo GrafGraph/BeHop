@@ -597,3 +597,5 @@
 [2020-01-13 13:52:51 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'','$2y$10$ABFCEjrkhWwq4hsK81rm4OniOuD5kiipT76vRHB2VblDPgNIlSR0W','asdvc','',NULL);
 [2020-01-13 13:52:51 ]rtzuio
 [2020-01-13 13:52:51 ]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'address_id' cannot be null
+[2020-01-13 17:39:26 ]anton ist der allercoolste
+[2020-01-13 17:39:26 ]Marie

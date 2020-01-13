@@ -39,6 +39,7 @@ else
    else
    {
        $html .= '<div><p>Melde dich an um zum Checkout zu gelangen</p></div>';
+       $html .= '<div><button title="Kümmer dich um mich!" disabled>Checkout</button></div>';
    }
 }
 echo $html;

@@ -29,6 +29,23 @@ class ProductsController extends Controller
 		$this->_params['title'] = 'Behop - '. $product['name'];
 		$this->_params['images'] = Image::find('product_id = ' . $product['id']);
 		$this->_params['product'] = $product;
+
+		// Add to Cart-Routine
+		if(isset($_POST['submit']))
+		{
+			$quantity = $_POST['quantity'];
+			$cartItem = array();
+			$cartItem['product_id'] = $product['id'];
+			$cartItem['quantity'] = $quantity;
+			if(isset($_SESSION['shoppingCartItems']) && !empty($_SESSION['shoppingCartItems']))
+			{
+				array_push($shoppingCartItems, $cartItem);
+			}
+			else
+			{
+				$_SESSION['shoppingCartItems'] = array($cartItem);
+			}
+		}
 	}
 
 	public function actionSales()

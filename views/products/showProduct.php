@@ -11,6 +11,9 @@
 <p>Beschreibung:</br>
 <q><?=$product['description']?></q></p>
 </br>
-<h2>TODO:</h2>
-<button title="Kümmer dich um mich!">Zum Warenkorb hinzufügen</button>
+<form method="POST">
+    <label for="quantity">Anzahl:</label>
+    <input type="number" name="quantity" min="1" max=<?=$product['numberInStock']?> value="1">
+    <input type="submit" value="Zum Warenkorb hinzufügen">
+</form>
 </div>

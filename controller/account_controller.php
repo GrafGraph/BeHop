@@ -16,11 +16,12 @@ class AccountController extends Controller
 					$password = $_POST['password'];
 					$user = User::findOne('email = ' . "'".$email."'");
 					if(password_verify($password, $user['password']))
-					//if($password == $user['password'])
+					//if($password == $user['password']) // without hash...
 					{
 						$_SESSION['loggedIn'] = true;
 						$_SESSION['userMail'] = $user['email'];
 						$_SESSION['userID'] = $user['id'];
+						// 	TODO: Bei Login den Warenkorb der Session nicht verwerfen, falls der Datenbank-Warenkorb leer ist.
 						header('Location: index.php');
 					}
 					else
@@ -168,38 +169,46 @@ class AccountController extends Controller
 
     public function actionShoppingcart()
 	{
+		// TODO: Für User muss ShoppingCart erstellt werden und entsprechend shoppingCartHasProduct befüllt werden
 		$this->_params['title'] = 'BeHop - Mein Warenkorb' ;
 		$shoppingCartItems = array();
-		// IF: Nutzer eingeloggt -> eigener warenkorb aus Datenbank
-		if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true)
+		$userIsLoggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true;
+		$thereAreShoppingCartItemsInSession = isset($_SESSION['shoppingCartItems']) && !empty($_SESSION['shoppingCartItems']);
+		if($userIsLoggedIn || $thereAreShoppingCartItemsInSession)
 		{
-			$userID = $_SESSION['userID'];
-			$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
-			$shoppingCartHasProducts = ShoppingCart_Has_Product::find('shoppingCart_id = '. $shoppingCart['id']);
+			$shoppingCartHasProducts = array();
+			if($userIsLoggedIn)
+			{
+				$userID = $_SESSION['userID'];
+				$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
+				$shoppingCartHasProducts = ShoppingCart_Has_Product::find('shoppingCart_id = '. $shoppingCart['id']);
+			}		
+			//	ELSE: Warenkorb ergibt sich aus Session
+			else
+			{
+				$shoppingCartHasProducts = $_SESSION['shoppingCartItems'];
+			}
 
-			
-			foreach($shoppingCartHasProducts as $OrderItem)
+			if(!empty($shoppingCartHasProducts))
 			{
-				$product = Product::findOne('id = '. $OrderItem['product_id']);
-				$product['quantity'] = $OrderItem['quantity'];
-				$product['image'] = Image::findOne('product_id = '. $product['id']);
-				array_push($shoppingCartItems, $product);
-			}	
-		}
-		//	ELSE: Warenkorb ergibt sich aus Session
-		/*	TODO: Beim Hinzufügen von Produkten zum Warenkorb diese Information in $_SESSION schreiben.
-			TODO: Bei Login den Warenkorb der Session nicht verwerfen, wenn der Datenbank-Warenkorb leer ist.
-		*/
-		else
-		{
-			if(isset($_SESSION['shoppingCartItems']) && !empty($_SESSION['shoppingCartItems']))
-			{
-				$shoppingCartItems = $_SESSION['shoppingCartItems'];
+				foreach($shoppingCartHasProducts as $OrderItem)
+				{
+					$product = Product::findOne('id = '. $OrderItem['product_id']);
+					$product['quantity'] = $OrderItem['quantity'];
+					$product['image'] = Image::findOne('product_id = '. $product['id']);
+					array_push($shoppingCartItems, $product);
+				}
 			}
 			else
 			{
 				$shoppingCartItems = null;
 			}
+			
+		}
+		// empty shoppingCart
+		else
+		{
+			$shoppingCartItems = null;
 		}
 		$this->_params['shoppingCartItems'] = $shoppingCartItems;
     }
