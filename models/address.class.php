@@ -12,6 +12,5 @@ class Address extends BaseModel
         'street' => ['type' => BaseModel::TYPE_STRING, 'max' => 100],
         'number' => ['type' => BaseModel::TYPE_STRING, 'min' => 1, 'max' => 10],
         'zip' => ['type' => BaseModel::TYPE_STRING, 'min' => 5, 'max' => 5], 
-        'country' => ['type' => BaseModel::TYPE_STRING, 'max' => 50]
     ];
 }
