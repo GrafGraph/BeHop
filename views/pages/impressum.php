@@ -1,5 +1,9 @@
 <h1>Impressum</h1>
-<p><a href="index.php?a=projectDocumentation">Projektdokumentation</a></p>
+
+<!-- TODO: Stylesheet statt inline -->
+<article style="text-align:left;margin-right: 5%;
+  margin-left: 5%;">
+<h2><a href="index.php?a=projectDocumentation">Projektdokumentation</a></h2>
 <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
 <p>Fachhochschule Erfurt<br />
 Musterstra&szlig;e 111<br />
@@ -47,4 +51,4 @@ DE 999 999 999</p>
     Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden 
     Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
 
-<p>Quelle: <a href="https://www.e-recht24.de">e-recht24.de</a></p>
+<p>Quelle: <a href="https://www.e-recht24.de">e-recht24.de</a></p></article>
