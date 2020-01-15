@@ -13,6 +13,7 @@ if(empty($shoppingCartItems))
 else
 {
     $priceTotal = 0.0;
+
    foreach($shoppingCartItems as $item)
    {
        $priceForPosition = $item['price'] * $item['quantity'];
@@ -30,16 +31,18 @@ else
    }
     
    $html .= '<br><div><p>Total: '.$priceTotal.'&euro;</p></div>';
-    // Not logged in -> Checkout leads to Login
-    // TODO: Or Checkout button is unavailable until login
    if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true)
    {
-       $html .= '<div><button title="Kümmer dich um mich!">Checkout</button></div>';
+       $html .= '<div><form action="index.php?c=account&a=checkout" method="POST">
+       <input type="hidden" name="priceTotal" value='.$priceTotal.'>
+       <input type="submit" name="checkout" value="Proceed to Checkout"></form></div>';
    }
+    // TODO: Not logged in -> Checkout leads to Login?
+    // Checkout button is unavailable until login
    else
    {
        $html .= '<div><p>Melde dich an um zum Checkout zu gelangen</p></div>';
-       $html .= '<div><button title="Kümmer dich um mich!" disabled>Checkout</button></div>';
+       $html .= '<div><button title="Log in to be able to check out" disabled>Checkout</button></div>';
    }
 }
 echo $html;
