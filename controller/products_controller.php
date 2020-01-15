@@ -8,19 +8,88 @@ class ProductsController extends Controller
 	{
 		$this->_params['title'] = 'BeHop - Produkte' ;
 
-		// TODO: IF: Falls Filteroptionen -> Aus Url filtern
+		// --------- Multiple Categories --------------------
+		// if(isset($_GET['cat[]']))
+		// {
+		// 	// Find Category ID's
+		// 	$whereCat = '';
+		// 	foreach($_GET['cat[]'] as $categorie)
+		// 	{
+		// 		$whereCat .= ' name like %'.$categorie.'%';
+		// 		// last element?
+		// 		if($categorie->next() == false)
+		// 		{
+		// 			break;
+		// 		}
+		// 		else
+		// 		{
+		// 			$whereCat .= ' or';
+		// 		}
+		// 	}
+		// 	$categories = Category::find($whereCat);
+		// 	// Find products with given categories
+		// 	$where = '';
+		// 	foreach($categories as $catID)
+		// 	{
+		// 		$where .= 'category_id = '.$catID['id'];
+		// 		// last element?
+		// 		if($catID->next() == false)
+		// 		{
+		// 			break;
+		// 		}
+		// 		else
+		// 		{
+		// 			$where .= ' or';
+		// 		}
+		// 	}
+		// }
 
-		// Else: Show all products and their images
-			$where = 'id is not null';
-			$products = Product::find($where);	
-			
-			// Image to product...
-			// TODO: Mehrere Images berücksichtigen. MainImage usw. 
-			foreach($products as &$product)
+		// Which products to display
+		$where = '';
+		// TODO: IF: Falls Filteroptionen -> Aus Url! filtern
+		if(isset($_GET['cat']) || isset($_GET['productName']) || isset($_GET['color']) || isset($_GET['brand']) || isset($_GET['sale']) || isset($_GET['maxPrice']))
+		{
+			if(!empty($_GET['cat']))
 			{
-				$product['image'] = Image::findOne('product_id = ' . $product['id']);
+				$category = Category::findOne('name like "%'.$_GET['cat'].'%" and');
+				$where .= ' category_id = '.$category['id'];
 			}
-			$this->_params['products'] = $products;
+			if(!empty($_GET['productName']))
+			{
+				$where .= ' name like "%'.$_GET['productName'].'%" and';
+			}
+			if(!empty($_GET['color']))
+			{
+				$where .= ' color ="'.$_GET['color'].'" and';
+			}
+			if(!empty($_GET['brand']))
+			{
+				$where .= ' brand like "%'.$_GET['brand'].'%" and';
+			}
+			if(!empty($_GET['sale']))
+			{
+				$where .= ' sales_id is not null and';
+			}
+			if(!empty($_GET['maxPrice']))
+			{
+				$where .= ' price < '.$_GET['maxPrice'].' and';
+			}
+			// substr($where, 0, -4); // Die letzten 4 Zeichen entfernen -> ' and'
+		}
+		// debug_to_logFile('color ='.$_GET['color']);
+			// Else: Show all products
+			$where .= ' id is not null';
+	
+
+		$products = Product::find($where);	
+		
+		// Image to product...
+		// TODO: Mehrere Images berücksichtigen. MainImage usw. 
+		foreach($products as &$product)
+		{
+			$product['image'] = Image::findOne('product_id = ' . $product['id']);
+		}
+		$this->_params['products'] = $products;
 	}
 
 	public function actionShowProduct()
