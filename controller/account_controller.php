@@ -141,7 +141,6 @@ class AccountController extends Controller
 
 					// Create new ShoppingCart for User
 					$user_id = User::findOne('email = "'. $email.'"');
-					debug_to_logFile('userID = '. $user_id['id']);
 					$shoppingCartData = ['user_id' => $user_id['id']];
 					$shoppingCart = new ShoppingCart($shoppingCartData);
 					$shoppingCart->save();

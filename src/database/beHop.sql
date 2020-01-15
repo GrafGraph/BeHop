@@ -165,7 +165,7 @@ CREATE TABLE `shoppingcart` (
   `id` int(11) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
   `updatedAt` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

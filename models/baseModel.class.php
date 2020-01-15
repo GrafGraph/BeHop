@@ -77,7 +77,7 @@ abstract class BaseModel
                 }
                 else
                 {
-                    // debug_to_logFile($this->data[$key]);
+
                     $valueString .= $database->quote($this->data[$key]).',';
                 }
                 
