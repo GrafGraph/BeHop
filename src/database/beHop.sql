@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2020 at 06:46 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Erstellungszeit: 15. Jan 2020 um 20:38
+-- Server-Version: 10.4.11-MariaDB
+-- PHP-Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,14 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `behop`
+-- Datenbank: `behop`
 --
-create database behop;
-use behop;
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `address`
+-- Tabellenstruktur für Tabelle `address`
 --
 
 CREATE TABLE `address` (
@@ -41,7 +40,7 @@ CREATE TABLE `address` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `address`
+-- Daten für Tabelle `address`
 --
 
 INSERT INTO `address` (`id`, `createdAt`, `updatedAt`, `city`, `street`, `number`, `zip`, `country`) VALUES
@@ -52,7 +51,7 @@ INSERT INTO `address` (`id`, `createdAt`, `updatedAt`, `city`, `street`, `number
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Tabellenstruktur für Tabelle `category`
 --
 
 CREATE TABLE `category` (
@@ -63,7 +62,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `category`
+-- Daten für Tabelle `category`
 --
 
 INSERT INTO `category` (`id`, `createdAt`, `updatedAt`, `name`) VALUES
@@ -73,7 +72,7 @@ INSERT INTO `category` (`id`, `createdAt`, `updatedAt`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `image`
+-- Tabellenstruktur für Tabelle `image`
 --
 
 CREATE TABLE `image` (
@@ -86,7 +85,7 @@ CREATE TABLE `image` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `image`
+-- Daten für Tabelle `image`
 --
 
 INSERT INTO `image` (`id`, `createdAt`, `updatedAt`, `imageUrl`, `altText`, `product_id`) VALUES
@@ -96,20 +95,21 @@ INSERT INTO `image` (`id`, `createdAt`, `updatedAt`, `imageUrl`, `altText`, `pro
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Tabellenstruktur für Tabelle `order`
 --
 
 CREATE TABLE `order` (
   `id` int(11) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
   `updatedAt` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `shoppingcart_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Tabellenstruktur für Tabelle `product`
 --
 
 CREATE TABLE `product` (
@@ -119,6 +119,7 @@ CREATE TABLE `product` (
   `name` varchar(45) NOT NULL,
   `price` decimal(7,2) NOT NULL,
   `color` varchar(50) NOT NULL,
+  `brand` varchar(50) NOT NULL,
   `numberInStock` int(11) NOT NULL,
   `description` varchar(500) DEFAULT NULL,
   `category_id` int(11) NOT NULL,
@@ -126,17 +127,17 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `product`
+-- Daten für Tabelle `product`
 --
 
-INSERT INTO `product` (`id`, `createdAt`, `updatedAt`, `name`, `price`, `color`, `numberInStock`, `description`, `category_id`, `sales_id`) VALUES
-(1, '2020-01-12 08:04:22', NULL, 'Jordans Supercool', '69.99', 'White', 5, 'Das Brandneue Jordans Modell SUPERCOOL: Noch mehr Tragekomfort und das im bisher coolsten Look!', 1, NULL),
-(2, '2020-01-12 10:23:28', NULL, 'Harem Jogginghose', '19.99', 'Schwarz', 2, 'Verschluss: Tunnelzug.\r\nPolyester.\r\nHarem.\r\nBreiter, weicher Gummibund mit innenliegendem Kordelzug für komfortablen, sicheren Halt.\r\nPerfekt für einen aktiven Lebensstil und geeignet zum Laufen, Laufen, Yoga und den meisten Sportarten.', 2, 1);
+INSERT INTO `product` (`id`, `createdAt`, `updatedAt`, `name`, `price`, `color`, `brand`, `numberInStock`, `description`, `category_id`, `sales_id`) VALUES
+(1, '2020-01-12 08:04:22', NULL, 'Jordans Supercool', '69.99', 'White', 'Jordan', 5, 'Das Brandneue Jordans Modell SUPERCOOL: Noch mehr Tragekomfort und das im bisher coolsten Look!', 1, NULL),
+(2, '2020-01-12 10:23:28', NULL, 'Harem Jogginghose', '19.99', 'Schwarz', 'BeHop', 2, 'Verschluss: Tunnelzug.\r\nPolyester.\r\nHarem.\r\nBreiter, weicher Gummibund mit innenliegendem Kordelzug für komfortablen, sicheren Halt.\r\nPerfekt für einen aktiven Lebensstil und geeignet zum Laufen, Laufen, Yoga und den meisten Sportarten.', 2, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sales`
+-- Tabellenstruktur für Tabelle `sales`
 --
 
 CREATE TABLE `sales` (
@@ -148,7 +149,7 @@ CREATE TABLE `sales` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `sales`
+-- Daten für Tabelle `sales`
 --
 
 INSERT INTO `sales` (`id`, `createdAt`, `updatedAt`, `name`, `discountPercent`) VALUES
@@ -158,18 +159,18 @@ INSERT INTO `sales` (`id`, `createdAt`, `updatedAt`, `name`, `discountPercent`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `shoppingcart`
+-- Tabellenstruktur für Tabelle `shoppingcart`
 --
 
 CREATE TABLE `shoppingcart` (
   `id` int(11) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
   `updatedAt` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
-  `user_id` int(11) NULL
+  `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `shoppingcart`
+-- Daten für Tabelle `shoppingcart`
 --
 
 INSERT INTO `shoppingcart` (`id`, `createdAt`, `updatedAt`, `user_id`) VALUES
@@ -179,7 +180,7 @@ INSERT INTO `shoppingcart` (`id`, `createdAt`, `updatedAt`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `shoppingcart_has_product`
+-- Tabellenstruktur für Tabelle `shoppingcart_has_product`
 --
 
 CREATE TABLE `shoppingcart_has_product` (
@@ -190,7 +191,7 @@ CREATE TABLE `shoppingcart_has_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `shoppingcart_has_product`
+-- Daten für Tabelle `shoppingcart_has_product`
 --
 
 INSERT INTO `shoppingcart_has_product` (`id`, `shoppingCart_id`, `product_id`, `quantity`) VALUES
@@ -200,7 +201,7 @@ INSERT INTO `shoppingcart_has_product` (`id`, `shoppingCart_id`, `product_id`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Tabellenstruktur für Tabelle `user`
 --
 
 CREATE TABLE `user` (
@@ -215,7 +216,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user`
+-- Daten für Tabelle `user`
 --
 
 INSERT INTO `user` (`id`, `createdAt`, `updatedAt`, `email`, `password`, `firstName`, `lastName`, `address_id`) VALUES
@@ -223,23 +224,23 @@ INSERT INTO `user` (`id`, `createdAt`, `updatedAt`, `email`, `password`, `firstN
 (5, '2020-01-13 19:00:33', NULL, 'admin@fh-erfurt.de', '$2y$10$Y6.w6mpMlZioRLUrlw/ETOj7AhktY4ajnWX3TTD/f7D7S.hN9Z76C', 'admin', 'root', 1);
 
 --
--- Indexes for dumped tables
+-- Indizes der exportierten Tabellen
 --
 
 --
--- Indexes for table `address`
+-- Indizes für die Tabelle `address`
 --
 ALTER TABLE `address`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `category`
+-- Indizes für die Tabelle `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `image`
+-- Indizes für die Tabelle `image`
 --
 ALTER TABLE `image`
   ADD PRIMARY KEY (`id`),
@@ -247,14 +248,15 @@ ALTER TABLE `image`
   ADD KEY `fk_image_product1_idx` (`product_id`);
 
 --
--- Indexes for table `order`
+-- Indizes für die Tabelle `order`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_order_user1_idx` (`user_id`);
+  ADD KEY `fk_order_user1_idx` (`user_id`),
+  ADD KEY `fk_order_shoppingcart1` (`shoppingcart_id`);
 
 --
--- Indexes for table `product`
+-- Indizes für die Tabelle `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
@@ -262,21 +264,21 @@ ALTER TABLE `product`
   ADD KEY `fk_product_sales1_idx` (`sales_id`);
 
 --
--- Indexes for table `sales`
+-- Indizes für die Tabelle `sales`
 --
 ALTER TABLE `sales`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name_UNIQUE` (`name`);
 
 --
--- Indexes for table `shoppingcart`
+-- Indizes für die Tabelle `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_shoppingCart_user1_idx` (`user_id`);
 
 --
--- Indexes for table `shoppingcart_has_product`
+-- Indizes für die Tabelle `shoppingcart_has_product`
 --
 ALTER TABLE `shoppingcart_has_product`
   ADD PRIMARY KEY (`id`),
@@ -284,7 +286,7 @@ ALTER TABLE `shoppingcart_has_product`
   ADD KEY `fk_shoppingCart_has_product_shoppingCart1_idx` (`shoppingCart_id`);
 
 --
--- Indexes for table `user`
+-- Indizes für die Tabelle `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
@@ -292,47 +294,47 @@ ALTER TABLE `user`
   ADD KEY `fk_user_address_idx` (`address_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT für exportierte Tabellen
 --
 
 --
--- AUTO_INCREMENT for table `address`
+-- AUTO_INCREMENT für Tabelle `address`
 --
 ALTER TABLE `address`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `category`
+-- AUTO_INCREMENT für Tabelle `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `image`
+-- AUTO_INCREMENT für Tabelle `image`
 --
 ALTER TABLE `image`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT für Tabelle `order`
 --
 ALTER TABLE `order`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT für Tabelle `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `sales`
+-- AUTO_INCREMENT für Tabelle `sales`
 --
 ALTER TABLE `sales`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `shoppingcart`
+-- AUTO_INCREMENT für Tabelle `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
@@ -344,49 +346,49 @@ ALTER TABLE `shoppingcart_has_product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Constraints for dumped tables
+-- Constraints der exportierten Tabellen
 --
 
 --
--- Constraints for table `image`
+-- Constraints der Tabelle `image`
 --
 ALTER TABLE `image`
   ADD CONSTRAINT `fk_image_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `order`
+-- Constraints der Tabelle `order`
 --
 ALTER TABLE `order`
   ADD CONSTRAINT `fk_order_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `product`
+-- Constraints der Tabelle `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `fk_product_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_product_sales1` FOREIGN KEY (`sales_id`) REFERENCES `sales` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `shoppingcart`
+-- Constraints der Tabelle `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
   ADD CONSTRAINT `fk_shoppingCart_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `shoppingcart_has_product`
+-- Constraints der Tabelle `shoppingcart_has_product`
 --
 ALTER TABLE `shoppingcart_has_product`
   ADD CONSTRAINT `fk_shoppingCart_has_product_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_shoppingCart_has_product_shoppingCart1` FOREIGN KEY (`shoppingCart_id`) REFERENCES `shoppingcart` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `user`
+-- Constraints der Tabelle `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `fk_user_address` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
