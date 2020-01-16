@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 15. Jan 2020 um 20:38
+-- Erstellungszeit: 16. Jan 2020 um 11:21
 -- Server-Version: 10.4.11-MariaDB
 -- PHP-Version: 7.4.1
 
@@ -36,7 +36,7 @@ CREATE TABLE `address` (
   `street` varchar(100) NOT NULL,
   `number` varchar(10) NOT NULL,
   `zip` varchar(5) NOT NULL,
-  `country` varchar(50) NOT NULL DEFAULT 'Deutschland'
+  `country` varchar(50) DEFAULT 'Deutschland'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -45,8 +45,7 @@ CREATE TABLE `address` (
 
 INSERT INTO `address` (`id`, `createdAt`, `updatedAt`, `city`, `street`, `number`, `zip`, `country`) VALUES
 (1, '2020-01-12 07:50:28', NULL, 'Erfurt', 'Altonaer Straße', '25', '99085', 'Deutschland'),
-(2, '2020-01-13 16:39:12', NULL, 'Erfurt', 'Grolmannstraße', '13', '99085', 'Deutschland'),
-(3, '2020-01-13 16:39:15', NULL, '', '', '', '', '');
+(2, '2020-01-13 16:39:12', NULL, 'Erfurt', 'Grolmannstraße', '13', '99085', 'Deutschland');
 
 -- --------------------------------------------------------
 
@@ -66,8 +65,8 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `createdAt`, `updatedAt`, `name`) VALUES
-(1, '2020-01-12 07:59:20', NULL, 'Schuhe'),
-(2, '2020-01-12 07:59:20', NULL, 'Hosen');
+(1, '2020-01-12 07:59:20', NULL, 'Shoes'),
+(2, '2020-01-12 07:59:20', NULL, 'Pants');
 
 -- --------------------------------------------------------
 
@@ -89,8 +88,8 @@ CREATE TABLE `image` (
 --
 
 INSERT INTO `image` (`id`, `createdAt`, `updatedAt`, `imageUrl`, `altText`, `product_id`) VALUES
-(1, '2020-01-12 08:14:02', NULL, '/Git/BeHop/assets/images/products/mainImage-1.jpg', '', 1),
-(2, '2020-01-12 10:37:47', NULL, '/Git/BeHop/assets/images/products/mainImage-2.jpg', 'Schwarze Harem-Jogginghose', 2);
+(1, '2020-01-12 08:14:02', NULL, '/Git/BeHop/assets/images/products/mainImage-1.jpg', 'best looking shoes', 1),
+(2, '2020-01-12 10:37:47', NULL, '/Git/BeHop/assets/images/products/mainImage-2.jpg', 'Black Harem-Joggers', 2);
 
 -- --------------------------------------------------------
 
@@ -131,8 +130,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `createdAt`, `updatedAt`, `name`, `price`, `color`, `brand`, `numberInStock`, `description`, `category_id`, `sales_id`) VALUES
-(1, '2020-01-12 08:04:22', NULL, 'Jordans Supercool', '69.99', 'White', 'Jordan', 5, 'Das Brandneue Jordans Modell SUPERCOOL: Noch mehr Tragekomfort und das im bisher coolsten Look!', 1, NULL),
-(2, '2020-01-12 10:23:28', NULL, 'Harem Jogginghose', '19.99', 'Schwarz', 'BeHop', 2, 'Verschluss: Tunnelzug.\r\nPolyester.\r\nHarem.\r\nBreiter, weicher Gummibund mit innenliegendem Kordelzug für komfortablen, sicheren Halt.\r\nPerfekt für einen aktiven Lebensstil und geeignet zum Laufen, Laufen, Yoga und den meisten Sportarten.', 2, 1);
+(1, '2020-01-12 08:04:22', NULL, 'Jordans Supercool', '69.99', 'White', 'Jordan', 5, 'The hot and new Jordans Model SUPERCOOL: Comfort in its best looking way!', 1, NULL),
+(2, '2020-01-12 10:23:28', NULL, 'Harem Joggers', '19.99', 'Black', 'BeHop', 2, 'Polyester.\r\nHarem.\r\nPerfect for an active lifestyle: Suitable for trekking, running, yoga, couchsurfing and most other sports!', 2, 1);
 
 -- --------------------------------------------------------
 
