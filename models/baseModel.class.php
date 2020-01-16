@@ -77,7 +77,7 @@ abstract class BaseModel
                 }
                 else
                 {
-                    // debug_to_logFile($this->data[$key]);
+
                     $valueString .= $database->quote($this->data[$key]).',';
                 }
                 
@@ -243,6 +243,30 @@ abstract class BaseModel
                 $sql .= ' WHERE ' . $where .  ';';
             }
             $result = $database->query($sql)->fetch();
+        }
+        catch(\PDOException $e)
+        {
+            die('Select statement failed: ' . $e->getMessage());
+        }
+
+        return $result;
+    }
+
+    // specialization of find which selects given attributes instead of everything.
+    public static function findAttributes($attributes, $where = '')
+    {
+        $database  = $GLOBALS['database'];
+        $result = null;
+
+        try
+        {
+            $sql = 'SELECT '.$attributes.' FROM ' . self::tablename();
+                
+            if(!empty($where))
+            {
+                $sql .= ' WHERE ' . $where .  ';';
+            }
+            $result = $database->query($sql)->fetchAll();
         }
         catch(\PDOException $e)
         {

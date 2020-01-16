@@ -18,12 +18,9 @@
 						alt="BeHop-Logo" style="background-color:black"></a></li>
 						<li>
 
-						<ul>
-							<li><a href="index.php?c=products&a=sales">Sales</a></li>
-							<li><a href="index.php?c=products&a=products">Products</a></li>
-							<li><a href="index.php?a=contact">Contact</a></li>
-							<li><a href="index.php?a=aboutus">About Us</a></li>
-						</ul>
+						<li><a href="index.php?c=products&a=sales">Sales</a></li>
+						<li><a href="index.php?c=products&a=products">Products</a></li>
+						<li><a href="index.php?a=aboutus">About Us</a></li>
 						
 						</li>
 						<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>

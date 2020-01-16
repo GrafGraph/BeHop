@@ -11,6 +11,7 @@ class Product extends BaseModel
         'name' => ['type' => BaseModel::TYPE_STRING, 'max' => 45],
         'price' => ['type' => BaseModel::TYPE_FLOAT],
         'color' => ['type' => BaseModel::TYPE_STRING, 'max' => 50],
+        'brand' => ['type' => BaseModel::TYPE_STRING, 'max' => 50],
         'numberInStock' => ['type' => BaseModel::TYPE_INT],
         'description' => ['type' => BaseModel::TYPE_STRING, 'max' => 255],
         'category_id' => ['type' => BaseModel::TYPE_INT],
