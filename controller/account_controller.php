@@ -141,7 +141,6 @@ class AccountController extends Controller
 
 					// Create new ShoppingCart for User
 					$user_id = User::findOne('email = "'. $email.'"');
-					debug_to_logFile('userID = '. $user_id['id']);
 					$shoppingCartData = ['user_id' => $user_id['id']];
 					$shoppingCart = new ShoppingCart($shoppingCartData);
 					$shoppingCart->save();
@@ -155,10 +154,7 @@ class AccountController extends Controller
 		{
 			header('Location: index.php');
 		}
-}
-
-
-
+	}
 
     public function actionShoppingcart()
 	{
@@ -204,6 +200,33 @@ class AccountController extends Controller
 			$shoppingCartItems = null;
 		}
 		$this->_params['shoppingCartItems'] = $shoppingCartItems;
-    }
+	}
+	
+	public function actionCheckout()
+	{
+		$this->_params['title'] = 'BeHop - Checkout' ;
+		// Must be logged in to place an order
+		if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true && isset($_SESSION['userId']))
+		{
+			if(isset($_POST['submit']))
+			{
+				// debug_to_logFile($_POST['shoppinCartItems']);
+				$this->_params['totalPrice'] = $_POST['totalPrice'];
+				
+				// TODO: Doppelter code: Ähnlich wie actionAccount...
+				// $user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
+				// $this->_params['user'] = $user;
+				// $address = Address::findOne('id = ' . $user['address_id']);
+				// $this->_params['address'] = $address;
+			}
+			// select payment? -> always PayPal
+			// confirm data
+			// create new order
+		}
+		else
+		{
+			header('Location: ?c=account&a=shoppingcart');
+		}
+	}
 }
 ?>

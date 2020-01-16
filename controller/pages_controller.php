@@ -24,11 +24,6 @@ class PagesController extends Controller
 		$this->_params['title'] = 'BeHop - Über uns' ;
 	}
 
-	public function actionContact()
-	{
-		$this->_params['title'] = 'BeHop - Kontakt' ;
-	}
-
 	public function actionImpressum()
 	{
 		$this->_params['title'] = 'BeHop - Impressum' ;

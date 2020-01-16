@@ -1,6 +1,6 @@
 <article>
 <h1>About Us</h1>
-<img src="/Git/BeHop/assets/images/aboutUs/happyWorkers.jpg" alt="Arbeitsplatz in Textilfabrik" style="width:40%;height:30%">
+<img src="/Git/BeHop/assets/images/aboutUs/happyWorkers.jpg" alt="Arbeitsplatz in Textilfabrik" style="max-height:400px;">
 <figcaption>Happy Workers?</figcaption>
 <br>
 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing 

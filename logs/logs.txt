@@ -637,4 +637,32 @@
 [2020-01-13 20:58:19 ]$shoppingCart_id=Array
 [2020-01-14 12:38:26 ]userID = Array
 [2020-01-14 12:41:28 ]userID = 6
-[2020-01-14 14:10:18 ]userID = 7
+[2020-01-15 22:36:22 ]cat =
+[2020-01-15 22:36:22 ]prodName =Jordans Supercool
+[2020-01-15 22:36:22 ]prodName =Harem Jogginghose
+[2020-01-15 22:39:25 ]cat =
+[2020-01-15 22:39:25 ]prodName =Jordans Supercool
+[2020-01-15 22:39:25 ]prodName =Harem Jogginghose
+[2020-01-15 22:39:29 ]cat =
+[2020-01-15 22:39:29 ]prodName =Jordans Supercool
+[2020-01-15 22:39:29 ]prodName =Harem Jogginghose
+[2020-01-15 22:40:10 ]cat =
+[2020-01-15 22:40:10 ]prodName =Jordans Supercool
+[2020-01-15 22:40:10 ]prodName =Harem Jogginghose
+[2020-01-15 22:40:50 ]cat =
+[2020-01-15 22:40:50 ]prodName =Jordans Supercool
+[2020-01-15 22:40:50 ]prodName =Harem Jogginghose
+[2020-01-15 22:41:25 ]cat =
+[2020-01-15 22:41:25 ]prodName =Jordans Supercool
+[2020-01-15 22:41:25 ]prodName =Harem Jogginghose
+[2020-01-15 22:41:28 ]cat =
+[2020-01-15 22:41:28 ]prodName =Jordans Supercool
+[2020-01-15 22:41:28 ]prodName =Harem Jogginghose
+[2020-01-15 22:44:02 ]cat =
+[2020-01-15 22:44:02 ]prodName =Jordans Supercool
+[2020-01-15 22:44:02 ]prodName =Harem Jogginghose
+[2020-01-15 22:46:08 ]cat =
+[2020-01-15 22:46:30 ]color =
+[2020-01-15 22:47:13 ]color =
+[2020-01-16 11:03:06 ]Black
+[2020-01-16 11:03:40 ]Black
