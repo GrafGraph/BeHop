@@ -77,7 +77,7 @@ class ProductsController extends Controller
 			}
 			if(!empty($_GET['maxPrice']))
 			{
-				$where .= ' price < '.htmlspecialchars($_GET['maxPrice']).' and';
+				$where .= ' price <= '.htmlspecialchars($_GET['maxPrice']).' and';
 			}
 			// substr($where, 0, -4); // Die letzten 4 Zeichen entfernen -> ' and'
 		}

@@ -1,4 +1,4 @@
-<h1>Hier finden Sie bald unseren Warenkatalog</h1>
+<h1>Browse our Products</h1>
 <div>
     <form method="GET">
     <ul style="list-style-type:none;">
@@ -21,7 +21,10 @@
             <option value="Black">Black</option>
             </select>
         </li>
-           
+        <li>
+        <label for="maxPrice">Max Price</label>
+        <input type="number" id="maxPrice" min="1" max="99999" step="1" name="maxPrice">
+        </li>
         <!-- <li>
             <select name="brand">
                 <option value="Jordan">Jordan</option>
@@ -38,19 +41,28 @@
 </div>
 <?php 
 $html = '';
-foreach($products as $product)
+if(!empty($products))
 {
-    $imageUrl = $product['image']['imageUrl'] ?? '';
-    $imageAltText = $product['image']['altText'] ?? '';
-    $html .= 
-    '<a href="index.php?c=products&a=showProduct&productID='. $product['id'].'">
-    <div class="products">
-    <img src="'. $imageUrl .'" alt="'. $imageAltText .'">'.
-        '<div>'.
-        $product['name']. ' nur '. $product['price']. '&euro;'.
-        '</div></br>'.
-    '</div></a>';
+    foreach($products as $product)
+    {
+        $imageUrl = $product['image']['imageUrl'] ?? '';
+        $imageAltText = $product['image']['altText'] ?? '';
+        $html .= 
+        '<a href="index.php?c=products&a=showProduct&productID='. $product['id'].'">
+        <div class="products">
+        <img src="'. $imageUrl .'" alt="'. $imageAltText .'">'.
+            '<div>'.
+            $product['name']. ' only '. $product['price']. '&euro;'.
+            '</div></br>'.
+        '</div></a>';
+    }
 }
+else
+{
+    $html .= '<div><h2>No results found...</h2></div>';
+}
+
 echo $html;
 ?>
+
 
