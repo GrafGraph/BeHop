@@ -6,7 +6,7 @@ class ProductsController extends Controller
 {
 	public function actionProducts()
 	{
-		$this->_params['title'] = 'BeHop - Produkte' ;
+		$this->_params['title'] = 'BeHop - Products' ;
 
 		// --------- Multiple Categories --------------------
 		// if(isset($_GET['cat[]']))
@@ -51,20 +51,25 @@ class ProductsController extends Controller
 		{
 			if(!empty($_GET['cat']))
 			{
-				$category = Category::findOne('name like "%'.$_GET['cat'].'%" and');
-				$where .= ' category_id = '.$category['id'];
+				$category = Category::findOne('name like "%'.htmlspecialchars($_GET['cat']).'%"');
+				if(!empty($category['id']))
+				$where .= ' category_id = '.$category['id'].' and';
+				else
+				{
+					debug_to_logFile('$category["id"]) is empty!');
+				}
 			}
 			if(!empty($_GET['productName']))
 			{
-				$where .= ' name like "%'.$_GET['productName'].'%" and';
+				$where .= ' name like "%'.htmlspecialchars($_GET['productName']).'%" and';
 			}
 			if(!empty($_GET['color']))
 			{
-				$where .= ' color ="'.$_GET['color'].'" and';
+				$where .= ' color ="'.htmlspecialchars($_GET['color']).'" and';
 			}
 			if(!empty($_GET['brand']))
 			{
-				$where .= ' brand like "%'.$_GET['brand'].'%" and';
+				$where .= ' brand like "%'.htmlspecialchars($_GET['brand']).'%" and';
 			}
 			if(!empty($_GET['sale']))
 			{
@@ -72,11 +77,10 @@ class ProductsController extends Controller
 			}
 			if(!empty($_GET['maxPrice']))
 			{
-				$where .= ' price < '.$_GET['maxPrice'].' and';
+				$where .= ' price < '.htmlspecialchars($_GET['maxPrice']).' and';
 			}
 			// substr($where, 0, -4); // Die letzten 4 Zeichen entfernen -> ' and'
 		}
-		// debug_to_logFile('color ='.$_GET['color']);
 			// Else: Show all products
 			$where .= ' id is not null';
 	
