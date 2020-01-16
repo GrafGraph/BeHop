@@ -8,45 +8,14 @@ class ProductsController extends Controller
 	{
 		$this->_params['title'] = 'BeHop - Products' ;
 
-		// --------- Multiple Categories --------------------
-		// if(isset($_GET['cat[]']))
-		// {
-		// 	// Find Category ID's
-		// 	$whereCat = '';
-		// 	foreach($_GET['cat[]'] as $categorie)
-		// 	{
-		// 		$whereCat .= ' name like %'.$categorie.'%';
-		// 		// last element?
-		// 		if($categorie->next() == false)
-		// 		{
-		// 			break;
-		// 		}
-		// 		else
-		// 		{
-		// 			$whereCat .= ' or';
-		// 		}
-		// 	}
-		// 	$categories = Category::find($whereCat);
-		// 	// Find products with given categories
-		// 	$where = '';
-		// 	foreach($categories as $catID)
-		// 	{
-		// 		$where .= 'category_id = '.$catID['id'];
-		// 		// last element?
-		// 		if($catID->next() == false)
-		// 		{
-		// 			break;
-		// 		}
-		// 		else
-		// 		{
-		// 			$where .= ' or';
-		// 		}
-		// 	}
-		// }
+		// Filteroptions?
+		$this->_params['categories'] = Category::findAttributes('name','id is not null');
+
+		$this->_params['colors'] = Product::findAttributes('color','id is not null');
+		$this->_params['brands'] = Product::findAttributes('brand','id is not null');
 
 		// Which products to display
 		$where = '';
-		// TODO: IF: Falls Filteroptionen -> Aus Url! filtern
 		if(isset($_GET['cat']) || isset($_GET['productName']) || isset($_GET['color']) || isset($_GET['brand']) || isset($_GET['sale']) || isset($_GET['maxPrice']))
 		{
 			if(!empty($_GET['cat']))
@@ -79,12 +48,10 @@ class ProductsController extends Controller
 			{
 				$where .= ' price <= '.htmlspecialchars($_GET['maxPrice']).' and';
 			}
-			// substr($where, 0, -4); // Die letzten 4 Zeichen entfernen -> ' and'
+			// substr($where, 0, -4); // remove the last 4 chars-> ' and' // Not needed since we always add ' id is not null'
 		}
-			// Else: Show all products
-			$where .= ' id is not null';
-	
-
+		$where .= ' id is not null';
+		
 		$products = Product::find($where);	
 		
 		// Image to product...
