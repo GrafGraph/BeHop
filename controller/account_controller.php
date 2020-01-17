@@ -255,20 +255,33 @@ class AccountController extends Controller
 		// Must be logged in to place an order
 		if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true && isset($_SESSION['userID']))
 		{
+			$this->_params['priceTotal'] = $_POST['priceTotal'];
+				
+			// TODO: Doppelter code: Ähnlich wie actionAccount...
+			$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
+			$this->_params['user'] = $user;
+			$address = Address::findOne('id = ' . $user['address_id']);
+			$this->_params['address'] = $address;
+
 			if(isset($_POST['checkout']))
 			{
-				// debug_to_logFile($_POST['shoppinCartItems']);
-				$this->_params['priceTotal'] = $_POST['priceTotal'];
-				
-				// TODO: Doppelter code: Ähnlich wie actionAccount...
-				// $user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
-				// $this->_params['user'] = $user;
-				// $address = Address::findOne('id = ' . $user['address_id']);
-				// $this->_params['address'] = $address;
+				$this->_params['step'] = 1;
 			}
-			// select payment? -> always PayPal
-			// confirm data
-			// create new order
+			elseif(isset($_POST['submit']))
+			{
+				$this->_params['step'] = 2;
+				// select payment? -> always PayPal?
+				// confirm data
+			}
+			elseif(isset($_POST['placeOrder']))
+			{
+				$this->_params['step'] = 3;
+				// create new order
+			}
+			else
+			{
+				// TODO: What else?
+			}
 		}
 		else
 		{
