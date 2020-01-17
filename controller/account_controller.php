@@ -101,12 +101,62 @@ class AccountController extends Controller
 				$email    = $_POST['email'] ?? null;
 				$password1 = $_POST['password1'] ?? null;
 				$password2 = $_POST['password2'] ?? null;
-				$result = User::validateValue('firstname', $firstName, $this->schema);
-				if($result == )
+				$error = [];
+				$user_data = User::findOne('email = "' . $email . '"');
+				if($user_data != null)
+				{ 
+					$error[] = "Email is already in use!";
+					$this->_params['errors'] = $error; 
+				}
 				if($password1 != $password2) 
 				{
-					$this->params['errors'] = "Passwort stimmt nicht überein!";
-					return false;
+					$error[] = "Password does not match!";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($firstName))
+				{
+					$error[] = "Firstname is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($lastName))
+				{
+					$error[] = "Lastname is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($street))
+				{
+					$error[] = "Street is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($number))
+				{
+					$error[] = "Housnumber is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($city))
+				{
+					$error[] = "City is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($zip))
+				{
+					$error[] = "ZIP is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($email))
+				{
+					$error[] = "Email is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($password1))
+				{
+					$error[] = "Password is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($password2))
+				{
+					$error[] = "Password is missing";
+					$this->_params['errors'] = $error;
 				}
 				else
 				{
@@ -122,12 +172,6 @@ class AccountController extends Controller
 							$address = new Address($addressData);
 							$address->save();		
 					}	
-					$user_data = User::findOne('email = "' . $email . '"');
-					if($user_data != null)
-					{ 
-						$this->params['errors'] = "Email wird bereits verwendet!"; 
-						return false;
-					}
 					else
 					{
 					$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
