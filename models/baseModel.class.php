@@ -252,6 +252,30 @@ abstract class BaseModel
         return $result;
     }
 
+    // specialization of find which selects given attributes instead of everything.
+    public static function findAttributes($attributes, $where = '')
+    {
+        $database  = $GLOBALS['database'];
+        $result = null;
+
+        try
+        {
+            $sql = 'SELECT '.$attributes.' FROM ' . self::tablename();
+                
+            if(!empty($where))
+            {
+                $sql .= ' WHERE ' . $where .  ';';
+            }
+            $result = $database->query($sql)->fetchAll();
+        }
+        catch(\PDOException $e)
+        {
+            die('Select statement failed: ' . $e->getMessage());
+        }
+
+        return $result;
+    }
+
     /* Specialization of method find. Sorts List of DB entries by parameter String $sortby
     in either ascending or descending order, given by bool $descending.
     If $descending is false, the list will by default be orderd ascending.

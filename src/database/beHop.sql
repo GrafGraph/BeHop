@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 16. Jan 2020 um 11:21
+-- Erstellungszeit: 16. Jan 2020 um 18:23
 -- Server-Version: 10.4.11-MariaDB
 -- PHP-Version: 7.4.1
 
@@ -66,7 +66,11 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `createdAt`, `updatedAt`, `name`) VALUES
 (1, '2020-01-12 07:59:20', NULL, 'Shoes'),
-(2, '2020-01-12 07:59:20', NULL, 'Pants');
+(2, '2020-01-12 07:59:20', NULL, 'Trousers'),
+(3, '2020-01-16 15:59:06', NULL, 'T-Shirts'),
+(4, '2020-01-16 15:59:06', NULL, 'Jackets'),
+(5, '2020-01-16 15:59:06', NULL, 'Sweaters and Hoodies'),
+(6, '2020-01-16 15:59:06', NULL, 'Underwear');
 
 -- --------------------------------------------------------
 
@@ -306,7 +310,7 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT für Tabelle `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT für Tabelle `image`

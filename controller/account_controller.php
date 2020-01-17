@@ -87,8 +87,11 @@ class AccountController extends Controller
 		$this->_params['title'] = 'BeHop - Registrierung' ;
 		if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] === false)
 		{
+			debug_to_logFile('asas');
 			if(isset($_POST['submit']))
 			{
+
+			
 				$firstName = $_POST['firstName'] ?? null;
 				$lastName = $_POST['lastName'] ?? null;
 				$street = $_POST['street'] ?? null;
@@ -101,7 +104,7 @@ class AccountController extends Controller
 				if($password1 != $password2) 
 				{
 					$this->params['errors'] = "Passwort stimmt nicht überein!";
-					header('Location: ?c=account&a=signUp');
+					return false;
 				}
 				else
 				{
@@ -121,7 +124,7 @@ class AccountController extends Controller
 					if($user_data != null)
 					{ 
 						$this->params['errors'] = "Email wird bereits verwendet!"; 
-						header('Location: ?c=account&a=signUp');
+						return false;
 					}
 					else
 					{
@@ -148,7 +151,6 @@ class AccountController extends Controller
 					}
 				}
 			}
-			// $_SESSION['errors'] = $errors;
 		}
 		else
 		{
