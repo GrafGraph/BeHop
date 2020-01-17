@@ -277,6 +277,26 @@ class AccountController extends Controller
 			{
 				$this->_params['step'] = 3;
 				// create new order
+					// find ShoppingCart to User
+					$shoppingCart=ShoppingCart::findOne('user_id ='.$user['id']);
+					$orderData = [
+						'user_id' => $user['id'],
+						'shoppingcart_id' => $shoppingCart['id']
+					];
+					$order = new Order($orderData);
+					$order->save();
+				
+				// TODO: Must be easier than this...
+				// "Delete" ShoppingCart for User
+				$updatedShoppingCart = new ShoppingCart($shoppingCart);
+				$updatedShoppingCart->setUserIDNull();
+				// Create new empty ShoppingCart for User
+				$newShoppingCartData = [
+					'id' => null,
+					'user_id' => $user['id']
+				];
+				$newShoppingCart = new ShoppingCart($newShoppingCartData);
+				$newShoppingCart->save();
 			}
 			else
 			{
