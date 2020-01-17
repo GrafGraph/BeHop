@@ -49,7 +49,6 @@ class AccountController extends Controller
 		{
 			$_SESSION['loggedIn'] = false;
 		}
-		// TODO: Soll das hier bleiben? Wann wird Session noch zu löschen sein?
 		session_destroy();
 	}
 
@@ -208,12 +207,12 @@ class AccountController extends Controller
 	{
 		$this->_params['title'] = 'BeHop - Checkout' ;
 		// Must be logged in to place an order
-		if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true && isset($_SESSION['userId']))
+		if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true && isset($_SESSION['userID']))
 		{
-			if(isset($_POST['submit']))
+			if(isset($_POST['checkout']))
 			{
 				// debug_to_logFile($_POST['shoppinCartItems']);
-				$this->_params['totalPrice'] = $_POST['totalPrice'];
+				$this->_params['priceTotal'] = $_POST['priceTotal'];
 				
 				// TODO: Doppelter code: Ähnlich wie actionAccount...
 				// $user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
