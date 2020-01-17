@@ -136,9 +136,9 @@ select {
 .error {
     border: 2px solid var(--red);
     color: var(--red);
-    width: 50%;
+    width: 30%;
     margin: 0 auto;
-    padding: 16px;
+    padding: 8px;
     text-align: center;
 }
 
@@ -165,4 +165,8 @@ table {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.errors{
+    color : red;
 }
