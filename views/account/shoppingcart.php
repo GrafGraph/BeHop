@@ -3,8 +3,8 @@
 // Empty shoppingCart
 if(empty($shoppingCartItems)) : ?>
     <div>
-        <h2>Dein Warenkorb ist Leer</h2>
-        <p> Melde dich an um deinen Warenkorb zu sehen und nach Produkten zu suchen!</p>
+        <h2>Your Shopping Cart is Empty</h2>
+        <p> Log in to see your Shopping Cart</p>
     </div>
 <? else :
 $priceTotal = 0.0;
@@ -32,7 +32,7 @@ foreach($shoppingCartItems as $item) :
     // TODO: Not logged in -> Checkout leads to Login?
     // Checkout button is unavailable until login
    else : ?>
-        <div><p>Melde dich an um zum Checkout zu gelangen</p></div>
+        <div><p>Log in to Checkout</p></div>
         <div><button title="Log in to be able to check out" disabled>Checkout</button></div>
    <? endif;
 endif;?>

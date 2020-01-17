@@ -1,4 +1,4 @@
-<h1>Willkommen bei BeHop!</h1><br>
+<h1>Welcome at BeHop!</h1><br>
 
 
 <!-- <div><h2>Galery?</h2></div> -->

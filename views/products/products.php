@@ -45,7 +45,7 @@
 <? if(!empty($products)) : ?>
     <? foreach($products as $product) : ?>
         
-        <a href="index.php?c=products&a=showProduct&productID=<?=product['id']?>">
+        <a href="index.php?c=products&a=showProduct&productID=<?=$product['id']?>">
         <div class="products">
         <img src="<?=$product['image']['imageUrl'] ?? ''?>" alt="<?= $product['image']['altText'] ?? ''?>">
         <div>
