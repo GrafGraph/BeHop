@@ -27,6 +27,8 @@ SET time_zone = "+00:00";
 --
 -- Tabellenstruktur für Tabelle `address`
 --
+create database behop;
+use behop;
 
 CREATE TABLE `address` (
   `id` int(11) NOT NULL,

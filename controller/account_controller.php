@@ -101,6 +101,8 @@ class AccountController extends Controller
 				$email    = $_POST['email'] ?? null;
 				$password1 = $_POST['password1'] ?? null;
 				$password2 = $_POST['password2'] ?? null;
+				$result = User::validateValue('firstname', $firstName, $this->schema);
+				if($result == )
 				if($password1 != $password2) 
 				{
 					$this->params['errors'] = "Passwort stimmt nicht überein!";
