@@ -16,6 +16,7 @@ class ProductsController extends Controller
 		$this->_params['maxPrice'] = ceil($maxPrice['price']);
 		$minPrice = Product::getMinOrMaxPrice('MIN');
 		$this->_params['minPrice'] = floor($minPrice['price']);
+		$this->_params['sales'] = Sales::findAttributes('name', 'id is not null');
 
 		// TODO: catch MaxPrice lower than MinPrice 
 		// if(!((isset($_GET['maxPrice']) && isset($_GET['minPrice'])) && (htmlspecialchars($_GET['maxPrice']) < htmlspecialchars($_GET['minPrice']))))
@@ -26,7 +27,7 @@ class ProductsController extends Controller
 			{
 				if(!empty($_GET['cat']))
 				{
-					$category = Category::findOne('name like "%'.htmlspecialchars($_GET['cat']).'%"');
+					$category = Category::findOne('name = "'.htmlspecialchars($_GET['cat']).'"');
 					if(!empty($category['id']))
 					$where .= ' category_id = '.$category['id'].' and';
 					else
@@ -44,11 +45,19 @@ class ProductsController extends Controller
 				}
 				if(!empty($_GET['brand']))
 				{
-					$where .= ' brand like "%'.htmlspecialchars($_GET['brand']).'%" and';
+					$where .= ' brand like "'.htmlspecialchars($_GET['brand']).'" and';
 				}
 				if(!empty($_GET['sale']))
 				{
-					$where .= ' sales_id is not null and';
+					if($_GET['sale'] === 'all')
+					{
+						$where .= ' sales_id is not null and';
+					}
+					else
+					{
+						$sales = Sales::findOne('name = "'.htmlspecialchars($_GET['sale']).'"');
+						$where .= ' sales_id ='. $sales['id']. ' and';
+					}
 				}
 				if(!empty($_GET['maxPrice']))
 				{

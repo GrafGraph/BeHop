@@ -17,16 +17,11 @@ function getImagesToProductID($productID)
     return Image::find('product_id = ' . $productID);
 }
 
-// returns selected to display which filter option on products was used
-// function SelectedIfSet($html, $filterOption, $category)
-// {
-//     $html = '';
-//     if(isset($_GET[$filterOption]) && htmlspecialchars($_GET[$filterOption]) == $category)
-//     {
-//         ' selected ';
-//     }
-//     return $html;
-// }
+// prints selected to display which filter option on products was used
+function printSelectedIfSet($filterOption, $option)
+{
+    if(isset($_GET[$filterOption]) && $_GET[$filterOption] === $option) : ?>selected <? endif;
+}
 
 // filterOptions is array of possible options. attribute is needed key for filterOption
 // Example: getFilterOptions($categories, 'name', 'cat');

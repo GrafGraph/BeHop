@@ -28,10 +28,19 @@
             </select>
         </li>
         <li>
+            <select name="sale">
+                <option value="">--Select a Sale--</option>
+                <option value="all"
+                <?printSelectedIfSet('sale','all');?>>All</option>
+                <?=printFilterOptions($sales, 'name', 'sale')?>
+            </select>
+        </li>
+        <li>
             <label for="minPrice">Min-Price</label>
-            <input type="number" id="minPrice" min=<?=$minPrice?> max=<?=$maxPrice?> step="1" name="minPrice">
+            <!-- TODO: Create it more intuitive -->
+            <input type="number" id="minPrice" min="0" max=<?=$maxPrice?> step="1" name="minPrice">
             <label for="maxPrice">Max-Price</label>
-            <input type="number" id="maxPrice" min=<?=$minPrice?> max=<?=$maxPrice?> step="1" name="maxPrice">
+            <input type="number" id="maxPrice" min="1" max="99999" step="1" name="maxPrice">
         </li>
         <li>
             <select name="sortBy">
