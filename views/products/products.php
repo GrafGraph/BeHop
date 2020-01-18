@@ -34,6 +34,17 @@
             <input type="number" id="maxPrice" min=<?=$minPrice?> max=<?=$maxPrice?> step="1" name="maxPrice">
         </li>
         <li>
+            <select name="sortBy">
+                <option value="">--Sort By--</option>
+                <option value="priceAsc">Price Ascending</option>
+                <option value="priceDesc">Price Descending</option>
+                <option value="nameAsc">Name Ascending</option>
+                <option value="nameDesc">Name Descending</option>
+                <option value="color">Color</option>
+                <option value="brand">Brand</option>
+            </select>
+        </li>
+        <li>
             <button type="submit" name="submit">Filter Now</button>
         </li>
     </ul>
@@ -41,16 +52,18 @@
     <a href="index.php?c=products&a=products"><button>Reset Filters</button></a>
 </div>
 <? if(!empty($products)) : ?>
+<div>
     <? foreach($products as $product) : ?>
-        
+        <!-- TODO: Link nur auf Bild und namen? -->
         <a href="index.php?c=products&a=showProduct&productID=<?=$product['id']?>">
         <div class="products">
         <img src="<?=$product['image']['imageUrl'] ?? ''?>" alt="<?= $product['image']['altText'] ?? ''?>">
         <div>
-            <?=$product['name']?> only <?=$product['price'] ?> &euro;
+            <?=$product['name']?> only <?=$product['price']?> &euro;
         </div></br>
         </div></a>
     <? endforeach; ?>
+</div>
 <? else : ?> 
     <div><h2>No results found...</h2></div>
 <? endif; ?>

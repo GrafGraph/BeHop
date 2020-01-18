@@ -27,3 +27,18 @@
 [2020-01-18 14:03:36 ]SELECT MIN(price) as price FROM `product`;
 [2020-01-18 14:03:36 ]Minprice=19.99
 [2020-01-18 14:03:36 ]Maxprice=69.99
+[2020-01-18 15:15:08 ]SELECT * FROM `product` WHERE  id is not null;Order by price;
+[2020-01-18 15:16:50 ]SELECT * FROM `product` WHERE  id is not null;Order by price;
+[2020-01-18 15:16:53 ]SELECT * FROM `product` WHERE  id is not null;Order by price DESC;
+[2020-01-18 15:17:04 ]SELECT * FROM `product` WHERE  id is not null;Order by name;
+[2020-01-18 15:17:22 ]SELECT * FROM `product` WHERE  id is not null;Order by name;
+[2020-01-18 15:17:26 ]SELECT * FROM `product` WHERE  id is not null;Order by color DESC;
+[2020-01-18 15:17:54 ]SELECT * FROM `product` WHERE  id is not null;Order by price DESC;
+[2020-01-18 15:18:01 ]SELECT * FROM `product` WHERE  id is not null;Order by price;
+[2020-01-18 15:18:47 ]SELECT * FROM `product` WHERE  id is not null;Order by price;
+[2020-01-18 15:20:14 ]SELECT * FROM `product` WHERE  id is not null Order by price;
+[2020-01-18 15:20:30 ]SELECT * FROM `product` WHERE  id is not null Order by color DESC;
+[2020-01-18 15:20:34 ]SELECT * FROM `product` WHERE  id is not null Order by color;
+[2020-01-18 15:20:39 ]SELECT * FROM `product` WHERE  id is not null Order by price DESC;
+[2020-01-18 15:20:44 ]SELECT * FROM `product` WHERE  id is not null Order by price;
+[2020-01-18 15:20:51 ]SELECT * FROM `product` WHERE  id is not null Order by color DESC;

@@ -62,7 +62,39 @@ class ProductsController extends Controller
 			}
 			$where .= ' id is not null';
 			
-			$products = Product::find($where);	
+			if(isset($_GET['sortBy']) && !empty($_GET['sortBy']))
+			{
+				$descending = false;
+				switch($_GET['sortBy'])
+				{
+					case "priceAsc": 
+						$sortBy = "price";
+					break;
+					case "priceDesc":
+						$sortBy = "price";
+						$descending = true;
+					break;
+					case "nameAsc":
+						$sortBy = "name";
+					break;
+					case "nameDesc":
+						$sortBy= "name";
+						$descending = true;
+					case "color":
+						$sortBy = "color";
+					break;
+					case "brand":
+						$sortBy = "brand";
+					break;
+					default:
+						$sortBy = "id";
+				}
+				$products = Product::findSorted($sortBy, $where, $descending);
+			}
+			else
+			{
+				$products = Product::find($where);	
+			}
 			
 			// Image to product...
 			// TODO: Mehrere Images berücksichtigen. MainImage usw. 
