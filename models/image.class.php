@@ -10,6 +10,7 @@ class Image extends BaseModel
         'updatedAt' => ['type' => BaseModel::TYPE_STRING], 
         'imageUrl' => ['type'=> BaseModel::TYPE_STRING, 'max' => 255],
         'altText' => ['type'=> BaseModel::TYPE_STRING, 'max' => 255],
-        'product_id' => ['type' => BaseModel::TYPE_INT]
+        'product_id' => ['type' => BaseModel::TYPE_INT],
+        'sales_id' => ['type' => BaseModel::TYPE_INT]
     ];
 }

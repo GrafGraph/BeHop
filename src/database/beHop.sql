@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 16. Jan 2020 um 18:23
+-- Erstellungszeit: 18. Jan 2020 um 19:01
 -- Server-Version: 10.4.11-MariaDB
 -- PHP-Version: 7.4.1
 
@@ -21,15 +21,12 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `behop`
 --
-create database behop;
-use behop;
+
 -- --------------------------------------------------------
 
 --
 -- Tabellenstruktur für Tabelle `address`
 --
-create database behop;
-use behop;
 
 CREATE TABLE `address` (
   `id` int(11) NOT NULL,
@@ -87,16 +84,19 @@ CREATE TABLE `image` (
   `updatedAt` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `imageUrl` varchar(255) NOT NULL,
   `altText` varchar(255) DEFAULT NULL,
-  `product_id` int(11) NOT NULL
+  `product_id` int(11) DEFAULT NULL,
+  `sales_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `image`
 --
 
-INSERT INTO `image` (`id`, `createdAt`, `updatedAt`, `imageUrl`, `altText`, `product_id`) VALUES
-(1, '2020-01-12 08:14:02', NULL, '/Git/BeHop/assets/images/products/mainImage-1.jpg', 'best looking shoes', 1),
-(2, '2020-01-12 10:37:47', NULL, '/Git/BeHop/assets/images/products/mainImage-2.jpg', 'Black Harem-Joggers', 2);
+INSERT INTO `image` (`id`, `createdAt`, `updatedAt`, `imageUrl`, `altText`, `product_id`, `sales_id`) VALUES
+(1, '2020-01-12 08:14:02', NULL, '/Git/BeHop/assets/images/products/mainImage-1.jpg', 'Best looking Shoes', 1, NULL),
+(2, '2020-01-12 10:37:47', NULL, '/Git/BeHop/assets/images/products/mainImage-2.jpg', 'Black Harem-Joggers', 2, NULL),
+(3, '2020-01-18 17:42:54', NULL, '/Git/BeHop/assets/images/sales/endOfSeasonSale20.jpg', 'End of Season Sale: 20 Percent off', NULL, 3),
+(4, '2020-01-18 17:42:54', NULL, '/Git/BeHop/assets/images/index/sneakersAndMore.jpg', 'Sneakers and More', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -137,7 +137,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `createdAt`, `updatedAt`, `name`, `price`, `color`, `brand`, `numberInStock`, `description`, `category_id`, `sales_id`) VALUES
-(1, '2020-01-12 08:04:22', NULL, 'Jordans Supercool', '69.99', 'White', 'Jordan', 5, 'The hot and new Jordans Model SUPERCOOL: Comfort in its best looking way!', 1, NULL),
+(1, '2020-01-12 08:04:22', NULL, 'Jordans Supercool', '69.99', 'White', 'Jordan', 5, 'The hot and new Jordans Model SUPERCOOL: Comfort in its best looking way!', 1, 3),
 (2, '2020-01-12 10:23:28', NULL, 'Harem Joggers', '19.99', 'Black', 'BeHop', 2, 'Polyester.\r\nHarem.\r\nPerfect for an active lifestyle: Suitable for trekking, running, yoga, couchsurfing and most other sports!', 2, 1);
 
 -- --------------------------------------------------------
@@ -160,7 +160,8 @@ CREATE TABLE `sales` (
 
 INSERT INTO `sales` (`id`, `createdAt`, `updatedAt`, `name`, `discountPercent`) VALUES
 (1, '2020-01-12 08:01:47', NULL, 'Sale10', 10),
-(2, '2020-01-12 08:01:47', NULL, 'Wintersale', 15);
+(2, '2020-01-12 08:01:47', NULL, 'Wintersale', 15),
+(3, '2020-01-18 17:40:49', NULL, 'EndOfSeasonSale', 20);
 
 -- --------------------------------------------------------
 
@@ -251,7 +252,8 @@ ALTER TABLE `category`
 ALTER TABLE `image`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `imageUrl_UNIQUE` (`imageUrl`),
-  ADD KEY `fk_image_product1_idx` (`product_id`);
+  ADD KEY `fk_image_product1_idx` (`product_id`),
+  ADD KEY `fk_image_sales1_idx` (`sales_id`);
 
 --
 -- Indizes für die Tabelle `order`
@@ -319,7 +321,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT für Tabelle `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `order`
@@ -337,7 +339,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT für Tabelle `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT für Tabelle `shoppingcart`
@@ -365,7 +367,8 @@ ALTER TABLE `user`
 -- Constraints der Tabelle `image`
 --
 ALTER TABLE `image`
-  ADD CONSTRAINT `fk_image_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_image_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_image_sales1` FOREIGN KEY (`sales_id`) REFERENCES `sales` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints der Tabelle `order`

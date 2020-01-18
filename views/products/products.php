@@ -60,12 +60,13 @@
     </form>
     <a href="index.php?c=products&a=products"><button>Reset Filters</button></a>
 </div>
+<br>
 <? if(!empty($products)) : ?>
 <div>
     <? foreach($products as $product) : ?>
-        <!-- TODO: Link nur auf Bild und namen? -->
-        <a href="index.php?c=products&a=showProduct&productID=<?=$product['id']?>">
+        <!-- TODO: Link nur auf Bild und namen? --> 
         <div class="products">
+        <a href="index.php?c=products&a=showProduct&productID=<?=$product['id']?>">
         <img src="<?=$product['image']['imageUrl'] ?? ''?>" alt="<?= $product['image']['altText'] ?? ''?>">
         <div>
             <?=$product['name']?> only <?=$product['price']?> &euro;
