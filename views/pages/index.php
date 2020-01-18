@@ -1,4 +1,4 @@
-<h1>BeHop</h1>
+<br>
 <a href="index.php?c=products&a=products&sale=all">
     <img src="/Git/BeHop/assets/images/sales/SALES.png" alt="Sales">
 

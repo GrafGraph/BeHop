@@ -16,22 +16,22 @@
 					<a href="?a=index" title="Home"><img src="/Git/BeHop/assets/images/layout/logo.png"
 					alt="BeHop-Logo" style="float:left; max-height:80px; margin-left:50px;"></a>
 					<ul style="height:80px;">
-						<li><a href="index.php?c=products&a=products" style="color:<?=highlightNavText('products');?>">Products</a></li>
-						<li><a href="index.php?a=aboutus" style="color:<?=highlightNavText('aboutus');?>">About Us</a></li>
+						<li><a href="index.php?c=products&a=products" title="Products" style="color:<?=highlightNavText('products');?>">Products</a></li>
+						<li><a href="index.php?a=aboutus" title="About Us" style="color:<?=highlightNavText('aboutus');?>">About Us</a></li>
 						
 						</li>
 						<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>
-						<li><a href="?c=account&a=logout" style="color:<?=highlightNavText('logout');?>">Logout</a></li>
-						<li><a href="?c=account&a=account">
+						<li><a href="?c=account&a=logout" title="Logout" style="color:<?=highlightNavText('logout');?>">Logout</a></li>
+						<li><a href="?c=account&a=account" title="Account">
 						<img src="/Git/BeHop/assets/images/layout/account<?=highlightNavIcon('account');?>.png" alt="Account" style="max-height:40px;">
 						</a></li>
 						<?php else : ?>
-						<li><a href="?c=account&a=login">
+						<li><a href="?c=account&a=login" title="Login">
 						<img src="/Git/BeHop/assets/images/layout/account<?=highlightNavIcon('login');?>.png" alt="Login" style="max-height:40px;">
 						</a></li>
 						<?php endif; ?>
 						<li>
-						<a href="index.php?c=account&a=shoppingcart" title="Shoppingcart">
+						<a href="index.php?c=account&a=shoppingcart" title="Shopping Cart">
 						<img src="/Git/BeHop/assets/images/layout/shoppingCart<?=highlightNavIcon('shoppingcart');?>.png" alt="Einkaufswagen Bild" style="max-height:40px; margin-right:50px;"></a>
 						</li>
 					</ul>
