@@ -1,4 +1,3 @@
-<h1>My Shopping Cart</h1><hr>
 <?php 
 // Empty shoppingCart
 if(empty($shoppingCartItems)) : ?>

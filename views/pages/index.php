@@ -1,6 +1,5 @@
-<br>
 <a href="index.php?c=products&a=products&sale=all">
-    <img src="/Git/BeHop/assets/images/sales/SALES.png" alt="Sales">
+<img src="/Git/BeHop/assets/images/sales/SALES.png" alt="Sales" style="margin:15px;"> </a>
 
 <div><h2>Campaigns/Sales</h2></div>
 <? if(!empty($sales)) : ?>
