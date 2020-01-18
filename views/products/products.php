@@ -21,20 +21,18 @@
                 <?=printFilterOptions($colors,'color','color')?>
             </select>
         </li>
-        <!-- <li>
-            <label for="maxPrice">Max Price</label>
-            <input type="number" id="maxPrice" min="1" max="99999" step="1" name="maxPrice" default>
-        </li> -->
         <li>
             <select name="brand">
                 <option value="">--Select a Brand--</option>
                 <?=printFilterOptions($brands, 'brand', 'brand')?>
             </select>
         </li>
-    <!-- <li>
-            <label for="maxPrice">Max Price</label>
-            <input type="number" id="maxPrice" min="1" max="99999" step="1" name="maxPrice" default>
-        </li> -->
+        <li>
+            <label for="minPrice">Min-Price</label>
+            <input type="number" id="minPrice" min=<?=$minPrice?> max=<?=$maxPrice?> step="1" name="minPrice">
+            <label for="maxPrice">Max-Price</label>
+            <input type="number" id="maxPrice" min=<?=$minPrice?> max=<?=$maxPrice?> step="1" name="maxPrice">
+        </li>
         <li>
             <button type="submit" name="submit">Filter Now</button>
         </li>

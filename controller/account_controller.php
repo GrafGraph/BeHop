@@ -86,7 +86,6 @@ class AccountController extends Controller
 		$this->_params['title'] = 'BeHop - Registrierung' ;
 		if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] === false)
 		{
-			debug_to_logFile('asas');
 			if(isset($_POST['submit']))
 			{
 
