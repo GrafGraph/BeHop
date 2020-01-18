@@ -21,12 +21,15 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `behop`
 --
-
+create database behop;
+use behop;
 -- --------------------------------------------------------
 
 --
 -- Tabellenstruktur für Tabelle `address`
 --
+create database behop;
+use behop;
 
 CREATE TABLE `address` (
   `id` int(11) NOT NULL,
@@ -211,7 +214,7 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
   `updatedAt` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
-  `email` varchar(70) NOT NULL,
+  `email` varchar(320) NOT NULL,
   `password` varchar(255) NOT NULL,
   `firstName` varchar(50) NOT NULL,
   `lastName` varchar(70) NOT NULL,

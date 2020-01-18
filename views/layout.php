@@ -25,7 +25,7 @@
 						</li>
 						<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>
 						<li><a href="?c=account&a=logout">Logout</a></li>
-						<li><a href="?c=account&a=account">Mein Konto</a></li>
+						<li><a href="?c=account&a=account">My Account</a></li>
 						<?php else : ?>
 						<li><a href="?c=account&a=login">Login</a></li>
 						<?php endif; ?>
@@ -49,7 +49,7 @@
 		</div>
 		<footer>
 			<a href="?a=index" title="Home" style="text-decoration:none;">BEHOP</a> &copy; 
-			<a href="index.php?a=impressum">Impressum</a>
+			<a href="index.php?a=impressum">Imprint</a>
 		</footer>
 	</body>
 </html>

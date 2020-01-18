@@ -49,7 +49,6 @@ class AccountController extends Controller
 		{
 			$_SESSION['loggedIn'] = false;
 		}
-		// TODO: Soll das hier bleiben? Wann wird Session noch zu löschen sein?
 		session_destroy();
 	}
 
@@ -89,6 +88,8 @@ class AccountController extends Controller
 		{
 			if(isset($_POST['submit']))
 			{
+
+			
 				$firstName = $_POST['firstName'] ?? null;
 				$lastName = $_POST['lastName'] ?? null;
 				$street = $_POST['street'] ?? null;
@@ -98,10 +99,62 @@ class AccountController extends Controller
 				$email    = $_POST['email'] ?? null;
 				$password1 = $_POST['password1'] ?? null;
 				$password2 = $_POST['password2'] ?? null;
+				$error = [];
+				$user_data = User::findOne('email = "' . $email . '"');
+				if($user_data != null)
+				{ 
+					$error[] = "Email is already in use!";
+					$this->_params['errors'] = $error; 
+				}
 				if($password1 != $password2) 
 				{
-					$this->params['errors'] = "Passwort stimmt nicht überein!";
-					header('Location: ?c=account&a=signUp');
+					$error[] = "Password does not match!";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($firstName))
+				{
+					$error[] = "Firstname is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($lastName))
+				{
+					$error[] = "Lastname is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($street))
+				{
+					$error[] = "Street is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($number))
+				{
+					$error[] = "Housnumber is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($city))
+				{
+					$error[] = "City is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($zip))
+				{
+					$error[] = "ZIP is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($email))
+				{
+					$error[] = "Email is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($password1))
+				{
+					$error[] = "Password is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($password2))
+				{
+					$error[] = "Password is missing";
+					$this->_params['errors'] = $error;
 				}
 				else
 				{
@@ -117,12 +170,6 @@ class AccountController extends Controller
 							$address = new Address($addressData);
 							$address->save();		
 					}	
-					$user_data = User::findOne('email = "' . $email . '"');
-					if($user_data != null)
-					{ 
-						$this->params['errors'] = "Email wird bereits verwendet!"; 
-						header('Location: ?c=account&a=signUp');
-					}
 					else
 					{
 					$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
@@ -148,7 +195,6 @@ class AccountController extends Controller
 					}
 				}
 			}
-			// $_SESSION['errors'] = $errors;
 		}
 		else
 		{
@@ -206,22 +252,55 @@ class AccountController extends Controller
 	{
 		$this->_params['title'] = 'BeHop - Checkout' ;
 		// Must be logged in to place an order
-		if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true && isset($_SESSION['userId']))
+		if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true && isset($_SESSION['userID']))
 		{
-			if(isset($_POST['submit']))
-			{
-				// debug_to_logFile($_POST['shoppinCartItems']);
-				$this->_params['totalPrice'] = $_POST['totalPrice'];
+			$this->_params['priceTotal'] = $_POST['priceTotal'];
 				
-				// TODO: Doppelter code: Ähnlich wie actionAccount...
-				// $user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
-				// $this->_params['user'] = $user;
-				// $address = Address::findOne('id = ' . $user['address_id']);
-				// $this->_params['address'] = $address;
+			// TODO: Doppelter code: Ähnlich wie actionAccount...
+			$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
+			$this->_params['user'] = $user;
+			$address = Address::findOne('id = ' . $user['address_id']);
+			$this->_params['address'] = $address;
+
+			if(isset($_POST['checkout']))
+			{
+				$this->_params['step'] = 1;
 			}
-			// select payment? -> always PayPal
-			// confirm data
-			// create new order
+			elseif(isset($_POST['submit']))
+			{
+				$this->_params['step'] = 2;
+				// select payment? -> always PayPal?
+				// confirm data
+			}
+			elseif(isset($_POST['placeOrder']))
+			{
+				$this->_params['step'] = 3;
+				// create new order
+					// find ShoppingCart to User
+					$shoppingCart=ShoppingCart::findOne('user_id ='.$user['id']);
+					$orderData = [
+						'user_id' => $user['id'],
+						'shoppingcart_id' => $shoppingCart['id']
+					];
+					$order = new Order($orderData);
+					$order->save();
+				
+				// TODO: Must be easier than this...
+				// "Delete" ShoppingCart for User
+				$updatedShoppingCart = new ShoppingCart($shoppingCart);
+				$updatedShoppingCart->setUserIDNull();
+				// Create new empty ShoppingCart for User
+				$newShoppingCartData = [
+					'id' => null,
+					'user_id' => $user['id']
+				];
+				$newShoppingCart = new ShoppingCart($newShoppingCartData);
+				$newShoppingCart->save();
+			}
+			else
+			{
+				// TODO: What else?
+			}
 		}
 		else
 		{

@@ -18,4 +18,23 @@ class Product extends BaseModel
         'sales_id' => ['type' => BaseModel::TYPE_INT]
     ];
    
+    public function getMinOrMaxPrice($minOrMax)
+    {
+        $database  = $GLOBALS['database'];
+        $result = null;
+
+        try
+        {
+            $sql = 'SELECT '.$minOrMax.'(price) as price FROM ' . self::tablename();
+            $sql .= ';';
+            
+            $result = $database->query($sql)->fetch();
+        }
+        catch(\PDOException $e)
+        {
+            die('Select statement failed: ' . $e->getMessage());
+        }
+
+        return $result;
+    }
 }

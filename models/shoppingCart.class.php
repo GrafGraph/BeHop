@@ -10,4 +10,25 @@ class ShoppingCart extends BaseModel
         'updatedAt' => ['type' => BaseModel::TYPE_STRING], 
         'user_id' => ['type' => BaseModel::TYPE_INT]
     ];
+
+    public function setUserIDNull(&$errors = null)
+    {
+        $database = $GLOBALS['database'];
+
+        try
+        {
+            $sql = 'UPDATE ' . self::tablename() . ' SET user_id = null' ;
+            $sql .= ' WHERE id = ' . $this->data['id'];
+
+            $statement = $database->prepare($sql);
+            $statement->execute();
+             
+            return true;
+        }
+        catch(\PDOException $e)
+        {
+            $errors[] = 'Error updating '.get_called_class();
+        }
+        return false;
+    }
 }

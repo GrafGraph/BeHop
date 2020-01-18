@@ -3,7 +3,8 @@
 const DEBUG =true;
 // const ERROR =true;
  
-function debug_to_logFile($message, $class = null){
+function debug_to_logFile($message, $class = null)
+{
     if(DEBUG){
         $class= ($class != null) ? $class:  '';
         $message = '['.(new DateTime())->format('Y-m-d H:i:s ').$class. ']' . $message. "\n";
@@ -11,7 +12,8 @@ function debug_to_logFile($message, $class = null){
     }
 }
 
-function getImagesToProductID($productID){
+function getImagesToProductID($productID)
+{
     return Image::find('product_id = ' . $productID);
 }
 
@@ -28,20 +30,18 @@ function getImagesToProductID($productID){
 
 // filterOptions is array of possible options. attribute is needed key for filterOption
 // Example: getFilterOptions($categories, 'name', 'cat');
-function getFilterOptions($filterOptions, $attribute, $urlAttribute)
+function printFilterOptions($filterOptions, $attribute, $urlAttribute)
 {
-    $string = '';
-    foreach($filterOptions as $filterOption)
-		{
-                $string .= '<option value="'.$filterOption[$attribute].'"';
-                // Remember which option was selected
-				if(isset($_GET[$urlAttribute]) && $_GET[$urlAttribute] == $filterOption[$attribute])
-				{
-				   $string .=' selected';
-				}
-				$string .= '>'.$filterOption[$attribute].'</option>';
-        }
-    return $string;	
+    foreach($filterOptions as $filterOption) : ?>
+
+    <option value=<?=$filterOption[$attribute]?>
+                <?// Remember which option was selected
+				if(isset($_GET[$urlAttribute]) && $_GET[$urlAttribute] == $filterOption[$attribute]) : ?>
+				selected
+                <? endif; ?>
+				>
+                <?=$filterOption[$attribute]?></option>
+    <? endforeach;
     // ------ Based on: ---------
     // foreach($categories as $category)
     // {
@@ -51,5 +51,7 @@ function getFilterOptions($filterOptions, $attribute, $urlAttribute)
     // 		   $html .=' selected ';
     // 		}
     // 		$html .= '>'.$category['name'].'</option>';
-    // }   
-}
+    // 
+    
+}   
+?>

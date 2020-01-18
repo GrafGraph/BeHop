@@ -1,12 +1,12 @@
-<h1>Mein Account</h1>
+<h1>My Account</h1>
 <!-- TODO: Nicht als Tabelle, sondern als Formularfeldern realisieren -->
 <table style="width:30%">
 <tr>
-    <td>Vorname</td>
+    <td>First Name</td>
     <td><?=$user['firstName']?></td>
   </tr>
   <tr>
-    <td>Nachname</td>
+    <td>Last Name</td>
     <td><?=$user['lastName']?></td>
   </tr>
   <tr>
@@ -14,20 +14,20 @@
     <td><?=$user['email']?></td>
   </tr>
   <tr>
-    <td>Anschrift</td>
+    <td>Address</td>
     <td><?=$address['country'] . $address['street'] . $address['number'] 
     . $address['city'] . $address['zip']?></td>
   </tr>
   <tr>
-    <td>Letzte Bestellung</td>
+    <td>Last Order</td>
     <td><?=$latestOrder['createdAt']?></td>
   </tr>
   <tr>
-    <td>Account erstellt</td>
+    <td>Account created</td>
     <td><?=$user['createdAt']?></td>
   </tr>
   <tr>
-    <td>Letzte Aktualisierung</td>
+    <td>Last Update</td>
     <td><?=$user['updatedAt']?></td>
   </tr>
 </table>
