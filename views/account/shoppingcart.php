@@ -9,19 +9,36 @@ if(empty($shoppingCartItems)) : ?>
     </div>
 <? else :
 $priceTotal = 0.0;
-foreach($shoppingCartItems as $item) :
-    $priceForPosition = $item['price'] * $item['quantity'];
-    $priceTotal +=  $priceForPosition;
-    $imageUrl = $item['image']['imageUrl'];
-    $imageAltText =$item['image']['altText'];?>
-    <div>
-        <a href="index.php?c=products&a=showProduct&productID=<?=$item['id']?>" style="max-width:80px;float:left;">
-        <img src=<?=$imageUrl?> alt=<?=$imageAltText?> style="max-height:70px;max-width:70px;"></a>
-        <p><?=$item['name']?>, <?=$item['color']?></p>
-        <p><?=$item['price']?>&euro; x <?=$item['quantity']?> = <?=$priceForPosition?>&euro;</p>
-    </div><br><br><hr>
-<? endforeach;?>
-   <br><div><p>Total= <?=$priceTotal?>&euro;</p></div>
+$n = 0; // Counter for indexing the quantity submit
+?>
+<div>
+    
+    <form Method="POST">
+        <? foreach($shoppingCartItems as $item) :
+            $quantity = isset($_POST['submit'.$n]) ? htmlspecialchars($_POST['submit'.$n]) : htmlspecialchars($item['quantity']);
+            $priceForPosition = $item['price'] * $quantity;
+            $priceTotal +=  $priceForPosition;
+            $imageUrl = $item['image']['imageUrl'];
+            $imageAltText =$item['image']['altText'];?>
+            <div>
+                <a href="index.php?c=products&a=showProduct&productID=<?=$item['id']?>" style="max-width:80px;float:left;">
+                <img src=<?=$imageUrl?> alt=<?=$imageAltText?> style="max-height:70px;max-width:70px;"></a>
+                <p><?=$item['name']?>, <?=$item['color']?></p>
+                <p><?=$item['price']?>&euro; x 
+                <input type="number" name=<?="quantity".$n?> min="1" max=<?=$item['numberInStock']?> value=<?=$quantity?>> 
+                = <?=$priceForPosition?>&euro;
+                <label for="remove">Remove?</label>
+                <input type="checkbox" name=<?="remove".$n?> id="remove"></p>
+                <input type="hidden" name=<?="prodID".$n?> value=<?=$item['id']?>>
+            </div><hr>
+            <? $n++;?>
+        <? endforeach;?>
+        <input type="hidden" name="numberOfItems" value=<?=count($shoppingCartItems)?>>
+        <button type="submit" name="submit">Save</button>
+        <button type="reset" name="reset">Reset</button>
+    </form>
+</div>   
+    <br><div><p>Total= <?=$priceTotal?>&euro;</p></div>
    <?if(isLoggedIn()) : ?>
     <div>
         <form action="index.php?c=account&a=checkout" method="POST">

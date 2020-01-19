@@ -16,7 +16,6 @@ class AccountController extends Controller
 					$password = $_POST['password'];
 					$user = User::findOne('email = ' . "'".$email."'");
 					if(password_verify($password, $user['password']))
-					//if($password == $user['password']) // without hash...
 					{
 						$_SESSION['loggedIn'] = true;
 						$_SESSION['userMail'] = $user['email'];
@@ -142,8 +141,6 @@ class AccountController extends Controller
 		{
 			if(isset($_POST['submit']))
 			{
-
-			
 				$firstName = $_POST['firstName'] ?? null;
 				$lastName = $_POST['lastName'] ?? null;
 				$street = $_POST['street'] ?? null;
@@ -264,6 +261,53 @@ class AccountController extends Controller
 		$thereAreShoppingCartItemsInSession = isset($_SESSION['shoppingCartItems']) && !empty($_SESSION['shoppingCartItems']);
 		if(isLoggedIn() || $thereAreShoppingCartItemsInSession)
 		{
+			// Changes to Items and Quantity
+			// Update Database
+			if(isset($_POST['submit']) && isLoggedIn())
+			{
+				$userID = $_SESSION['userID'];
+				// Which product was changed?
+				for($n = 0; $n < $_POST['numberOfItems']; $n++)
+				{	
+					$prodID = $_POST["prodID".$n];
+					$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
+					$shoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $shoppingCart['id'].' and product_id = '.$prodID);
+					// Delete or change quantity?
+					if(isset($_POST["remove".$n]) && !empty($_POST["remove".$n]))
+					{
+						// Delete shoppingCartHasProducts from Database
+						$deletedShoppingCartHasProducts = new ShoppingCart_has_product($shoppingCartHasProducts);
+						$deletedShoppingCartHasProducts->delete();
+					}
+					elseif(isset($_POST["quantity".$n]) && !empty($_POST["quantity".$n]))
+					{
+						// Update Quantity
+						$shoppingCartHasProducts['quantity'] = htmlspecialchars($_POST["quantity".$n]);
+						$updatedShoppingCart = new ShoppingCart_has_product($shoppingCartHasProducts);
+						$updatedShoppingCart->save();
+					}
+					
+				}
+			}
+			elseif(isset($_POST['submit']) && !isLoggedIn())
+			{
+				for($n = 0; $n < $_POST['numberOfItems']; $n++)
+				{	
+					// Update Session
+					if(isset($_POST["remove".$n]) && !empty($_POST["remove".$n]))
+					{
+						// Delete shoppingCartItem from Session
+						unset($_SESSION['shoppingCartItems'][$n]);
+					}
+					elseif(isset($_POST["quantity".$n]) && !empty($_POST["quantity".$n]))
+					{
+						// Update Quantity
+						$_SESSION['shoppingCartItems'][$n]['quantity'] = htmlspecialchars($_POST["quantity".$n]);
+					}
+				}
+			}
+
+			// Get ShoppingCartItems from Database
 			$shoppingCartHasProducts = array();
 			if(isLoggedIn())
 			{
@@ -291,7 +335,6 @@ class AccountController extends Controller
 			{
 				$shoppingCartItems = null;
 			}
-			
 		}
 		// empty shoppingCart
 		else

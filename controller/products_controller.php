@@ -21,97 +21,98 @@ class ProductsController extends Controller
 		// TODO: catch MaxPrice lower than MinPrice 
 		// if(!((isset($_GET['maxPrice']) && isset($_GET['minPrice'])) && (htmlspecialchars($_GET['maxPrice']) < htmlspecialchars($_GET['minPrice']))))
 		// {
-			// Which products to display regarding filters
-			$where ='';
-			if(isset($_GET['cat']) || isset($_GET['productName']) || isset($_GET['color']) || isset($_GET['brand']) || isset($_GET['sale']) || isset($_GET['maxPrice']))
+
+		// Which products to display regarding filters
+		$where ='';
+		if(isset($_GET['cat']) || isset($_GET['productName']) || isset($_GET['color']) || isset($_GET['brand']) || isset($_GET['sale']) || isset($_GET['maxPrice']))
+		{
+			if(!empty($_GET['cat']))
 			{
-				if(!empty($_GET['cat']))
+				$category = Category::findOne('name = "'.htmlspecialchars($_GET['cat']).'"');
+				if(!empty($category['id']))
+				$where .= ' category_id = '.$category['id'].' and';
+				else
 				{
-					$category = Category::findOne('name = "'.htmlspecialchars($_GET['cat']).'"');
-					if(!empty($category['id']))
-					$where .= ' category_id = '.$category['id'].' and';
-					else
-					{
-						debug_to_logFile('$category["id"]) is empty!');
-					}
+					debug_to_logFile('$category["id"]) is empty!');
 				}
-				if(!empty($_GET['productName']))
-				{
-					$where .= ' name like "%'.htmlspecialchars($_GET['productName']).'%" and';
-				}
-				if(!empty($_GET['color']))
-				{
-					$where .= ' color ="'.htmlspecialchars($_GET['color']).'" and';
-				}
-				if(!empty($_GET['brand']))
-				{
-					$where .= ' brand like "'.htmlspecialchars($_GET['brand']).'" and';
-				}
-				if(!empty($_GET['sale']))
-				{
-					if($_GET['sale'] === 'all')
-					{
-						$where .= ' sales_id is not null and';
-					}
-					else
-					{
-						$sales = Sales::findOne('name = "'.htmlspecialchars($_GET['sale']).'"');
-						$where .= ' sales_id ='. $sales['id']. ' and';
-					}
-				}
-				if(!empty($_GET['maxPrice']))
-				{
-					$where .= ' price <= '.htmlspecialchars($_GET['maxPrice']).' and';
-				}
-				if(!empty($_GET['minPrice']))
-				{
-					$where .= ' price >= '.htmlspecialchars($_GET['minPrice']).' and';
-				}
-				// substr($where, 0, -4); // remove the last 4 chars-> ' and' // Not needed since we always add ' id is not null'
 			}
-			$where .= ' id is not null';
-			
-			if(isset($_GET['sortBy']) && !empty($_GET['sortBy']))
+			if(!empty($_GET['productName']))
 			{
-				$descending = false;
-				switch($_GET['sortBy'])
+				$where .= ' name like "%'.htmlspecialchars($_GET['productName']).'%" and';
+			}
+			if(!empty($_GET['color']))
+			{
+				$where .= ' color ="'.htmlspecialchars($_GET['color']).'" and';
+			}
+			if(!empty($_GET['brand']))
+			{
+				$where .= ' brand like "'.htmlspecialchars($_GET['brand']).'" and';
+			}
+			if(!empty($_GET['sale']))
+			{
+				if($_GET['sale'] === 'all')
 				{
-					case "priceAsc": 
-						$sortBy = "price";
-					break;
-					case "priceDesc":
-						$sortBy = "price";
-						$descending = true;
-					break;
-					case "nameAsc":
-						$sortBy = "name";
-					break;
-					case "nameDesc":
-						$sortBy= "name";
-						$descending = true;
-					case "color":
-						$sortBy = "color";
-					break;
-					case "brand":
-						$sortBy = "brand";
-					break;
-					default:
-						$sortBy = "id";
+					$where .= ' sales_id is not null and';
 				}
-				$products = Product::findSorted($sortBy, $where, $descending);
+				else
+				{
+					$sales = Sales::findOne('name = "'.htmlspecialchars($_GET['sale']).'"');
+					$where .= ' sales_id ='. $sales['id']. ' and';
+				}
 			}
-			else
+			if(!empty($_GET['maxPrice']))
 			{
-				$products = Product::find($where);	
+				$where .= ' price <= '.htmlspecialchars($_GET['maxPrice']).' and';
 			}
-			
-			// Image to product...
-			// TODO: Mehrere Images berücksichtigen. MainImage usw. 
-			foreach($products as &$product)
+			if(!empty($_GET['minPrice']))
 			{
-				$product['image'] = Image::findOne('product_id = ' . $product['id']);
+				$where .= ' price >= '.htmlspecialchars($_GET['minPrice']).' and';
 			}
-			$this->_params['products'] = $products;
+			// substr($where, 0, -4); // remove the last 4 chars-> ' and' // Not needed since we always add ' id is not null'
+		}
+		$where .= ' id is not null';
+		
+		if(isset($_GET['sortBy']) && !empty($_GET['sortBy']))
+		{
+			$descending = false;
+			switch($_GET['sortBy'])
+			{
+				case "priceAsc": 
+					$sortBy = "price";
+				break;
+				case "priceDesc":
+					$sortBy = "price";
+					$descending = true;
+				break;
+				case "nameAsc":
+					$sortBy = "name";
+				break;
+				case "nameDesc":
+					$sortBy= "name";
+					$descending = true;
+				case "color":
+					$sortBy = "color";
+				break;
+				case "brand":
+					$sortBy = "brand";
+				break;
+				default:
+					$sortBy = "id";
+			}
+			$products = Product::findSorted($sortBy, $where, $descending);
+		}
+		else
+		{
+			$products = Product::find($where);	
+		}
+		
+		// Image to product...
+		// TODO: Mehrere Images berücksichtigen. MainImage usw. 
+		foreach($products as &$product)
+		{
+			$product['image'] = Image::findOne('product_id = ' . $product['id']);
+		}
+		$this->_params['products'] = $products;
 		// }
 		// else
 		// {
