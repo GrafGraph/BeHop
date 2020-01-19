@@ -280,7 +280,6 @@ abstract class BaseModel
     in either ascending or descending order, given by bool $descending.
     If $descending is false, the list will by default be orderd ascending.
     */
-    
     public static function findSorted($sortBy, $where = '', $descending = false)
     {
         $db  = $GLOBALS['database'];
