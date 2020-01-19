@@ -12,9 +12,10 @@ class Address extends BaseModel
         'street' => ['type' => BaseModel::TYPE_STRING, 'max' => 100],
         'number' => ['type' => BaseModel::TYPE_STRING, 'min' => 1, 'max' => 10],
         'zip' => ['type' => BaseModel::TYPE_STRING, 'min' => 5, 'max' => 5],
-        'country' => ['type' => BaseModel::TYPE_STRING, 'max' => 50]
+        'country' => ['type' => BaseModel::TYPE_STRING, 'max' => 50] // TODO: Default Germany instead of Deutschland
     ];
 
+    // returns already existing Address with given Data or null
     public static function findAddress($addressData)
     {
         $where = 'city ="'.$addressData['city'].'" and street ="'
@@ -23,13 +24,13 @@ class Address extends BaseModel
         .$addressData['country'].'"';
         // foreach($addressData as $key => $attribute)
         // {
-        // }
+        // } 
         return self::findOne($where);
     }
     public static function validateAddress($newAddress, &$insertError){
         $newAddress->validate($insertError);
 
-        if (!preg_match('/^[A-Za-z -]*$/', $newAddress->__get('street'))) {
+        if (!preg_match('/^[A-Za-zß -]*$/', $newAddress->__get('street'))) {
             array_push($insertError, 'Street may only consist of Letters, Spaces and Hyphen!');
         }
 
