@@ -103,6 +103,7 @@ class AccountController extends Controller
 				$password2 = $_POST['password2'] ?? null;
 				$error = [];
 				$user_data = User::findOne('email = "' . $email . '"');
+				
 				if($user_data != null)
 				{ 
 					$error[] = "Email is already in use!";
