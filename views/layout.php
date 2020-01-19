@@ -20,7 +20,7 @@
 						<li><a href="index.php?a=aboutus" title="About Us" style="color:<?=highlightNavText('aboutus');?>">About Us</a></li>
 						
 						</li>
-						<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>
+						<?php if(isLoggedIn()) : ?>
 						<li><a href="?c=account&a=logout" title="Logout" style="color:<?=highlightNavText('logout');?>">Logout</a></li>
 						<li><a href="?c=account&a=account" title="Account">
 						<img src="/Git/BeHop/assets/images/layout/account<?=highlightNavIcon('account');?>.png" alt="Account" style="max-height:40px;">

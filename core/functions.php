@@ -12,6 +12,15 @@ function debug_to_logFile($message, $class = null)
     }
 }
 
+function isLoggedIn()
+{
+    $result = false;
+    if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true)
+    {
+        $result = true;
+    }
+    return $result;
+}
 function getImagesToProductID($productID)
 {
     return Image::find('product_id = ' . $productID);

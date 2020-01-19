@@ -1,21 +1,22 @@
 <h1>My Account</h1>
+<?if(isset($insertError))
+  {?> <div class="error"><?
+    if(is_array($insertError))
+    {
+      foreach($insertError as $error)
+      {?>
+            <?=$error?> <br>
+      <?}
+    }
+    else
+    {
+        echo $insertError;
+    }?>
+  </div>
+<? } ?>
 <div>
     <form autocomplete= "off" action="?c=account&a=account" method="POST">
-      <?if(isset($insertError))
-        {?> <div class="error"><?
-          if(is_array($insertError))
-          {
-            foreach($insertError as $error)
-            {?>
-                  <?=$error?> <br>
-            <?}
-          }
-          else
-          {
-              echo $insertError;
-          }?>
-        </div>
-      <? } ?>
+      
 
         <!-- firstname -->
         <div class="input">

@@ -3,7 +3,9 @@
 if(empty($shoppingCartItems)) : ?>
     <div>
         <h2>Your Shopping Cart is Empty</h2>
-        <p> Log in to see your Shopping Cart</p>
+        <? if(!isLoggedIn()) : ?>
+        <p>Log in to see your Shopping Cart</p>
+        <? endif;?>
     </div>
 <? else :
 $priceTotal = 0.0;
@@ -20,7 +22,7 @@ foreach($shoppingCartItems as $item) :
     </div><br><br><hr>
 <? endforeach;?>
    <br><div><p>Total= <?=$priceTotal?>&euro;</p></div>
-   <?if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>
+   <?if(isLoggedIn()) : ?>
     <div>
         <form action="index.php?c=account&a=checkout" method="POST">
             <input type="hidden" name="priceTotal" value=<?=$priceTotal?>>

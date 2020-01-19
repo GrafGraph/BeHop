@@ -132,7 +132,7 @@ class ProductsController extends Controller
 			$quantity = $_POST['quantity'];
 			$cartItem['product_id'] = $product['id'];
 			$cartItem['quantity'] = $quantity;
-			if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true)
+			if(isLoggedIn())
 			{
 				// New Entry in table shoppingcart_has_product
 				$shoppingCart = ShoppingCart::findOne('user_id = '.$_SESSION['userID']);

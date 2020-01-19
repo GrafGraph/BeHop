@@ -6,7 +6,7 @@ class AccountController extends Controller
 	public function actionLogin()
 	{
 		$this->_params['title'] = 'BeHop - Login' ;
-		if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] === false)
+		if(!isLoggedIn())
 		{
 			if(isset($_POST['submit']))
 			{
@@ -42,7 +42,7 @@ class AccountController extends Controller
 		}
 	}
 
-	//TODO: Logout Seite erstellen, funktion schon da :)
+	//TODO: Logout Seite interessanter gestalten? Oder auf index weiterleiten und alert anzeigen?
 	public function actionLogout()
 	{
 		if($_SESSION['loggedIn'] === true)
@@ -56,23 +56,77 @@ class AccountController extends Controller
 	public function actionAccount()
 	{
 		$this->_params['title'] = 'BeHop - Mein Account' ;
-		if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true)
+		if(isLoggedIn())
 		{
 			if(isset($_SESSION['userID']))
 			{
+				// Updating Account Information
+				if(isset($_POST['submit']))
+				{
+					// TODO: UserID aus Session zu holen ist unsicher? -> Wenn UserID inkorrekt ist oder verändert wird,
+					// funktioniert der Rest hier nicht...
+					$insertError = [];
+					$userData = [
+						'id' => $_SESSION['userID'],
+						'email' => $_POST['email'],
+						'firstName' => $_POST['firstName'],
+						'lastName' => $_POST['lastName'],
+					];
+
+					// Address already in Database?
+					$addressData = [
+						'city' => $_POST['city'],
+						'street' => $_POST['street'],
+						'number' => $_POST['number'],
+						'zip' => $_POST['zip'],
+						'country' => $_POST['country']
+					];
+					$existingAddress = Address::findAddress($addressData);
+					if($existingAddress != null)
+					{
+						$userData['address_id'] = $existingAddress['id'];
+					}
+					else
+					{
+						// Create new Address
+						$newAddress = new Address($addressData);
+						if(!Address::validateAddress($newAddress, $insertError)){
+							$this->_params['insertError'] = $insertError;
+							return false;
+						}
+						else
+						{
+							$newAddress->save();
+							$newAddress = Address::findAddress($addressData);
+							$userData['address_id'] = $newAddress['id'];
+						}
+					}
+
+					// Updating User
+					$newUser = new User($userData);
+					if(!User::validateUser($newUser, $insertError)){
+						$this->_params['insertError'] = $insertError;
+						return false;
+					}
+					else
+					{
+						$newUser->save();
+					}
+					
+				}
+				// Current Account Information
 				$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
 				$this->_params['user'] = $user;
 
 				$address = Address::findOne('id = ' . $user['address_id']);
 				$this->_params['address'] = $address;
 
-				$latestOrder = Order::findOne('user_id = ' .$_SESSION['userID']);
-				// $latestOrder = Order::findSorted('createdAt',
-				// 						 'user_id = ' ."'".$_SESSION['userID']."'", true);
+				$latestOrder = Order::findSorted('createdAt', 'user_id = '.$_SESSION['userID'], true);
 				if(isset($latestOrder))
 				{
 					$this->_params['latestOrder'] = $latestOrder;
 				}
+
 			}
 		}
 		else
@@ -84,7 +138,7 @@ class AccountController extends Controller
 	public function actionSignUp()
 	{
 		$this->_params['title'] = 'BeHop - Registrierung' ;
-		if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] === false)
+		if(!isLoggedIn())
 		{
 			if(isset($_POST['submit']))
 			{
@@ -207,12 +261,11 @@ class AccountController extends Controller
 		// TODO: Für User muss ShoppingCart erstellt werden und entsprechend shoppingCartHasProduct befüllt werden
 		$this->_params['title'] = 'BeHop - Mein Warenkorb' ;
 		$shoppingCartItems = array();
-		$userIsLoggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true;
 		$thereAreShoppingCartItemsInSession = isset($_SESSION['shoppingCartItems']) && !empty($_SESSION['shoppingCartItems']);
-		if($userIsLoggedIn || $thereAreShoppingCartItemsInSession)
+		if(isLoggedIn() || $thereAreShoppingCartItemsInSession)
 		{
 			$shoppingCartHasProducts = array();
-			if($userIsLoggedIn)
+			if(isLoggedIn())
 			{
 				$userID = $_SESSION['userID'];
 				$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
@@ -252,7 +305,7 @@ class AccountController extends Controller
 	{
 		$this->_params['title'] = 'BeHop - Checkout' ;
 		// Must be logged in to place an order
-		if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true && isset($_SESSION['userID']))
+		if(isLoggedIn())
 		{
 			$this->_params['priceTotal'] = $_POST['priceTotal'];
 				
