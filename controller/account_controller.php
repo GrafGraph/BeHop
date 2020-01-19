@@ -255,78 +255,14 @@ class AccountController extends Controller
 
     public function actionShoppingcart()
 	{
-		// TODO: Für User muss ShoppingCart erstellt werden und entsprechend shoppingCartHasProduct befüllt werden
 		$this->_params['title'] = 'BeHop - Mein Warenkorb' ;
-		$shoppingCartItems = array();
-		$thereAreShoppingCartItemsInSession = isset($_SESSION['shoppingCartItems']) && !empty($_SESSION['shoppingCartItems']);
-		if(isLoggedIn() || $thereAreShoppingCartItemsInSession)
-		{
-			// Changes to Items and Quantity
-			// Update Database
-			if(isset($_POST['submit']) && isLoggedIn())
-			{
-				$userID = $_SESSION['userID'];
-				// Which product was changed?
-				for($n = 0; $n < $_POST['numberOfItems']; $n++)
-				{	
-					// Delete or change quantity?
-					if(isset($_POST["remove".$n]) && !empty($_POST["remove".$n]))
-					{
-						$prodID = $_POST["prodID".$n];
-						$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
-						$shoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $shoppingCart['id'].' and product_id = '.$prodID);
-						// Delete shoppingCartHasProducts from Database
-						$deletedShoppingCartHasProducts = new ShoppingCart_has_product($shoppingCartHasProducts);
-						$deletedShoppingCartHasProducts->delete();
-					}
-					elseif(isset($_POST["quantity".$n]) && !empty($_POST["quantity".$n]))
-					{
-						$prodID = $_POST["prodID".$n];
-						$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
-						$shoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $shoppingCart['id'].' and product_id = '.$prodID);
-						// Update Quantity
-						$shoppingCartHasProducts['quantity'] = htmlspecialchars($_POST["quantity".$n]);
-						$updatedShoppingCart = new ShoppingCart_has_product($shoppingCartHasProducts);
-						$updatedShoppingCart->save();
-					}
-					
-				}
-			}
-			elseif(isset($_POST['submit']) && !isLoggedIn())
-			{
-				for($n = 0; $n < $_POST['numberOfItems']; $n++)
-				{	
-					// Update Session
-					if(isset($_POST["remove".$n]) && $_POST["remove".$n] == true)
-					{
-						// Delete shoppingCartItem from Session
-						$prodID = $_POST["prodID".$n];
-						$numberOfItemsInCart = count($_SESSION['shoppingCartItems']);
-						for($i = 0; $i < $numberOfItemsInCart; $i++)
-						{
-							if($_SESSION['shoppingCartItems'][$i]['product_id'] === $prodID)
-							{
-								unset($_SESSION['shoppingCartItems'][$i]);
-								break;
-							}
-						}
-					}
-					elseif(isset($_POST["quantity".$n]) && !empty($_POST["quantity".$n]))
-					{
-						$prodID = $_POST["prodID".$n];
-						// Update Quantity
-						foreach($_SESSION['shoppingCartItems'] as &$shoppingCartItem)
-						{
-							if($shoppingCartItem['product_id'] === $prodID)
-							{
-								$shoppingCartItem['quantity'] = $_POST["quantity".$n];
-								break;
-							}
-						}
-					}
-				}
-			}
 
+		// Changes to Items and Quantity if $_POST['submit'] is set
+		updateShoppingCart();
+
+		$shoppingCartItems = array();
+		if(isLoggedIn() || thereAreShoppingCartItemsInSession())
+		{
 			$shoppingCartHasProducts = array();
 			// Get ShoppingCartItems from Database
 			if(isLoggedIn())
