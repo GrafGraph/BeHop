@@ -42,3 +42,19 @@
 [2020-01-18 15:20:39 ]SELECT * FROM `product` WHERE  id is not null Order by price DESC;
 [2020-01-18 15:20:44 ]SELECT * FROM `product` WHERE  id is not null Order by price;
 [2020-01-18 15:20:51 ]SELECT * FROM `product` WHERE  id is not null Order by color DESC;
+[2020-01-19 16:03:45 ]quantity before=2
+[2020-01-19 16:03:45 ]quantity after=3
+[2020-01-19 16:05:41 ]
+[2020-01-19 16:06:28 ]
+[2020-01-19 16:07:02 ]
+[2020-01-19 16:07:02 ]after
+[2020-01-19 16:07:04 ]
+[2020-01-19 16:07:04 ]after
+[2020-01-19 16:07:25 ]
+[2020-01-19 16:07:25 ]after
+[2020-01-19 16:08:07 ]
+[2020-01-19 16:08:07 ]after
+[2020-01-19 16:09:09 ]
+[2020-01-19 16:17:58 ]before:Array
+[2020-01-19 16:17:58 ]after:
+[2020-01-19 16:17:58 ]
