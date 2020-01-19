@@ -1,4 +1,4 @@
-<img src="/Git/BeHop/assets/images/aboutUs/fashionForThePeople1.png" alt="Fashion for the People" style="margin:15px;">
+<img src="assets/images/aboutUs/fashionForThePeople1.png" alt="Fashion for the People" style="margin:15px;">
 <article>
 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing 
 elit. Aenean commodo ligula eget dolor. Aenean massa 

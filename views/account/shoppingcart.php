@@ -9,7 +9,7 @@ if(empty($shoppingCartItems)) : ?>
     </div>
 <? else :
 $priceTotal = 0.0;
-$n = 0; // Counter for indexing the quantity submit
+$n = 0; // Counter for indexing the quantity and remove submit
 ?>
 <div>
     

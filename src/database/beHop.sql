@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 18. Jan 2020 um 19:01
+-- Erstellungszeit: 19. Jan 2020 um 15:57
 -- Server-Version: 10.4.11-MariaDB
 -- PHP-Version: 7.4.1
 
@@ -17,7 +17,8 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-
+drop schema if exists behop;
+create database behop;
 --
 -- Datenbank: `behop`
 --
@@ -93,10 +94,10 @@ CREATE TABLE `image` (
 --
 
 INSERT INTO `image` (`id`, `createdAt`, `updatedAt`, `imageUrl`, `altText`, `product_id`, `sales_id`) VALUES
-(1, '2020-01-12 08:14:02', NULL, '/Git/BeHop/assets/images/products/mainImage-1.jpg', 'Best looking Shoes', 1, NULL),
-(2, '2020-01-12 10:37:47', NULL, '/Git/BeHop/assets/images/products/mainImage-2.jpg', 'Black Harem-Joggers', 2, NULL),
-(3, '2020-01-18 17:42:54', NULL, '/Git/BeHop/assets/images/sales/endOfSeasonSale20.jpg', 'End of Season Sale: 20 Percent off', NULL, 3),
-(4, '2020-01-18 17:42:54', NULL, '/Git/BeHop/assets/images/index/sneakersAndMore.jpg', 'Sneakers and More', NULL, NULL);
+(1, '2020-01-12 08:14:02', NULL, 'assets/images/products/mainImage-1.jpg', 'Best looking Shoes', 1, NULL),
+(2, '2020-01-12 10:37:47', NULL, 'assets/images/products/mainImage-2.jpg', 'Black Harem-Joggers', 2, NULL),
+(3, '2020-01-18 17:42:54', NULL, 'assets/images/sales/endOfSeasonSale20.png', 'End of Season Sale: 20 Percent off', NULL, 3),
+(4, '2020-01-18 17:42:54', NULL, 'assets/images/index/sneakersAndMore.png', 'Sneakers and More', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -111,6 +112,13 @@ CREATE TABLE `order` (
   `user_id` int(11) NOT NULL,
   `shoppingcart_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `order`
+--
+
+INSERT INTO `order` (`id`, `createdAt`, `updatedAt`, `user_id`, `shoppingcart_id`) VALUES
+(1, '2020-01-18 20:47:08', NULL, 5, 5);
 
 -- --------------------------------------------------------
 
@@ -181,8 +189,10 @@ CREATE TABLE `shoppingcart` (
 --
 
 INSERT INTO `shoppingcart` (`id`, `createdAt`, `updatedAt`, `user_id`) VALUES
-(5, '2020-01-13 19:35:25', NULL, 5),
-(6, '2020-01-13 19:35:25', NULL, 3);
+(5, '2020-01-13 19:35:25', '2020-01-18 20:47:08', NULL),
+(6, '2020-01-13 19:35:25', NULL, 3),
+(7, '2020-01-18 20:47:08', NULL, 5),
+(8, '2020-01-19 09:13:46', NULL, 6);
 
 -- --------------------------------------------------------
 
@@ -228,7 +238,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `createdAt`, `updatedAt`, `email`, `password`, `firstName`, `lastName`, `address_id`) VALUES
 (3, '2020-01-13 16:39:12', NULL, 'MarieS.H@web.de', '$2y$10$Xj1rNHe6SHS20ptb1HbL2Oq4yXXGnFuHA2Qi4r5IEIwIzDSGsgzqe', 'Marie', 'Hartmann', 2),
-(5, '2020-01-13 19:00:33', NULL, 'admin@fh-erfurt.de', '$2y$10$Y6.w6mpMlZioRLUrlw/ETOj7AhktY4ajnWX3TTD/f7D7S.hN9Z76C', 'admin', 'root', 1);
+(5, '2020-01-13 19:00:33', NULL, 'admin@fh-erfurt.de', '$2y$10$Y6.w6mpMlZioRLUrlw/ETOj7AhktY4ajnWX3TTD/f7D7S.hN9Z76C', 'admin', 'root', 1),
+(6, '2020-01-19 09:13:46', '2020-01-19 11:05:04', 'marie.hartmann@uni-erfurt.de', '$2y$10$dCkDEAV4thuxSt.RC7XW9e74p9xWXvdUc3UohnGWYWRXZ0luRYKyG', 'Marie', 'Hartmann', 2);
 
 --
 -- Indizes der exportierten Tabellen
@@ -309,7 +320,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT für Tabelle `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `category`
@@ -327,7 +338,7 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT für Tabelle `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT für Tabelle `product`
@@ -345,19 +356,19 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT für Tabelle `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT für Tabelle `shoppingcart_has_product`
 --
 ALTER TABLE `shoppingcart_has_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints der exportierten Tabellen

@@ -1,5 +1,5 @@
 <a href="index.php?c=products&a=products&sale=all">
-<img src="/Git/BeHop/assets/images/sales/SALES.png" alt="Sales" style="margin:15px;"> </a>
+<img src="assets/images/sales/SALES.png" alt="Sales" style="margin:15px;"> </a>
 
 <div><h2>Campaigns/Sales</h2></div>
 <? if(!empty($sales)) : ?>
@@ -15,9 +15,9 @@
 <div><h2>Highlights</h2></div>
     <div class="hightlights">
     <a href="index.php?c=products&a=products&cat=Shoes">
-    <img src="/Git/BeHop/assets/images/index/sneakersAndMore.png" alt="Sneakers and More">
+    <img src="assets/images/index/sneakersAndMore.png" alt="Sneakers and More">
     </a></div>
     <br>
 <div><h2>New Products</h2></div>
 
-<?//var_dump($_SESSION);?>
+<?=var_dump($_SESSION);?>

@@ -269,18 +269,21 @@ class AccountController extends Controller
 				// Which product was changed?
 				for($n = 0; $n < $_POST['numberOfItems']; $n++)
 				{	
-					$prodID = $_POST["prodID".$n];
-					$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
-					$shoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $shoppingCart['id'].' and product_id = '.$prodID);
 					// Delete or change quantity?
 					if(isset($_POST["remove".$n]) && !empty($_POST["remove".$n]))
 					{
+						$prodID = $_POST["prodID".$n];
+						$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
+						$shoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $shoppingCart['id'].' and product_id = '.$prodID);
 						// Delete shoppingCartHasProducts from Database
 						$deletedShoppingCartHasProducts = new ShoppingCart_has_product($shoppingCartHasProducts);
 						$deletedShoppingCartHasProducts->delete();
 					}
 					elseif(isset($_POST["quantity".$n]) && !empty($_POST["quantity".$n]))
 					{
+						$prodID = $_POST["prodID".$n];
+						$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
+						$shoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $shoppingCart['id'].' and product_id = '.$prodID);
 						// Update Quantity
 						$shoppingCartHasProducts['quantity'] = htmlspecialchars($_POST["quantity".$n]);
 						$updatedShoppingCart = new ShoppingCart_has_product($shoppingCartHasProducts);
@@ -294,15 +297,36 @@ class AccountController extends Controller
 				for($n = 0; $n < $_POST['numberOfItems']; $n++)
 				{	
 					// Update Session
-					if(isset($_POST["remove".$n]) && !empty($_POST["remove".$n]))
+					if(isset($_POST["remove".$n]) && $_POST["remove".$n] == true)
 					{
+						$prodID = $_POST["prodID".$n];
 						// Delete shoppingCartItem from Session
-						unset($_SESSION['shoppingCartItems'][$n]);
+						foreach($_SESSION['shoppingCartItems'] as $shoppingCartItem)
+						{
+							if($shoppingCartItem['product_id'] === $prodID)
+							{
+								unset($shoppingCartItem);
+								break;
+							}
+						}
+						// Re-Indexing the array
+						$temp = array_values($_SESSION['shoppingCartItems']);
+						$_SESSION['shoppingCartItems']= $temp;
 					}
 					elseif(isset($_POST["quantity".$n]) && !empty($_POST["quantity".$n]))
 					{
+						$prodID = $_POST["prodID".$n];
 						// Update Quantity
-						$_SESSION['shoppingCartItems'][$n]['quantity'] = htmlspecialchars($_POST["quantity".$n]);
+						foreach($_SESSION['shoppingCartItems'] as $shoppingCartItem)
+						{
+							if($shoppingCartItem['product_id'] === $prodID)
+							{
+								debug_to_logFile('quantity before='.$shoppingCartItem['quantity']);
+								$shoppingCartItem['quantity'] = $_POST["quantity".$n];
+								debug_to_logFile('quantity after='.$shoppingCartItem['quantity']);
+								break;
+							}
+						}
 					}
 				}
 			}
