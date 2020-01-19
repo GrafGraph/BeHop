@@ -1,8 +1,5 @@
+<img src="assets/images/aboutUs/fashionForThePeople1.png" alt="Fashion for the People" style="margin:15px;">
 <article>
-<h1>About Us</h1>
-<img src="/Git/BeHop/assets/images/aboutUs/happyWorkers.jpg" alt="Arbeitsplatz in Textilfabrik" style="max-height:400px;">
-<figcaption>Happy Workers?</figcaption>
-<br>
 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing 
 elit. Aenean commodo ligula eget dolor. Aenean massa 
 <strong>strong</strong>. Cum sociis natoque penatibus 

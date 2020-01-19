@@ -228,7 +228,7 @@ abstract class BaseModel
         return $result;
     }
 
-    // Specialization of method find, which returns only one DataRow
+    // Specialization of method find, which returns only one DataRow/tuple
     public static function findOne($where = '')
     {
         $database  = $GLOBALS['database'];
@@ -252,62 +252,57 @@ abstract class BaseModel
         return $result;
     }
 
-    // specialization of find which selects given attributes instead of everything.
-    public static function findAttributes($attributes, $where = '')
-    {
-        $database  = $GLOBALS['database'];
-        $result = null;
-
-        try
+        // specialization of find which selects given attributes instead of everything.
+        public static function findAttributes($attributes, $where = '')
         {
-            $sql = 'SELECT '.$attributes.' FROM ' . self::tablename();
-                
-            if(!empty($where))
+            $database  = $GLOBALS['database'];
+            $result = null;
+    
+            try
             {
-                $sql .= ' WHERE ' . $where .  ';';
+                $sql = 'SELECT '.$attributes.' FROM ' . self::tablename();
+                    
+                if(!empty($where))
+                {
+                    $sql .= ' WHERE ' . $where .  ';';
+                }
+                $result = $database->query($sql)->fetchAll();
             }
-            $result = $database->query($sql)->fetchAll();
+            catch(\PDOException $e)
+            {
+                die('Select statement failed: ' . $e->getMessage());
+            }
+    
+            return $result;
         }
-        catch(\PDOException $e)
-        {
-            die('Select statement failed: ' . $e->getMessage());
-        }
-
-        return $result;
-    }
-
+        
     /* Specialization of method find. Sorts List of DB entries by parameter String $sortby
     in either ascending or descending order, given by bool $descending.
     If $descending is false, the list will by default be orderd ascending.
     */
-    
-    // public static function findSorted($sortBy, $where = '', $descending = false)
-    // {
-    //     $db  = $GLOBALS['database'];
-    //     $result = null;
-
-    //     try
-    //     {
-    //         $sql = 'SELECT * FROM ' . self::tablename();
-                
-    //         if(!empty($where))
-    //         {
-    //             $sql .= ' WHERE ' . $where .  ';';
-    //         }
-    //         $sql .= 'Order by ' . "'".$sortBy."'";
-    //         if($descending)
-    //         {
-    //             $sql .= ' desc';
-    //         }
-    //         $sql .= ';';
-    //         debug_to_logFile($sql);
-    //         $result = $db->query($sql)->fetchAll();
-    //     }
-    //     catch(\PDOException $e)
-    //     {
-    //         die('Select statment failed: ' . $e->getMessage());
-    //     }
-
-    //     return $result;
-    // }
+    public static function findSorted($sortBy, $where = '', $descending = false)
+    {
+        $db  = $GLOBALS['database'];
+        $result = null;
+        try
+        {
+            $sql = 'SELECT * FROM ' . self::tablename();
+            if(!empty($where))
+            {
+                $sql .= ' WHERE ' . $where;
+            }
+            $sql .= ' Order by ' . $sortBy;
+            if($descending)
+            {
+                $sql .= ' DESC';
+            }
+            $sql .= ';';
+            $result = $db->query($sql)->fetchAll();
+        }
+        catch(\PDOException $e)
+        {
+            die('Select statment failed: ' . $e->getMessage());
+        }
+        return $result;
+    }
 }

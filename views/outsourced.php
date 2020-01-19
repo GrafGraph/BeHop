@@ -78,3 +78,14 @@ var myDropdown = document.getElementById("myDropdown");
     // 		}
     // 	}
     // }
+
+    <? if(!empty($hightlights)) : ?>
+<div>
+    <? foreach($hightlights as $hightlight) : ?>
+        <div class="hightlights">
+        <a href="index.php?c=products&a=products&cat=shoes">
+        <img src="<?=$hightlight['imageUrl'] ?? ''?>" alt="<?= $hightlight['altText'] ?? ''?>">
+        </div></a>
+    <? endforeach; ?>
+</div><br>
+<? endif; ?>

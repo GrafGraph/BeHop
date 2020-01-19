@@ -1,7 +1,11 @@
 body {
     text-align: center;
     background: rgb(255, 255, 255);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans Extra Bold', sans-serif;
+}
+
+p {
+    font-family: 'Open Sans Extra Bold', sans-serif;
 }
 
 .products {}
@@ -11,12 +15,12 @@ select {
     height: 40px;
     padding-left: 10px;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans Extra Bold', sans-serif;
     font-size: 16px;
 }
 
 nav {
-    background-color: #000000;
+    background-color: #333333;
 }
 
 nav ul {
@@ -34,10 +38,12 @@ nav ul li {
 
 nav ul li a {
     display: inline-block;
-    padding: 1.5em;
+    padding: 1.0em;
     text-decoration: none;
     color: rgb(255, 255, 255);
     text-align: center;
+    font-size: 150%;
+    font-family: 'Open Sans Extra Bold', sans-serif;
 }
 
 nav ul li a:hover {
@@ -55,11 +61,11 @@ footer {
     height: 60px;
     text-align: center;
     line-height: 60px;
-    color: #000000;
+    color: #333333;
 }
 
 :root {
-    --red: #bf0a00;
+    --red: #ff5757;
 }
 
 * {
@@ -70,7 +76,7 @@ footer {
 
 body,
 body * {
-    font-family: calibri, 'sans-serif';
+    font-family: 'Open Sans Extra Bold', 'sans-serif';
     font-weight: 600;
     color: dimgrey;
 }
@@ -120,7 +126,7 @@ input[type=submit].del-btn {
 
 input[type=submit]:hover {
     color: white;
-    background: rgb(0, 0, 0);
+    background: #333333;
 }
 
 input[type=submit].del-btn:hover {
@@ -150,7 +156,7 @@ table {
     display: inline-block;
     margin: 20px;
     text-decoration: none;
-    font-family: Arial;
+    font-family: 'Open Sans Extra Bold';
     font-size: 16px;
     border: 1px solid dimgrey;
     color: dimgrey;
@@ -167,6 +173,6 @@ img {
     height: auto;
 }
 
-.errors{
-    color : red;
+.errors {
+    color: red;
 }

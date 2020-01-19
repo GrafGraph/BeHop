@@ -1,4 +1,23 @@
-<h2>Willkommen!</h2>
+<a href="index.php?c=products&a=products&sale=all">
+<img src="assets/images/sales/SALES.png" alt="Sales" style="margin:15px;"> </a>
 
-Content
-<? //=var_dump($_SESSION);?>
+<div><h2>Campaigns/Sales</h2></div>
+<? if(!empty($sales)) : ?>
+<div>
+    <? foreach($sales as $sale) : ?>
+        <div class="sales">
+        <a href="index.php?c=products&a=products&sale=<?=$sale['name']?>">
+        <img src="<?=$sale['image']['imageUrl'] ?? ''?>" alt="<?= $sale['image']['altText'] ?? ''?>">
+        </a></div>
+    <? endforeach; ?>
+</div><br>
+<? endif; ?>
+<div><h2>Highlights</h2></div>
+    <div class="hightlights">
+    <a href="index.php?c=products&a=products&cat=Shoes">
+    <img src="assets/images/index/sneakersAndMore.png" alt="Sneakers and More">
+    </a></div>
+    <br>
+<div><h2>New Products</h2></div>
+
+<?=var_dump($_SESSION);?>
