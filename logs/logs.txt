@@ -909,3 +909,4 @@
 [2020-01-20 18:47:12 ]INSERT INTO `shoppingCart` (`id`,`createdAt`,`updatedAt`,`user_id`) VALUES (NULL,NULL,NULL,'7');
 [2020-01-20 18:47:28 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton-bespalov@gmx.de','$2y$10$gGuc3T8iNFx4COwkKxkcyODXQ6NB/ctvMmGOk./ymNbOx9.sGZKPa','Anton','Bespalov','5');
 [2020-01-20 18:47:28 ]INSERT INTO `shoppingCart` (`id`,`createdAt`,`updatedAt`,`user_id`) VALUES (NULL,NULL,NULL,'7');
+[2020-01-20 19:50:58 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Erfurt','Lilo-Herrmann-Straße ','2','99086',NULL);

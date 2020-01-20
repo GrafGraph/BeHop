@@ -488,6 +488,7 @@ class AccountController extends Controller
 						];
 						$user = new User($userData);
 						$user->save();
+
 					}
 					else
 					{
@@ -496,8 +497,13 @@ class AccountController extends Controller
 					}
 
 				}
+				header('Location: ?c=account&a=passwordChanged');
 			}
 
+	}
+	public function actionPasswordChanged()
+	{
+		$this->_params['title'] = 'BeHop - Password changed!' ;
 	}
 }
 
