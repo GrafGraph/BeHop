@@ -85,7 +85,6 @@ abstract class BaseModel
             $sql =trim($sql, ',');
             $valueString = trim($valueString, ',');
             $sql .= ')' . $valueString . ');';
-            debug_to_logFile($sql);
             $statement = $database->prepare($sql);
             $statement->execute();
             
