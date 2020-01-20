@@ -96,6 +96,13 @@ class ProductsController extends Controller
 				case "brand":
 					$sortBy = "brand";
 				break;
+				case "newestFirst":
+					$sortBy = "createdAt";
+					$descending = true;
+				break;
+				case "oldestFirst":
+					$sortBy = "createdAt";
+				break;
 				default:
 					$sortBy = "id";
 			}

@@ -45,6 +45,8 @@
         <li>
             <select name="sortBy">
                 <option value="">--Sort By--</option>
+                <option value="newestFirst">Newest First</option>
+                <option value="oldestFirst">Oldest First</option>
                 <option value="priceAsc">Price Ascending</option>
                 <option value="priceDesc">Price Descending</option>
                 <option value="nameAsc">Name Ascending</option>
