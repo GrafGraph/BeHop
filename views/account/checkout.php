@@ -1,7 +1,7 @@
 <h1>Checkout</h1>
 <? if($step === 1) : ?>
-    <h2>Step 1 of 3: Select Payment Method</h2>
-    <h2>Your Information</h2>
+    <h2>Step 1 of 2: Confirm your Information</h2>
+    <!-- <h2>Your Information</h2> -->
     <div>
     <table style="width:30%">
     <tr>
@@ -22,62 +22,48 @@
         . $address['city'] . $address['zip']?></td>
     </tr>
     </table>
-    </div>
-    <h2>Select Payment Method</h2>
-    <p>Total= <?=$priceTotal?>&euro;</p>
-        <form method="POST">
-            <!-- TODO: Required machen -->
-            <!-- TODO: Falls nur Paypal, dann immerhin ordentlich einbinden! -->
-            <!-- <label for="paypal">PayPal</label> -->
-            <input type="radio" name="paymentMethod" value="paypal" id="paypal"> PayPal <br>
-            <!-- <label for="transfer">Transfer</label> -->
-            <input type="radio" name="paymentMethod" value="transfer" id="transfer"> Transfer <br>
-
-            <!-- <label for="purchaseOnAccount">Purchase on Account</label> -->
-            <input type="radio" name="paymentMethod"value="purchaseOnAccount" id="purchaseOnAccount"> Purchase on Account <br>
-            <div>
-                <input type="hidden" name="priceTotal" value=<?=$priceTotal?>>
-                <button type="submit" name="submit">Continue</button>
-            </div>
-        </form>
-        
-<? elseif($step === 2) : ?>
-    <h2>Step 2 of 3: Confirm Order</h2>
-    <h2>Your Information</h2>
-    <div>
-    <table style="width:30%">
-    <tr>
-        <td>First Name</td>
-        <td><?=$user['firstName']?></td>
-    </tr>
-    <tr>
-        <td>Last Name</td>
-        <td><?=$user['lastName']?></td>
-    </tr>
-    <tr>
-        <td>Email</td>
-        <td><?=$user['email']?></td>
-    </tr>
-    <tr>
-        <td>Address</td>
-        <td><?=$address['country'] . $address['street'] . $address['number'] 
-        . $address['city'] . $address['zip']?></td>
-    </tr>
-    </table>
-    <p>Total= <?=$priceTotal?>&euro;</p>
+    <a href="index.php?c=account&a=account"><button>Change Information</button></a>
     </div>
     <div>
         <form method="POST">
             <input type="hidden" name="priceTotal" value=<?=$priceTotal?>>
-            <button type="submit" name="placeOrder">Place Order</button>
+            <button type="submit" name="submit">Continue</button>
+        </form>
+    </div>
+<? elseif($step === 2) : ?>
+    <h2>Step 2 of 2: Payment</h2>
+    <h2>Select Payment Method</h2>
+    <p>Total= <?=$priceTotal?>&euro;</p>
+    <div>
+        <form method="POST" target="_blank">
+            <ul style="list-style-type:none;">
+                <!-- TODO: Required machen -->
+                <!-- TODO: Falls nur Paypal, dann immerhin ordentlich einbinden! -->
+                <li>
+                    <!-- <label for="paypal">PayPal</label> -->
+                    <input type="radio" name="paymentMethod" value="paypal" id="paypal">PayPal
+                </li>
+                <li>
+                    <!-- <label for="transfer">Transfer</label> -->
+                    <input type="radio" name="paymentMethod" value="transfer" id="transfer" disabled>Transfer
+                </li>
+                <li>
+                    <!-- <label for="purchaseOnAccount">Purchase on Account</label> -->
+                    <input type="radio" name="paymentMethod"value="purchaseOnAccount" id="purchaseOnAccount" disabled>Purchase on Account
+                </li>
+            </ul> 
+            <br>
+            <div>
+                <button type="submit" name="placeOrder">Place Order</button>
+            </div>
         </form>
     </div>
 <? elseif($step === 3) : ?>
-    <h2>Step 3 of 3: Creating Order</h2>
+    <h2>Complete!</h2>
     <div>
-        <p>Thank You!</p>
         <p>Your Order will be processed</p>
     </div>
+    <h2>Thank You!</h2>
 <? else : ?>
     <h2>OOPS... We could not find your Order...</h2>
 <? endif; ?>

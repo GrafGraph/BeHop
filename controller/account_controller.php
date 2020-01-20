@@ -259,7 +259,78 @@ class AccountController extends Controller
 		$this->_params['title'] = 'BeHop - Mein Warenkorb' ;
 
 		// Changes to Items and Quantity if $_POST['submit'] is set
-		updateShoppingCart();
+		if(isset($_POST['submit']))
+		{
+			
+			if(isLoggedIn())	// Update Database
+			{
+				$userID = $_SESSION['userID'];
+				// Which product was changed?
+				for($n = 0; $n < $_POST['numberOfItems']; $n++)
+				{	
+					// Delete or change quantity?
+					if(isset($_POST["remove".$n]) && !empty($_POST["remove".$n]))
+					{
+						$prodID = $_POST["prodID".$n];
+						$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
+						$shoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $shoppingCart['id'].' and product_id = '.$prodID);
+						// Delete shoppingCartHasProducts from Database
+						$deletedShoppingCartHasProducts = new ShoppingCart_has_product($shoppingCartHasProducts);
+						$deletedShoppingCartHasProducts->delete();
+					}
+					elseif(isset($_POST["quantity".$n]) && !empty($_POST["quantity".$n]))
+					{
+						$prodID = $_POST["prodID".$n];
+						$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
+						$shoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $shoppingCart['id'].' and product_id = '.$prodID);
+						// Update Quantity
+						$shoppingCartHasProducts['quantity'] = htmlspecialchars($_POST["quantity".$n]);
+						$updatedShoppingCart = new ShoppingCart_has_product($shoppingCartHasProducts);
+						$updatedShoppingCart->save();
+					}
+				}
+			}
+			elseif(thereAreShoppingCartItemsInSession())	// Update Session
+			{
+				for($n = 0; $n < $_POST['numberOfItems']; $n++)
+				{	
+					if(isset($_POST["remove".$n]) && $_POST["remove".$n] == true)
+					{
+						// Delete shoppingCartItem from Session
+						$prodID = $_POST["prodID".$n];
+						$numberOfItemsInCart = count($_SESSION['shoppingCartItems']);
+						if($numberOfItemsInCart == 1)
+						{
+							unset($_SESSION['shoppingCartItems']);
+						}
+						else
+						{
+							for($i = 0; $i < $numberOfItemsInCart; $i++)
+							{
+								if(isset($_SESSION['shoppingCartItems'][$i]['product_id']) && $_SESSION['shoppingCartItems'][$i]['product_id'] === $prodID)
+								{
+									unset($_SESSION['shoppingCartItems'][$i]);
+									break;
+								}
+							}
+						}
+					}
+					elseif(isset($_POST["quantity".$n]) && !empty($_POST["quantity".$n]))
+					{
+						$prodID = $_POST["prodID".$n];
+						// Update Quantity
+						foreach($_SESSION['shoppingCartItems'] as &$shoppingCartItem)
+						{
+							if($shoppingCartItem['product_id'] === $prodID)
+							{
+								$shoppingCartItem['quantity'] = $_POST["quantity".$n];
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
 
 		$shoppingCartItems = array();
 		if(isLoggedIn() || thereAreShoppingCartItemsInSession())
@@ -306,43 +377,44 @@ class AccountController extends Controller
 		$this->_params['title'] = 'BeHop - Checkout' ;
 		// Must be logged in to place an order
 		if(isLoggedIn())
-		{
-			$this->_params['priceTotal'] = $_POST['priceTotal'];
-				
+		{		
 			// TODO: Doppelter code: Ähnlich wie actionAccount...
 			$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
 			$this->_params['user'] = $user;
 			$address = Address::findOne('id = ' . $user['address_id']);
 			$this->_params['address'] = $address;
 
-			if(isset($_POST['checkout']))
+			if(isset($_POST['checkout']))	// confirm data
 			{
+				$this->_params['priceTotal'] = $_POST['priceTotal'];
 				$this->_params['step'] = 1;
+				
 			}
-			elseif(isset($_POST['submit']))
+			elseif(isset($_POST['submit']))	// select payment
 			{
+				$this->_params['priceTotal'] = $_POST['priceTotal'];
 				$this->_params['step'] = 2;
-				// select payment? -> always PayPal?
-				// confirm data
+				// TODO: always PayPal?
 			}
-			elseif(isset($_POST['placeOrder']))
+			elseif(isset($_POST['placeOrder']))	// create new order
 			{
+			// open PayPal in new Tab
+			
 				$this->_params['step'] = 3;
-				// create new order
-					// find ShoppingCart to User
-					$shoppingCart=ShoppingCart::findOne('user_id ='.$user['id']);
-					$orderData = [
-						'user_id' => $user['id'],
-						'shoppingcart_id' => $shoppingCart['id']
-					];
-					$order = new Order($orderData);
-					$order->save();
+			// find ShoppingCart to User
+				$shoppingCart=ShoppingCart::findOne('user_id ='.$user['id']);
+				$orderData = [
+					'user_id' => $user['id'],
+					'shoppingcart_id' => $shoppingCart['id']
+				];
+				$order = new Order($orderData);
+				$order->save();
 				
 				// TODO: Must be easier than this...
-				// "Delete" ShoppingCart for User
+			// "Delete" ShoppingCart for User
 				$updatedShoppingCart = new ShoppingCart($shoppingCart);
 				$updatedShoppingCart->setUserIDNull();
-				// Create new empty ShoppingCart for User
+			// Create new empty ShoppingCart for User
 				$newShoppingCartData = [
 					'id' => null,
 					'user_id' => $user['id']
