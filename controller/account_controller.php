@@ -44,7 +44,7 @@ class AccountController extends Controller
 	//TODO: Logout Seite interessanter gestalten? Oder auf index weiterleiten und alert anzeigen?
 	public function actionLogout()
 	{
-		if($_SESSION['loggedIn'] === true)
+		if(isLoggedIn())
 		{
 			$_SESSION['loggedIn'] = false;
 		}
