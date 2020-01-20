@@ -9,7 +9,7 @@
       <?php foreach($errors as $error){echo $error."<br>";}?>
    </div>
    <?php endif; ?><br>
-   <input type="text" id="streetInput" name="street" required value = "<?=isset($_POST['street']) ? $_POST['street'] : ''?>" placeholder="street"><br><br>
+   <input type="text" id="firstNameInput" name="firstName" required value = "<?=isset($_POST['firstName']) ? $_POST['firstName'] : ''?>" placeholder="firstname"><br><br>
    <input type="text" id="lastNameInput" name="lastName" required value = "<?=isset($_POST['lastName']) ? $_POST['lastName'] : ''?>" placeholder="lastname"><br><br>
    
    <input type="text" id="streetInput" name="street" required value = "<?=isset($_POST['street']) ? $_POST['street'] : ''?>" placeholder="street"><br>
@@ -28,7 +28,7 @@
    <br>
    <button type="submit" name="submit">register</button>
    
-   <script>
+   <!-- <script>
          var firstName = document.getElementById('firstNameInput');
          firstName.addEventListener('focusout', function(){
             firstName.style.backgroundColor = "white";               
@@ -99,4 +99,4 @@
                   return;
                }
          });
-   </script>
+   </script> -->

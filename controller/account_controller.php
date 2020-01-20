@@ -132,7 +132,7 @@ class AccountController extends Controller
 
 	public function actionSignUp()
 	{
-		$this->_params['title'] = 'BeHop - Registrierung' ;
+		$this->_params['title'] = 'BeHop - Registration' ;
 		if(!isLoggedIn())
 		{
 			if(isset($_POST['submit']))
@@ -428,5 +428,70 @@ class AccountController extends Controller
 			header('Location: ?c=account&a=shoppingcart');
 		}
 	}
+	public function actionChangePassword()
+	{
+		$this->_params['title'] = 'BeHop - Change password' ;
+
+			if(isset($_POST['submit']))
+			{
+				$password1 = $_POST['password1'] ?? null;
+				$password2 = $_POST['password2'] ?? null;
+				$password3 = $_POST['password3'] ?? null;
+
+				if(empty($password1))
+				{
+					$error[] = "Password is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($password2))
+				{
+					$error[] = "New password is missing";
+					$this->_params['errors'] = $error;
+				}
+				if(empty($password3))
+				{
+					$error[] = "New password is missing";
+					$this->_params['errors'] = $error;
+				}
+
+				if($password2 !== $password3)
+				{
+					$error[] = "New password does not match!";
+					$this->_params['errors'] = $error;
+				}
+				else
+				{
+					$userData = User::findOne('email = '. '"'.$_SESSION['userMail'].'"'); 
+					$userID = $userData['id'];
+					$firstName = $userData['firstName'];
+					$lastName = $userData['lastName'];
+					$address_id = $userData['address_id'];
+					$userPassword = password_verify($password1, $userData['password']);
+
+					if($password1 == $userPassword)
+					{
+						$password = password_hash($password3, PASSWORD_DEFAULT);
+						$userData = [
+							'id' => $userID,
+							'email' => $_SESSION['userMail'], 
+							'password' => $password,
+							'firstName' => $firstName, 
+							'lastName' => $lastName,
+							'address_id' => $address_id
+						];
+						$user = new User($userData);
+						$user->save();
+					}
+					else
+					{
+					$error[] = "The current password does not match";
+					$this->_params['errors'] = $error;
+					}
+
+				}
+			}
+
+	}
 }
+
 ?>
