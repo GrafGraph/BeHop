@@ -87,7 +87,7 @@ abstract class BaseModel
             $sql .= ')' . $valueString . ');';
             $statement = $database->prepare($sql);
             $statement->execute();
-
+            
             return true;
         }
         catch(\PDOException $e)

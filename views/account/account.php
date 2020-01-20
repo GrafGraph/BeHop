@@ -103,3 +103,4 @@
         </table>
     </div>
 </div>
+<a href="index.php?c=account&a=changePassword"><button>Change Password</button></a>

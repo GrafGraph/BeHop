@@ -867,3 +867,41 @@
 [2020-01-19 16:17:58 ]before:Array
 [2020-01-19 16:17:58 ]after:
 [2020-01-19 16:17:58 ]
+[2020-01-20 10:51:59 ]
+[2020-01-20 10:53:07 ]
+[2020-01-20 10:54:49 ]Array
+[2020-01-20 11:05:32 ]
+[2020-01-20 11:06:43 ]Array
+[2020-01-20 11:08:11 ]Array
+[2020-01-20 12:16:03 ]
+[2020-01-20 12:16:42 ]
+[2020-01-20 14:25:46 ]email=Array
+[2020-01-20 14:25:46 ]user=
+[2020-01-20 14:26:56 ]email=
+[2020-01-20 14:26:56 ]user=
+[2020-01-20 14:33:18 ]email=
+[2020-01-20 14:33:18 ]user=
+[2020-01-20 16:09:11 ]email=anton.bespalov@fh-erfurt.de
+[2020-01-20 16:09:11 ]user=
+[2020-01-20 16:11:22 ]email=anton.bespalov@fh-erfurt.de
+[2020-01-20 16:11:22 ]user=
+[2020-01-20 16:11:22 ]$2y$10$x8rtYyE3IHsbIt3PIY8LE.qjPCPO/9IV5pcRjM8LexwLL5h5upooa
+[2020-01-20 16:12:11 ]email=anton.bespalov@fh-erfurt.de
+[2020-01-20 16:12:11 ]user=
+[2020-01-20 16:12:11 ]$2y$10$x8rtYyE3IHsbIt3PIY8LE.qjPCPO/9IV5pcRjM8LexwLL5h5upooa
+[2020-01-20 16:12:11 ]$2y$10$.bRKUx4AeK7IlxLmKWDLOOcUUsInfY.IQced.iRtUb9dzP.L61v7W
+[2020-01-20 16:12:58 ]email=anton.bespalov@fh-erfurt.de
+[2020-01-20 16:12:58 ]user=
+[2020-01-20 16:12:58 ]$2y$10$x8rtYyE3IHsbIt3PIY8LE.qjPCPO/9IV5pcRjM8LexwLL5h5upooa
+[2020-01-20 16:12:58 ]$2y$10$nXB1upzVc6tfyq5HIdkYfOwZ9UQVki6V9V.t/8ymjncl/iwW09iSK
+[2020-01-20 16:16:25 ]
+[2020-01-20 16:16:40 ]
+[2020-01-20 16:16:43 ]
+[2020-01-20 16:16:47 ]
+[2020-01-20 16:17:01 ]
+[2020-01-20 16:17:55 ]
+[2020-01-20 16:42:01 ]
+[2020-01-20 16:51:24 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton.bespalov@fh-erfurt.de','$2y$10$TF49n7607NpsP7bogHPEQ.tQvxNEW5DeOaU.G/tZrfR0cxhJ0XESG','Anton','Bespalov','6');
+[2020-01-20 16:52:24 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton.bespalov@fh-erfurt.de','$2y$10$KnJaEYlcr4mXgxW5bQLPguBbc4xTwu9BIfgle1VsOB/Vxdd9UD74u','Anton','Bespalov','6');
+[2020-01-20 16:56:04 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton.bespalov@fh-erfurt.de','$2y$10$vikvZvuDOGLU5elwRc1/luSugWj4cSIsFs4daewYTCNxNWF93BjPq','Anton','Bespalov','6');
+[2020-01-20 17:02:53 ]UPDATE `user` SET email = 'anton.bespalov@fh-erfurt.de',password = '$2y$10$P.7j0WOH3o8eLcIsfv3vv.xfQU4pwA3EeCCr9gkcNc0aPKxWWV.lG',firstName = 'Anton',lastName = 'Bespalov',address_id = '6' WHERE id = 
