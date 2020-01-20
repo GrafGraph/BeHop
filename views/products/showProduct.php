@@ -7,7 +7,11 @@
 <p><?=$product['name']?></p>
 <p>Color: <?=$product['color']?></p>
 <p>In Stock: <?=$product['numberInStock']?></p>
-<p><?=$product['price']?>&euro;</p>
+<p> <?if(isset($product['discountPrice'])) : ?>
+    <span style="text-decoration:line-through;"> <?=$product['price']?>&euro;</span>
+    <span style="color:red;">  <?=$product['discountPrice']?>&euro;</span>
+    <? else : ?> <?=$product['price']?> &euro;
+    <? endif;?></p>
 <p>Description:</br>
 <q><?=$product['description']?></q></p>
 </br>

@@ -113,11 +113,18 @@ class ProductsController extends Controller
 			$products = Product::find($where);	
 		}
 		
-		// Image to product...
+		// Image and Discount to Product...
 		// TODO: Mehrere Images berücksichtigen. MainImage usw. 
 		foreach($products as &$product)
 		{
 			$product['image'] = Image::findOne('product_id = ' . $product['id']);
+
+			if($product['sales_id'] !== null)	// Product in Sale
+			{
+				// Apply Discounts
+				$sale = Sales::findOne('id ='.$product['sales_id']);
+				$product['discountPrice'] = calculateDiscountPrice($product['price'], $sale['discountPercent']);
+			}
 		}
 		$this->_params['products'] = $products;
 		// }
@@ -132,6 +139,12 @@ class ProductsController extends Controller
 		$product = Product::findOne('id = '. htmlspecialchars($_GET['productID']));
 		$this->_params['title'] = 'Behop - '. $product['name'];
 		$this->_params['images'] = Image::find('product_id = ' . $product['id']);
+		if($product['sales_id'] !== null)	// Product in Sale
+		{
+			// Apply Discount
+			$sale = Sales::findOne('id ='.$product['sales_id']);
+			$product['discountPrice'] = calculateDiscountPrice($product['price'], $sale['discountPercent']);
+		}
 		$this->_params['product'] = $product;
 
 		// Add to Cart-Routine

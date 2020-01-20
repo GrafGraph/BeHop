@@ -328,6 +328,7 @@ class AccountController extends Controller
 			}
 		}
 
+		// Choosing the correct Items
 		$shoppingCartItems = array();
 		if(isLoggedIn() || thereAreShoppingCartItemsInSession())
 		{
@@ -352,6 +353,12 @@ class AccountController extends Controller
 					$product = Product::findOne('id = '. $OrderItem['product_id']);
 					$product['quantity'] = $OrderItem['quantity'];
 					$product['image'] = Image::findOne('product_id = '. $product['id']);
+					if($product['sales_id'] !== null)	// Product in Sale
+					{
+						// Apply Discounts
+						$sale = Sales::findOne('id ='.$product['sales_id']);
+						$product['discountPrice'] = calculateDiscountPrice($product['price'], $sale['discountPercent']);
+					}
 					array_push($shoppingCartItems, $product);
 				}
 			}

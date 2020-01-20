@@ -16,7 +16,8 @@ $n = 0; // Counter for indexing the quantity and remove submit
     <form Method="POST">
         <? foreach($shoppingCartItems as $item) :
             $quantity = isset($_POST['submit'.$n]) ? htmlspecialchars($_POST['submit'.$n]) : htmlspecialchars($item['quantity']);
-            $priceForPosition = $item['price'] * $quantity;
+            $itemPrice = isset($item['discountPrice']) ? $item['discountPrice'] : $item['price'];
+            $priceForPosition = $itemPrice * $quantity;
             $priceTotal +=  $priceForPosition;
             $imageUrl = $item['image']['imageUrl'];
             $imageAltText =$item['image']['altText'];?>
@@ -24,7 +25,12 @@ $n = 0; // Counter for indexing the quantity and remove submit
                 <a href="index.php?c=products&a=showProduct&productID=<?=$item['id']?>" style="max-width:80px;float:left;">
                 <img src=<?=$imageUrl?> alt=<?=$imageAltText?> style="max-height:70px;max-width:70px;"></a>
                 <p><?=$item['name']?>, <?=$item['color']?></p>
-                <p><?=$item['price']?>&euro; x 
+                <p>     <? if(isset($item['discountPrice'])) : ?>
+                        <span style="text-decoration:line-through;"> <?=$item['price']?>&euro;</span>
+                        <span style="color:red;">  <?=$item['discountPrice']?>&euro;</span>
+                        <? else : ?> <?=$item['price']?> &euro;
+                        <? endif;?>
+                x 
                 <input type="number" name=<?="quantity".$n?> min="1" max=<?=$item['numberInStock']?> value=<?=$quantity?>> 
                 = <?=$priceForPosition?>&euro;
                 <label for="remove">Remove?</label>

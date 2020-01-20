@@ -71,7 +71,12 @@
         <a href="index.php?c=products&a=showProduct&productID=<?=$product['id']?>">
         <img src="<?=$product['image']['imageUrl'] ?? ''?>" alt="<?= $product['image']['altText'] ?? ''?>">
         <div>
-            <?=$product['name']?> only <?=$product['price']?> &euro;
+            <?=$product['name']?> only
+            <? if(isset($product['discountPrice'])) : ?>
+            <span style="text-decoration:line-through;"> <?=$product['price']?>&euro;</span>
+            <span style="color:red;">  <?=$product['discountPrice']?>&euro;</span>
+            <? else : ?> <?=$product['price']?> &euro;
+            <? endif;?>
         </div></br>
         </div></a>
     <? endforeach; ?>

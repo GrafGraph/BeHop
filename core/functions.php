@@ -71,6 +71,12 @@ function highlightNavIcon($action)
     return $result;
 }
 
+// Calculate discountPrice for discount given in integer Percent and rounds up to second decimal
+function calculateDiscountPrice($standardPrice, $discountInPercent)
+{
+    return round( ($standardPrice * (1 - ($discountInPercent / 100))), 2);
+}
+
 // filterOptions is array of possible options. attribute is needed key for filterOption
 // Example: getFilterOptions($categories, 'name', 'cat');
 function printFilterOptions($filterOptions, $attribute, $urlAttribute)
@@ -96,5 +102,5 @@ function printFilterOptions($filterOptions, $attribute, $urlAttribute)
     // 		$html .= '>'.$category['name'].'</option>';
     // 
     
-}   
+}
 ?>
