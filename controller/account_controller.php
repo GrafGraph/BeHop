@@ -55,77 +55,73 @@ class AccountController extends Controller
 	public function actionAccount()
 	{
 		$this->_params['title'] = 'BeHop - Mein Account' ;
-		if(isLoggedIn())
+		if(isLoggedIn() && isset($_SESSION['userID']))
 		{
-			if(isset($_SESSION['userID']))
+			// Updating Account Information
+			if(isset($_POST['submit']))
 			{
-				// Updating Account Information
-				if(isset($_POST['submit']))
+				// TODO: UserID aus Session zu holen ist unsicher? -> Wenn UserID inkorrekt ist oder verändert wird,
+				// funktioniert der Rest hier nicht...
+				$insertError = [];
+				$userData = [
+					'id' => $_SESSION['userID'],
+					'email' => $_POST['email'],
+					'firstName' => $_POST['firstName'],
+					'lastName' => $_POST['lastName'],
+				];
+
+				// Address already in Database?
+				$addressData = [
+					'city' => $_POST['city'],
+					'street' => $_POST['street'],
+					'number' => $_POST['number'],
+					'zip' => $_POST['zip'],
+					'country' => $_POST['country']
+				];
+				$existingAddress = Address::findAddress($addressData);
+				if($existingAddress != null)
 				{
-					// TODO: UserID aus Session zu holen ist unsicher? -> Wenn UserID inkorrekt ist oder verändert wird,
-					// funktioniert der Rest hier nicht...
-					$insertError = [];
-					$userData = [
-						'id' => $_SESSION['userID'],
-						'email' => $_POST['email'],
-						'firstName' => $_POST['firstName'],
-						'lastName' => $_POST['lastName'],
-					];
-
-					// Address already in Database?
-					$addressData = [
-						'city' => $_POST['city'],
-						'street' => $_POST['street'],
-						'number' => $_POST['number'],
-						'zip' => $_POST['zip'],
-						'country' => $_POST['country']
-					];
-					$existingAddress = Address::findAddress($addressData);
-					if($existingAddress != null)
-					{
-						$userData['address_id'] = $existingAddress['id'];
-					}
-					else
-					{
-						// Create new Address
-						$newAddress = new Address($addressData);
-						if(!Address::validateAddress($newAddress, $insertError)){
-							$this->_params['insertError'] = $insertError;
-							return false;
-						}
-						else
-						{
-							$newAddress->save();
-							$newAddress = Address::findAddress($addressData);
-							$userData['address_id'] = $newAddress['id'];
-						}
-					}
-
-					// Updating User
-					$newUser = new User($userData);
-					if(!User::validateUser($newUser, $insertError)){
+					$userData['address_id'] = $existingAddress['id'];
+				}
+				else
+				{
+					// Create new Address
+					$newAddress = new Address($addressData);
+					if(!Address::validateAddress($newAddress, $insertError)){
 						$this->_params['insertError'] = $insertError;
 						return false;
 					}
 					else
 					{
-						$newUser->save();
+						$newAddress->save();
+						$newAddress = Address::findAddress($addressData);
+						$userData['address_id'] = $newAddress['id'];
 					}
-					
 				}
-				// Current Account Information
-				$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
-				$this->_params['user'] = $user;
 
-				$address = Address::findOne('id = ' . $user['address_id']);
-				$this->_params['address'] = $address;
-
-				$latestOrder = Order::findSorted('createdAt', 'user_id = '.$_SESSION['userID'], true);
-				if(isset($latestOrder))
+				// Updating User
+				$newUser = new User($userData);
+				if(!User::validateUser($newUser, $insertError)){
+					$this->_params['insertError'] = $insertError;
+					return false;
+				}
+				else
 				{
-					$this->_params['latestOrder'] = $latestOrder;
+					$newUser->save();
 				}
+				
+			}
+			// Current Account Information
+			$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
+			$this->_params['user'] = $user;
 
+			$address = Address::findOne('id = ' . $user['address_id']);
+			$this->_params['address'] = $address;
+
+			$latestOrder = Order::findSorted('createdAt', 'user_id = '.$_SESSION['userID'], true);
+			if(!empty($latestOrder))
+			{
+				$this->_params['latestOrder'] = $latestOrder[0];
 			}
 		}
 		else
@@ -399,7 +395,7 @@ class AccountController extends Controller
 			elseif(isset($_POST['placeOrder']))	// create new order
 			{
 			// open PayPal in new Tab
-			
+
 				$this->_params['step'] = 3;
 			// find ShoppingCart to User
 				$shoppingCart=ShoppingCart::findOne('user_id ='.$user['id']);

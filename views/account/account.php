@@ -82,15 +82,15 @@
             <!-- <span class="error-message" id="errorZIP"></span> -->
         </div>
 
-        <button type="submit" name="submit">Save</button>
-        <button type="reset">Reset Inputs</button>
+        <button type="submit" name="submit">Save Changes</button>
+        <button type="reset">Reset Changes</button>
     </form>
     
     <div>
          <table style="width:30%">
          <tr>
             <td>Last Order</td>
-            <td><?=isset($latestOrder['createdAt']) ? $latestOrder['createdAt'] : null; ?></td>
+            <td><?=isset($latestOrder['createdAt']) ? $latestOrder['createdAt'] : 'None'; ?></td>
           </tr>
           <tr>
             <td>Account created</td>
@@ -98,7 +98,7 @@
           </tr>
           <tr>
             <td>Last Update</td>
-            <td><?=isset($user['updatedAt']) ? $user['updatedAt'] : null; ?></td>
+            <td><?=isset($user['updatedAt']) ? $user['updatedAt'] : 'None'; ?></td>
           </tr>
         </table>
     </div>

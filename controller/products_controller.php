@@ -185,9 +185,4 @@ class ProductsController extends Controller
 			}
 		}
 	}
-
-	public function actionSales()
-	{
-		$this->_params['title'] = 'Behop - Sales';
-	}
 }
