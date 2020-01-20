@@ -21,7 +21,9 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `behop`
 --
-
+drop schema if exists behop;
+create database behop;
+use behop;
 -- --------------------------------------------------------
 
 --
