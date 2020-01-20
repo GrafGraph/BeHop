@@ -905,3 +905,7 @@
 [2020-01-20 16:52:24 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton.bespalov@fh-erfurt.de','$2y$10$KnJaEYlcr4mXgxW5bQLPguBbc4xTwu9BIfgle1VsOB/Vxdd9UD74u','Anton','Bespalov','6');
 [2020-01-20 16:56:04 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton.bespalov@fh-erfurt.de','$2y$10$vikvZvuDOGLU5elwRc1/luSugWj4cSIsFs4daewYTCNxNWF93BjPq','Anton','Bespalov','6');
 [2020-01-20 17:02:53 ]UPDATE `user` SET email = 'anton.bespalov@fh-erfurt.de',password = '$2y$10$P.7j0WOH3o8eLcIsfv3vv.xfQU4pwA3EeCCr9gkcNc0aPKxWWV.lG',firstName = 'Anton',lastName = 'Bespalov',address_id = '6' WHERE id = 
+[2020-01-20 18:47:12 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton-bespalov@gmx.de','$2y$10$1MEvioJpNME0sMIN9taipOMT/lgce0C7IkRL8AmWWHonuN0v.79ru','Anton','Bespalov','5');
+[2020-01-20 18:47:12 ]INSERT INTO `shoppingCart` (`id`,`createdAt`,`updatedAt`,`user_id`) VALUES (NULL,NULL,NULL,'7');
+[2020-01-20 18:47:28 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton-bespalov@gmx.de','$2y$10$gGuc3T8iNFx4COwkKxkcyODXQ6NB/ctvMmGOk./ymNbOx9.sGZKPa','Anton','Bespalov','5');
+[2020-01-20 18:47:28 ]INSERT INTO `shoppingCart` (`id`,`createdAt`,`updatedAt`,`user_id`) VALUES (NULL,NULL,NULL,'7');
