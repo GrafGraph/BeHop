@@ -35,7 +35,7 @@
     <h2>Select Payment Method</h2>
     <p>Total= <?=$priceTotal?>&euro;</p>
     <div>
-        <form method="POST" target="_blank">
+        <form method="POST">
             <ul style="list-style-type:none;">
                 <!-- TODO: Required machen -->
                 <!-- TODO: Falls nur Paypal, dann immerhin ordentlich einbinden! -->
@@ -54,16 +54,14 @@
             </ul> 
             <br>
             <div>
-                <button type="submit" name="placeOrder">Place Order</button>
+            <button type="submit" name="placeOrder">Place Order</button>
+                
             </div>
         </form>
     </div>
 <? elseif($step === 3) : ?>
-    <h2>Complete!</h2>
-    <div>
-        <p>Your Order will be processed</p>
-    </div>
-    <h2>Thank You!</h2>
+    <a href="index.php?c=products&a=products">
+    <img src="assets/images/checkout/thanksForYourOrder<?=random_int(1,3)?>.png" alt="Continue Shopping" style="margin:15px;"> </a>
 <? else : ?>
     <h2>OOPS... We could not find your Order...</h2>
 <? endif; ?>
