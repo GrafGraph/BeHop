@@ -1,3 +1,812 @@
+[2020-01-11 14:33:23 ]test
+[2020-01-11 14:34:26 ]SELECT * FROM `user` WHERE email = hip.hop@fh-erfurt.de;
+[2020-01-11 14:34:44 ]SELECT * FROM `user` WHERE email = hip.hop@fh-erfurt.de;
+[2020-01-11 14:39:35 ]SELECT * FROM `user` WHERE email = 'hip.hop@fh-erfurt.de';
+[2020-01-11 14:39:42 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:39:42 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 14:39:42 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtArray;
+[2020-01-11 14:42:39 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:42:39 ]SELECT * FROM `address` WHERE id ='';
+[2020-01-11 14:42:39 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtArray;
+[2020-01-11 14:42:41 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:42:41 ]SELECT * FROM `address` WHERE id ='';
+[2020-01-11 14:42:41 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtArray;
+[2020-01-11 14:43:53 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:43:53 ]SELECT * FROM `address` WHERE id ='';
+[2020-01-11 14:43:53 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtArray;
+[2020-01-11 14:44:01 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:44:01 ]SELECT * FROM `address` WHERE id ='';
+[2020-01-11 14:44:01 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtArray;
+[2020-01-11 14:45:01 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:45:01 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 14:45:01 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtArray;
+[2020-01-11 14:47:23 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:47:23 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 14:47:23 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtArray;
+[2020-01-11 14:52:32 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:52:32 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 14:52:32 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtArray;
+[2020-01-11 14:52:53 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:52:53 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 14:52:53 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtArray;
+[2020-01-11 14:55:20 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:55:20 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 14:55:20 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtArray;
+[2020-01-11 14:55:57 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:55:57 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 14:55:57 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtdesc;
+[2020-01-11 14:56:05 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:56:05 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 14:56:05 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtdesc;
+[2020-01-11 14:57:52 ]anton ist der allercoolste
+[2020-01-11 14:57:52 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:57:52 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 14:57:52 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtdesc;
+[2020-01-11 14:58:17 ]anton ist der allercoolste
+[2020-01-11 14:58:17 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:58:17 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 14:58:17 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtdesc;
+[2020-01-11 14:59:35 ]anton ist der allercoolste
+[2020-01-11 14:59:35 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:59:35 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 14:59:35 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtdesc;
+[2020-01-11 14:59:36 ]anton ist der allercoolste
+[2020-01-11 14:59:36 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 14:59:36 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 14:59:36 ]SELECT * FROM `order` WHERE user_id ='1';Order by createdAtdesc;
+[2020-01-11 15:00:36 ]anton ist der allercoolste
+[2020-01-11 15:00:36 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:00:36 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 15:00:36 ]SELECT * FROM `order` WHERE user_id ='1';Order by 'createdAt' desc;
+[2020-01-11 15:02:28 ]anton ist der allercoolste
+[2020-01-11 15:02:28 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:02:28 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 15:02:29 ]SELECT * FROM `order` WHERE user_id ='1';Order by 'createdAt' desc;
+[2020-01-11 15:04:11 ]anton ist der allercoolste
+[2020-01-11 15:04:11 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:04:11 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 15:04:11 ]SELECT * FROM `order` WHERE user_id = '1';
+[2020-01-11 15:05:44 ]anton ist der allercoolste
+[2020-01-11 15:05:44 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:05:45 ]Hippie
+[2020-01-11 15:05:45 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 15:05:45 ]SELECT * FROM `order` WHERE user_id = '1';
+[2020-01-11 15:06:57 ]anton ist der allercoolste
+[2020-01-11 15:06:57 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:06:57 ]Hippie
+[2020-01-11 15:06:57 ]SELECT * FROM `address` WHERE id ='1';
+[2020-01-11 15:06:57 ]SELECT * FROM `order` WHERE user_id = '1';
+[2020-01-11 15:08:00 ]anton ist der allercoolste
+[2020-01-11 15:08:00 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:08:00 ]Hippie
+[2020-01-11 15:08:00 ]SELECT * FROM `address` WHERE id =1;
+[2020-01-11 15:08:00 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:08:02 ]anton ist der allercoolste
+[2020-01-11 15:08:02 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:08:02 ]Hippie
+[2020-01-11 15:08:02 ]SELECT * FROM `address` WHERE id =1;
+[2020-01-11 15:08:02 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:08:09 ]anton ist der allercoolste
+[2020-01-11 15:08:09 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:08:09 ]Hippie
+[2020-01-11 15:08:09 ]SELECT * FROM `address` WHERE id =1;
+[2020-01-11 15:08:09 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:08:15 ]anton ist der allercoolste
+[2020-01-11 15:08:15 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:08:15 ]Hippie
+[2020-01-11 15:08:15 ]SELECT * FROM `address` WHERE id =1;
+[2020-01-11 15:08:15 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:12:34 ]anton ist der allercoolste
+[2020-01-11 15:12:34 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:12:34 ]Hippie
+[2020-01-11 15:12:34 ]SELECT * FROM `address` WHERE id =1;
+[2020-01-11 15:12:34 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:13:13 ]anton ist der allercoolste
+[2020-01-11 15:13:13 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:13:13 ]Hippie
+[2020-01-11 15:13:13 ]SELECT * FROM `address` WHERE id = 1;
+[2020-01-11 15:13:13 ]
+[2020-01-11 15:13:13 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:14:17 ]anton ist der allercoolste
+[2020-01-11 15:14:17 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:14:17 ]Hippie
+[2020-01-11 15:14:17 ]SELECT * FROM `address` WHERE id = 1;
+[2020-01-11 15:14:17 ]1
+[2020-01-11 15:14:17 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:14:56 ]anton ist der allercoolste
+[2020-01-11 15:14:56 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:14:56 ]Hippie
+[2020-01-11 15:14:57 ]SELECT * FROM `address` WHERE id = 1;
+[2020-01-11 15:14:57 ]1
+[2020-01-11 15:14:57 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:44:30 ]SELECT * FROM `user` WHERE email = 'hip.hop@fh-erfurt.de';
+[2020-01-11 15:45:12 ]SELECT * FROM `user` WHERE email = 'hip.hop@fh-erfurt.de';
+[2020-01-11 15:55:47 ]anton ist der allercoolste
+[2020-01-11 15:55:47 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:55:47 ]Hippie
+[2020-01-11 15:55:47 ]SELECT * FROM `address` WHERE id = 1;
+[2020-01-11 15:55:47 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:55:50 ]anton ist der allercoolste
+[2020-01-11 15:55:50 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:55:50 ]Hippie
+[2020-01-11 15:55:50 ]SELECT * FROM `address` WHERE id = 1;
+[2020-01-11 15:55:50 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 15:56:02 ]anton ist der allercoolste
+[2020-01-11 15:56:02 ]SELECT * FROM `user` WHERE ID ='1';
+[2020-01-11 15:56:02 ]Hippie
+[2020-01-11 15:56:02 ]SELECT * FROM `address` WHERE id = 1;
+[2020-01-11 15:56:02 ]SELECT * FROM `order` WHERE user_id = 1;
+[2020-01-11 17:20:24 ]SELECT * FROM `user` WHERE email = 'hip.hop@fh-erfurt.de';
+[2020-01-11 17:39:00 ]grüße aus __set
+[2020-01-11 17:54:37 ]grüße aus __set
+[2020-01-11 19:10:09 ]anton ist der allercoolste
+[2020-01-11 19:10:09 ]Hippie
+[2020-01-11 19:11:00 ]anton ist der allercoolste
+[2020-01-11 19:11:00 ]Hippie
+[2020-01-11 19:12:22 ]grüße aus __set
+[2020-01-11 19:12:38 ]grüße aus __set
+[2020-01-12 10:28:54 ]Array
+[2020-01-12 10:28:54 ]
+[2020-01-12 10:28:54 ]Jordans Supercool
+[2020-01-12 10:31:47 ]Jordans Supercool
+[2020-01-12 10:36:20 ]
+[2020-01-12 10:36:31 ]Jordans Supercool
+[2020-01-12 10:37:38 ]
+[2020-01-12 10:37:48 ]
+[2020-01-12 10:38:40 ]
+[2020-01-12 10:40:18 ]Array
+[2020-01-12 10:40:18 ]Jordans Supercool
+[2020-01-12 10:40:18 ]
+[2020-01-12 10:41:19 ]
+[2020-01-12 10:41:19 ]
+[2020-01-12 10:41:19 ]
+[2020-01-12 10:45:43 ]1
+[2020-01-12 10:45:43 ]
+[2020-01-12 10:45:43 ]
+[2020-01-12 10:46:04 ]1
+[2020-01-12 10:46:04 ]
+[2020-01-12 10:49:45 ]1
+[2020-01-12 10:49:45 ]
+[2020-01-12 10:50:09 ]1
+[2020-01-12 10:50:09 ]
+[2020-01-12 10:50:34 ]/assets/images/products/mainImage-1.jpg
+[2020-01-12 10:50:34 ]
+[2020-01-12 10:51:46 ]/assets/images/products/mainImage-1.jpg
+[2020-01-12 10:51:46 ]
+[2020-01-12 10:52:49 ]/assets/images/products/mainImage-1.jpg
+[2020-01-12 10:52:49 ]
+[2020-01-12 10:55:29 ]/assets/images/products/mainImage-1.jpg
+[2020-01-12 10:55:29 ]Jordans Supercool
+[2020-01-12 10:55:53 ]/assets/images/products/mainImage-1.jpg
+[2020-01-12 10:55:53 ]
+[2020-01-12 10:56:23 ]/assets/images/products/mainImage-1.jpg
+[2020-01-12 10:56:23 ]
+[2020-01-12 10:58:49 ]
+[2020-01-12 10:58:49 ]
+[2020-01-12 10:59:00 ]/assets/images/products/mainImage-1.jpg
+[2020-01-12 10:59:00 ]
+[2020-01-12 10:59:24 ]/assets/images/products/mainImage-1.jpg
+[2020-01-12 10:59:24 ]
+[2020-01-12 11:01:44 ]/assets/images/products/mainImage-1.jpg
+[2020-01-12 11:01:44 ]
+[2020-01-12 11:02:15 ]/assets/images/products/mainImage-1.jpg
+[2020-01-12 11:02:15 ]
+[2020-01-12 11:03:15 ]
+[2020-01-12 11:03:27 ]
+[2020-01-12 11:03:50 ]Jordans Supercool
+[2020-01-12 11:04:04 ]
+[2020-01-12 11:05:25 ]Array
+[2020-01-12 11:06:06 ]/assets/images/products/mainImage-1.jpg
+[2020-01-12 15:26:45 ]anton ist der allercoolste
+[2020-01-12 15:26:45 ]Hippie
+[2020-01-12 15:48:58 ]anton ist der allercoolste
+[2020-01-12 15:48:58 ]Hippie
+[2020-01-12 16:09:38 ]warum funktioniert es nicht?
+[2020-01-12 16:16:54 ]warum funktioniert es nicht?
+[2020-01-12 16:18:21 ]grüße aus 
+[2020-01-13 10:04:37 ]grüße aus 
+[2020-01-13 10:41:02 ]legt er einen user an?
+[2020-01-13 10:49:05 ]legt er einen user an?
+[2020-01-13 10:50:04 ]legt er einen user an?
+[2020-01-13 10:50:54 ]legt er einen user an?
+[2020-01-13 12:22:58 ]legt er einen user an?
+[2020-01-13 12:33:23 ]rtzuio
+[2020-01-13 12:33:23 ]rtzuio
+[2020-01-13 12:33:23 ]legt er einen user an?
+[2020-01-13 12:34:39 ]rtzuio
+[2020-01-13 12:34:39 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:34:39 ]rtzuio
+[2020-01-13 12:34:39 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:34:39 ]legt er einen user an?
+[2020-01-13 12:36:44 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Erfurt,''jzfuzhzjf,''2,'',''Deutschland,');
+[2020-01-13 12:36:44 ]rtzuio
+[2020-01-13 12:36:44 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:36:44 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton.bespalov@fh-erfurt.de,''$2y$10$5BPxp0zibNhpepCgUGF.xuzHee0ePjSSBwpAQTAISS2jLr1s28Cj2,''fds,''juzffuz,'',');
+[2020-01-13 12:36:44 ]rtzuio
+[2020-01-13 12:36:44 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:36:44 ]legt er einen user an?
+[2020-01-13 12:41:23 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (','','',''Erfurt,''Lilo-Herrmann-Straße ,''2,''99086,''Deutschland,');
+[2020-01-13 12:41:23 ]rtzuio
+[2020-01-13 12:41:23 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:41:24 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (','','',''anton.bespalov@fh-erfurt.de,''$2y$10$99UzN10jmqXk6w4UlLOHweAXuqutPhd89voew5FgES/FU7LEsoQvW,''Anton,''Bespalov,'',');
+[2020-01-13 12:41:24 ]rtzuio
+[2020-01-13 12:41:24 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:41:24 ]legt er einen user an?
+[2020-01-13 12:54:08 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Erfurt,''Lilo-Herrmann-Straße ,''2,''34376,''Deutschland,');
+[2020-01-13 12:54:08 ]rtzuio
+[2020-01-13 12:54:08 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:54:08 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton.bespalov@fh-erfurt.de,''$2y$10$yQ6ZYt0yYUByAlLx2CT1S.F/XmfC6ZV6MyIWWSm2lXI2wR/YSNfCm,''Anton,''Bespalov,'',');
+[2020-01-13 12:54:08 ]rtzuio
+[2020-01-13 12:54:08 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:54:08 ]legt er einen user an?
+[2020-01-13 12:56:18 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Erfurt\',''Lilo-Herrmann-Straße \',''2\',''34376\',''Deutschland\',');
+[2020-01-13 12:56:18 ]rtzuio
+[2020-01-13 12:56:18 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:56:18 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton.bespalov@fh-erfurt.de\',''$2y$10$EKXDP.GpqpYQF3tpBv.uL.JoNPSkcCMToB3cIddm.by3WDQ3Fz0Iq\',''Anton\',''Bespalov\',''\',');
+[2020-01-13 12:56:18 ]rtzuio
+[2020-01-13 12:56:18 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:56:18 ]legt er einen user an?
+[2020-01-13 12:56:52 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Erfurt\',''Lilo-Herrmann-Straße \',''2\',''99086\',''Deutschland\',');
+[2020-01-13 12:56:52 ]rtzuio
+[2020-01-13 12:56:52 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:56:52 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'a.bespalov@gmx.de\',''$2y$10$VGkRRBFMVV6icTwEpKbYzu3YbjRvhRZnDcggNfWrRRdf8TIEq0nOa\',''Anton\',''Bespalov\',''\',');
+[2020-01-13 12:56:52 ]rtzuio
+[2020-01-13 12:56:52 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:56:52 ]legt er einen user an?
+[2020-01-13 12:58:34 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Erfurt,''Lilo-Herrmann-Straße ,''31,''99086,''Deutschland,');
+[2020-01-13 12:58:34 ]rtzuio
+[2020-01-13 12:58:34 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:58:34 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'s.müller@gmail.com,''$2y$10$eqCYUybWOQjA79q9.GOFyOPJmPgtx0daoXTR0rOQzz2gsRKGxh7eO,''Sebastian ,''Müller,'',');
+[2020-01-13 12:58:34 ]rtzuio
+[2020-01-13 12:58:34 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 12:58:34 ]legt er einen user an?
+[2020-01-13 13:01:25 ]Erfurt
+[2020-01-13 13:01:25 ]'Erfurt,'
+[2020-01-13 13:01:25 ]Lilo-Herrmann-Straße 
+[2020-01-13 13:01:25 ]'Lilo-Herrmann-Straße ,'
+[2020-01-13 13:01:25 ]31
+[2020-01-13 13:01:25 ]'31,'
+[2020-01-13 13:01:25 ]99086
+[2020-01-13 13:01:25 ]'99086,'
+[2020-01-13 13:01:25 ]Deutschland
+[2020-01-13 13:01:25 ]'Deutschland,'
+[2020-01-13 13:01:25 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Erfurt,''Lilo-Herrmann-Straße ,''31,''99086,''Deutschland,');
+[2020-01-13 13:01:25 ]rtzuio
+[2020-01-13 13:01:25 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 13:01:25 ]s.müller@gmail.com
+[2020-01-13 13:01:25 ]'s.müller@gmail.com,'
+[2020-01-13 13:01:25 ]$2y$10$H1tcHqeJvIwRrE65po2y3OE1R4mudpf2grzB4FkTwHU6MBmmblOHq
+[2020-01-13 13:01:25 ]'$2y$10$H1tcHqeJvIwRrE65po2y3OE1R4mudpf2grzB4FkTwHU6MBmmblOHq,'
+[2020-01-13 13:01:25 ]Sebastian 
+[2020-01-13 13:01:25 ]'Sebastian ,'
+[2020-01-13 13:01:25 ]Müller
+[2020-01-13 13:01:25 ]'Müller,'
+[2020-01-13 13:01:25 ]
+[2020-01-13 13:01:25 ]','
+[2020-01-13 13:01:25 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'s.müller@gmail.com,''$2y$10$H1tcHqeJvIwRrE65po2y3OE1R4mudpf2grzB4FkTwHU6MBmmblOHq,''Sebastian ,''Müller,'',');
+[2020-01-13 13:01:25 ]rtzuio
+[2020-01-13 13:01:25 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 13:01:25 ]legt er einen user an?
+[2020-01-13 13:02:55 ]Erfurt
+[2020-01-13 13:02:55 ]'Erfurt',
+[2020-01-13 13:02:55 ]Lilo-Herrmann-Straße 
+[2020-01-13 13:02:55 ]'Lilo-Herrmann-Straße ',
+[2020-01-13 13:02:55 ]31
+[2020-01-13 13:02:55 ]'31',
+[2020-01-13 13:02:55 ]99086
+[2020-01-13 13:02:55 ]'99086',
+[2020-01-13 13:02:55 ]Deutschland
+[2020-01-13 13:02:55 ]'Deutschland',
+[2020-01-13 13:02:55 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Erfurt','Lilo-Herrmann-Straße ','31','99086','Deutschland');
+[2020-01-13 13:02:55 ]s.müller@gmail.com
+[2020-01-13 13:02:55 ]'s.müller@gmail.com',
+[2020-01-13 13:02:55 ]$2y$10$X4F0M2sIeE0zW95I7zfupeeZDDbX0WqRTfEqtiPdGCv2Hqk.sFSEq
+[2020-01-13 13:02:55 ]'$2y$10$X4F0M2sIeE0zW95I7zfupeeZDDbX0WqRTfEqtiPdGCv2Hqk.sFSEq',
+[2020-01-13 13:02:55 ]Sebastian 
+[2020-01-13 13:02:55 ]'Sebastian ',
+[2020-01-13 13:02:55 ]Müller
+[2020-01-13 13:02:55 ]'Müller',
+[2020-01-13 13:02:55 ]Array
+[2020-01-13 13:02:55 ],
+[2020-01-13 13:02:55 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'s.müller@gmail.com','$2y$10$X4F0M2sIeE0zW95I7zfupeeZDDbX0WqRTfEqtiPdGCv2Hqk.sFSEq','Sebastian ','Müller');
+[2020-01-13 13:02:55 ]rtzuio
+[2020-01-13 13:02:55 ]SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[2020-01-13 13:02:55 ]legt er einen user an?
+[2020-01-13 13:09:55 ]
+[2020-01-13 13:09:56 ]legt er einen user an?
+[2020-01-13 13:11:48 ]
+[2020-01-13 13:11:48 ]legt er einen user an?
+[2020-01-13 13:17:34 ]legt er einen user an?
+[2020-01-13 13:19:03 ]SELECT * FROM `user` WHERE email = "anton-bespalov@gmx.de";
+[2020-01-13 13:19:03 ]SELECT * FROM `address` WHERE city = "Immenhausen" and street = "Fasanenweg " and number = "2" and zip = "34376" and country = "Deutschland";;
+[2020-01-13 13:19:03 ]SELECT * FROM `address` WHERE city = "Immenhausen" and street = "Fasanenweg " and number = "2" and zip = "34376" and country = "Deutschland";;
+[2020-01-13 13:19:04 ]legt er einen user an?
+[2020-01-13 13:20:37 ]SELECT * FROM `user` WHERE email = "anton-bespalov@gmx.de";
+[2020-01-13 13:20:37 ]SELECT * FROM `address` WHERE city = "Immenhausen" and street = "Fasanenweg " and number = "2" and zip = "34376" and country = "Deutschland";;
+[2020-01-13 13:20:37 ]SELECT * FROM `address` WHERE city = "Immenhausen" and street = "Fasanenweg " and number = "2" and zip = "34376" and country = "Deutschland";;
+[2020-01-13 13:20:37 ]legt er einen user an?
+[2020-01-13 13:23:42 ]anton-bespalov@gmx.de
+[2020-01-13 13:23:42 ]'anton-bespalov@gmx.de',
+[2020-01-13 13:23:42 ]$2y$10$3Eyx.pE11R/QXxCfuXjwleH.Pj1rB8bu0uLQhA7N9H49aDqbS4cRG
+[2020-01-13 13:23:42 ]'$2y$10$3Eyx.pE11R/QXxCfuXjwleH.Pj1rB8bu0uLQhA7N9H49aDqbS4cRG',
+[2020-01-13 13:23:42 ]Anton
+[2020-01-13 13:23:42 ]'Anton',
+[2020-01-13 13:23:42 ]Bespalov
+[2020-01-13 13:23:42 ]'Bespalov',
+[2020-01-13 13:23:42 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton-bespalov@gmx.de','$2y$10$3Eyx.pE11R/QXxCfuXjwleH.Pj1rB8bu0uLQhA7N9H49aDqbS4cRG','Anton','Bespalov',NULL);
+[2020-01-13 13:23:42 ]rtzuio
+[2020-01-13 13:23:42 ]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'address_id' cannot be null
+[2020-01-13 13:23:42 ]legt er einen user an?
+[2020-01-13 13:25:10 ]Immenhausen
+[2020-01-13 13:25:10 ]'Immenhausen',
+[2020-01-13 13:25:10 ]Fasanenweg 
+[2020-01-13 13:25:10 ]'Fasanenweg ',
+[2020-01-13 13:25:10 ]2
+[2020-01-13 13:25:10 ]'2',
+[2020-01-13 13:25:10 ]34376
+[2020-01-13 13:25:10 ]'34376',
+[2020-01-13 13:25:10 ]Deutschland
+[2020-01-13 13:25:10 ]'Deutschland',
+[2020-01-13 13:25:10 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Immenhausen','Fasanenweg ','2','34376','Deutschland');
+[2020-01-13 13:25:10 ]anton-bespalov@gmx.de
+[2020-01-13 13:25:10 ]'anton-bespalov@gmx.de',
+[2020-01-13 13:25:10 ]$2y$10$WspHc2nYg/srM9B5zkhVH.C3.e4pPmWQqjFDt0IAjrkadZrB4gn/a
+[2020-01-13 13:25:10 ]'$2y$10$WspHc2nYg/srM9B5zkhVH.C3.e4pPmWQqjFDt0IAjrkadZrB4gn/a',
+[2020-01-13 13:25:10 ]Anton
+[2020-01-13 13:25:10 ]'Anton',
+[2020-01-13 13:25:10 ]Bespalov
+[2020-01-13 13:25:10 ]'Bespalov',
+[2020-01-13 13:25:10 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton-bespalov@gmx.de','$2y$10$WspHc2nYg/srM9B5zkhVH.C3.e4pPmWQqjFDt0IAjrkadZrB4gn/a','Anton','Bespalov',NULL);
+[2020-01-13 13:25:10 ]rtzuio
+[2020-01-13 13:25:10 ]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'address_id' cannot be null
+[2020-01-13 13:25:10 ]legt er einen user an?
+[2020-01-13 13:26:52 ]Immenhausen
+[2020-01-13 13:26:52 ]'Immenhausen',
+[2020-01-13 13:26:52 ]Fasanenweg 
+[2020-01-13 13:26:52 ]'Fasanenweg ',
+[2020-01-13 13:26:52 ]2
+[2020-01-13 13:26:52 ]'2',
+[2020-01-13 13:26:52 ]34376
+[2020-01-13 13:26:52 ]'34376',
+[2020-01-13 13:26:52 ]Deutschland
+[2020-01-13 13:26:52 ]'Deutschland',
+[2020-01-13 13:26:52 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Immenhausen','Fasanenweg ','2','34376','Deutschland');
+[2020-01-13 13:26:52 ]anton-bespalov@gmx.de
+[2020-01-13 13:26:52 ]'anton-bespalov@gmx.de',
+[2020-01-13 13:26:52 ]$2y$10$gU6hdh0OAfSvhgbsQjo1o.an78./PX.b3jFSyMFUIdII0oHWbxBka
+[2020-01-13 13:26:52 ]'$2y$10$gU6hdh0OAfSvhgbsQjo1o.an78./PX.b3jFSyMFUIdII0oHWbxBka',
+[2020-01-13 13:26:52 ]Anton
+[2020-01-13 13:26:52 ]'Anton',
+[2020-01-13 13:26:52 ]Bespalov
+[2020-01-13 13:26:52 ]'Bespalov',
+[2020-01-13 13:26:52 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton-bespalov@gmx.de','$2y$10$gU6hdh0OAfSvhgbsQjo1o.an78./PX.b3jFSyMFUIdII0oHWbxBka','Anton','Bespalov',NULL);
+[2020-01-13 13:26:52 ]rtzuio
+[2020-01-13 13:26:52 ]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'address_id' cannot be null
+[2020-01-13 13:26:52 ]legt er einen user an?
+[2020-01-13 13:28:21 ]Immenhausen
+[2020-01-13 13:28:21 ]'Immenhausen',
+[2020-01-13 13:28:21 ]Fasanenweg 
+[2020-01-13 13:28:21 ]'Fasanenweg ',
+[2020-01-13 13:28:21 ]2
+[2020-01-13 13:28:21 ]'2',
+[2020-01-13 13:28:21 ]34376
+[2020-01-13 13:28:21 ]'34376',
+[2020-01-13 13:28:21 ]Deutschland
+[2020-01-13 13:28:21 ]'Deutschland',
+[2020-01-13 13:28:21 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Immenhausen','Fasanenweg ','2','34376','Deutschland');
+[2020-01-13 13:28:21 ]1
+[2020-01-13 13:28:22 ]anton-bespalov@gmx.de
+[2020-01-13 13:28:22 ]'anton-bespalov@gmx.de',
+[2020-01-13 13:28:22 ]$2y$10$.uH8NheP.EaoRoJTn6Gdvuz5QV.Uk2V6WpxCJuXPyuYlVromxlSFK
+[2020-01-13 13:28:22 ]'$2y$10$.uH8NheP.EaoRoJTn6Gdvuz5QV.Uk2V6WpxCJuXPyuYlVromxlSFK',
+[2020-01-13 13:28:22 ]Anton
+[2020-01-13 13:28:22 ]'Anton',
+[2020-01-13 13:28:22 ]Bespalov
+[2020-01-13 13:28:22 ]'Bespalov',
+[2020-01-13 13:28:22 ]5
+[2020-01-13 13:28:22 ]'5',
+[2020-01-13 13:28:22 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton-bespalov@gmx.de','$2y$10$.uH8NheP.EaoRoJTn6Gdvuz5QV.Uk2V6WpxCJuXPyuYlVromxlSFK','Anton','Bespalov','5');
+[2020-01-13 13:28:22 ]legt er einen user an?
+[2020-01-13 13:29:29 ]Immenhausen
+[2020-01-13 13:29:29 ]'Immenhausen',
+[2020-01-13 13:29:29 ]Fasanenweg 
+[2020-01-13 13:29:29 ]'Fasanenweg ',
+[2020-01-13 13:29:29 ]2
+[2020-01-13 13:29:29 ]'2',
+[2020-01-13 13:29:29 ]34376
+[2020-01-13 13:29:29 ]'34376',
+[2020-01-13 13:29:29 ]Deutschland
+[2020-01-13 13:29:29 ]'Deutschland',
+[2020-01-13 13:29:29 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Immenhausen','Fasanenweg ','2','34376','Deutschland');
+[2020-01-13 13:29:29 ]1
+[2020-01-13 13:29:29 ]anton-bespalov@gmx.de
+[2020-01-13 13:29:29 ]'anton-bespalov@gmx.de',
+[2020-01-13 13:29:29 ]$2y$10$rKeZEMTSVu5zt63RGhejT.UhpgsY6mLAGCFbVJB0fmQgW3xlQvIKy
+[2020-01-13 13:29:29 ]'$2y$10$rKeZEMTSVu5zt63RGhejT.UhpgsY6mLAGCFbVJB0fmQgW3xlQvIKy',
+[2020-01-13 13:29:29 ]Anton
+[2020-01-13 13:29:29 ]'Anton',
+[2020-01-13 13:29:29 ]Bespalov
+[2020-01-13 13:29:29 ]'Bespalov',
+[2020-01-13 13:29:29 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton-bespalov@gmx.de','$2y$10$rKeZEMTSVu5zt63RGhejT.UhpgsY6mLAGCFbVJB0fmQgW3xlQvIKy','Anton','Bespalov',NULL);
+[2020-01-13 13:29:29 ]rtzuio
+[2020-01-13 13:29:29 ]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'address_id' cannot be null
+[2020-01-13 13:29:29 ]legt er einen user an?
+[2020-01-13 13:29:55 ]Immenhausen
+[2020-01-13 13:29:55 ]'Immenhausen',
+[2020-01-13 13:29:55 ]Fasanenweg 
+[2020-01-13 13:29:55 ]'Fasanenweg ',
+[2020-01-13 13:29:55 ]2
+[2020-01-13 13:29:55 ]'2',
+[2020-01-13 13:29:55 ]34376
+[2020-01-13 13:29:55 ]'34376',
+[2020-01-13 13:29:55 ]Deutschland
+[2020-01-13 13:29:55 ]'Deutschland',
+[2020-01-13 13:29:55 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Immenhausen','Fasanenweg ','2','34376','Deutschland');
+[2020-01-13 13:29:55 ]1
+[2020-01-13 13:29:55 ]anton-bespalov@gmx.de
+[2020-01-13 13:29:55 ]'anton-bespalov@gmx.de',
+[2020-01-13 13:29:55 ]$2y$10$iU8IPHBhRm/w.2aAXzXneO5M.pigmYDgjsf9MNY2751fG8/EiwsVS
+[2020-01-13 13:29:55 ]'$2y$10$iU8IPHBhRm/w.2aAXzXneO5M.pigmYDgjsf9MNY2751fG8/EiwsVS',
+[2020-01-13 13:29:55 ]Anton
+[2020-01-13 13:29:55 ]'Anton',
+[2020-01-13 13:29:55 ]Bespalov
+[2020-01-13 13:29:55 ]'Bespalov',
+[2020-01-13 13:29:55 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton-bespalov@gmx.de','$2y$10$iU8IPHBhRm/w.2aAXzXneO5M.pigmYDgjsf9MNY2751fG8/EiwsVS','Anton','Bespalov',NULL);
+[2020-01-13 13:29:55 ]rtzuio
+[2020-01-13 13:29:55 ]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'address_id' cannot be null
+[2020-01-13 13:29:55 ]legt er einen user an?
+[2020-01-13 13:30:04 ]Immenhausen
+[2020-01-13 13:30:04 ]'Immenhausen',
+[2020-01-13 13:30:04 ]Fasanenweg 
+[2020-01-13 13:30:04 ]'Fasanenweg ',
+[2020-01-13 13:30:04 ]2
+[2020-01-13 13:30:04 ]'2',
+[2020-01-13 13:30:04 ]34376
+[2020-01-13 13:30:04 ]'34376',
+[2020-01-13 13:30:04 ]Deutschland
+[2020-01-13 13:30:04 ]'Deutschland',
+[2020-01-13 13:30:04 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Immenhausen','Fasanenweg ','2','34376','Deutschland');
+[2020-01-13 13:30:04 ]1
+[2020-01-13 13:30:04 ]anton-bespalov@gmx.de
+[2020-01-13 13:30:04 ]'anton-bespalov@gmx.de',
+[2020-01-13 13:30:04 ]$2y$10$FrK0q53iNOXVXFwAERuEleGJTW/M8L.A321YY5UadDI447R6g5n9u
+[2020-01-13 13:30:04 ]'$2y$10$FrK0q53iNOXVXFwAERuEleGJTW/M8L.A321YY5UadDI447R6g5n9u',
+[2020-01-13 13:30:04 ]Anton
+[2020-01-13 13:30:04 ]'Anton',
+[2020-01-13 13:30:04 ]Bespalov
+[2020-01-13 13:30:04 ]'Bespalov',
+[2020-01-13 13:30:04 ]5
+[2020-01-13 13:30:04 ]'5',
+[2020-01-13 13:30:04 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'anton-bespalov@gmx.de','$2y$10$FrK0q53iNOXVXFwAERuEleGJTW/M8L.A321YY5UadDI447R6g5n9u','Anton','Bespalov','5');
+[2020-01-13 13:30:04 ]rtzuio
+[2020-01-13 13:30:04 ]SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'anton-bespalov@gmx.de' for key 'email_UNIQUE'
+[2020-01-13 13:30:04 ]legt er einen user an?
+[2020-01-13 13:33:19 ]Immenhausen
+[2020-01-13 13:33:19 ]'Immenhausen',
+[2020-01-13 13:33:19 ]Arschstraße
+[2020-01-13 13:33:19 ]'Arschstraße',
+[2020-01-13 13:33:19 ]31
+[2020-01-13 13:33:19 ]'31',
+[2020-01-13 13:33:19 ]34376
+[2020-01-13 13:33:19 ]'34376',
+[2020-01-13 13:33:19 ]Deutschland
+[2020-01-13 13:33:19 ]'Deutschland',
+[2020-01-13 13:33:19 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Immenhausen','Arschstraße','31','34376','Deutschland');
+[2020-01-13 13:33:19 ]1
+[2020-01-13 13:33:19 ]s.müller@gmail.com
+[2020-01-13 13:33:19 ]'s.müller@gmail.com',
+[2020-01-13 13:33:19 ]$2y$10$B/C6NwXDUnTxz/LB2biCkeCUIIv2NdYWhMkG6FJFTiA5tCYZk5PDa
+[2020-01-13 13:33:19 ]'$2y$10$B/C6NwXDUnTxz/LB2biCkeCUIIv2NdYWhMkG6FJFTiA5tCYZk5PDa',
+[2020-01-13 13:33:19 ]Sebastian 
+[2020-01-13 13:33:19 ]'Sebastian ',
+[2020-01-13 13:33:19 ]Müller
+[2020-01-13 13:33:19 ]'Müller',
+[2020-01-13 13:33:19 ]10
+[2020-01-13 13:33:19 ]'10',
+[2020-01-13 13:33:19 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'s.müller@gmail.com','$2y$10$B/C6NwXDUnTxz/LB2biCkeCUIIv2NdYWhMkG6FJFTiA5tCYZk5PDa','Sebastian ','Müller','10');
+[2020-01-13 13:33:19 ]legt er einen user an?
+[2020-01-13 13:36:25 ]Immenhausen
+[2020-01-13 13:36:25 ]'Immenhausen',
+[2020-01-13 13:36:25 ]Arschstraße
+[2020-01-13 13:36:25 ]'Arschstraße',
+[2020-01-13 13:36:25 ]31
+[2020-01-13 13:36:25 ]'31',
+[2020-01-13 13:36:25 ]34376
+[2020-01-13 13:36:25 ]'34376',
+[2020-01-13 13:36:25 ]Deutschland
+[2020-01-13 13:36:25 ]'Deutschland',
+[2020-01-13 13:36:25 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Immenhausen','Arschstraße','31','34376','Deutschland');
+[2020-01-13 13:36:25 ]s.müller@gmail.com
+[2020-01-13 13:36:25 ]'s.müller@gmail.com',
+[2020-01-13 13:36:25 ]$2y$10$QFbNt7KQBLOh4o1AYdqU4.mg38/4SvLYMIEyXMovhY1AG.SiU32C6
+[2020-01-13 13:36:25 ]'$2y$10$QFbNt7KQBLOh4o1AYdqU4.mg38/4SvLYMIEyXMovhY1AG.SiU32C6',
+[2020-01-13 13:36:25 ]Sebastian 
+[2020-01-13 13:36:25 ]'Sebastian ',
+[2020-01-13 13:36:25 ]Müller
+[2020-01-13 13:36:25 ]'Müller',
+[2020-01-13 13:36:25 ]10
+[2020-01-13 13:36:25 ]'10',
+[2020-01-13 13:36:25 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'s.müller@gmail.com','$2y$10$QFbNt7KQBLOh4o1AYdqU4.mg38/4SvLYMIEyXMovhY1AG.SiU32C6','Sebastian ','Müller','10');
+[2020-01-13 13:36:25 ]rtzuio
+[2020-01-13 13:36:25 ]SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 's.müller@gmail.com' for key 'email_UNIQUE'
+[2020-01-13 13:39:24 ]Erfurt
+[2020-01-13 13:39:24 ]'Erfurt',
+[2020-01-13 13:39:24 ]Grolmannstraße
+[2020-01-13 13:39:24 ]'Grolmannstraße',
+[2020-01-13 13:39:24 ]13
+[2020-01-13 13:39:24 ]'13',
+[2020-01-13 13:39:24 ]99086
+[2020-01-13 13:39:24 ]'99086',
+[2020-01-13 13:39:24 ]Deutschland
+[2020-01-13 13:39:24 ]'Deutschland',
+[2020-01-13 13:39:24 ]INSERT INTO `address` (`id`,`createdAt`,`updatedAt`,`city`,`street`,`number`,`zip`,`country`) VALUES (NULL,NULL,NULL,'Erfurt','Grolmannstraße','13','99086','Deutschland');
+[2020-01-13 13:39:24 ]michael.hopp@fh-erfurt.de
+[2020-01-13 13:39:24 ]'michael.hopp@fh-erfurt.de',
+[2020-01-13 13:39:24 ]$2y$10$NRrKdrIgPIO8rH0t2uIz7eAHRNzPCWfinyl73mxw1vdBmqCptrbii
+[2020-01-13 13:39:24 ]'$2y$10$NRrKdrIgPIO8rH0t2uIz7eAHRNzPCWfinyl73mxw1vdBmqCptrbii',
+[2020-01-13 13:39:24 ]Michael
+[2020-01-13 13:39:24 ]'Michael',
+[2020-01-13 13:39:24 ]Hopp
+[2020-01-13 13:39:24 ]'Hopp',
+[2020-01-13 13:39:24 ]12
+[2020-01-13 13:39:24 ]'12',
+[2020-01-13 13:39:24 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'michael.hopp@fh-erfurt.de','$2y$10$NRrKdrIgPIO8rH0t2uIz7eAHRNzPCWfinyl73mxw1vdBmqCptrbii','Michael','Hopp','12');
+[2020-01-13 13:40:58 ]anton ist der allercoolste
+[2020-01-13 13:40:58 ]Michael
+[2020-01-13 13:43:56 ]bonse@gmail.com
+[2020-01-13 13:43:56 ]'bonse@gmail.com',
+[2020-01-13 13:43:56 ]$2y$10$MJKla6Qd/36GWyAt2Z/6FeMusw6WRQJqxGLSPEmhOGVRY8evC2PKm
+[2020-01-13 13:43:56 ]'$2y$10$MJKla6Qd/36GWyAt2Z/6FeMusw6WRQJqxGLSPEmhOGVRY8evC2PKm',
+[2020-01-13 13:43:56 ]Maximilian
+[2020-01-13 13:43:56 ]'Maximilian',
+[2020-01-13 13:43:56 ]Gerhold
+[2020-01-13 13:43:56 ]'Gerhold',
+[2020-01-13 13:43:56 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'bonse@gmail.com','$2y$10$MJKla6Qd/36GWyAt2Z/6FeMusw6WRQJqxGLSPEmhOGVRY8evC2PKm','Maximilian','Gerhold',NULL);
+[2020-01-13 13:43:56 ]rtzuio
+[2020-01-13 13:43:56 ]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'address_id' cannot be null
+[2020-01-13 13:50:22 ]
+[2020-01-13 13:50:22 ]'',
+[2020-01-13 13:50:22 ]$2y$10$cG3LSICWLRebky7l3Rta8OmxCWM16jztC7jscAO8w1OdAgTsLv5Ya
+[2020-01-13 13:50:22 ]'$2y$10$cG3LSICWLRebky7l3Rta8OmxCWM16jztC7jscAO8w1OdAgTsLv5Ya',
+[2020-01-13 13:50:22 ]
+[2020-01-13 13:50:22 ]'',
+[2020-01-13 13:50:22 ]p
+[2020-01-13 13:50:22 ]'p',
+[2020-01-13 13:50:22 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'','$2y$10$cG3LSICWLRebky7l3Rta8OmxCWM16jztC7jscAO8w1OdAgTsLv5Ya','','p',NULL);
+[2020-01-13 13:50:22 ]rtzuio
+[2020-01-13 13:50:22 ]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'address_id' cannot be null
+[2020-01-13 13:51:38 ]
+[2020-01-13 13:51:38 ]'',
+[2020-01-13 13:51:38 ]$2y$10$A2m2/kPgk2ZkQpbsjr8jr.sEqXnf0osKbGD3Dvecds68oOLEjdb4K
+[2020-01-13 13:51:38 ]'$2y$10$A2m2/kPgk2ZkQpbsjr8jr.sEqXnf0osKbGD3Dvecds68oOLEjdb4K',
+[2020-01-13 13:51:38 ]sdfsdf
+[2020-01-13 13:51:38 ]'sdfsdf',
+[2020-01-13 13:51:38 ]
+[2020-01-13 13:51:38 ]'',
+[2020-01-13 13:51:38 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'','$2y$10$A2m2/kPgk2ZkQpbsjr8jr.sEqXnf0osKbGD3Dvecds68oOLEjdb4K','sdfsdf','',NULL);
+[2020-01-13 13:51:38 ]rtzuio
+[2020-01-13 13:51:38 ]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'address_id' cannot be null
+[2020-01-13 13:52:51 ]
+[2020-01-13 13:52:51 ]'',
+[2020-01-13 13:52:51 ]$2y$10$ABFCEjrkhWwq4hsK81rm4OniOuD5kiipT76vRHB2VblDPgNIlSR0W
+[2020-01-13 13:52:51 ]'$2y$10$ABFCEjrkhWwq4hsK81rm4OniOuD5kiipT76vRHB2VblDPgNIlSR0W',
+[2020-01-13 13:52:51 ]asdvc
+[2020-01-13 13:52:51 ]'asdvc',
+[2020-01-13 13:52:51 ]
+[2020-01-13 13:52:51 ]'',
+[2020-01-13 13:52:51 ]INSERT INTO `user` (`id`,`createdAt`,`updatedAt`,`email`,`password`,`firstName`,`lastName`,`address_id`) VALUES (NULL,NULL,NULL,'','$2y$10$ABFCEjrkhWwq4hsK81rm4OniOuD5kiipT76vRHB2VblDPgNIlSR0W','asdvc','',NULL);
+[2020-01-13 13:52:51 ]rtzuio
+[2020-01-13 13:52:51 ]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'address_id' cannot be null
+[2020-01-13 14:34:20 ]anton ist der allercoolste
+[2020-01-13 14:34:20 ]tom
+[2020-01-13 14:34:47 ]anton ist der allercoolste
+[2020-01-13 14:34:47 ]tom
+[2020-01-13 14:35:19 ]anton ist der allercoolste
+[2020-01-13 14:35:19 ]tom
+[2020-01-13 16:21:47 ]anton ist der allercoolste
+[2020-01-13 16:21:47 ]tom
+[2020-01-13 19:43:39 ]anton ist der allercoolste
+[2020-01-13 19:43:39 ]Marie
+[2020-01-13 19:43:49 ]anton ist der allercoolste
+[2020-01-13 19:43:49 ]Marie
+[2020-01-13 19:48:15 ]anton ist der allercoolste
+[2020-01-13 19:48:15 ]Marie
+[2020-01-13 19:48:18 ]anton ist der allercoolste
+[2020-01-13 19:48:18 ]Marie
+[2020-01-13 20:35:37 ]anton ist der allercoolste
+[2020-01-13 20:35:37 ]admin
+[2020-01-13 20:46:47 ]Array
+[2020-01-13 20:46:47 ]1
+[2020-01-13 20:46:47 ]1
+[2020-01-13 20:49:07 ]
+[2020-01-13 20:49:07 ]1
+[2020-01-13 20:49:07 ]1
+[2020-01-13 20:49:57 ]
+[2020-01-13 20:49:57 ]1
+[2020-01-13 20:49:57 ]1
+[2020-01-13 20:50:11 ]
+[2020-01-13 20:50:11 ]1
+[2020-01-13 20:50:11 ]1
+[2020-01-13 20:50:30 ]
+[2020-01-13 20:50:30 ]2
+[2020-01-13 20:50:30 ]1
+[2020-01-13 20:52:35 ]$shoppingCart_id=Array
+[2020-01-13 20:54:38 ]$_SESSION[userID] =5
+[2020-01-13 20:54:38 ]$shoppingCart_id=Array
+[2020-01-13 20:58:19 ]$_SESSION[userID] =5
+[2020-01-13 20:58:19 ]$shoppingCart_id=Array
+[2020-01-14 13:48:02 ]asssssssas
+[2020-01-14 13:48:02 ]asas
+[2020-01-14 13:48:02 ]test
+[2020-01-14 13:48:02 ]test
+[2020-01-14 13:49:06 ]asssssssas
+[2020-01-14 13:49:06 ]asas
+[2020-01-14 13:49:06 ]test
+[2020-01-14 13:49:06 ]test
+[2020-01-14 12:38:26 ]userID = Array
+[2020-01-14 12:41:28 ]userID = 6
+[2020-01-15 22:36:22 ]cat =
+[2020-01-15 22:36:22 ]prodName =Jordans Supercool
+[2020-01-15 22:36:22 ]prodName =Harem Jogginghose
+[2020-01-15 22:39:25 ]cat =
+[2020-01-15 22:39:25 ]prodName =Jordans Supercool
+[2020-01-15 22:39:25 ]prodName =Harem Jogginghose
+[2020-01-15 22:39:29 ]cat =
+[2020-01-15 22:39:29 ]prodName =Jordans Supercool
+[2020-01-15 22:39:29 ]prodName =Harem Jogginghose
+[2020-01-15 22:40:10 ]cat =
+[2020-01-15 22:40:10 ]prodName =Jordans Supercool
+[2020-01-15 22:40:10 ]prodName =Harem Jogginghose
+[2020-01-15 22:40:50 ]cat =
+[2020-01-15 22:40:50 ]prodName =Jordans Supercool
+[2020-01-15 22:40:50 ]prodName =Harem Jogginghose
+[2020-01-15 22:41:25 ]cat =
+[2020-01-15 22:41:25 ]prodName =Jordans Supercool
+[2020-01-15 22:41:25 ]prodName =Harem Jogginghose
+[2020-01-15 22:41:28 ]cat =
+[2020-01-15 22:41:28 ]prodName =Jordans Supercool
+[2020-01-15 22:41:28 ]prodName =Harem Jogginghose
+[2020-01-15 22:44:02 ]cat =
+[2020-01-15 22:44:02 ]prodName =Jordans Supercool
+[2020-01-15 22:44:02 ]prodName =Harem Jogginghose
+[2020-01-15 22:46:08 ]cat =
+[2020-01-15 22:46:30 ]color =
+[2020-01-15 22:47:13 ]color =
+[2020-01-16 11:03:06 ]Black
+[2020-01-16 11:03:40 ]Black
+[2020-01-16 20:10:38 ]asas
+[2020-01-16 20:13:39 ]asas
+[2020-01-16 20:21:36 ]asas
+[2020-01-16 20:22:32 ]asas
+[2020-01-16 20:24:50 ]asas
+[2020-01-16 20:25:16 ]asas
+[2020-01-16 20:25:40 ]asas
+[2020-01-16 20:30:09 ]asas
+[2020-01-16 20:31:52 ]asas
+[2020-01-16 20:33:38 ]asas
+[2020-01-16 20:34:52 ]asas
+[2020-01-16 20:35:01 ]asas
+[2020-01-16 20:41:18 ]asas
+[2020-01-16 20:49:48 ]asas
+[2020-01-16 20:50:10 ]asas
+[2020-01-16 20:55:48 ]asas
+[2020-01-16 20:57:23 ]asas
+[2020-01-16 21:00:21 ]asas
+[2020-01-16 21:00:43 ]asas
+[2020-01-16 21:03:43 ]asas
+[2020-01-17 08:13:51 ]asas
+[2020-01-17 09:02:10 ]asas
+[2020-01-17 09:02:42 ]asas
+[2020-01-17 10:09:03 ]asas
+[2020-01-17 10:09:25 ]asas
+[2020-01-17 10:09:59 ]asas
+[2020-01-17 10:11:30 ]asas
+[2020-01-17 10:11:38 ]asas
+[2020-01-17 10:11:56 ]asas
+[2020-01-17 10:11:58 ]asas
+[2020-01-17 10:12:15 ]asas
+[2020-01-17 10:14:08 ]asas
+[2020-01-17 10:14:59 ]asas
+[2020-01-17 10:15:11 ]asas
+[2020-01-17 10:15:55 ]asas
+[2020-01-17 10:16:17 ]asas
+[2020-01-17 10:16:42 ]asas
+[2020-01-17 10:19:46 ]asas
+[2020-01-17 10:22:29 ]asas
+[2020-01-17 10:23:40 ]asas
+[2020-01-17 10:23:58 ]asas
+[2020-01-17 10:24:07 ]asas
+[2020-01-17 10:24:32 ]asas
+[2020-01-17 10:24:55 ]asas
+[2020-01-17 10:25:55 ]asas
+[2020-01-17 10:27:49 ]asas
+[2020-01-17 10:28:43 ]asas
+[2020-01-17 10:31:59 ]asas
+[2020-01-17 10:32:24 ]asas
+[2020-01-17 10:32:36 ]asas
+[2020-01-17 10:33:38 ]asas
+[2020-01-17 10:34:57 ]asas
+[2020-01-17 10:35:05 ]asas
+[2020-01-17 10:36:12 ]asas
+[2020-01-17 10:36:39 ]asas
+[2020-01-17 10:37:22 ]asas
+[2020-01-17 10:37:29 ]asas
+[2020-01-17 10:37:49 ]asas
+[2020-01-17 10:37:52 ]asas
+[2020-01-17 10:38:36 ]asas
+[2020-01-17 10:39:35 ]asas
+[2020-01-17 10:41:26 ]asas
+[2020-01-17 10:41:51 ]asas
+[2020-01-17 10:43:08 ]asas
+[2020-01-17 10:43:48 ]asas
+[2020-01-17 10:44:16 ]asas
+[2020-01-17 10:44:21 ]asas
+[2020-01-17 10:44:35 ]asas
+[2020-01-17 10:44:49 ]asas
+[2020-01-17 10:45:43 ]asas
+[2020-01-17 10:45:48 ]asas
+[2020-01-17 10:49:50 ]asas
+[2020-01-17 10:50:25 ]asas
+[2020-01-17 10:50:48 ]asas
+[2020-01-17 10:51:08 ]asas
+[2020-01-17 10:51:27 ]asas
+[2020-01-17 10:52:04 ]asas
+[2020-01-17 10:52:14 ]asas
+[2020-01-17 10:52:33 ]asas
+[2020-01-17 10:59:03 ]asas
+[2020-01-17 10:59:23 ]asas
+[2020-01-17 11:00:22 ]asas
+[2020-01-17 11:00:28 ]asas
+[2020-01-17 11:00:31 ]asas
+[2020-01-17 11:00:32 ]asas
+[2020-01-17 11:00:33 ]asas
+[2020-01-17 11:00:45 ]asas
+[2020-01-17 11:00:56 ]asas
+[2020-01-17 11:00:56 ]asas
+[2020-01-17 11:02:07 ]asas
+[2020-01-17 11:02:11 ]asas
+[2020-01-17 11:02:28 ]asas
+[2020-01-17 11:02:56 ]asas
+[2020-01-17 11:03:40 ]asas
+[2020-01-17 11:04:08 ]asas
+[2020-01-17 11:05:12 ]asas
+[2020-01-17 11:05:22 ]asas
+[2020-01-17 11:06:08 ]asas
+[2020-01-17 11:07:14 ]asas
+[2020-01-17 11:07:24 ]asas
+[2020-01-17 11:08:03 ]asas
+[2020-01-17 11:08:19 ]asas
+[2020-01-17 11:08:46 ]asas
+[2020-01-17 11:10:51 ]asas
+[2020-01-17 11:11:10 ]asas
+[2020-01-17 11:11:20 ]asas
+[2020-01-17 11:11:30 ]asas
+[2020-01-17 11:11:45 ]asas
+[2020-01-17 11:12:40 ]asas
+[2020-01-17 11:13:11 ]asas
+[2020-01-17 11:15:33 ]asas
+[2020-01-17 11:18:20 ]asas
+[2020-01-17 11:19:21 ]asas
+[2020-01-17 11:19:32 ]asas
+[2020-01-17 11:19:52 ]asas
+[2020-01-17 11:20:10 ]asas
+[2020-01-17 11:20:26 ]asas
+[2020-01-17 11:21:06 ]asas
+[2020-01-17 11:26:37 ]asas
+[2020-01-17 11:27:07 ]asas
+[2020-01-17 11:27:33 ]asas
+[2020-01-17 11:28:05 ]asas
+[2020-01-17 11:28:25 ]asas
+[2020-01-18 17:19:44 ]asas
+[2020-01-18 17:27:59 ]asas
+[2020-01-18 17:28:02 ]asas
+[2020-01-18 17:28:16 ]asas
+[2020-01-18 17:28:32 ]asas
+[2020-01-18 17:29:05 ]asas
+[2020-01-18 17:30:26 ]asas
+[2020-01-18 17:34:45 ]asas
+[2020-01-19 19:32:02 ]asas
+[2020-01-19 19:33:43 ]asas
 [2020-01-18 13:52:26 ]Maxprice=Array
 [2020-01-18 13:53:38 ]Maxprice=Array
 [2020-01-18 13:53:59 ]Maxprice=
