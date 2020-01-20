@@ -133,23 +133,53 @@ class ProductsController extends Controller
 			$quantity = $_POST['quantity'];
 			$cartItem['product_id'] = $product['id'];
 			$cartItem['quantity'] = $quantity;
-			if(isLoggedIn())
+			if(isLoggedIn())	// New or Updated Entry in table shoppingcart_has_product
 			{
-				// New Entry in table shoppingcart_has_product
+				
 				$shoppingCart = ShoppingCart::findOne('user_id = '.$_SESSION['userID']);
-				$shoppingCart_has_productData = [
+				// Find existing shoppingCart_has_product Entry
+				$shoppingCart_has_product = ShoppingCart_has_product::findOne(
+					'shoppingCart_id = '.$shoppingCart['id'].' and product_id ='.$product['id']);
+				if(!empty($shoppingCart_has_product))	// Udate existing Entry
+				{
+					$shoppingCart_has_productData = [
+						'id' => $shoppingCart_has_product['id'],
+						'shoppingCart_id' => $shoppingCart['id'],
+						'product_id' => $cartItem['product_id'],
+						'quantity' => ($shoppingCart_has_product['quantity'] + $quantity)
+						];
+				}
+				else	// Create new Entry: id => null
+				{
+					$shoppingCart_has_productData = [
 					'shoppingCart_id' => $shoppingCart['id'],
 					'product_id' => $cartItem['product_id'],
 					'quantity' => $quantity
-				];
-				$shoppingCart_has_product = new ShoppingCart_has_product($shoppingCart_has_productData);
-				$shoppingCart_has_product->save();
+					];
+				}
+				$newShoppingCart_has_product = new ShoppingCart_has_product($shoppingCart_has_productData);
+				$newShoppingCart_has_product->save();
 			}
-			elseif(isset($_SESSION['shoppingCartItems']) && !empty($_SESSION['shoppingCartItems']))
+			elseif(thereAreShoppingCartItemsInSession())	// New or Updated Entry in Sessions shoppingCartItems
 			{
-				array_push($_SESSION['shoppingCartItems'], $cartItem);
+				// Find existing Entry with same product_id
+				$alreadyExisting = false;
+				foreach($_SESSION['shoppingCartItems'] as &$item)
+				{
+					if($item['product_id'] === $product['id'])	// Update quantity in Entry
+					{
+						$item['quantity'] += $quantity;
+						$alreadyExisting = true;
+						break;
+					}
+				}
+				if(!$alreadyExisting)	// New Entry
+				{
+					array_push($_SESSION['shoppingCartItems'], $cartItem);	
+				}
+				
 			}
-			else
+			else	// Create new Session-ShoppingCart
 			{
 				$_SESSION['shoppingCartItems'] = array($cartItem);
 			}

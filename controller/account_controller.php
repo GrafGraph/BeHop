@@ -376,43 +376,44 @@ class AccountController extends Controller
 		$this->_params['title'] = 'BeHop - Checkout' ;
 		// Must be logged in to place an order
 		if(isLoggedIn())
-		{
-			$this->_params['priceTotal'] = $_POST['priceTotal'];
-				
+		{		
 			// TODO: Doppelter code: Ähnlich wie actionAccount...
 			$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
 			$this->_params['user'] = $user;
 			$address = Address::findOne('id = ' . $user['address_id']);
 			$this->_params['address'] = $address;
 
-			if(isset($_POST['checkout']))
+			if(isset($_POST['checkout']))	// confirm data
 			{
+				$this->_params['priceTotal'] = $_POST['priceTotal'];
 				$this->_params['step'] = 1;
+				
 			}
-			elseif(isset($_POST['submit']))
+			elseif(isset($_POST['submit']))	// select payment
 			{
+				$this->_params['priceTotal'] = $_POST['priceTotal'];
 				$this->_params['step'] = 2;
-				// select payment? -> always PayPal?
-				// confirm data
+				// TODO: always PayPal?
 			}
-			elseif(isset($_POST['placeOrder']))
+			elseif(isset($_POST['placeOrder']))	// create new order
 			{
+			// open PayPal in new Tab
+			
 				$this->_params['step'] = 3;
-				// create new order
-					// find ShoppingCart to User
-					$shoppingCart=ShoppingCart::findOne('user_id ='.$user['id']);
-					$orderData = [
-						'user_id' => $user['id'],
-						'shoppingcart_id' => $shoppingCart['id']
-					];
-					$order = new Order($orderData);
-					$order->save();
+			// find ShoppingCart to User
+				$shoppingCart=ShoppingCart::findOne('user_id ='.$user['id']);
+				$orderData = [
+					'user_id' => $user['id'],
+					'shoppingcart_id' => $shoppingCart['id']
+				];
+				$order = new Order($orderData);
+				$order->save();
 				
 				// TODO: Must be easier than this...
-				// "Delete" ShoppingCart for User
+			// "Delete" ShoppingCart for User
 				$updatedShoppingCart = new ShoppingCart($shoppingCart);
 				$updatedShoppingCart->setUserIDNull();
-				// Create new empty ShoppingCart for User
+			// Create new empty ShoppingCart for User
 				$newShoppingCartData = [
 					'id' => null,
 					'user_id' => $user['id']
