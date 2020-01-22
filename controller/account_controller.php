@@ -488,7 +488,7 @@ class AccountController extends Controller
 						];
 						$user = new User($userData);
 						$user->save();
-
+						header('Location: ?c=account&a=passwordChanged');
 					}
 					else
 					{
@@ -497,7 +497,6 @@ class AccountController extends Controller
 					}
 
 				}
-				header('Location: ?c=account&a=passwordChanged');
 			}
 
 	}
