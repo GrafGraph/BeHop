@@ -1,3 +1,9 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/Maffotter/BeHop/badge/master?s=17405f65133fc8d0a0ea804b4fb6c4fac532809e)](https://www.codefactor.io/repository/github/Maffotter/BeHop/overview/master)
+
+![CodeFactor](https://img.shields.io/badge/PHP-7.4.1-blue)
+![CodeFactor](https://img.shields.io/badge/xampp-7.3.5-orange)
+![CodeFactor](https://img.shields.io/badge/MariaDB-10.4.11-Yellow)
+
 # README des HipHop Online-Shops BeHop
 Erstellt von Anton Bespalov und Michael Hopp im Rahmen des Website-Projekts in GWP und DWP an der Fachhochschule Erfurt.
 [Aufgabenstellung](WEB-WS1920-Projektaufgabe-1.pdf)
