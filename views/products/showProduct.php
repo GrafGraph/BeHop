@@ -1,4 +1,4 @@
-<h1>Sie interessieren sich also für &raquo;<?=$product['name']?>&laquo;</h1>
+<h1>&raquo;<?=$product['name']?>&laquo;</h1>
 
 <div style="float:left; width:50%">
     <img src="<?=$images[0]['imageUrl']?>" alt="<?=$images[0]['imageAltText']?>">

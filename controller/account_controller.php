@@ -397,12 +397,9 @@ class AccountController extends Controller
 			{
 				$this->_params['priceTotal'] = $_POST['priceTotal'];
 				$this->_params['step'] = 2;
-				// TODO: always PayPal?
 			}
-			elseif(isset($_POST['placeOrder']))	// create new order
+			elseif(isset($_POST['paid']))	// create new order
 			{
-			// open PayPal in new Tab
-
 				$this->_params['step'] = 3;
 			// find ShoppingCart to User
 				$shoppingCart=ShoppingCart::findOne('user_id ='.$user['id']);
@@ -435,6 +432,24 @@ class AccountController extends Controller
 			header('Location: ?c=account&a=shoppingcart');
 		}
 	}
+
+	public function actionPayment()
+	{
+		$this->_params['title'] = 'BeHop - Payment' ;
+		if(isset($_POST['placeOrder']))
+		{
+			if(isset($_POST['paymentMethod']) && isset($_POST['priceTotal']))
+			{
+				$this->_params['paymentMethod'] = $_POST['paymentMethod'];
+				$this->_params['priceTotal'] = $_POST['priceTotal']; 
+				// if($_POST['paymentMethod'] == "paypal")
+				// {
+					 
+				// }
+			}
+		}
+	}
+
 	public function actionChangePassword()
 	{
 		$this->_params['title'] = 'BeHop - Change password' ;
@@ -500,6 +515,7 @@ class AccountController extends Controller
 			}
 
 	}
+
 	public function actionPasswordChanged()
 	{
 		$this->_params['title'] = 'BeHop - Password changed!' ;

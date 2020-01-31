@@ -35,10 +35,9 @@
     <h2>Select Payment Method</h2>
     <p>Total= <?=$priceTotal?>&euro;</p>
     <div>
-        <form method="POST">
+        <form method="POST" action="?c=account&a=payment">
             <ul style="list-style-type:none;">
                 <!-- TODO: Required machen -->
-                <!-- TODO: Falls nur Paypal, dann immerhin ordentlich einbinden! -->
                 <li>
                     <!-- <label for="paypal">PayPal</label> -->
                     <input type="radio" name="paymentMethod" value="paypal" id="paypal">PayPal
@@ -54,8 +53,8 @@
             </ul> 
             <br>
             <div>
+            <input type="hidden" name="priceTotal" value=<?=$priceTotal?>>
             <button type="submit" name="placeOrder">Place Order</button>
-                
             </div>
         </form>
     </div>
