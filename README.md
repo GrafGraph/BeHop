@@ -1,4 +1,4 @@
-# README des Online HipHop Shops BeHop
+# README des HipHop Online-Shops BeHop
 Erstellt von Anton Bespalov und Michael Hopp im Rahmen des Website-Projekts in GWP und DWP an der Fachhochschule Erfurt.
 [Aufgabenstellung](WEB-WS1920-Projektaufgabe-1.pdf)
 Prüfer: Prof. R. Kruse und K. Friess
@@ -17,11 +17,9 @@ Prüfer: Prof. R. Kruse und K. Friess
 
 
 ## Über das Produkt
-
+BeHop ist ein HipHop Online-Shop
 ### [SiteMap](https://www.lucidchart.com/invitations/accept/48120419-dd6e-4d54-b51b-972ed3d3a95a)
 
-### Funktionalität
-...
 
 ### Genutzte Technologie
 - HTML5, CSS3
