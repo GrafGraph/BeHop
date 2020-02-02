@@ -2,6 +2,8 @@
 ![CodeFactor](https://img.shields.io/badge/PHP-5.4.22-purple)
 ![CodeFactor](https://img.shields.io/badge/xampp-1.8.3-orange)
 ![CodeFactor](https://img.shields.io/badge/MySQL-5.6.16-blue)
+
+
 Erstellt von [Anton Bespalov](https://github.com/kanton1998) und [Michael Hopp](https://github.com/Maffotter) im Rahmen des Website-Projekts in GWP und DWP an der Fachhochschule Erfurt.
 [Aufgabenstellung](WEB-WS1920-Projektaufgabe-1.pdf)
 Prüfer: Prof. R. Kruse und K. Friess
