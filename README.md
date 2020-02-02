@@ -1,19 +1,14 @@
-# README des HipHop Online-Shops BeHop
-Erstellt von Anton Bespalov und Michael Hopp im Rahmen des Website-Projekts in GWP und DWP an der Fachhochschule Erfurt.
+# README des HipHop Online-Shops BeHop 
+![CodeFactor](https://img.shields.io/badge/PHP-5.4.22-purple)
+![CodeFactor](https://img.shields.io/badge/xampp-1.8.3-orange)
+![CodeFactor](https://img.shields.io/badge/MySQL-5.6.16-blue)
+Erstellt von [Anton Bespalov](https://github.com/kanton1998) und [Michael Hopp](https://github.com/Maffotter) im Rahmen des Website-Projekts in GWP und DWP an der Fachhochschule Erfurt.
 [Aufgabenstellung](WEB-WS1920-Projektaufgabe-1.pdf)
 Prüfer: Prof. R. Kruse und K. Friess
 
 ## Getting Started / HowTo
-- TODO: Der Ordner BeHop braucht aktuell noch übergeordnet den Order "Git"...
-
-
-### Für Entwickler besonders zu beachten:
-- UTF-8 Sonderzeichen
-- Ordentliche Datenbankanbindung -> Testen!
-- Kein Umfangreiches Hintergrundbild in vielen MB speichern oder senden... Anständig komprimieren!
-- Passwörter nicht in Cookies oder Klartext speichern
-- Navigation auf jeder Seite
-
+Bereits vordefinierte Account-Zugangsdaten: 
+- email: "admin@fh-erfurt.de" password: "root"
 
 
 ## Über das Produkt
@@ -23,7 +18,7 @@ BeHop ist ein HipHop Online-Shop
 
 ### Genutzte Technologie
 - HTML5, CSS3
-- XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16
+- XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22
 
 ### Design-Ideen
 - HipHop-Look: Knallige Muster+Farben, Streetlook(Beton, Grafitti, Neon)
