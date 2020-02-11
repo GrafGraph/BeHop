@@ -59,8 +59,10 @@
         </form>
     </div>
 <? elseif($step === 3) : ?>
-    <a href="index.php?c=products&a=products">
-    <img src="assets/images/checkout/thanksForYourOrder<?=random_int(1,3)?>.png" alt="Continue Shopping" style="margin:15px;"> </a>
+    <section class="banner">
+        <a href="index.php?c=products&a=products">
+        <img src="assets/images/checkout/thanksForYourOrder<?=random_int(1,3)?>.png" alt="Continue Shopping"></a>
+    </section>
 <? else : ?>
     <h2>OOPS... We could not find your Order...</h2>
 <? endif; ?>

@@ -1,14 +1,36 @@
-body {
+.center {
     text-align: center;
-    background: rgb(255, 255, 255);
-    font-family: 'Open Sans Extra Bold', sans-serif;
 }
 
-p {
-    font-family: 'Open Sans Extra Bold', sans-serif;
+.banner {
+    margin: 15px;
+    text-align: center;
 }
 
-.products {}
+.products {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.product {
+    padding: 5px;
+    background-color: rgb(145, 145, 145);
+    text-align: center;
+}
+
+.productImage {
+    max-height: 20em;
+}
+
+.productText {
+    font-size: 1.5em;
+}
+
+.productLink {
+    text-decoration: none;
+}
 
 select {
     width: 30%;
@@ -50,8 +72,6 @@ nav ul li a:hover {
     opacity: 0.7;
     /* background-color: #111111; */
 }
-
-main {}
 
 .content-wrap {
     min-height: calc(100vh - 60px);
