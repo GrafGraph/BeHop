@@ -3,7 +3,8 @@
 }
 
 .banner {
-    margin: 15px;
+    margin-bottom: 1%;
+    margin-top: 1%;
     text-align: center;
 }
 
@@ -15,7 +16,7 @@
 }
 
 .product {
-    padding: 2px;
+    padding: 1%;
     /* background-color: rgb(145, 145, 145); */
     text-align: center;
     width: 450px;
@@ -36,7 +37,7 @@
 
 .productImage {
     max-height: 23em;
-    background-color: #eeeeee;
+    background-color: #efefef;
 }
 
 .productText {
@@ -47,6 +48,47 @@
 
 .productLink {
     text-decoration: none;
+}
+
+.start-wrap {
+    margin: auto;
+    max-width: 1350px;
+}
+
+.start-container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.start-container-vertical-half {
+    width: 49.5%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.start-item-vertical-half {
+    height: 48.5%;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.start-item-vertical-half img {
+    width: 100%;
+    height: 100%;
+}
+
+.start-item {
+    text-align: center;
+    margin-top: 1%;
+    width: 49.5%;
+}
+
+.start-item img {
+    width: 100%;
 }
 
 .logo {
@@ -158,7 +200,7 @@ footer {
     height: 60px;
     text-align: center;
     line-height: 60px;
-    color: #333333;
+    color: #ffffff;
 }
 
 :root {

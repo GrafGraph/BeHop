@@ -89,3 +89,15 @@ var myDropdown = document.getElementById("myDropdown");
     <? endforeach; ?>
 </div><br>
 <? endif; ?>
+
+<? if(!empty($sales)) : ?>
+    <h2 class="center">Campaigns/Sales</h2>
+    <div class="products center">
+        <? foreach($sales as $sale) : ?>
+            <div class="product">
+                <a href="index.php?c=products&a=products&sale=<?=$sale['name']?>">
+                <img src="<?=$sale['image']['imageUrl'] ?? ''?>" alt="<?= $sale['image']['altText'] ?? ''?>"></a>
+            </div>
+        <? endforeach; ?>
+    </div><br>
+<? endif; ?>
