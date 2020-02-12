@@ -62,12 +62,14 @@
             <li>
                 <button type="submit" name="submit">Filter Now</button>
             </li> 
-            <li>
-                <a href="index.php?c=products&a=products"><button>Reset Filters</button></a>
-            </li>
         </ul>
-    </ul>
     </form>
+    </ul>
+    <ul class="center" style="list-style-type:none;">
+        <li>
+            <a href="index.php?c=products&a=products"><button>Reset Filters</button></a>
+        </li>
+    </ul>
 </section>
 
 <? if(!empty($products)) : ?>
@@ -78,13 +80,16 @@
                 <a class="productLink" href="index.php?c=products&a=showProduct&productID=<?=$product['id']?>">
                     <img class="productImage" src="<?=$product['image']['imageUrl'] ?? ''?>" alt="<?= $product['image']['altText'] ?? ''?>">
                     <div class="productText">
-                        <?=$product['name']?> only
+                        <?=$product['name']?>
+                        <br>
+                        <span class="price">
                         <? if(isset($product['discountPrice'])) : ?>
                             <span style="text-decoration:line-through;"> <?=$product['price']?>&euro;</span>
                             <span style="color:red;">  <?=$product['discountPrice']?>&euro;</span>
                         <? else : ?> 
                             <?=$product['price']?> &euro;
                         <? endif;?>
+                        </span>
                     </div>
                 </a>
             </div>

@@ -11,25 +11,36 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .product {
-    padding: 5px;
-    background-color: rgb(145, 145, 145);
+    padding: 2px;
+    /* background-color: rgb(145, 145, 145); */
     text-align: center;
+    width: 450px;
+    margin-bottom: 50px;
 }
 
 .productImage {
-    max-height: 20em;
+    max-height: 23em;
+    background-color: #eeeeee;
 }
 
 .productText {
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
+    /* text-align: center; */
+    /* max-width: 80%; */
+    /* display: block; */
+    margin: 5px;
 }
 
 .productLink {
     text-decoration: none;
+}
+
+.price {
+    font-weight: bold;
 }
 
 select {
