@@ -1,6 +1,6 @@
 <h1>Impressum</h1>
 
-<article class="imprint;">
+<article class="imprint">
 <h2><a href="index.php?a=projectDocumentation">Projektdokumentation</a></h2>
 <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
 <p>Fachhochschule Erfurt<br />

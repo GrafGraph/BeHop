@@ -36,7 +36,7 @@
     <p>Total= <?=$priceTotal?>&euro;</p>
     <div>
         <form method="POST" action="?c=account&a=payment">
-            <ul class="noDecoration;">
+            <ul class="noDecoration">
                 <!-- TODO: Required machen -->
                 <li>
                     <!-- <label for="paypal">PayPal</label> -->

@@ -53,7 +53,7 @@
 			</main>
 		</div>
 		<footer>
-			<a href="?a=index" title="Home" class="noDecoration;">BEHOP</a> &copy; 
+			<a href="?a=index" title="Home" class="noDecoration">BEHOP</a> &copy; 
 			<a href="index.php?a=impressum">Imprint</a>
 		</footer>
 	</body>

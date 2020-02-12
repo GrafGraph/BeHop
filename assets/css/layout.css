@@ -16,7 +16,7 @@
 
 .product {
     padding: 2px;
-    /* background-color: rgb(145, 145, 145); */
+    background-color: rgb(145, 145, 145);
     text-align: center;
     width: 450px;
     margin-bottom: 50px;
@@ -35,10 +35,6 @@
 
 .productLink {
     text-decoration: none;
-}
-
-.price {
-    font-size: 125%;
 }
 
 .logo {
@@ -62,6 +58,11 @@
 .noDecoration {
     text-decoration: none;
     list-style-type: none;
+}
+
+.price {
+    font-size: 120%;
+    font-weight: 600;
 }
 
 .priceOld {

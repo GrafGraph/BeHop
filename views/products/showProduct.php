@@ -8,8 +8,8 @@
 <p>Color: <?=$product['color']?></p>
 <p>In Stock: <?=$product['numberInStock']?></p>
 <p> <?if(isset($product['discountPrice'])) : ?>
-    <span class="priceOld;"> <?=$product['price']?>&euro;</span>
-    <span class="priceNew;">  <?=$product['discountPrice']?>&euro;</span>
+    <span class="priceOld"> <?=$product['price']?>&euro;</span>
+    <span class="priceNew">  <?=$product['discountPrice']?>&euro;</span>
     <? else : ?> <?=$product['price']?> &euro;
     <? endif;?></p>
 <p>Description:</br>
