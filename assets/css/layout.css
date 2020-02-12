@@ -16,10 +16,22 @@
 
 .product {
     padding: 2px;
-    background-color: rgb(145, 145, 145);
+    /* background-color: rgb(145, 145, 145); */
     text-align: center;
     width: 450px;
     margin-bottom: 50px;
+}
+
+
+/* Mobile-View */
+
+@media (max-width: 917px) {
+    .product {
+        width: 180px;
+    }
+    .productText {
+        font-size: 100%;
+    }
 }
 
 .productImage {
@@ -30,7 +42,7 @@
 .productText {
     /* font-size: 1.5em; */
     /* display: block; */
-    margin: 5px;
+    padding: 5px;
 }
 
 .productLink {
