@@ -1,15 +1,15 @@
 <h1 class="center">&raquo;<?=$product['name']?>&laquo;</h1>
 
-<div style="float:left; width:50%">
+<div style="float:left; width:50%;">
     <img src="<?=$images[0]['imageUrl']?>" alt="<?=$images[0]['imageAltText']?>">
 </div>
-<div style="float:right; width:50%">
+<div style="float:right; width:50%;">
 <p><?=$product['name']?></p>
 <p>Color: <?=$product['color']?></p>
 <p>In Stock: <?=$product['numberInStock']?></p>
 <p> <?if(isset($product['discountPrice'])) : ?>
-    <span style="text-decoration:line-through;"> <?=$product['price']?>&euro;</span>
-    <span style="color:red;">  <?=$product['discountPrice']?>&euro;</span>
+    <span class="priceOld;"> <?=$product['price']?>&euro;</span>
+    <span class="priceNew;">  <?=$product['discountPrice']?>&euro;</span>
     <? else : ?> <?=$product['price']?> &euro;
     <? endif;?></p>
 <p>Description:</br>

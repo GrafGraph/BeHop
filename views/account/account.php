@@ -88,7 +88,7 @@
       </form>
       
       <div>
-          <table style="width:30%">
+          <table class="smallTable">
           <tr>
               <td>Last Order</td>
               <td><?=isset($latestOrder['createdAt']) ? $latestOrder['createdAt'] : 'None'; ?></td>

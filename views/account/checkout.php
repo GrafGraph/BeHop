@@ -3,7 +3,7 @@
     <h2>Step 1 of 2: Confirm your Information</h2>
     <!-- <h2>Your Information</h2> -->
     <div>
-    <table style="width:30%">
+    <table class="smallTable">
     <tr>
         <td>First Name</td>
         <td><?=$user['firstName']?></td>
@@ -36,7 +36,7 @@
     <p>Total= <?=$priceTotal?>&euro;</p>
     <div>
         <form method="POST" action="?c=account&a=payment">
-            <ul style="list-style-type:none;">
+            <ul class="noDecoration;">
                 <!-- TODO: Required machen -->
                 <li>
                     <!-- <label for="paypal">PayPal</label> -->

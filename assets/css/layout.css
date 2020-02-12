@@ -29,8 +29,6 @@
 
 .productText {
     /* font-size: 1.5em; */
-    /* text-align: center; */
-    /* max-width: 80%; */
     /* display: block; */
     margin: 5px;
 }
@@ -40,7 +38,63 @@
 }
 
 .price {
-    font-weight: bold;
+    font-size: 125%;
+}
+
+.logo {
+    float: left;
+    max-height: 80px;
+    margin-left: 50px;
+}
+
+.dimgrey {
+    background-color: #333333;
+}
+
+.navList {
+    height: 80px;
+}
+
+.navIcon {
+    max-height: 40px;
+}
+
+.noDecoration {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.priceOld {
+    text-decoration: line-through;
+}
+
+.priceNew {
+    color: red;
+}
+
+.payPalLogo {
+    margin: 15px;
+    max-height: 10em;
+}
+
+.shoppingcartProductImage {
+    max-height: 70px;
+    max-width: 70px;
+}
+
+.shoppingcartProductLink {
+    max-width: 80px;
+    float: left;
+}
+
+.imprint {
+    text-align: left;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.smallTable {
+    width: 30%;
 }
 
 select {
@@ -48,7 +102,6 @@ select {
     height: 40px;
     padding-left: 10px;
     color: #fff;
-    font-family: 'Open Sans Extra Bold', sans-serif;
     font-size: 16px;
 }
 
@@ -76,7 +129,7 @@ nav ul li a {
     color: rgb(255, 255, 255);
     text-align: center;
     font-size: 150%;
-    font-family: 'Open Sans Extra Bold', sans-serif;
+    font-weight: 600;
 }
 
 nav ul li a:hover {
@@ -100,6 +153,7 @@ footer {
 }
 
 * {
+    font-family: "Open Sans", sans-serif;
     box-sizing: border-box;
     margin: 0;
     position: relative;
@@ -107,9 +161,7 @@ footer {
 
 body,
 body * {
-    font-family: 'Open Sans Extra Bold', 'sans-serif';
-    font-weight: 600;
-    color: dimgrey;
+    color: dimgray;
 }
 
 .left,
@@ -187,7 +239,6 @@ table {
     display: inline-block;
     margin: 20px;
     text-decoration: none;
-    font-family: 'Open Sans Extra Bold';
     font-size: 16px;
     border: 1px solid dimgrey;
     color: dimgrey;

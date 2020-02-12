@@ -1,7 +1,7 @@
 <section class="center">
     <h1>Payment</h1>
     <? if($paymentMethod == "paypal") : ?>
-        <img src="assets/images/checkout/PayPalLogo.png" alt="PayPal Logo" style="margin:15px;max-height:10em;">
+        <img src="assets/images/checkout/PayPalLogo.png" alt="PayPal Logo" class="payPalLogo;">
         <div>
             Pay <?=$priceTotal?>&euro; now:
         </div>

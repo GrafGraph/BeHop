@@ -22,12 +22,12 @@ $n = 0; // Counter for indexing the quantity and remove submit
             $imageUrl = $item['image']['imageUrl'];
             $imageAltText =$item['image']['altText'];?>
             <div>
-                <a href="index.php?c=products&a=showProduct&productID=<?=$item['id']?>" style="max-width:80px;float:left;">
-                <img src=<?=$imageUrl?> alt=<?=$imageAltText?> style="max-height:70px;max-width:70px;"></a>
+                <a href="index.php?c=products&a=showProduct&productID=<?=$item['id']?>" class="shoppingcartProductLink">
+                <img src=<?=$imageUrl?> alt=<?=$imageAltText?> class="shoppingcartProductImgage;"></a>
                 <p><?=$item['name']?>, <?=$item['color']?></p>
                 <p>     <? if(isset($item['discountPrice'])) : ?>
-                        <span style="text-decoration:line-through;"> <?=$item['price']?>&euro;</span>
-                        <span style="color:red;">  <?=$item['discountPrice']?>&euro;</span>
+                        <span class="priceOld"> <?=$item['price']?>&euro;</span>
+                        <span class="priceNew">  <?=$item['discountPrice']?>&euro;</span>
                         <? else : ?> <?=$item['price']?> &euro;
                         <? endif;?>
                 x 

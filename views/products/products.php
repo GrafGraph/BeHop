@@ -1,7 +1,7 @@
 <h1 class="center">Browse our Products</h1>
 <section>
     <form method="GET">
-        <ul style="list-style-type:none;">
+        <ul class="noDecoration">
             <!-- hidden fields for controller and action location -->
             <input type="hidden" name="c" value="products">
             <input type="hidden" name="a" value="products">
@@ -17,7 +17,7 @@
                 <input type="number" id="maxPrice" min="1" max="99999" step="1" name="maxPrice">
             </li>
         </ul>
-        <ul style="list-style-type:none;">
+        <ul class="noDecoration">
             <li> 
                 <select name="cat">
                     <option value="">--Select a Category--</option>
@@ -45,7 +45,7 @@
                 </select>
             </li>
         </ul>
-        <ul class="center" style="list-style-type:none;">
+        <ul class="center noDecoration">
             <li>
                 <select name="sortBy">
                     <option value="">--Sort By--</option>
@@ -65,7 +65,7 @@
         </ul>
     </form>
     </ul>
-    <ul class="center" style="list-style-type:none;">
+    <ul class="center noDecoration">
         <li>
             <a href="index.php?c=products&a=products"><button>Reset Filters</button></a>
         </li>
@@ -84,8 +84,8 @@
                         <br>
                         <span class="price">
                         <? if(isset($product['discountPrice'])) : ?>
-                            <span style="text-decoration:line-through;"> <?=$product['price']?>&euro;</span>
-                            <span style="color:red;">  <?=$product['discountPrice']?>&euro;</span>
+                            <span class="priceOld"> <?=$product['price']?>&euro;</span>
+                            <span class="priceNew">  <?=$product['discountPrice']?>&euro;</span>
                         <? else : ?> 
                             <?=$product['price']?> &euro;
                         <? endif;?>

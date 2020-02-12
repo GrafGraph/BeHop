@@ -1,8 +1,6 @@
 <h1>Impressum</h1>
 
-<!-- TODO: Stylesheet statt inline -->
-<article style="text-align:left;margin-right: 5%;
-  margin-left: 5%;">
+<article class="imprint;">
 <h2><a href="index.php?a=projectDocumentation">Projektdokumentation</a></h2>
 <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
 <p>Fachhochschule Erfurt<br />
