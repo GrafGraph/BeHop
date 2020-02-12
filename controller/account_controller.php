@@ -75,8 +75,7 @@ class AccountController extends Controller
 					'city' => $_POST['city'],
 					'street' => $_POST['street'],
 					'number' => $_POST['number'],
-					'zip' => $_POST['zip'],
-					'country' => $_POST['country']
+					'zip' => $_POST['zip']
 				];
 				$existingAddress = Address::findAddress($addressData);
 				if($existingAddress != null)
@@ -147,8 +146,32 @@ class AccountController extends Controller
 				$password1 = $_POST['password1'] ?? null;
 				$password2 = $_POST['password2'] ?? null;
 				$error = [];
+
+				$userData = [
+					'email' => $_POST['email'],
+					'firstName' => $_POST['firstName'],
+					'lastName' => $_POST['lastName']
+				];
+				$newUser = new User($userData);
+				if(User::validateUser($newUser, $error) == false){
+					$this->_params['errors'] = $error;
+					return false;
+				}
+
+				$addressData = [
+					'city' => $_POST['city'],
+					'street' => $_POST['street'],
+					'number' => $_POST['number'],
+					'zip' => $_POST['zip']
+				];
+
+				$newAddress = new Address($addressData);
+					if(Address::validateAddress($newAddress, $error) == false){
+						$this->_params['errors'] = $error;
+						return false;
+					}
+
 				$user_data = User::findOne('email = "' . $email . '"');
-				
 				if($user_data != null)
 				{ 
 					$error[] = "Email is already in use!";
