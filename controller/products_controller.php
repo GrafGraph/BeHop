@@ -31,10 +31,10 @@ class ProductsController extends Controller
 				$category = Category::findOne('name = "'.htmlspecialchars($_GET['cat']).'"');
 				if(!empty($category['id']))
 				$where .= ' category_id = '.$category['id'].' and';
-				else
-				{
-					debug_to_logFile('$category["id"]) is empty!');
-				}
+				// else
+				// {
+				// 	debug_to_logFile("{$category[i]} is empty!");
+				// }
 			}
 			if(!empty($_GET['productName']))
 			{

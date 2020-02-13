@@ -1,76 +1,88 @@
 <h1 class="center">Browse our Products</h1>
-<section>
-    <form method="GET">
-        <ul class="noDecoration">
+<div class="filter-wrap">
+    <div>
+        <form method="GET" style="text-align:center">
+
             <!-- hidden fields for controller and action location -->
             <input type="hidden" name="c" value="products">
             <input type="hidden" name="a" value="products">
-            <li>
-                <label for="productName">NameSearchfield</label>
-                <input type="text" name="productName" id="productName" placeholder="Product Name">
-            </li>
-            <li>
-                <label for="minPrice">Min-Price</label>
+
+    <!--    <label for="productName">NameSearchfield</label>
+            <input type="text" name="productName" id="productName" placeholder="Product Name"> -->
+            
+            <div class="filter-item">
+                <!-- <label for="minPrice">Min-Price</label> -->
                 <!-- TODO: Create it more intuitive -->
-                <input type="number" id="minPrice" min="0" max=<?=$maxPrice?> step="1" name="minPrice">
-                <label for="maxPrice">Max-Price</label>
-                <input type="number" id="maxPrice" min="1" max="99999" step="1" name="maxPrice">
-            </li>
-        </ul>
-        <ul class="noDecoration">
-            <li> 
+                <input type="number" min="0" max=<?=$maxPrice?> step="1" name="minPrice" placeholder=" Min-Price...">
+            </div>
+            
+            <div class="filter-item">
+                <!-- <label for="maxPrice">Max-Price</label> -->
+                <input type="number" min="1" max="99999" step="1" name="maxPrice" placeholder=" Max-Price...">
+            </div>
+
+            <div class="filter-item">
                 <select name="cat">
-                    <option value="">--Select a Category--</option>
+                    <option value="">--Category--</option>
                     <?=printFilterOptions($categories, 'name', 'cat')?>
                 </select>
-            </li>
-            <li> 
+            </div>
+
+            <div class="filter-item">
                 <select name="color">
-                    <option value="">--Select a Color--</option>
+                    <option value="">--Color--</option>
                     <?=printFilterOptions($colors,'color','color')?>
                 </select>
-            </li>
-            <li>
+            </div>
+
+            <div class="filter-item">
                 <select name="brand">
-                    <option value="">--Select a Brand--</option>
+                    <option value="">--Brand--</option>
                     <?=printFilterOptions($brands, 'brand', 'brand')?>
                 </select>
-            </li>
-            <li>
+            </div>
+            
+            <div class="filter-item">
                 <select name="sale">
-                    <option value="">--Select a Sale--</option>
+                    <option value="">--Sale--</option>
                     <option value="all"
                     <?printSelectedIfSet('sale','all');?>>All</option>
                     <?=printFilterOptions($sales, 'name', 'sale')?>
                 </select>
-            </li>
-        </ul>
-        <ul class="center noDecoration">
-            <li>
+            </div>
+
+            <div class="filter-item">
                 <select name="sortBy">
                     <option value="">--Sort By--</option>
-                    <option value="newestFirst">Newest First</option>
-                    <option value="oldestFirst">Oldest First</option>
-                    <option value="priceAsc">Price Ascending</option>
-                    <option value="priceDesc">Price Descending</option>
-                    <option value="nameAsc">Name Ascending</option>
-                    <option value="nameDesc">Name Descending</option>
-                    <option value="color">Color</option>
-                    <option value="brand">Brand</option>
+                    <option value="newestFirst"
+                    <?printSelectedIfSet('sortBy','newestFirst');?>>Newest First</option>
+                    <option value="oldestFirst"
+                    <?printSelectedIfSet('sortBy','oldestFirst');?>>Oldest First</option>
+                    <option value="priceAsc"
+                    <?printSelectedIfSet('sortBy','priceAsc');?>>Price Ascending</option>
+                    <option value="priceDesc"
+                    <?printSelectedIfSet('sortBy','priceDesc');?>>Price Descending</option>
+                    <option value="nameAsc"
+                    <?printSelectedIfSet('sortBy','nameAsc');?>>Name Ascending</option>
+                    <option value="nameDesc"
+                    <?printSelectedIfSet('sortBy','nameDesc');?>>Name Descending</option>
+                    <option value="color"
+                    <?printSelectedIfSet('sortBy','color');?>>Color</option>
+                    <option value="brand"
+                    <?printSelectedIfSet('sortBy','brand');?>>Brand</option>
                 </select>
-            </li>
-            <li>
-                <button type="submit" name="submit">Filter Now</button>
-            </li> 
-        </ul>
-    </form>
-    </ul>
-    <ul class="center noDecoration">
-        <li>
-            <a href="index.php?c=products&a=products"><button>Reset Filters</button></a>
-        </li>
-    </ul>
-</section>
+            </div>
+    </div>
+        <div class="filter-buttons">
+            <div class="filter-button">
+                <button style="float:right;" type="submit" name="submit">Filter Now</button>
+        </form>
+            </div>
+            <div class="filter-button">
+                <a style="float:left;" href="index.php?c=products&a=products"><button>Reset Filters</button></a>
+            </div>
+        </div>
+</div>
 
 <? if(!empty($products)) : ?>
     <div class="products">

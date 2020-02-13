@@ -40,7 +40,7 @@
                 <!-- TODO: Required machen -->
                 <li>
                     <!-- <label for="paypal">PayPal</label> -->
-                    <input type="radio" name="paymentMethod" value="paypal" id="paypal">PayPal
+                    <input type="radio" name="paymentMethod" value="paypal" id="paypal" checked="checked">PayPal
                 </li>
                 <li>
                     <!-- <label for="transfer">Transfer</label> -->

@@ -26,13 +26,13 @@ $n = 0; // Counter for indexing the quantity and remove submit
                 <img src=<?=$imageUrl?> alt=<?=$imageAltText?> class="shoppingcartProductImgage"></a>
                 <p><?=$item['name']?>, <?=$item['color']?></p>
                 <p>     <? if(isset($item['discountPrice'])) : ?>
-                        <span class="priceOld"> <?=$item['price']?>&euro;</span>
-                        <span class="priceNew">  <?=$item['discountPrice']?>&euro;</span>
-                        <? else : ?> <?=$item['price']?> &euro;
+                        <span class="priceOld price"> <?=$item['price']?>&euro;</span>
+                        <span class="priceNew price">  <?=$item['discountPrice']?>&euro;</span>
+                        <? else : ?> <span class="price"><?=$item['price']?> &euro;</span>
                         <? endif;?>
                 x 
                 <input type="number" name=<?="quantity".$n?> min="1" max=<?=$item['numberInStock']?> value=<?=$quantity?>> 
-                = <?=$priceForPosition?>&euro;
+                = <span class="price"><?=$priceForPosition?>&euro;</span>
                 <label for="remove">Remove?</label>
                 <input type="checkbox" name=<?="remove".$n?> id="remove"></p>
                 <input type="hidden" name=<?="prodID".$n?> value=<?=$item['id']?>>
@@ -44,7 +44,7 @@ $n = 0; // Counter for indexing the quantity and remove submit
         <button type="reset" name="reset">Reset</button>
     </form>
 </div>   
-    <br><div><p>Total= <?=$priceTotal?>&euro;</p></div>
+    <br><div><p class="price">Total= <?=$priceTotal?>&euro;</p></div>
    <?if(isLoggedIn()) : ?>
     <div>
         <form action="index.php?c=account&a=checkout" method="POST">

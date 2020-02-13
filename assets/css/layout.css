@@ -1,3 +1,7 @@
+/* :root {
+    --red: #ff5757;
+} */
+
 .center {
     text-align: center;
 }
@@ -91,13 +95,47 @@
     width: 100%;
 }
 
+.filter-wrap {
+    background-color: #efefef;
+    /* margin: auto; */
+}
+
+.filter-wrap form {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    margin: 1%;
+}
+
+.filter-item {
+    margin: auto;
+    margin-top: 0.5%;
+    width: 200px;
+}
+
+.filter-item input,
+.filter-item select {
+    width: 100%;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-flow: nowrap;
+    margin: 1%;
+}
+
+.filter-button {
+    flex: 1;
+    margin-bottom: 0.5%;
+}
+
 .logo {
     float: left;
     max-height: 80px;
     margin-left: 50px;
 }
 
-.dimgrey {
+.BeHopGrey {
     background-color: #333333;
 }
 
@@ -124,7 +162,7 @@
 }
 
 .priceNew {
-    color: red;
+    color: #ff5757;
 }
 
 .payPalLogo {
@@ -152,11 +190,12 @@
     width: 30%;
 }
 
-select {
-    width: 30%;
+select,
+input[type=number] {
+    display: block;
+    min-width: 30%;
     height: 40px;
     padding-left: 10px;
-    color: #fff;
     font-size: 16px;
 }
 
@@ -189,7 +228,6 @@ nav ul li a {
 
 nav ul li a:hover {
     opacity: 0.7;
-    /* background-color: #111111; */
 }
 
 .content-wrap {
@@ -201,10 +239,6 @@ footer {
     text-align: center;
     line-height: 60px;
     color: #ffffff;
-}
-
-:root {
-    --red: #ff5757;
 }
 
 * {
@@ -219,20 +253,7 @@ body * {
     color: dimgray;
 }
 
-.left,
-.right {
-    width: 49.5%;
-    float: left;
-    padding: 10% 30px;
-    top: 0;
-}
-
-.right::after {
-    clear: both;
-}
-
-label,
-select {
+label {
     display: block;
 }
 
@@ -242,7 +263,7 @@ form>div {
 }
 
 input {
-    width: 30%;
+    min-width: 30%;
 }
 
 input[type=submit] {
@@ -290,7 +311,8 @@ table {
     max-width: 100%;
 }
 
-.button {
+
+/* .button {
     display: inline-block;
     margin: 20px;
     text-decoration: none;
@@ -299,7 +321,7 @@ table {
     color: dimgrey;
     background-color: white;
     padding: 3px 7px;
-}
+} */
 
 .button:hover {
     background-color: white;

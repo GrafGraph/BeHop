@@ -13,7 +13,7 @@
 	<body>
 		<div class="content-wrap">
 			<header>
-				<nav class="dimgrey">
+				<nav class="BeHopGrey">
 					<a href="?a=index" title="Home"><img src="assets/images/layout/logo.png"
 					alt="BeHop-Logo" class="logo"></a>
 					<ul class="navList">
