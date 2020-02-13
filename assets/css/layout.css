@@ -117,7 +117,7 @@
 .filter-item select {
     width: 100%;
 }
-
+/* 
 .filter-buttons {
     display: flex;
     flex-flow: nowrap;
@@ -127,7 +127,7 @@
 .filter-button {
     flex: 1;
     margin-bottom: 0.5%;
-}
+} */
 
 .logo {
     float: left;
@@ -377,22 +377,6 @@ table {
     max-width: 100%;
 }
 
-
-/* .button {
-    display: inline-block;
-    margin: 20px;
-    text-decoration: none;
-    font-size: 16px;
-    border: 1px solid dimgrey;
-    color: dimgrey;
-    background-color: white;
-    padding: 3px 7px;
-} */
-
-.button:hover {
-    background-color: white;
-}
-
 img {
     max-width: 100%;
     height: auto;
@@ -400,4 +384,18 @@ img {
 
 .errors {
     color: red;
+}
+button {
+    margin: 16px 0;
+    padding: 8px;
+    border-radius: 0;
+    border: 3px solid dimgrey;
+    background: none;
+    font-size: 14px;
+    transition: color .25s ease-in, background .25s ease-in;
+    cursor: pointer;
+}
+button:hover {
+    color: white;
+    background: #333333;
 }

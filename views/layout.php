@@ -39,16 +39,6 @@
 				</nav>
 			</header>
 			<main>
-				<!-- <div class="errors">
-				//<
-						// if (isset($_SESSION['errors']))
-						// 	{
-						// 		foreach()
-						// 		{
-						// 			// TODO Errors widergeben mit einer for each schleife
-						// 		}
-						// 	}
-					?> -->
 				<?php echo $body ?>
 			</main>
 		</div>

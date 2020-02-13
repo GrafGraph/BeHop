@@ -102,7 +102,9 @@ INSERT INTO `image` (`id`, `createdAt`, `updatedAt`, `imageUrl`, `altText`, `pro
 (3, '2020-01-18 17:42:54', NULL, 'assets/images/sales/endOfSeasonSale20.png', 'End of Season Sale: 20 Percent off', NULL, 3),
 (5, '2020-01-20 18:18:10', NULL, 'assets/images/products/mainImage-3.jpg', 'Adidas NMD_R1 black', 4, NULL),
 (6, '2020-01-20 18:37:17', NULL, 'assets/images/products/mainImage-4.jpg', 'Nike black Jacket', 5, NULL),
-(8, '2020-01-20 20:14:06', NULL, 'assets/images/sales/WinterSale.png', 'Winter Sale', NULL, 2);
+(8, '2020-01-20 20:14:06', NULL, 'assets/images/sales/WinterSale.png', 'Winter Sale', NULL, 2),
+(9, '2020-01-20 18:37:17', NULL, 'assets/images/products/mainImage-5.jpg', 'White T-Shirt', 6, 2),
+(10, '2020-01-20 18:37:17', NULL, 'assets/images/products/mainImage-6.jpg', 'Black Balenciaga Hoodie', 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -153,7 +155,9 @@ INSERT INTO `product` (`id`, `createdAt`, `updatedAt`, `name`, `price`, `color`,
 (1, '2020-01-12 08:04:22', NULL, 'Jordans Supercool', '69.99', 'White', 'Jordan', 5, 'The hot and new Jordans Model SUPERCOOL: Comfort in its best looking way!', 1, 3),
 (2, '2020-01-12 10:23:28', NULL, 'Harem Joggers', '19.99', 'Black', 'BeHop', 2, 'Polyester.\r\nHarem.\r\nPerfect for an active lifestyle: Suitable for trekking, running, yoga, couchsurfing and most other sports!', 2, 2),
 (4, '2020-01-20 18:20:15', NULL, 'adidas Original NMD_R1', '140.00', 'Black', 'Adidas', 45, 'The nicest black shoe on the market, everyone want this shoe. It is a special edition and extremely rare.', 1, NULL),
-(5, '2020-01-20 18:36:15', NULL, 'Nike Academy 18 Track Jacket', '39.95', 'Black', 'Nike', 12, 'Best jacket for Sports', 4, 2);
+(5, '2020-01-20 18:36:15', NULL, 'Nike Academy 18 Track Jacket', '39.95', 'Black', 'Nike', 12, 'Best jacket for Sports', 4, 2),
+(6, '2020-01-20 18:36:15', NULL, 'e.s. Funktions T-Shirt poly cotton', '22.99', 'White', 'Engelbert Strauß', 22, 'Nice T-Shirt for everyone', 3, 2),
+(7, '2020-01-20 18:36:15', NULL, 'Balenciaga Mode Hoodie', '359.99', 'Black', 'Balenciaga', 22, 'The best Hoodie on the Market', 5, NULL);
 
 -- --------------------------------------------------------
 
