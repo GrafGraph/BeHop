@@ -228,9 +228,12 @@
 }
 
 
-/* .shoppingcart-item-left {}
+/* .shoppingcart-item-left {} */
 
-.shoppingcart-item-right {} */
+.shoppingcart-item-right {
+    width: 40%;
+    text-align: left;
+}
 
 .shoppingcart-item-right div {
     width: 100%;
@@ -430,6 +433,12 @@ img {
 .errors {
     color: red;
 }
+
+
+/* .disabled {
+    background-color: red;
+    transition: none;
+} */
 
 button {
     width: 180px;

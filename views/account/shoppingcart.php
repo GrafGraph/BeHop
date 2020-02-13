@@ -29,12 +29,14 @@ if(empty($shoppingCartItems)) : ?>
                                 <img class="shoppingcartProductImage" src=<?=$imageUrl?> alt=<?=$imageAltText?>></a>
                             </div>
                             <div class="shoppingcart-item-right">  
-                                <p><?=$item['name']?>, <?=$item['color']?></p>
+                                <div>
+                                    <?=$item['name']?>, <?=$item['color']?>
+                                </div>
                                 <div>     
                                     <? if(isset($item['discountPrice'])) : ?>
-                                        <span class="priceOld price"> <?=$item['price']?>&euro;</span>
-                                        <span class="priceNew price">  <?=$item['discountPrice']?>&euro;</span>
-                                    <? else : ?> 
+                                        <span class="priceOld price"><?=$item['price']?>&euro;</span>
+                                        <span class="priceNew price"><?=$item['discountPrice']?>&euro;</span>
+                                    <? else : ?>
                                         <span class="price"><?=$item['price']?> &euro;</span>
                                     <? endif;?>
                                 </div> 
@@ -76,10 +78,9 @@ if(empty($shoppingCartItems)) : ?>
                     // Checkout button is unavailable until login
                 else : ?>
                         <div>
-                            <p>Log in to Checkout</p>
-                        </div>
-                        <div>
-                            <button title="Log in to be able to check out" disabled>Checkout</button>
+                            <a href="index.php?c=account&a=login">
+                            <button class="disabled" title="Log in to be able to check out">Log in to Checkout</button>
+                            </a>
                         </div>
                 <? endif;?>
             </div>
