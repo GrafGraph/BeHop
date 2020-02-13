@@ -42,6 +42,9 @@
 .productImage {
     max-height: 23em;
     background-color: #efefef;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .productText {
@@ -117,17 +120,40 @@
 .filter-item select {
     width: 100%;
 }
-/* 
+
 .filter-buttons {
     display: flex;
     flex-flow: nowrap;
-    margin: 1%;
 }
 
 .filter-button {
     flex: 1;
     margin-bottom: 0.5%;
-} */
+}
+
+.table-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.table-confirm {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    min-width: 50%;
+}
+
+.table-confirm td,
+.table-confirm th {
+    border-bottom: 1px solid #ddd;
+}
+
+.checkout-label {
+    width: 180px;
+    text-align: left;
+    margin: 0.5%;
+}
 
 .logo {
     float: left;
@@ -240,6 +266,25 @@
     margin-bottom: 2%;
 }
 
+.showProduct-container {
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.showProduct-item {
+    flex: 1;
+    margin: 1%;
+}
+
+.showProduct-item p,
+.showProduct-item label {
+    margin: 1%;
+}
+
+.inline {
+    display: inline-block;
+}
+
 
 /* .shoppingcartProductLink {
     max-width: 80px;
@@ -333,7 +378,7 @@ input {
 }
 
 input[type=submit] {
-    margin: 16px 0;
+    margin: 1%;
     padding: 8px;
     border-radius: 0;
     border: 3px solid dimgrey;
@@ -385,8 +430,11 @@ img {
 .errors {
     color: red;
 }
+
 button {
-    margin: 16px 0;
+    width: 180px;
+    /* Test */
+    margin: 5px 1% 1% 1%;
     padding: 8px;
     border-radius: 0;
     border: 3px solid dimgrey;
@@ -395,6 +443,7 @@ button {
     transition: color .25s ease-in, background .25s ease-in;
     cursor: pointer;
 }
+
 button:hover {
     color: white;
     background: #333333;

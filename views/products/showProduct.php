@@ -1,23 +1,31 @@
-<h1 class="center">&raquo;<?=$product['name']?>&laquo;</h1>
+<div class="product-wrap">   
+    <h1 class="center">&raquo;<?=$product['name']?>&laquo;</h1>
+    <div class="showProduct-container">
+        <div class="showProduct-item">
+            <img class="productImage" src="<?=$images[0]['imageUrl']?>" alt="<?=$images[0]['imageAltText']?>">
+        </div>
+        <div class="showProduct-item">
+            <p><strong><?=$product['name']?></strong></p>
+            <p> 
+                <?if(isset($product['discountPrice'])) : ?>
+                    <span class="price priceOld"> <?=$product['price']?>&euro;</span>
+                    <span class="price priceNew">  <?=$product['discountPrice']?>&euro;</span>
+                <? else : ?>  
+                    <span class="price"><?=$product['price']?> &euro;</span>
+                <? endif;?>
+            </p>
+            <p><strong>Color:</strong> <?=$product['color']?></p>
+            <p><strong>In Stock:</strong> <?=$product['numberInStock']?></p>
 
-<div style="float:left; width:50%;">
-    <img src="<?=$images[0]['imageUrl']?>" alt="<?=$images[0]['imageAltText']?>">
-</div>
-<div style="float:right; width:50%;padding:5px;">
-    <p><?=$product['name']?></p>
-    <p>Color: <?=$product['color']?></p>
-    <p>In Stock: <?=$product['numberInStock']?></p>
-    <p> <?if(isset($product['discountPrice'])) : ?>
-        <span class="price priceOld"> <?=$product['price']?>&euro;</span>
-        <span class="price priceNew">  <?=$product['discountPrice']?>&euro;</span>
-        <? else : ?> <?=$product['price']?> &euro;
-        <? endif;?></p>
-    <p>Description:</br>
-    <q><?=$product['description']?></q></p>
-    </br>
-    <form method="POST">
-        <label for="quantity">Amount:</label>
-        <input type="number" name="quantity" min="1" max=<?=$product['numberInStock']?> value="1">
-        <button type="submit" name="submit">Add to Cart</button>
-    </form>
+            <p><strong>Description:</strong></br>
+            <q><?=$product['description']?></q></p>
+            </br>
+            <form method="POST">
+                <label class="inline" for="quantity"><strong>Amount:</strong></label>
+                <input type="number" name="quantity" min="1" max=<?=$product['numberInStock']?> value="1">
+                <br>
+                <button type="submit" name="submit">Add to Cart</button>
+            </form>
+        </div>
+    </div>
 </div>

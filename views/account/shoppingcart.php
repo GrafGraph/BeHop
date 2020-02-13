@@ -1,3 +1,4 @@
+<h1 class="center" style="background-color:#efefef;">My Shopping Cart</h1>
 <section style="background-color:#efefef;">
 <?php 
 // Empty shoppingCart

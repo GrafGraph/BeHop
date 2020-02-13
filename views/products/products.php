@@ -76,8 +76,8 @@
         <div class="filter-buttons">
             <div class="filter-button">
                 <button style="float:right;" type="submit" name="submit">Filter Now</button>
-        </form>
             </div>
+        </form>
             <div class="filter-button">
                 <a style="float:left;" href="index.php?c=products&a=products"><button>Reset Filters</button></a>
             </div>

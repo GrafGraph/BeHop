@@ -1,5 +1,5 @@
+<h1 class="center">My Account</h1>
 <section class="center">
-  <h1>My Account</h1>
   <?if(isset($insertError))
     {?> <div class="error"><?
       if(is_array($insertError))
@@ -87,18 +87,18 @@
           <button type="reset">Reset Changes</button>
       </form>
       
-      <div>
-          <table class="smallTable">
+      <div class="table-container">
+          <table class="table-confirm">
           <tr>
-              <td>Last Order</td>
+              <td><strong>Last Order:</strong></td>
               <td><?=isset($latestOrder['createdAt']) ? $latestOrder['createdAt'] : 'None'; ?></td>
             </tr>
             <tr>
-              <td>Account created</td>
+              <td><strong>Account created</strong>:</td>
               <td><?=$user['createdAt']?></td>
             </tr>
             <tr>
-              <td>Last Update</td>
+              <td><strong>Last Update:</strong></td>
               <td><?=isset($user['updatedAt']) ? $user['updatedAt'] : 'None'; ?></td>
             </tr>
           </table>
