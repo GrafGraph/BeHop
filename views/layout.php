@@ -37,6 +37,28 @@
 						</li>
 					</ul>
 				</nav>
+				<nav class="BeHopGrey2">
+				<a href="?a=index" title="Home"><img src="assets/images/layout/logo.png"
+					alt="BeHop-Logo" class="logo"></a>
+					<ul class = "navList">
+				<div class="dropdown" style="float:right;">
+				<button class="dropbtn">Menu</button>
+						<div class="dropdown-content">
+							<ul>
+								<li><a href="index.php?c=products&a=products">Products</a></li>
+								<li><a href="index.php?a=aboutus">About Us</a></li>
+								<?php if(isLoggedIn()) : ?>
+								<li><a href="?c=account&a=logout">Logout</a></li>
+								<li><a href="?c=account&a=account">Account</a></li>
+								<?php else : ?>
+								<li><a href="?c=account&a=login">Login</a></li>
+								<?php endif; ?>
+								<li><a href="index.php?c=account&a=shoppingcart">Shopping Cart</a></li>   
+							</ul>
+						</div>
+				</div>
+				</ul>
+				</nav>			
 			</header>
 			<main>
 				<?php echo $body ?>
