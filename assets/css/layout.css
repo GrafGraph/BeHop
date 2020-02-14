@@ -506,7 +506,7 @@ button:hover {
     display: block;
   }
   
-@media (min-width: 521px) and (max-width: 917px) {
+@media (min-width: 521px) and (max-width: 1123px) {
     [class*="col-"] {
         width: 100%;
     }    
@@ -521,7 +521,7 @@ button:hover {
     }    
 } 
 
-@media (min-width: 918px) {     
+@media (min-width: 1124px) {     
     .BeHopGrey2 {
     display: none;
     }
