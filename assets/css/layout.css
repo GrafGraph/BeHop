@@ -159,6 +159,7 @@
     float: left;
     max-height: 80px;
     margin-left: 50px;
+    z-index: 10;
 }
 
 .BeHopGrey {
