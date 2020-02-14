@@ -167,6 +167,7 @@
 
 .navList {
     height: 80px;
+    overflow: visible;
 }
 
 .navIcon {
@@ -377,9 +378,13 @@ form>div {
 }
 
 input {
+    width: 150px;
     min-width: 30%;
 }
 
+input[name=login]{
+    width: 70px;
+}
 input[type=submit] {
     margin: 1%;
     padding: 8px;
@@ -412,6 +417,9 @@ select {
     padding: 8px;
 }
 
+
+
+
 .error {
     border: 2px solid var(--red);
     color: var(--red);
@@ -441,7 +449,7 @@ img {
 } */
 
 button {
-    width: 180px;
+    width: 150px;
     /* Test */
     margin: 5px 1% 1% 1%;
     padding: 8px;
@@ -459,15 +467,6 @@ button:hover {
 }
 
 
-@media (max-width: 768px) {
-    [class*="col-"] {
-        width: 100%;
-      }
-      
-      .BeHopGrey{
-        display: none;
-      }
-}
 .dropbtn {
     background-color:#333333;
     color: white;
@@ -485,8 +484,7 @@ button:hover {
     display: none;
     position: absolute;
     background-color: #333333;
-    min-width: 160px;
-    z-index: 1;
+    z-index: 1000000000000000;
   }
   
   .dropdown-content a {
@@ -494,14 +492,26 @@ button:hover {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    z-index: 1000000000000000;
   }
   
   
   .dropdown:hover .dropdown-content {
     display: block;
   }
-@media (min-width: 769px) {     
+  
+@media (max-width: 917px) {
+    [class*="col-"] {
+        width: 100%;
+      }    
+      .BeHopGrey{
+        display: none;
+      }      
+}
+
+@media (min-width: 918px) {     
       .BeHopGrey2 {
         display: none;
       }
+      
 }   
