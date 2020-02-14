@@ -165,7 +165,9 @@
 .BeHopGrey {
     background-color: #333333;
 }
-
+.BeHopGrey2 {
+    background-color: #333333;
+}
 .navList {
     height: 80px;
     overflow: visible;
@@ -383,7 +385,7 @@ input {
     min-width: 30%;
 }
 
-input[name=login]{
+input[name=submit]{
     width: 70px;
 }
 input[type=submit] {
