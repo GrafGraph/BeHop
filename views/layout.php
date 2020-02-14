@@ -19,7 +19,11 @@
 					<ul class="navList">
 						<li><a href="index.php?c=products&a=products" title="Products" style="color:<?=highlightNavText('products');?>;">Products</a></li>
 						<li><a href="index.php?a=aboutus" title="About Us" style="color:<?=highlightNavText('aboutus');?>">About Us</a></li>
-						
+						<li>
+							<form method="GET" action="index.php?c=products&a=products">
+								<input type="text" name="search" placeholder="Search...">
+								<input type="submit" name="searchSubmit">
+							</form>
 						</li>
 						<?php if(isLoggedIn()) : ?>
 						<li><a href="?c=account&a=logout" title="Logout" style="color:<?=highlightNavText('logout');?>;">Logout</a></li>
