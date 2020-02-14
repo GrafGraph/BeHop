@@ -168,6 +168,9 @@
 .BeHopGrey2 {
     background-color: #333333;
 }
+.BeHopGrey3 {
+    background-color: #333333;
+}
 .navList {
     height: 80px;
     overflow: visible;
@@ -487,7 +490,7 @@ button:hover {
     display: none;
     position: absolute;
     background-color: #333333;
-    z-index: 1000000000000000;
+    z-index: 10;
   }
   
   .dropdown-content a {
@@ -495,7 +498,7 @@ button:hover {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    z-index: 1000000000000000;
+    z-index: 10;
   }
   
   
@@ -503,18 +506,41 @@ button:hover {
     display: block;
   }
   
-@media (max-width: 917px) {
+@media (min-width: 521px) and (max-width: 917px) {
     [class*="col-"] {
         width: 100%;
-      }    
-      .BeHopGrey{
-        display: none;
-      }      
-}
+    }    
+    .BeHopGrey{
+    display: none;
+    }  
+    .BeHopGrey3{
+    display: none;
+    }    
+    .logo{
+    margin-left: 5px;
+    }    
+} 
 
 @media (min-width: 918px) {     
-      .BeHopGrey2 {
-        display: none;
-      }
-      
+    .BeHopGrey2 {
+    display: none;
+    }
+    .BeHopGrey3{
+    display: none;
+    }  
+    }  
+
+@media (min-width: 300px) and (max-width: 520px) {     
+    [class*="col-"] {
+        width: 100%;
+      } 
+    .BeHopGrey{
+    display: none;
+    }  
+    .BeHopGrey2 {
+    display: none;
+    }  
+    .logo{
+        margin-left: 5px;
+    }    
 }   
