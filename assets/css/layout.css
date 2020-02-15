@@ -349,13 +349,6 @@ nav ul li a:hover {
     margin-bottom: 1%;
 }
 
-header {
-    top: 0;
-    width: 100%;
-    position: sticky;
-    z-index: 1000;
-}
-
 .flex-item {
     margin: 1%;
     flex: 1;
@@ -400,7 +393,9 @@ footer {
 
 body,
 body * {
+    /* border: 0; */
     outline: 0 none;
+    color: #696969;
 }
 
 label {
