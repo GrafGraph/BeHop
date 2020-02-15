@@ -45,7 +45,7 @@ function printSelectedIfSet($filterOption, $option)
 function productsMenu()
 {
     ?>
-        <a style="color:red" href="">Sale</a>
+        <a class="priceNew" href="">Sale</a>
         <a href="">New In</a>
         Categories
         <a href="">Shoes</a>

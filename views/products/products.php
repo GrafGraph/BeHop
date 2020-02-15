@@ -108,7 +108,7 @@
         <? endforeach; ?>
     </div>
 <? else : ?> 
-    <div>
+    <div class="center">
         <h2>No results found...</h2>
     </div>
 <? endif; ?>
