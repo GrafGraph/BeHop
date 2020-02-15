@@ -33,8 +33,12 @@
 					</li>
 					<li>
 						<form method="GET" action="index.php?c=products&a=products">
+							<!-- hidden fields for controller and action location -->
+							<input type="hidden" name="c" value="products">
+							<input type="hidden" name="a" value="products">
 							<input type="text" name="search" placeholder="Search...">
-							<input type="submit" name="searchSubmit">
+							<button style="all:initial; display:inline; position:absolute; cursor:pointer;"><img style="height:35px;" type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
+							
 						</form>
 					</li>
 					<?php if (isLoggedIn()) : ?>

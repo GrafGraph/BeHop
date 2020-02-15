@@ -22,8 +22,28 @@ class ProductsController extends Controller
 		// if(!((isset($_GET['maxPrice']) && isset($_GET['minPrice'])) && (htmlspecialchars($_GET['maxPrice']) < htmlspecialchars($_GET['minPrice']))))
 		// {
 
+
 		// Which products to display regarding filters
-		$where ='';
+		$where ='';	
+		// Searchbar-Filters
+		if(isset($_GET['search']) && !empty($_GET['search']))
+		{
+			$searchFilters = explode ('+',htmlspecialchars($_GET['search']));
+			foreach($searchFilters as $searchFilter)
+			{
+				$category = Category::findOne('name like "%'.$searchFilter.'%"');
+				if(!empty($category['id']))
+				{
+					$where .= ' category_id = '.$category['id'].' or';
+				}
+				$where .= ' name like "%'.$searchFilter.'%" or';
+				$where .= ' brand like "%'.$searchFilter.'%" or';
+				$where .= ' color like "%'.$searchFilter.'%" or';
+			}
+			$where = substr($where, 0, -3); // remove the last 3 chars-> ' or'
+			$where .= ' and';
+		}
+		// Url-Filters
 		if(isset($_GET['cat']) || isset($_GET['productName']) || isset($_GET['color']) || isset($_GET['brand']) || isset($_GET['sale']) || isset($_GET['maxPrice']))
 		{
 			if(!empty($_GET['cat']))
@@ -68,7 +88,6 @@ class ProductsController extends Controller
 			{
 				$where .= ' price >= '.htmlspecialchars($_GET['minPrice']).' and';
 			}
-			// substr($where, 0, -4); // remove the last 4 chars-> ' and' // Not needed since we always add ' id is not null'
 		}
 		$where .= ' id is not null';
 		
