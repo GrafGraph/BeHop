@@ -24,8 +24,8 @@ if(empty($shoppingCartItems)) : ?>
                     $imageUrl = $item['image']['imageUrl'];
                     $imageAltText =$item['image']['altText'];?>
                         <div class="shoppingcart-container-inner">
-                            <div class="shoppingcart-item-left">
-                                <a class="shoppingcartProductLink" href="index.php?c=products&a=showProduct&productID=<?=$item['id']?>">
+                            <div>
+                                <a href="index.php?c=products&a=showProduct&productID=<?=$item['id']?>">
                                 <img class="shoppingcartProductImage" src=<?=$imageUrl?> alt=<?=$imageAltText?>></a>
                             </div>
                             <div class="shoppingcart-item-right">  

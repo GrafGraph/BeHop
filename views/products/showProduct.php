@@ -1,6 +1,6 @@
 <div class="product-wrap">   
     <h1 class="center">&raquo;<?=$product['name']?>&laquo;</h1>
-    <div class="showProduct-container">
+    <div class="container-nowrap">
         <div class="showProduct-item">
             <img class="productImage" src="<?=$images[0]['imageUrl']?>" alt="<?=$images[0]['imageAltText']?>">
         </div>

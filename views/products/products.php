@@ -1,7 +1,7 @@
 <h1 class="center">Browse our Products</h1>
-<div class="filter-wrap">
+<div class="lightgrey">
     <div>
-        <form method="GET" style="text-align:center">
+        <form method="GET" class="center" style="padding-top:0.5%;">
 
             <!-- hidden fields for controller and action location -->
             <input type="hidden" name="c" value="products">
@@ -73,7 +73,7 @@
                 </select>
             </div>
     </div>
-        <div class="filter-buttons">
+        <div class="container-nowrap">
             <div class="filter-button">
                 <button style="float:right;" type="submit" name="submit">Filter Now</button>
             </div>

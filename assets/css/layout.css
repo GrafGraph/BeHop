@@ -21,7 +21,6 @@
 
 .product {
     padding: 1%;
-    /* background-color: rgb(145, 145, 145); */
     text-align: center;
     width: 450px;
     margin-bottom: 50px;
@@ -98,9 +97,8 @@
     width: 100%;
 }
 
-.filter-wrap {
+.lightgrey {
     background-color: #efefef;
-    /* margin: auto; */
 }
 
 .filter-wrap form {
@@ -121,7 +119,7 @@
     width: 100%;
 }
 
-.filter-buttons {
+.container-nowrap {
     display: flex;
     flex-flow: nowrap;
 }
@@ -162,15 +160,12 @@
     z-index: 10;
 }
 
-.BeHopGrey {
-    background-color: #333333;
-}
-.BeHopGrey2 {
-    background-color: #333333;
-}
+.BeHopGrey,
+.BeHopGrey2,
 .BeHopGrey3 {
     background-color: #333333;
 }
+
 .navList {
     height: 80px;
     overflow: visible;
@@ -209,7 +204,6 @@
 }
 
 .shoppingcart-form {
-    /* width: 100%; */
     text-align: center;
     background-color: #ffffff;
     margin: 1%;
@@ -233,9 +227,6 @@
     margin-bottom: 2%;
     width: 100%;
 }
-
-
-/* .shoppingcart-item-left {} */
 
 .shoppingcart-item-right {
     width: 40%;
@@ -276,11 +267,6 @@
     margin-bottom: 2%;
 }
 
-.showProduct-container {
-    display: flex;
-    /* justify-content: space-between; */
-}
-
 .showProduct-item {
     flex: 1;
     margin: 1%;
@@ -294,12 +280,6 @@
 .inline {
     display: inline-block;
 }
-
-
-/* .shoppingcartProductLink {
-    max-width: 80px;
-    float: left;
-} */
 
 .imprint {
     text-align: left;
@@ -388,9 +368,10 @@ input {
     min-width: 30%;
 }
 
-input[name=submit]{
+input[name=submit] {
     width: 70px;
 }
+
 input[type=submit] {
     margin: 1%;
     padding: 8px;
@@ -422,9 +403,6 @@ input[type=email],
 select {
     padding: 8px;
 }
-
-
-
 
 .error {
     border: 2px solid var(--red);
@@ -472,75 +450,74 @@ button:hover {
     background: #333333;
 }
 
-
 .dropbtn {
-    background-color:#333333;
+    background-color: #333333;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: #333333;
     cursor: pointer;
-  }
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #333333;
     z-index: 10;
-  }
-  
-  .dropdown-content a {
-    color:white;
+}
+
+.dropdown-content a {
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     z-index: 10;
-  }
-  
-  
-  .dropdown:hover .dropdown-content {
+}
+
+.dropdown:hover .dropdown-content {
     display: block;
-  }
-  
+}
+
 @media (min-width: 521px) and (max-width: 1123px) {
     [class*="col-"] {
         width: 100%;
-    }    
-    .BeHopGrey{
-    display: none;
-    }  
-    .BeHopGrey3{
-    display: none;
-    }    
-    .logo{
-    margin-left: 5px;
-    }    
-} 
-
-@media (min-width: 1124px) {     
-    .BeHopGrey2 {
-    display: none;
     }
-    .BeHopGrey3{
-    display: none;
-    }  
-    }  
+    .BeHopGrey {
+        display: none;
+    }
+    .BeHopGrey3 {
+        display: none;
+    }
+    .logo {
+        margin-left: 5px;
+    }
+}
 
-@media (min-width: 300px) and (max-width: 520px) {     
+@media (min-width: 1124px) {
+    .BeHopGrey2 {
+        display: none;
+    }
+    .BeHopGrey3 {
+        display: none;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 520px) {
     [class*="col-"] {
         width: 100%;
-      } 
-    .BeHopGrey{
-    display: none;
-    }  
+    }
+    .BeHopGrey {
+        display: none;
+    }
     .BeHopGrey2 {
-    display: none;
-    }  
-    .logo{
+        display: none;
+    }
+    .logo {
         margin-left: 5px;
-    }    
-}   
+    }
+}

@@ -72,13 +72,13 @@ function highlightNavIcon($action)
 }
 
 // returns string, containing quantity of items and total price of shoppingcart for nav-display
-// function shoppingcartContent()
-// {
-//     $result ='';
-//     // Placeholder
-//     $result ='(00: 000.0€)';
-//     return $result;
-// }
+function shoppingcartContent()
+{
+    $result ='';
+    // Placeholder
+    $result ='00';
+    return $result;
+}
 
 // Calculate discountPrice for discount given in integer Percent and rounds up to second decimal
 function calculateDiscountPrice($standardPrice, $discountInPercent)
