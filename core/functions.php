@@ -41,6 +41,17 @@ function printSelectedIfSet($filterOption, $option)
     if(isset($_GET[$filterOption]) && $_GET[$filterOption] === $option) : ?>selected <? endif;
 }
 
+// Prints Content for Products Dropdown menu in Nav
+function productsMenu()
+{
+    ?>
+        <a style="color:red" href="">Sale</a>
+        <a href="">New In</a>
+        Categories
+        <a href="">Shoes</a>
+        <a href="">Hoodies</a>
+    <?
+}
 // Changes Nav Text-color if site is active
 function highlightNavText($action)
 {

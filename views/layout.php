@@ -18,8 +18,11 @@
 						<img src="assets/images/layout/logo.png" alt="BeHop-Logo" class="logo">
 					</a>
 					<ul class="navList">
-						<li>
+						<li class="dropdown">
 							<a href="index.php?c=products&a=products" title="Products" style="color:<?=highlightNavText('products');?>;">Products</a>
+							<div class="dropdown-content">
+								<?productsMenu();?>
+							</div>
 						</li>
 						<li>
 							<a href="index.php?a=aboutus" title="About Us" style="color:<?=highlightNavText('aboutus');?>">About Us</a>
@@ -27,23 +30,18 @@
 						<li>
 							<form method="GET" action="index.php?c=products&a=products">
 								<input type="text" name="search" placeholder="Search...">
-						</li>
-						<li>	
 								<input type="submit" name="searchSubmit">
-						</li>
 							</form>
 						</li>
 						<?php if(isLoggedIn()) : ?>
 							<li>
 								<a href="?c=account&a=logout" title="Logout" style="color:<?=highlightNavText('logout');?>;">Logout</a>
 							</li>
-							
 							<li>
 								<a href="?c=account&a=account" title="Account">
 									<img src="assets/images/layout/account<?=highlightNavIcon('account');?>.png" alt="Account" class="navIcon">
 								</a>
 							</li>
-						
 						<?php else : ?>
 							<li>
 								<a href="?c=account&a=login" title="Login">
@@ -59,59 +57,67 @@
 					</ul>
 				</nav>
 				<nav class="BeHopGrey2">
-				<a href="?a=index" title="Home"><img src="assets/images/layout/logo.png"
-					alt="BeHop-Logo" class="logo"></a>
-				<ul class = "navList">
-				<?php if(isLoggedIn()) : ?>
-				<li>
+					<a href="?a=index" title="Home">
+						<img src="assets/images/layout/logo.png" alt="BeHop-Logo" class="logo">
+					</a>
+					<ul class = "navList">
+						<?php if(isLoggedIn()) : ?>
+							<li>
 								<a href="?c=account&a=account" title="Account">
 									<img src="assets/images/layout/account<?=highlightNavIcon('account');?>.png" alt="Account" class="navIcon">
 								</a>
-				</li>
-				<?php else : ?>
+							</li>
+						<?php else : ?>
 							<li>
 								<a href="?c=account&a=login" title="Login">
 									<img src="assets/images/layout/account<?=highlightNavIcon('login');?>.png" alt="Login" class="navIcon">
 								</a>
 							</li>
-				<?php endif; ?>
-				<li>
+						<?php endif; ?>
+						<li>
 							<a href="index.php?c=account&a=shoppingcart" title="Shopping Cart">
 								<img src="assets/images/layout/shoppingCart<?=highlightNavIcon('shoppingcart');?>.png" alt="Einkaufswagen Bild" class="navIcon" style="margin-right:50px;">
 							</a>
-				</li>
-				<div class="dropdown" style="float:right;">
-				<button class="dropbtn">Menu</button>
-						<div class="dropdown-content">
-									<li><a href="index.php?c=products&a=products">Products</a></li>
-									<li><a href="index.php?a=aboutus">About Us</a></li>
+						</li>
+						<div class="dropdown">
+							<li>
+								<button class="dropbtn">Menu</button>
+							</li>
+							<div class="dropdown-content">
+								<li><a href="index.php?c=products&a=products">Products</a></li>
+								<li><a href="index.php?a=aboutus">About Us</a></li>
 								<?php if(isLoggedIn()) : ?>
 									<li><a href="?c=account&a=logout">Logout</a></li>
 								<?php else : ?>
 									<li><a href="?c=account&a=login">Login</a></li>
 								<?php endif; ?>  
+							</div>
 						</div>
-				</div>
-				</ul>
+					</ul>
 				</nav>	
 				<nav class="BeHopGrey3">
-				<a href="?a=index" title="Home"><img src="assets/images/layout/logo.png"
-					alt="BeHop-Logo" class="logo"></a>
-				<ul class = "navList">
-				<div class="dropdown" style="float:right;">
-				<button class="dropbtn">Menu</button>
-						<div class="dropdown-content">
-									<li><a href="index.php?c=products&a=products">Products</a></li>
-									<li><a href="index.php?a=aboutus">About Us</a></li>
-								<?php if(isLoggedIn()) : ?>
-									<li><a href="?c=account&a=logout">Logout</a></li>
-								<?php else : ?>
-									<li><a href="?c=account&a=login">Login</a></li>
-								<?php endif; ?>  
-								<li><a href="index.php?c=account&a=shoppingcart">Shopping Cart</a></li>
-						</div>
-				</div>
-				</ul>
+					<ul class = "navList">
+						<li>
+							<a href="?a=index" title="Home">
+								<img src="assets/images/layout/logo.png" alt="BeHop-Logo" class="logo">
+							</a>
+						</li>
+							<div class="dropdown">
+								<li>
+									<button class="dropbtn">Menu</button>
+								</li>
+								<div class="dropdown-content">
+											<li><a href="index.php?c=products&a=products">Products</a></li>
+											<li><a href="index.php?a=aboutus">About Us</a></li>
+										<?php if(isLoggedIn()) : ?>
+											<li><a href="?c=account&a=logout">Logout</a></li>
+										<?php else : ?>
+											<li><a href="?c=account&a=login">Login</a></li>
+										<?php endif; ?>  
+										<li><a href="index.php?c=account&a=shoppingcart">Shopping Cart</a></li>
+								</div>
+							</div>
+					</ul>
 				</nav>		
 			</header>
 			<main>
