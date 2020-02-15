@@ -514,42 +514,64 @@ button:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.searchFieldMaxTabletVersion{
+    background-color:  #333333;
+    height: 80px;   
+}
 
+#backToNav{
+    float: left;
+    margin-top: 20px;
+    width: 5%;
+    height: 40px;
+    margin-left: 3%;
+}
+
+.clear{
+    clear: left;
+}
+
+.inputSearch{
+    width: 80%;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 2%;
+}
 @media (min-width: 521px) and (max-width: 1123px) {
     [class*="col-"] {
-        width: 100%;
+        width: 100% !important;;
     }
     .BeHopGrey {
-        display: none;
+        display: none !important;
     }
     .BeHopGrey3 {
-        display: none;
-    }
-    .logo {
-        margin-left: 5px;
+        display: none !important;
     }
 }
 
 @media (min-width: 1124px) {
     .BeHopGrey2 {
-        display: none;
+        display: none !important;
     }
     .BeHopGrey3 {
-        display: none;
+        display: none !important;
+    }
+    #searchMin{
+        display: none !important;
     }
 }
 
 @media (max-width: 520px) {
     [class*="col-"] {
-        width: 100%;
+        width: 100% !important;
     }
     .BeHopGrey {
-        display: none;
+        display: none !important;
     }
     .BeHopGrey2 {
-        display: none;
+        display: none !important;
     }
-    .logo {
-        margin-left: 5px;
+    #searchMin{
+        display: none !important; 
     }
 }
