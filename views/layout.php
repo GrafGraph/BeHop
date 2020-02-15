@@ -39,7 +39,7 @@
 							<input type="hidden" name="c" value="products">
 							<input type="hidden" name="a" value="products">
 							<input type="text" name="search" placeholder="Search..." id="mainSearch">
-							<button style="all:initial; display:inline; position:absolute; cursor:pointer; margin-left:1%"><img style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
+							<button style="all:initial; display:inline; position:absolute; cursor:pointer;"><img style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
 							
 						</form>
 					</li>
@@ -109,8 +109,12 @@
 				</ul>
 			</nav>
 			<div class="searchFieldMaxTabletVersion" id="searchMin" style="display: none;">
-				<input class="inputSearch" type="text" placeholder="Search..." style="float: left;">
+			<form method="GET" action="index.php?c=products&a=products">
+				<input type="hidden" name="c" value="products">
+				<input type="hidden" name="a" value="products">
+				<input class="inputSearch" name="search" placeholder="Search..." id="mainSearch" style="float: left;">
 				<i class="fas fa-search searchClick" style="float: left; width: 5%; height: 40px; margin-top: 20px; margin-left: 3%"></i>
+			<form method="GET" action="index.php?c=products&a=products">
 				<div id="backToNav"><i class="fas fa-times" style=" width: 100%; height: 100%;"></i></div>
 				<div class="clear"></div>
 
