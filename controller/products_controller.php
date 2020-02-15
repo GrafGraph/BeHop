@@ -174,7 +174,7 @@ class ProductsController extends Controller
 			$cartItem['quantity'] = $quantity;
 			if(isLoggedIn())	// New or Updated Entry in table shoppingcart_has_product
 			{
-				
+				// include 'core/updateShoppingcart.php';
 				$shoppingCart = ShoppingCart::findOne('user_id = '.$_SESSION['userID']);
 				// Find existing shoppingCart_has_product Entry
 				$shoppingCart_has_product = ShoppingCart_has_product::findOne(
