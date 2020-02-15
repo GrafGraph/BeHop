@@ -57,7 +57,7 @@ if(empty($shoppingCartItems)) : ?>
                 <? endforeach;?>
                 <input type="hidden" name="numberOfItems" value=<?=count($shoppingCartItems)?>>
                 <div>
-                    <button type="submit" name="submit">Save</button>
+                    <button type="submit" name="updateShoppingcartSubmit">Save</button>
                     <button type="reset" name="reset">Reset</button>
                 </div>
             </form>  
@@ -70,7 +70,7 @@ if(empty($shoppingCartItems)) : ?>
                     <div>
                         <form action="index.php?c=account&a=checkout" method="POST">
                             <input type="hidden" name="priceTotal" value=<?=$priceTotal?>>
-                            <input type="submit" name="checkout" value="Proceed to Checkout">
+                            <input type="submit" name="checkoutSubmit" value="Proceed to Checkout">
                         </form>
                     </div>
                 <? 

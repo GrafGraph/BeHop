@@ -167,7 +167,7 @@ class ProductsController extends Controller
 		$this->_params['product'] = $product;
 
 		// Add to Cart-Routine
-		if(isset($_POST['submit']))
+		if(isset($_POST['addToCartSubmit']))
 		{
 			$quantity = $_POST['quantity'];
 			$cartItem['product_id'] = $product['id'];

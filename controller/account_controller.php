@@ -96,7 +96,7 @@ class AccountController extends Controller
 		if(isLoggedIn() && isset($_SESSION['userID']))
 		{
 			// Updating Account Information
-			if(isset($_POST['submit']))
+			if(isset($_POST['updateAccountSubmit']))
 			{
 				// TODO: UserID aus Session zu holen ist unsicher? -> Wenn UserID inkorrekt ist oder verändert wird,
 				// funktioniert der Rest hier nicht...
@@ -316,7 +316,7 @@ class AccountController extends Controller
 		$this->_params['title'] = 'BeHop - Mein Warenkorb' ;
 
 		// Changes to Items and Quantity if $_POST['submit'] is set
-		if(isset($_POST['submit']))
+		if(isset($_POST['updateShoppingcartSubmit']))
 		{
 			
 			if(isLoggedIn())	// Update Database
@@ -448,18 +448,18 @@ class AccountController extends Controller
 			$address = Address::findOne('id = ' . $user['address_id']);
 			$this->_params['address'] = $address;
 
-			if(isset($_POST['checkout']))	// confirm data
+			if(isset($_POST['checkoutSubmit']))	// confirm data
 			{
 				$this->_params['priceTotal'] = $_POST['priceTotal'];
 				$this->_params['step'] = 1;
 				
 			}
-			elseif(isset($_POST['submit']))	// select payment
+			elseif(isset($_POST['confirmedInformationSubmit']))	// select payment
 			{
 				$this->_params['priceTotal'] = $_POST['priceTotal'];
 				$this->_params['step'] = 2;
 			}
-			elseif(isset($_POST['paid']))	// create new order
+			elseif(isset($_POST['paidSubmit']))	// create new order
 			{
 				$this->_params['step'] = 3;
 			// find ShoppingCart to User
@@ -497,7 +497,7 @@ class AccountController extends Controller
 	public function actionPayment()
 	{
 		$this->_params['title'] = 'BeHop - Payment' ;
-		if(isset($_POST['placeOrder']))
+		if(isset($_POST['placeOrderSubmit']))
 		{
 			if(isset($_POST['paymentMethod']) && isset($_POST['priceTotal']))
 			{

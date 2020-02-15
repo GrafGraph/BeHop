@@ -50,7 +50,7 @@ function productsMenu($categories)
                 <a href="index.php?c=products&a=products&sortBy=newestFirst">New In</a>
             </div>
             <div class="flex-container-half">
-                <div style="color:#ffffff; border-bottom: 1px solid #ffffff; text-align:left; width:90%;margin:2%;">
+                <div style="color:#ffffff; border-bottom: 1px solid #696969; text-align:left; width:90%;margin:2%;">
                     Categories
                 </div>
                     <? foreach($categories as $category) : ?>

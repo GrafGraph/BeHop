@@ -24,7 +24,7 @@
                 <label class="inline" for="quantity"><strong>Amount:</strong></label>
                 <input type="number" name="quantity" min="1" max=<?=$product['numberInStock']?> value="1">
                 <br>
-                <button type="submit" name="submit">Add to Cart</button>
+                <button type="submit" name="addToCartSubmit">Add to Cart</button>
             </form>
         </div>
     </div>

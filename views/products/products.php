@@ -75,7 +75,7 @@
     </div>
         <div class="container-nowrap">
             <div class="filter-button">
-                <button style="float:right;" type="submit" name="submit">Filter Now</button>
+                <button style="float:right;" type="submit" name="filterSubmit">Filter Now</button>
             </div>
         </form>
             <div class="filter-button">

@@ -7,7 +7,7 @@
         </div>
     <? endif;?>
     <form method="POST" action="?c=account&a=checkout">
-        <button type="submit" name="paid">Pay Now</button>
+        <button type="submit" name="paidSubmit">Pay Now</button>
     </form>
     <form method="POST" action="?c=account&a=checkout">
         <button type="submit" name="submit">Cancel</button>

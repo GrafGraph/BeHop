@@ -27,7 +27,7 @@
         <a href="index.php?c=account&a=account"><button>Change Information</button></a>
         <form method="POST">
             <input type="hidden" name="priceTotal" value=<?=$priceTotal?>>
-            <button type="submit" name="submit">Continue</button>
+            <button type="submit" name="confirmedInformationSubmit">Continue</button>
         </form>
     </div>
 <? elseif($step === 2) : ?>
@@ -52,7 +52,7 @@
                 <p class="price">Total: <?=$priceTotal?>&euro;</p>
                 <div>
                     <input type="hidden" name="priceTotal" value=<?=$priceTotal?>>
-                    <button type="submit" name="placeOrder">Place Order</button>
+                    <button type="submit" name="placeOrderSubmit">Place Order</button>
                 </div>
             </form>
         </div>

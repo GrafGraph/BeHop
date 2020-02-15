@@ -83,7 +83,7 @@
               <!-- <span class="error-message" id="errorZIP"></span> -->
           </div>
 
-          <button type="submit" name="submit">Save Changes</button>
+          <button type="submit" name="updateAccountSubmit">Save Changes</button>
           <button type="reset">Reset Changes</button>
       </form>
       
