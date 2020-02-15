@@ -33,8 +33,8 @@
 					</li>
 					<li>
 						<form method="GET" action="index.php?c=products&a=products">
-							<input type="text" name="search" placeholder="Search...">
-							<input type="submit" name="searchSubmit">
+							<input type="text" name="search" placeholder="Search..." id="mainSearch">
+							<!--input type="submit" name="searchSubmit" -->
 						</form>
 					</li>
 					<?php if (isLoggedIn()) : ?>
@@ -118,7 +118,7 @@
 					</li>
 					<div class="dropdown">
 						<li>
-							<button class="dropbtn">Menu</button>
+							<button class="dropbtn"><i class="fas fa-bars dropDownbtnIcon" style="width: 25%; height: 25%; "></i></button>
 						</li>
 						<div class="dropdown-content">
 							<li><a href="index.php?c=products&a=products">Products</a></li>
@@ -135,7 +135,7 @@
 				</ul>
 			</nav>
 		</header>
-		<main>
+		<main id="main">
 			<?php echo $body ?>
 		</main>
 	</div>
