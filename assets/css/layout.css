@@ -349,10 +349,12 @@ footer {
     position: relative;
 }
 
+
+/* 
 body,
 body * {
     color: dimgray;
-}
+} */
 
 label {
     display: block;
@@ -452,11 +454,15 @@ button:hover {
 
 .dropbtn {
     background-color: #333333;
-    color: white;
+    color: white !important;
     padding: 16px;
     font-size: 16px;
     border: #333333;
     cursor: pointer;
+}
+
+.dropDownbtnIcon:hover {
+    color: rgb(193, 193, 193);
 }
 
 .dropdown {
@@ -482,12 +488,14 @@ button:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-.searchFieldMaxTabletVersion{
-    background-color:  #333333;
-    height: 80px;   
+
+.searchFieldMaxTabletVersion {
+    background-color: #333333;
+    height: 80px;
 }
 
-#backToNav{
+#backToNav {
+    color: white;
     float: left;
     margin-top: 20px;
     width: 5%;
@@ -495,19 +503,42 @@ button:hover {
     margin-left: 3%;
 }
 
-.clear{
+#backToNav:hover {
+    color: rgb(193, 193, 193);
+}
+
+.invidualSearch {
+    margin-left: -70%;
+    color: white;
+}
+
+.searchClick {
+    color: white;
+}
+
+.searchClick:hover {
+    color: rgb(193, 193, 193);
+}
+
+.invidualSearch:hover {
+    color: rgb(193, 193, 193);
+}
+
+.clear {
     clear: left;
 }
 
-.inputSearch{
+.inputSearch {
     width: 80%;
     height: 40px;
     margin-top: 20px;
     margin-left: 2%;
 }
+
 @media (min-width: 521px) and (max-width: 1123px) {
     [class*="col-"] {
-        width: 100% !important;;
+        width: 100% !important;
+        ;
     }
     .BeHopGrey {
         display: none !important;
@@ -524,7 +555,7 @@ button:hover {
     .BeHopGrey3 {
         display: none !important;
     }
-    #searchMin{
+    #searchMin {
         display: none !important;
     }
 }
@@ -539,7 +570,7 @@ button:hover {
     .BeHopGrey2 {
         display: none !important;
     }
-    #searchMin{
-        display: none !important; 
+    #searchMin {
+        display: none !important;
     }
 }

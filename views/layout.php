@@ -84,11 +84,11 @@
 						</a>
 					</li>
 					<li id="searchClick">
-						<i class="fas fa-search" style="width: 45%; height: 45%; margin-left: -70%; color: white !important; opacity: 1.4;"></i>
+						<i class="fas fa-search invidualSearch" style="width: 45%;height: 45%;"></i>
 					</li>
 					<div class="dropdown">
 						<li>
-							<button class="dropbtn">Menu</button>
+							<button class="dropbtn"><i class="fas fa-bars dropDownbtnIcon" style="width: 25%; height: 25%; "></i></button>
 						</li>
 						<div class="dropdown-content">
 							<li><a href="index.php?c=products&a=products">Products</a></li>
@@ -102,11 +102,11 @@
 					</div>
 				</ul>
 			</nav>
-			<div class ="searchFieldMaxTabletVersion" id="searchMin" style="display: none;">
-				<input class= "inputSearch" type="text" placeholder="Search..." style = "float: left;">
-				<i class="fas fa-search" style = "float: left; width: 5%; height: 40px; margin-top: 20px; margin-left: 3%"></i>
-				<div id="backToNav"><i class="fas fa-times" style = " width: 100%; height: 100%;"></i></div>
-				<div class= "clear"></div>
+			<div class="searchFieldMaxTabletVersion" id="searchMin" style="display: none;">
+				<input class="inputSearch" type="text" placeholder="Search..." style="float: left;">
+				<i class="fas fa-search searchClick" style="float: left; width: 5%; height: 40px; margin-top: 20px; margin-left: 3%"></i>
+				<div id="backToNav"><i class="fas fa-times" style=" width: 100%; height: 100%;"></i></div>
+				<div class="clear"></div>
 
 			</div>
 			<nav class="BeHopGrey3">
@@ -143,23 +143,7 @@
 		<a href="?a=index" title="Home" class="noDecoration">BEHOP</a> &copy;
 		<a href="index.php?a=impressum">Imprint</a>
 	</footer>
-
-	<script>
-		document.getElementById("searchClick").addEventListener('click', function() {
-			var nav = document.getElementById('fullListMin');
-			var searchFull = document.getElementById('searchMin');
-			nav.style.display = "none";
-			searchFull.style.display = "block";
-		});
-
-
-		document.getElementById('backToNav').addEventListener('click', function() {
-			var nav = document.getElementById('fullListMin');
-			var searchFull = document.getElementById('searchMin');
-			nav.style.display = "block";
-			searchFull.style.display = "none";
-		});
-	</script>
 </body>
+<script src="assets/js/listenerLayout.js"></script>
 
 </html>
