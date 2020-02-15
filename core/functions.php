@@ -97,10 +97,25 @@ function highlightNavIcon($action)
 // returns string, containing quantity of items and total price of shoppingcart for nav-display
 function shoppingcartContent()
 {
-    $result ='';
-    // Placeholder
-    $result ='00';
-    return $result;
+    $sum = 0;
+    if(isLoggedIn())
+    {
+        $shoppingCart = beHop\Shoppingcart::findOne('user_id = '.$_SESSION['userID']);
+        $shoppingCartEntries = beHop\ShoppingCart_has_product::find('shoppingCart_id = '.$shoppingCart['id']);
+        foreach($shoppingCartEntries as $entry)
+        {
+            $sum += $entry['quantity'];
+        }
+    }
+    elseif(thereAreShoppingCartItemsInSession())
+    {
+        foreach($_SESSION['shoppingCartItems'] as $entry)
+        {
+            $sum += $entry['quantity'];
+        }
+    }
+    $result = strval($sum);
+    return ($result<1000) ? $result : '999+';
 }
 
 // Calculate discountPrice for discount given in integer Percent and rounds up to second decimal

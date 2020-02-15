@@ -577,6 +577,20 @@ button:hover {
     margin-left: 2%;
 }
 
+.shoppingcartQuantity {
+    border: 2px solid #ff5757;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    width: 35%;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -20px;
+    background-color: #ff5757;
+    color: white;
+    font-size: 80%;
+}
+
 @media (min-width: 521px) and (max-width: 1123px) {
     [class*="col-"] {
         width: 100% !important;
