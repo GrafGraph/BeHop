@@ -51,7 +51,7 @@
             </div>
         </div>  
         <div class="start-item">
-            <a href="index.php?c=products&a=products&cat=Sweaters">
+            <a href="index.php?c=products&a=products&cat=Hoodies">
             <img src="assets/images/index/hoodiesAndSweaters.png" alt="Hoodies And Sweaters"></a>
             
         </div>

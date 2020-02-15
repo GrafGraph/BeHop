@@ -9,11 +9,11 @@ class Controller
 	private $_controllerName = null; // stores the called controller name without "controller" as suffix
 
 	protected $_params = []; // stores all values we like to transfer to the view in render perform
-
 	public function __construct($action = null, $controllerName = null)
 	{
 		$this->_action         = $action;
 		$this->_controllerName = $controllerName;
+		$this->_params['categories'] = Category::findAttributes('name','id is not null');
 	}
 
 	public function renderHTML()
