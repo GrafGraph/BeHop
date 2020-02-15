@@ -324,7 +324,7 @@ class AccountController extends Controller
 				$userID = $_SESSION['userID'];
 				// Get latest Shoppingcart-Content
 				$latestShoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
-				$shoppingCartProducts = ShoppingCart_has_product::find('shoppingCart_id = '. $latestshoppingCart['id']);
+				$shoppingCartProducts = ShoppingCart_has_product::find('shoppingCart_id = '. $latestShoppingCart['id']);
 				// Which product was changed?
 				foreach($shoppingCartProducts as $product)
 				{
@@ -332,14 +332,14 @@ class AccountController extends Controller
 					// Delete or change quantity?
 					if(isset($_POST["remove".$id]) && !empty($_POST["remove".$id]))	// Delete
 					{
-						$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestshoppingCart['id'].' and product_id = '.$id);
+						$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
 						// Delete shoppingCartHasProducts-Entry from Database
 						$deletedShoppingCartHasProducts = new ShoppingCart_has_product($updateShoppingCartHasProducts);
 						$deletedShoppingCartHasProducts->delete();
 					}
 					elseif(isset($_POST["quantity".$id]) && !empty($_POST["quantity".$id])) // Change Quantity
 					{
-						$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestshoppingCart['id'].' and product_id = '.$id);
+						$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
 						// Update Quantity
 						$updateShoppingCartHasProducts['quantity'] = htmlspecialchars($_POST["quantity".$id]);
 						$updatedShoppingCart = new ShoppingCart_has_product($updateShoppingCartHasProducts);
