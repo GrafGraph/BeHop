@@ -9,7 +9,5 @@
     <form method="POST" action="?c=account&a=checkout">
         <button type="submit" name="paidSubmit">Pay Now</button>
     </form>
-    <form method="POST" action="?c=account&a=checkout">
-        <button type="submit" name="submit">Cancel</button>
-    </form>
+    <a href="?c=account&a=shoppingcart"><button>Cancel</button></a>
 </section>
