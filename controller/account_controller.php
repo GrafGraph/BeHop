@@ -314,83 +314,62 @@ class AccountController extends Controller
 
     public function actionShoppingcart()
 	{
-		$this->_params['title'] = 'BeHop - Mein Warenkorb' ;
+		$this->_params['title'] = 'BeHop - Shopping Cart' ;
 
-		// Changes to Items and Quantity if $_POST['submit'] is set
+		// Changes to Items and Quantity if $_POST['updateShoppingcartSubmit'] is set
 		if(isset($_POST['updateShoppingcartSubmit']))
 		{
-			
 			if(isLoggedIn())	// Update Database
 			{
 				$userID = $_SESSION['userID'];
+				// Get latest Shoppingcart-Content
+				$latestShoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
+				$shoppingCartProducts = ShoppingCart_has_product::find('shoppingCart_id = '. $shoppingCart['id']);
 				// Which product was changed?
-				for($n = 0; $n < $_POST['numberOfItems']; $n++)
-				{	
+				foreach($shoppingCartProducts as $product)
+				{
+					$id = strval($product['product_id']);
 					// Delete or change quantity?
-					if(isset($_POST["remove".$n]) && !empty($_POST["remove".$n]))
+					if(isset($_POST["remove".$id]) && !empty($_POST["remove".$id]))	// Delete
 					{
-						$prodID = $_POST["prodID".$n];
-						$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
-						$shoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $shoppingCart['id'].' and product_id = '.$prodID);
-						// Delete shoppingCartHasProducts from Database
-						$deletedShoppingCartHasProducts = new ShoppingCart_has_product($shoppingCartHasProducts);
+						$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $shoppingCart['id'].' and product_id = '.$id);
+						// Delete shoppingCartHasProducts-Entry from Database
+						$deletedShoppingCartHasProducts = new ShoppingCart_has_product($updateShoppingCartHasProducts);
 						$deletedShoppingCartHasProducts->delete();
 					}
-					elseif(isset($_POST["quantity".$n]) && !empty($_POST["quantity".$n]))
+					elseif(isset($_POST["quantity".$id]) && !empty($_POST["quantity".$id])) // Change Quantity
 					{
-						$prodID = $_POST["prodID".$n];
-						$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
-						$shoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $shoppingCart['id'].' and product_id = '.$prodID);
+						$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $shoppingCart['id'].' and product_id = '.$id);
 						// Update Quantity
-						$shoppingCartHasProducts['quantity'] = htmlspecialchars($_POST["quantity".$n]);
-						$updatedShoppingCart = new ShoppingCart_has_product($shoppingCartHasProducts);
+						$updateShoppingCartHasProducts['quantity'] = htmlspecialchars($_POST["quantity".$id]);
+						$updatedShoppingCart = new ShoppingCart_has_product($updateShoppingCartHasProducts);
 						$updatedShoppingCart->save();
 					}
 				}
 			}
 			elseif(thereAreShoppingCartItemsInSession())	// Update Session
 			{
-				for($n = 0; $n < $_POST['numberOfItems']; $n++)
-				{	
-					if(isset($_POST["remove".$n]) && $_POST["remove".$n] == true)
+				foreach($_SESSION['shoppingCartItems'] as $key => &$sessionItem)
+				{
+					$id = $sessionItem['product_id'];
+					// Delete or change quantity?
+					if(isset($_POST["remove".$id]) && !empty($_POST["remove".$id]))	// Delete
 					{
-						// Delete shoppingCartItem from Session
-						$prodID = $_POST["prodID".$n];
-						$numberOfItemsInCart = count($_SESSION['shoppingCartItems']);
-						if($numberOfItemsInCart == 1)
-						{
-							unset($_SESSION['shoppingCartItems']);
-						}
-						else
-						{
-							for($i = 0; $i < $numberOfItemsInCart; $i++)
-							{
-								if(isset($_SESSION['shoppingCartItems'][$i]['product_id']) && $_SESSION['shoppingCartItems'][$i]['product_id'] === $prodID)
-								{
-									unset($_SESSION['shoppingCartItems'][$i]);
-									break;
-								}
-							}
-						}
+						unset($_SESSION['shoppingCartItems'][$key]);	
 					}
-					elseif(isset($_POST["quantity".$n]) && !empty($_POST["quantity".$n]))
+					elseif(isset($_POST["quantity".$id]) && !empty($_POST["quantity".$id])) // Change Quantity
 					{
-						$prodID = $_POST["prodID".$n];
-						// Update Quantity
-						foreach($_SESSION['shoppingCartItems'] as &$shoppingCartItem)
-						{
-							if($shoppingCartItem['product_id'] === $prodID)
-							{
-								$shoppingCartItem['quantity'] = $_POST["quantity".$n];
-								break;
-							}
-						}
+						$sessionItem['quantity'] = htmlspecialchars($_POST["quantity".$id]);
 					}
+				}
+				if(empty($_SESSION['shoppingCartItems']))
+				{
+					unset($_SESSION['shoppingCartItems']);
 				}
 			}
 		}
 
-		// Choosing the correct Items
+		// Choosing the correct Items to display
 		$shoppingCartItems = array();
 		if(isLoggedIn() || thereAreShoppingCartItemsInSession())
 		{
@@ -401,8 +380,8 @@ class AccountController extends Controller
 				$userID = $_SESSION['userID'];
 				$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
 				$shoppingCartHasProducts = ShoppingCart_has_product::find('shoppingCart_id = '. $shoppingCart['id']);
-			}		
-			//	ELSE: Warenkorb ergibt sich aus Session
+			}
+			//	ELSE: Shoppingcart from Session
 			else
 			{
 				$shoppingCartHasProducts = $_SESSION['shoppingCartItems'];

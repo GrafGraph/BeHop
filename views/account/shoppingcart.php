@@ -6,18 +6,22 @@ if(empty($shoppingCartItems)) : ?>
     <div class="center">
         <h2>Your Shopping Cart is Empty</h2>
         <? if(!isLoggedIn()) : ?>
-        <p>Log in to see your Shopping Cart</p>
+            <div>
+                <a href="index.php?c=account&a=login">
+                    <button class="disabled" title="Log in to be able to check out">Log in to see your Shopping Cart</button>
+                </a>
+            </div>
         <? endif;?>
     </div>
 <? else :
     $priceTotal = 0.0;
-    $n = 0; // Counter for indexing the quantity and remove submit
+    // $n = 0; // Counter for indexing the quantity and remove submit
     ?>
     <div class="shoppingcart-wrap">
         <div class="shoppingcart-container-outer">
             <form Method="POST" class="shoppingcart-form">
                 <? foreach($shoppingCartItems as $item) :
-                    $quantity = isset($_POST['submit'.$n]) ? htmlspecialchars($_POST['submit'.$n]) : htmlspecialchars($item['quantity']);
+                    $quantity = isset($_POST['submit'.strval($item['id'])]) ? htmlspecialchars($_POST['submit'.strval($item['id'])]) : htmlspecialchars($item['quantity']);
                     $itemPrice = isset($item['discountPrice']) ? $item['discountPrice'] : $item['price'];
                     $priceForPosition = $itemPrice * $quantity;
                     $priceTotal +=  $priceForPosition;
@@ -41,26 +45,30 @@ if(empty($shoppingCartItems)) : ?>
                                     <? endif;?>
                                 </div> 
                                 <div>
-                                    Quantity: <input type="number" name=<?="quantity".$n?> min="1" max=<?=$item['numberInStock']?> value=<?=$quantity?>>
+                                    Quantity: <input type="number" name=<?="quantity".strval($item['id'])?> min="1" max=<?=$item['numberInStock']?> value=<?=$quantity?>>
                                 </div>
                                 <div>
                                     Sum: <span class="price"><?=$priceForPosition?>&euro;</span>
                                 </div>
                                 <div>
                                     <label for="remove">Remove?</label>
-                                    <input type="checkbox" name=<?="remove".$n?> id="remove">
+                                    <input type="checkbox" name=<?="remove".strval($item['id'])?> id="remove">
                                 </div>
-                                <input type="hidden" name=<?="prodID".$n?> value=<?=$item['id']?>>
+                                <input type="hidden" name=<?="prodID".strval($item['id'])?> value=<?=$item['id']?>>
                             </div>
                         </div>
-                    <? $n++;?>
                 <? endforeach;?>
                 <input type="hidden" name="numberOfItems" value=<?=count($shoppingCartItems)?>>
                 <div>
-                    <button type="submit" name="updateShoppingcartSubmit">Save</button>
-                    <button type="reset" name="reset">Reset</button>
+                    <button type="submit" name="updateShoppingcartSubmit">Save Changes</button>
+                    <button type="reset" name="reset">Reset Changes</button>
                 </div>
-            </form>  
+            </form>
+            <!-- <form method="post">
+                <div>
+                    <button type="submit" name="clearShoppingcartSubmit">Clear Shopping Cart</button>
+                </div>
+            </form> -->
             <div class="shoppingcart-checkout">  
                 <div>
                     <p class="total">Total</p>
