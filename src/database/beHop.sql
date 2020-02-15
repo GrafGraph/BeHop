@@ -68,13 +68,12 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `createdAt`, `updatedAt`, `name`) VALUES
 (1, '2020-01-12 07:59:20', NULL, 'Shoes'),
-(2, '2020-01-12 07:59:20', NULL, 'Trousers'),
+(2, '2020-01-12 07:59:20', NULL, 'Pants'),
 (3, '2020-01-16 15:59:06', NULL, 'T-Shirts'),
 (4, '2020-01-16 15:59:06', NULL, 'Jackets'),
-(5, '2020-01-16 15:59:06', NULL, 'Sweaters and Hoodies'),
-(6, '2020-01-16 15:59:06', NULL, 'Underwear'),
-(7, '2020-01-20 20:10:32', NULL, 'Hats'),
-(8, '2020-01-20 20:10:32', NULL, 'Socks');
+(5, '2020-01-16 15:59:06', NULL, 'Hoodies'),
+(6, '2020-01-20 20:10:32', NULL, 'Hats'),
+(7, '2020-01-20 20:10:32', NULL, 'Socks');
 
 -- --------------------------------------------------------
 
