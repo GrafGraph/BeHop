@@ -82,12 +82,12 @@ class AccountController extends Controller
 	//TODO: Logout Seite interessanter gestalten? Oder auf index weiterleiten und alert anzeigen?
 	public function actionLogout()
 	{
+		$this->_params['title'] = 'BeHop - Logout';
 		if(isLoggedIn())
 		{
 			$_SESSION['loggedIn'] = false;
 		}
 		session_destroy();
-		header('Location: index.php');
 	}
 
 
