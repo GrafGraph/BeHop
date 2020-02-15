@@ -527,10 +527,7 @@ button:hover {
 }
 
 #backToNav {
-<<<<<<< HEAD
-=======
     color: white;
->>>>>>> 35d77a9cf5d66be462736fc68b92482237927c4b
     float: left;
     margin-top: 20px;
     width: 5%;
@@ -538,8 +535,6 @@ button:hover {
     margin-left: 3%;
 }
 
-<<<<<<< HEAD
-=======
 #backToNav:hover {
     color: rgb(193, 193, 193);
 }
@@ -561,7 +556,6 @@ button:hover {
     color: rgb(193, 193, 193);
 }
 
->>>>>>> 35d77a9cf5d66be462736fc68b92482237927c4b
 .clear {
     clear: left;
 }
