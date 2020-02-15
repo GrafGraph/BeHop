@@ -105,9 +105,7 @@ function printFilterOptions($filterOptions, $attribute, $urlAttribute)
 
     <option value=<?=$filterOption[$attribute]?>
                 <?// Remember which option was selected
-				if(isset($_GET[$urlAttribute]) && $_GET[$urlAttribute] == $filterOption[$attribute]) : ?>
-				selected
-                <? endif; ?>
+                printSelectedIfSet($urlAttribute, $filterOption[$attribute]);?>
 				>
                 <?=$filterOption[$attribute]?></option>
     <? endforeach;
