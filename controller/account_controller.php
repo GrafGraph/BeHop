@@ -87,6 +87,7 @@ class AccountController extends Controller
 			$_SESSION['loggedIn'] = false;
 		}
 		session_destroy();
+		header('Location: index.php');
 	}
 
 
