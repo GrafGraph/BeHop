@@ -20,8 +20,8 @@
 					<ul class="navList">
 						<li class="dropdown">
 							<a href="index.php?c=products&a=products" title="Products" style="color:<?=highlightNavText('products');?>;">Products</a>
-							<div class="dropdown-content">
-								<?productsMenu();?>
+							<div class="dropdown-content" style="width:490px;">
+								<?productsMenu($categories);?>
 							</div>
 						</li>
 						<li>

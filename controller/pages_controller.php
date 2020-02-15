@@ -21,10 +21,6 @@ class PagesController extends Controller
 			$sale['image'] = Image::findOne('sales_id = ' . $sale['id']);
 		}
 		$this->_params['sales'] = $sales;
-
-		// Get Highlights
-		// $highlights = Image::find('product_id is null AND sales_id is null');
-		// $this->_params['highlights'] = $highlights;
 	}
 
 	public function actionError404()

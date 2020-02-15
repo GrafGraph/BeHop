@@ -1,5 +1,4 @@
 <?php
-
 const DEBUG =true;
 // const ERROR =true;
  
@@ -42,14 +41,27 @@ function printSelectedIfSet($filterOption, $option)
 }
 
 // Prints Content for Products Dropdown menu in Nav
-function productsMenu()
+function productsMenu($categories)
 {
     ?>
-        <a class="priceNew" href="">Sale</a>
-        <a href="">New In</a>
-        Categories
-        <a href="">Shoes</a>
-        <a href="">Hoodies</a>
+        <div class="flex-container">
+            <div class="flex-item">
+                <a style="color:#ff5757;" href="index.php?c=products&a=products&sale=all">Sale</a>
+                <a href="index.php?c=products&a=products&sortBy=newestFirst">New In</a>
+            </div>
+            <div class="flex-container-half">
+                <div style="color:#ffffff; border-bottom: 1px solid #ffffff; text-align:left; width:90%;margin:2%;">
+                    Categories
+                </div>
+                    <? foreach($categories as $category) : ?>
+                        <div class="flex-item-half">
+                             <a class="medium-dropdown-link" href="index.php?c=products&a=products&cat=<?=$category['name']?>">
+                                <?=$category['name']?>
+                            </a>
+                        </div> 
+                    <? endforeach; ?>      
+            </div>    
+        </div>    
     <?
 }
 // Changes Nav Text-color if site is active
