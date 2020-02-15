@@ -6,7 +6,7 @@
 		<label for="password">Password</label> <br />
 		<input type="password" name="password" id="password" /><br>
 		<br />
-		<input type="submit" name="submit" value="Login now!" /><br>
+		<input type="submit" name="loginSubmit" value="Login now!" /><br>
 	</form>
 	<br>
 	<a href="index.php?c=account&a=signUp"><button>  Create Account</button></a>

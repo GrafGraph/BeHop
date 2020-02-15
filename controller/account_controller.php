@@ -8,7 +8,7 @@ class AccountController extends Controller
 		$this->_params['title'] = 'BeHop - Login' ;
 		if(!isLoggedIn())
 		{
-			if(isset($_POST['submit']))
+			if(isset($_POST['loginSubmit']))
 			{
 				if(isset($_POST['email']) && isset($_POST['password']))
 				{
