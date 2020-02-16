@@ -38,7 +38,7 @@ CREATE TABLE `address` (
   `street` varchar(100) NOT NULL,
   `number` varchar(10) NOT NULL,
   `zip` varchar(5) NOT NULL,
-  `country` varchar(50) DEFAULT 'Deutschland'
+  `country` varchar(50) DEFAULT 'Germany'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -46,8 +46,8 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`id`, `createdAt`, `updatedAt`, `city`, `street`, `number`, `zip`, `country`) VALUES
-(1, '2020-01-12 07:50:28', NULL, 'Erfurt', 'Altonaer Straße', '25', '99085', 'Deutschland'),
-(2, '2020-01-13 16:39:12', NULL, 'Erfurt', 'Grolmannstraße', '13', '99085', 'Deutschland'),
+(1, '2020-01-12 07:50:28', NULL, 'Erfurt', 'Altonaer Straße', '25', '99085', 'Germany'),
+(2, '2020-01-13 16:39:12', NULL, 'Erfurt', 'Grolmannstraße', '13', '99085', 'Germany'),
 (5, '2020-02-15 19:05:39', NULL, 'Erfurt', 'Altonaer Straße', '25', '99085', NULL),
 (6, '2020-02-15 22:29:40', NULL, 'Erfurt', 'Altonaer Straße', '24', '99085', NULL);
 

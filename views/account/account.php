@@ -43,14 +43,6 @@
               <!-- <span class="error-message" id="errorEmail"></span> -->
           </div>
 
-          <!-- country -->
-          <div class="input">
-              <label for="country">Country</label>
-              <input type = "text" id="country" name="country" required
-                value = "<?=isset($_POST['country']) ? htmlspecialchars($_POST['country']) : htmlspecialchars($address['country'])?>">
-              <!-- <span class="error-message" id="errorCountry"></span> -->
-          </div>
-
           <!-- street -->
           <div class="input">
               <label for="street">Street</label>

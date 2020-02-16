@@ -18,8 +18,8 @@
         <tr>
             <td><strong>Address:</strong></td>
             <td><?=$address['street'] .' '. $address['number']?><br>
-                <?=$address['zip'] .' '. $address['city']?><br>
-                <?=$address['country']?></td>
+                <?=$address['zip'] .' '. $address['city']?>
+            </td>
         </tr>
         </table>
     </div>

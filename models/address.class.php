@@ -12,7 +12,7 @@ class Address extends BaseModel
         'street' => ['type' => BaseModel::TYPE_STRING, 'max' => 100],
         'number' => ['type' => BaseModel::TYPE_STRING, 'min' => 1, 'max' => 10],
         'zip' => ['type' => BaseModel::TYPE_STRING, 'min' => 5, 'max' => 5],
-        'country' => ['type' => BaseModel::TYPE_STRING, 'max' => 50] // TODO: Default Germany instead of Deutschland
+        'country' => ['type' => BaseModel::TYPE_STRING, 'max' => 50]            // Default: Germany
     ];
 
     // returns already existing Address with given Data or null
@@ -20,8 +20,7 @@ class Address extends BaseModel
     {
         $where = 'city ="'.$addressData['city'].'" and street ="'
         .$addressData['street'].'" and number ="'.$addressData['number']
-        .'" and zip ="'.$addressData['zip'].'" and country ="'
-        .$addressData['country'].'"';
+        .'" and zip ="'.$addressData['zip'].'"';
         // foreach($addressData as $key => $attribute)
         // {
         // } 
