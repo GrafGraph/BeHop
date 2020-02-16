@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 15. Feb 2020 um 21:13
+-- Erstellungszeit: 16. Feb 2020 um 11:27
 -- Server-Version: 10.4.11-MariaDB
 -- PHP-Version: 7.4.1
 
@@ -21,7 +21,9 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `behop`
 --
-
+drop schema if exists behop;
+create database behop;
+use behop;
 -- --------------------------------------------------------
 
 --
@@ -46,7 +48,8 @@ CREATE TABLE `address` (
 INSERT INTO `address` (`id`, `createdAt`, `updatedAt`, `city`, `street`, `number`, `zip`, `country`) VALUES
 (1, '2020-01-12 07:50:28', NULL, 'Erfurt', 'Altonaer Straße', '25', '99085', 'Deutschland'),
 (2, '2020-01-13 16:39:12', NULL, 'Erfurt', 'Grolmannstraße', '13', '99085', 'Deutschland'),
-(5, '2020-02-15 19:05:39', NULL, 'Erfurt', 'Altonaer Straße', '25', '99085', NULL);
+(5, '2020-02-15 19:05:39', NULL, 'Erfurt', 'Altonaer Straße', '25', '99085', NULL),
+(6, '2020-02-15 22:29:40', NULL, 'Erfurt', 'Altonaer Straße', '24', '99085', NULL);
 
 -- --------------------------------------------------------
 
@@ -130,7 +133,9 @@ CREATE TABLE `order` (
 
 INSERT INTO `order` (`id`, `createdAt`, `updatedAt`, `user_id`, `shoppingcart_id`) VALUES
 (1, '2020-01-18 20:47:08', NULL, 5, 5),
-(2, '2020-02-15 19:07:07', NULL, 5, 7);
+(2, '2020-02-15 19:07:07', NULL, 5, 7),
+(3, '2020-02-15 22:27:41', NULL, 5, 9),
+(4, '2020-02-15 22:28:33', NULL, 5, 10);
 
 -- --------------------------------------------------------
 
@@ -214,7 +219,9 @@ INSERT INTO `shoppingcart` (`id`, `createdAt`, `updatedAt`, `user_id`) VALUES
 (6, '2020-01-13 19:35:25', NULL, 3),
 (7, '2020-01-18 20:47:08', '2020-02-15 19:07:07', NULL),
 (8, '2020-01-19 09:13:46', NULL, 6),
-(9, '2020-02-15 19:07:07', NULL, 5);
+(9, '2020-02-15 19:07:07', '2020-02-15 22:27:41', NULL),
+(10, '2020-02-15 22:27:41', '2020-02-15 22:28:33', NULL),
+(11, '2020-02-15 22:28:33', NULL, 5);
 
 -- --------------------------------------------------------
 
@@ -236,7 +243,13 @@ CREATE TABLE `shoppingcart_has_product` (
 INSERT INTO `shoppingcart_has_product` (`id`, `shoppingCart_id`, `product_id`, `quantity`) VALUES
 (1, 5, 2, 1),
 (2, 5, 1, 3),
-(6, 7, 1, 1);
+(6, 7, 1, 1),
+(8, 9, 4, 1),
+(9, 9, 9, 1),
+(10, 9, 6, 1),
+(11, 9, 11, 1),
+(12, 10, 5, 1),
+(15, 11, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -343,7 +356,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT für Tabelle `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT für Tabelle `category`
@@ -361,7 +374,7 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT für Tabelle `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `product`
@@ -379,13 +392,13 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT für Tabelle `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT für Tabelle `shoppingcart_has_product`
 --
 ALTER TABLE `shoppingcart_has_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT für Tabelle `user`
