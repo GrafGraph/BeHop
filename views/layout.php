@@ -89,7 +89,7 @@
 						</a>
 					</li>
 					<li id="searchClick">
-						<i class="fas fa-search invidualSearch" style="width: 45%;height: 45%;"></i>
+						<i class="fas fa-search invidualSearch" style="width: 40px; height: 40px; margin-left: -80%"></i>
 					</li>
 					<div class="dropdown">
 						<li>
