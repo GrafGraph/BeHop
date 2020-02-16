@@ -1,4 +1,4 @@
-<h1 class="center">Browse our Products</h1>
+<h1 class="headline">Browse our Products</h1>
 <div class="lightgrey">
     <div>
         <form method="GET" class="center" style="padding-top:0.5%;">

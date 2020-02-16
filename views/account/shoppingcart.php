@@ -1,5 +1,5 @@
-<h1 class="center" style="background-color:#efefef;">My Shopping Cart</h1>
-<section style="background-color:#efefef;">
+<h1 class="headline form-background">My Shopping Cart</h1>
+<section class="form-background">
 <?php 
 // Empty shoppingCart
 if(empty($shoppingCartItems)) : ?>
@@ -15,9 +15,8 @@ if(empty($shoppingCartItems)) : ?>
     </div>
 <? else :
     $priceTotal = 0.0;
-    // $n = 0; // Counter for indexing the quantity and remove submit
     ?>
-    <div class="shoppingcart-wrap">
+    <div class="form-wrap">
         <div class="shoppingcart-container-outer">
             <form Method="POST" class="shoppingcart-form">
                 <? foreach($shoppingCartItems as $item) :
@@ -81,10 +80,7 @@ if(empty($shoppingCartItems)) : ?>
                             <input type="submit" name="checkoutSubmit" value="Proceed to Checkout">
                         </form>
                     </div>
-                <? 
-                    // TODO: Not logged in -> Checkout leads to Login?
-                    // Checkout button is unavailable until login
-                else : ?>
+                <? else : ?>
                         <div>
                             <a href="index.php?c=account&a=login">
                             <button class="disabled" title="Log in to be able to check out">Log in to Checkout</button>

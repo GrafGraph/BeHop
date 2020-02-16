@@ -1,4 +1,4 @@
-<h1>Impressum</h1>
+<h1 class="headline">Imprint</h1>
 
 <article class="imprint">
 <h2><a href="index.php?a=projectDocumentation">Projektdokumentation</a></h2>
