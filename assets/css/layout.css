@@ -135,6 +135,12 @@
     flex-flow: nowrap;
 }
 
+.container-wrap {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
 .filter-button {
     flex: 1;
     margin-bottom: 0.5%;
@@ -300,8 +306,10 @@
 }
 
 .showProduct-item {
-    flex: 1;
+    /* min-width: 200px; */
+    max-width: 50%;
     margin: 1%;
+    text-align: left;
 }
 
 .showProduct-item p,
