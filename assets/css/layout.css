@@ -162,7 +162,7 @@
 .logo {
     float: left;
     max-height: 80px;
-    margin-left: 1%;
+    /* margin-left: 1%; */
     z-index: 10;
 }
 
@@ -395,7 +395,7 @@ body,
 body * {
     /* border: 0; */
     outline: 0 none;
-    color: #696969;
+    /* color: #696969; */
 }
 
 label {
@@ -536,6 +536,11 @@ button:hover {
     height: 80px;
 }
 
+.searchFieldMaxSmartphoneVersion {
+    background-color: #333333;
+    height: 80px;
+}
+
 #backToNav {
     color: white;
     float: left;
@@ -545,7 +550,20 @@ button:hover {
     margin-left: 3%;
 }
 
+#backToNav2 {
+    color: white;
+    float: left;
+    margin-top: 20px;
+    width: 5%;
+    height: 40px;
+    margin-left: 3%;
+}
+
 #backToNav:hover {
+    color: rgb(193, 193, 193);
+}
+
+#backToNav2:hover {
     color: rgb(193, 193, 193);
 }
 
@@ -577,6 +595,18 @@ button:hover {
     margin-left: 2%;
 }
 
+.inputSearch2 {
+    width: 70%;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 2%;
+}
+
+#searchButton {
+    margin-left: 2%;
+    box-sizing: initial;
+}
+
 .shoppingcartQuantity {
     border: 2px solid #ff5757;
     border-radius: 50%;
@@ -602,6 +632,9 @@ button:hover {
     .BeHopGrey3 {
         display: none !important;
     }
+    #searchMin2 {
+        display: none !important;
+    }
 }
 
 @media (min-width: 1124px) {
@@ -612,6 +645,9 @@ button:hover {
         display: none !important;
     }
     #searchMin {
+        display: none !important;
+    }
+    #searchMin2 {
         display: none !important;
     }
 }

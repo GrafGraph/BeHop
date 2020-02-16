@@ -73,19 +73,19 @@
 					<?php if (isLoggedIn()) : ?>
 						<li>
 							<a href="?c=account&a=account" title="Account">
-								<img src="assets/images/layout/account<?= highlightNavIcon('account'); ?>.png" alt="Account" class="navIcon">
+								<img id="icons" src="assets/images/layout/account<?= highlightNavIcon('account'); ?>.png" style="width: 40px; height: 40px;" alt="Account" class="navIcon">
 							</a>
 						</li>
 					<?php else : ?>
 						<li>
 							<a href="?c=account&a=login" title="Login">
-								<img src="assets/images/layout/account<?= highlightNavIcon('login'); ?>.png" alt="Login" class="navIcon">
+								<img id="icons"src="assets/images/layout/account<?= highlightNavIcon('login'); ?>.png" style="width: 40px; height: 40px;" alt="Login" class="navIcon">
 							</a>
 						</li>
 					<?php endif; ?>
 					<li>
 						<a href="index.php?c=account&a=shoppingcart" title="Shopping Cart">
-							<img src="assets/images/layout/shoppingCart<?= highlightNavIcon('shoppingcart'); ?>.png" alt="Einkaufswagen Bild" class="navIcon" style="margin-right:50px;">
+							<img id="icons" src="assets/images/layout/shoppingCart<?= highlightNavIcon('shoppingcart'); ?>.png" alt="Einkaufswagen Bild" class="navIcon" style="margin-right:50px;">
 						</a>
 					</li>
 					<li id="searchClick">
@@ -108,18 +108,22 @@
 				</ul>
 			</nav>
 			<div class="searchFieldMaxTabletVersion" id="searchMin" style="display: none;">
-				<input class="inputSearch" type="text" placeholder="Search..." style="float: left;">
-				<i class="fas fa-search searchClick" style="float: left; width: 5%; height: 40px; margin-top: 20px; margin-left: 3%"></i>
-				<div id="backToNav"><i class="fas fa-times" style=" width: 100%; height: 100%;"></i></div>
+			<form method="GET" action="index.php?c=products&a=products">
+				<input type="hidden" name="c" value="products">
+				<input type="hidden" name="a" value="products">
+				<input class="inputSearch" type="text" name="search" placeholder="Search..." id="mainSearch" style="float: left;">
+				<button id="searchButton" style="all:initial; display:inline; position:relative; cursor:pointer; float: left; width: 10%; height: 40px; margin-top: 20px;"><img style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
+			</form>
+			<div id="backToNav"><i class="fas fa-times" style=" width: 100%; height: 100%; margin-left: -80%"></i></div>
 				<div class="clear"></div>
-
 			</div>
-			<nav class="BeHopGrey3">
-				<ul class="navList">
-					<li>
+			<nav class="BeHopGrey3" id="fullListMin2">
 						<a href="?a=index" title="Home">
-							<img src="assets/images/layout/logo.png" alt="BeHop-Logo" class="logo">
+							<img src="assets/images/layout/logo.png" alt="BeHop-Logo" class="logo" style="float: left;">
 						</a>
+				<ul class="navList">
+					<li id="searchClick2">
+						<i class="fas fa-search invidualSearch" style="width: 40px; height: 40px; margin-left:-80%;"></i>
 					</li>
 					<div class="dropdown">
 						<li>
@@ -139,6 +143,16 @@
 					</div>
 				</ul>
 			</nav>
+			<div class="searchFieldMaxSmartphoneVersion" id="searchMin2" style="display: none;">
+			<form method="GET" action="index.php?c=products&a=products">
+				<input type="hidden" name="c" value="products">
+				<input type="hidden" name="a" value="products">
+				<input class="inputSearch2" type="text" name="search" placeholder="Search..." id="mainSearch" style="float: left;">
+				<button id="searchButton" style="all:initial; display:inline; position:relative; cursor:pointer;float: left; width: 10%; height: 40px; margin-top: 20px; "><img style="height: 45px;  " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
+			</form>
+				<div id="backToNav2"><i class="fas fa-times" style=" width: 40px; height: 40px; margin-left: 5%"></i></div>
+				<div class="clear"></div>
+			</div>
 		</header>
 		<main id="main">
 			<?php echo $body ?>
