@@ -35,14 +35,6 @@
               <!-- <span class="error-message" id="errorLastName"></span> -->
           </div>
 
-          <!-- email -->
-          <div class="input">
-              <label for="email">E-Mail</label>
-              <input type = "email" id="email" name="email"
-                value = "<?=isset($_POST['email']) ? htmlspecialchars($_POST['email']) : htmlspecialchars($user['email'])?>">
-              <!-- <span class="error-message" id="errorEmail"></span> -->
-          </div>
-
           <!-- street -->
           <div class="input">
               <label for="street">Street</label>
@@ -75,8 +67,21 @@
               <!-- <span class="error-message" id="errorZIP"></span> -->
           </div>
 
-          <button type="submit" name="updateAccountSubmit">Save Changes</button>
-          <button type="reset">Reset Changes</button>
+          <!-- email -->
+          <div class="input">
+              <label for="email">E-Mail</label>
+              <input type = "email" id="email" name="email"
+                value = "<?=isset($_POST['email']) ? htmlspecialchars($_POST['email']) : htmlspecialchars($user['email'])?>">
+              <!-- <span class="error-message" id="errorEmail"></span> -->
+          </div>
+
+          <br>
+          
+          <div>
+              <button type="submit" name="updateAccountSubmit">Save Changes</button>
+              <button type="reset">Reset Changes</button>
+          </div>
+          
       </form>
       
       <div class="table-container">
