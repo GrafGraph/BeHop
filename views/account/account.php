@@ -1,4 +1,4 @@
-<h1 class="center form-background">My Account</h1>
+<h1 class="headline form-background">My Account</h1>
 <section class="center form-background">
   <?if(isset($insertError))
     {?> <div class="error"><?

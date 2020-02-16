@@ -1,1 +1,1 @@
-<h1 class="center">You changed your password successfully!</h1>
+<h1 class="headline">You changed your password successfully!</h1>

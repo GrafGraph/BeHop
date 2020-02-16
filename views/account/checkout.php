@@ -1,5 +1,5 @@
 <? if($step === 1) : ?>
-    <h1 class="center form-background">Checkout</h1>
+    <h1 class="headline form-background">Checkout</h1>
     <section class="center form-background">
         <div class="form-wrap">
             <div class="account-form">
@@ -38,7 +38,7 @@
         </div>
     </section>
 <? elseif($step === 2) : ?>
-    <h1 class="center form-background">Checkout</h1>
+    <h1 class="headline form-background">Checkout</h1>
     <section class="center form-background">
         <div class="form-wrap">
             <div class="account-form">
@@ -68,12 +68,12 @@
         <br> 
     </section>
 <? elseif($step === 3) : ?>
-    <h1 class="center">Checkout Complete</h1>
+    <h1 class="headline">Checkout Complete</h1>
     <section class="banner">
         <a href="index.php?c=products&a=products">
         <img src="assets/images/checkout/thanksForYourOrder<?=random_int(1,3)?>.png" alt="Continue Shopping"></a>
     </section>
 <? else : ?>
-    <h1 class="center">Checkout</h1>
-    <h2 class="center">OOPS... We could not find your Order...</h2>
+    <h1 class="headline">Checkout</h1>
+    <h2 class="headline">OOPS... We could not find your Order...</h2>
 <? endif; ?>

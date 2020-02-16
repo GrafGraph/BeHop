@@ -1,4 +1,4 @@
-<h1 class="center">About Us</h1>
+<h1 class="headline">About Us</h1>
 <section class="banner">
     <img src="assets/images/aboutUs/fashionForThePeople1.png" alt="Fashion for the People">
 </section>

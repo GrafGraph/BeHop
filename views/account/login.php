@@ -1,4 +1,4 @@
-<h1 class="center form-background">Login</h1>
+<h1 class="headline form-background">Login</h1>
 <section class="center form-background">
 	<div class="form-wrap">
 		<div class="account-form">

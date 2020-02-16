@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.headline {
+    text-align: center;
+    padding: 1% 0;
+}
+
 .banner {
     margin-bottom: 1%;
     margin-top: 1%;
@@ -272,6 +277,14 @@
     padding: 1%;
     min-width: 200px;
     max-width: 100%;
+}
+
+@media (min-width: 740px) {
+    .shoppingcart-checkout {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 60px;
+    }
 }
 
 .shoppingcartProductImage {

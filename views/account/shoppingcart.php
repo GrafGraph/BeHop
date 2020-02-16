@@ -1,4 +1,4 @@
-<h1 class="center form-background">My Shopping Cart</h1>
+<h1 class="headline form-background">My Shopping Cart</h1>
 <section class="form-background">
 <?php 
 // Empty shoppingCart

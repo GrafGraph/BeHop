@@ -1,5 +1,5 @@
 <div class="product-wrap">   
-    <h1 class="center">&raquo;<?=$product['name']?>&laquo;</h1>
+    <h1 class="headline">&raquo;<?=$product['name']?>&laquo;</h1>
     <div class="container-nowrap">
         <div class="showProduct-item">
             <img class="productImage" src="<?=$images[0]['imageUrl']?>" alt="<?=$images[0]['imageAltText']?>">
