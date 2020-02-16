@@ -204,7 +204,11 @@
     max-height: 10em;
 }
 
-.shoppingcart-wrap {
+.form-background {
+    background-color: #efefef;
+}
+
+.form-wrap {
     max-width: 1400px;
     margin: auto;
 }
@@ -216,6 +220,15 @@
     padding: 1%;
     min-width: 70%;
     max-width: 100%;
+}
+
+.account-form {
+    text-align: center;
+    background-color: #ffffff;
+    margin: auto;
+    padding: 1%;
+    min-width: 70%;
+    max-width: 900px;
 }
 
 .shoppingcart-container-outer {

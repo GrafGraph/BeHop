@@ -1,16 +1,21 @@
-<section class="center">
-   <h1>Change Password</h1>
-   <form method="POST">
+<h1 class="center form-background">Change Password</h1>
+<section class="center form-background">
+   <div class="form-wrap">
+      <div class="account-form">
+         <form method="POST">
 
-   <fieldset>
-   <?php if(!empty($errors)) : ?>
-      <div class= "error">
-         <?php foreach($errors as $error){echo $error."<br>";}?>
+         <fieldset>
+         <?php if(!empty($errors)) : ?>
+            <div class= "error">
+               <?php foreach($errors as $error){echo $error."<br>";}?>
+            </div>
+         <?php endif; ?><br>
+         <input type="password" name="password1"required placeholder =" Your current password"><br><br>
+         <input type="password" name="password2"required placeholder =" Your new password"><br><br>
+         <input type="password" name="password3"required placeholder =" Repeat the new password"><br><br>
+
+         <button type="submit" name="submit">change password</button>
       </div>
-   <?php endif; ?><br>
-   <input type="password" name="password1"required placeholder =" Your current password"><br><br>
-   <input type="password" name="password2"required placeholder =" Your new password"><br><br>
-   <input type="password" name="password3"required placeholder =" Repeat the new password"><br><br>
-
-   <button type="submit" name="submit">change password</button>
+      <br>
+   </div>
 </section>
