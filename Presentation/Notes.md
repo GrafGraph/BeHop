@@ -1,2 +1,2 @@
-#Stichpunkte
+# Stichpunkte
 - ...
