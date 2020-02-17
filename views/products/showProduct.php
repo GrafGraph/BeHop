@@ -2,6 +2,9 @@
 <section class="form-background">
         <div class="form-wrap">
             <div class="account-form">
+                <? if(isset($success) && !empty($success)) :?>
+                    <div class="success"><?=$success?></div>
+                <? endif;?>
                 <div class="container-wrap">
                     <div class="showProduct-item">
                         <img class="productImage" src="<?=$images[0]['imageUrl']?>" alt="<?=$images[0]['imageAltText']?>">

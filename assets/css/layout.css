@@ -429,7 +429,7 @@ body,
 body * {
     /* border: 0; */
     outline: 0 none;
-    /* color: #696969; */
+    color: dimgray;
 }
 
 label {
@@ -463,8 +463,8 @@ input[type=submit] {
 
 input[type=submit].del-btn {
     width: 150px;
-    color: var(--red);
-    border-color: var(--red);
+    color: #ff5757;
+    border-color: #ff5757;
 }
 
 input[type=submit]:hover {
@@ -473,7 +473,7 @@ input[type=submit]:hover {
 }
 
 input[type=submit].del-btn:hover {
-    background: var(--red);
+    background: #ff5757;
 }
 
 input[type=text],
@@ -483,8 +483,21 @@ select {
 }
 
 .error {
-    border: 2px solid var(--red);
-    color: var(--red);
+    border: 2px solid #ff5757;
+    color: #ff5757;
+    width: 30%;
+    margin: 0 auto;
+    padding: 8px;
+    text-align: center;
+}
+
+.errors {
+    color: #ff5757;
+}
+
+.success {
+    border: 2px solid green;
+    color: green;
     width: 30%;
     margin: 0 auto;
     padding: 8px;
@@ -500,13 +513,9 @@ img {
     height: auto;
 }
 
-.errors {
-    color: red;
-}
-
 
 /* .disabled {
-    background-color: red;
+    background-color: #ff5757;
     transition: none;
 } */
 

@@ -161,6 +161,11 @@ class AccountController extends Controller
 			{
 				$this->_params['latestOrder'] = $latestOrder[0];
 			}
+
+			if(isset($_GET['changedPassword']) && htmlspecialchars($_GET['changedPassword']) == 'true' )
+			{
+				$this->_params['passwordChanged'] = "Successfully changed Password!";
+			}
 		}
 		else
 		{
@@ -544,7 +549,7 @@ class AccountController extends Controller
 						];
 						$user = new User($userData);
 						$user->save();
-						header('Location: ?c=account&a=passwordChanged');
+						header('Location: ?c=account&a=account&changedPassword=true');
 					}
 					else
 					{

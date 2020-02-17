@@ -169,7 +169,7 @@ class ProductsController extends Controller
 		// Add to Cart-Routine
 		if(isset($_POST['addToCartSubmit']))
 		{
-			$quantity = $_POST['quantity'];
+			$quantity = htmlspecialchars($_POST['quantity']);
 			$cartItem['product_id'] = $product['id'];
 			$cartItem['quantity'] = $quantity;
 			if(isLoggedIn())	// New or Updated Entry in table shoppingcart_has_product
@@ -222,6 +222,8 @@ class ProductsController extends Controller
 			{
 				$_SESSION['shoppingCartItems'] = array($cartItem);
 			}
+			// Success-Alert Box contents
+			$this->_params['success'] = "Added $quantity to Shopping Cart";
 		}
 	}
 }

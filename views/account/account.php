@@ -15,6 +15,9 @@
       }?>
     </div>
   <? } ?>
+  <? if(isset($passwordChanged) && !empty($passwordChanged)) :?>
+      <div class="success"><?=$passwordChanged?></div>
+  <? endif;?>
   <form autocomplete="off" action="?c=account&a=account" method="POST" class="account-form">
       <!-- firstname -->
       <div class="input">
