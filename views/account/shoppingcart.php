@@ -16,24 +16,35 @@ if(empty($shoppingCartItems)) : ?>
 <? else :
     $priceTotal = 0.0;
     ?>
+    <? if(isset($errors)) : 
+            foreach($errors as $error) : ?>
+                <div class="error">
+                    <?=$error?>
+                </div>
+            <? endforeach;
+        endif;?>
     <div class="form-wrap">
         <div class="shoppingcart-container-outer">
-            <form Method="POST" class="shoppingcart-form">
+            <section class="shoppingcart-form">
                 <? foreach($shoppingCartItems as $item) :
-                    $quantity = isset($_POST['submit'.strval($item['id'])]) ? htmlspecialchars($_POST['submit'.strval($item['id'])]) : htmlspecialchars($item['quantity']);
+                    $quantity = isset($_POST['quantity'.strval($item['id'])]) ? $_POST['quantity'.strval($item['id'])] : $item['quantity'];
                     $itemPrice = isset($item['discountPrice']) ? $item['discountPrice'] : $item['price'];
                     $priceForPosition = $itemPrice * $quantity;
                     $priceTotal +=  $priceForPosition;
                     $imageUrl = $item['image']['imageUrl'];
                     $imageAltText =$item['image']['altText'];?>
-                        <div class="shoppingcart-container-inner">
+                        <div class="shoppingcart-container-inner" id=<?=$item['id']?>>
                             <div>
                                 <a href="index.php?c=products&a=showProduct&productID=<?=$item['id']?>">
                                 <img class="shoppingcartProductImage" src=<?=$imageUrl?> alt=<?=$imageAltText?>></a>
                             </div>
                             <div class="shoppingcart-item-right">  
-                                <div>
+                                <div id="name">
                                     <?=$item['name']?>, <?=$item['color']?>
+                                    <form method="POST" class="shoppingcart-remove">
+                                        <button type="submit" name=<?="remove".strval($item['id'])?> onclick="remove(<?=$item['id']?>)" id="shoppingCartDelete">X</button>
+                                    </form>
+                                    
                                 </div>
                                 <div>     
                                     <? if(isset($item['discountPrice'])) : ?>
@@ -44,30 +55,19 @@ if(empty($shoppingCartItems)) : ?>
                                     <? endif;?>
                                 </div> 
                                 <div>
-                                    Quantity: <input type="number" name=<?="quantity".strval($item['id'])?> min="1" max=<?=$item['numberInStock']?> value=<?=$quantity?>>
+                                    <form method="POST">
+                                        Quantity: 
+                                        <input type="number" name=<?="quantity".strval($item['id'])?> min=1 max=<?=$item['numberInStock']?> value=<?=$quantity?>>
+                                        <button type="submit" name=<?="update".strval($item['id'])?> onclick="remove(<?=$item['id']?>)" style="width:60px;">Save</button>
+                                    </form> 
                                 </div>
                                 <div>
                                     Sum: <span class="price"><?=$priceForPosition?>&euro;</span>
                                 </div>
-                                <div>
-                                    <label for="remove">Remove?</label>
-                                    <input type="checkbox" name=<?="remove".strval($item['id'])?> id="remove">
-                                </div>
-                                <input type="hidden" name=<?="prodID".strval($item['id'])?> value=<?=$item['id']?>>
                             </div>
                         </div>
                 <? endforeach;?>
-                <input type="hidden" name="numberOfItems" value=<?=count($shoppingCartItems)?>>
-                <div>
-                    <button type="submit" name="updateShoppingcartSubmit">Save Changes</button>
-                    <button type="reset" name="reset">Reset Changes</button>
-                </div>
-            </form>
-            <!-- <form method="post">
-                <div>
-                    <button type="submit" name="clearShoppingcartSubmit">Clear Shopping Cart</button>
-                </div>
-            </form> -->
+        </section>
             <div class="shoppingcart-checkout">  
                 <div>
                     <p class="total">Total</p>
@@ -92,3 +92,4 @@ if(empty($shoppingCartItems)) : ?>
     </div>
 <?endif;?>
 </section>
+<script src="assets/js/shoppingcart.js"></script>

@@ -321,58 +321,74 @@ class AccountController extends Controller
 	{
 		$this->_params['title'] = 'BeHop - Shopping Cart' ;
 
-		// Changes to Items and Quantity if $_POST['updateShoppingcartSubmit'] is set
-		if(isset($_POST['updateShoppingcartSubmit']))
-		{
-			if(isLoggedIn())	// Update Database
-			{
-				$userID = $_SESSION['userID'];
-				// Get latest Shoppingcart-Content
-				$latestShoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
-				$shoppingCartProducts = ShoppingCart_has_product::find('shoppingCart_id = '. $latestShoppingCart['id']);
-				// Which product was changed?
-				foreach($shoppingCartProducts as $product)
+		// Changes to Items and Quantity if $_POST is set
+		// if(!empty($_POST))
+		// {
+			// if(isset($_POST['updateShoppingcartSubmit']))
+			// {
+				if(isLoggedIn())	// Update Database
 				{
-					$id = strval($product['product_id']);
-					// Delete or change quantity?
-					if(isset($_POST["remove".$id]) && !empty($_POST["remove".$id]))	// Delete
+					$userID = $_SESSION['userID'];
+					// Get latest Shoppingcart-Content
+					$latestShoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
+					$shoppingCartProducts = ShoppingCart_has_product::find('shoppingCart_id = '. $latestShoppingCart['id']);
+					// Which product was changed?
+					foreach($shoppingCartProducts as $product)
 					{
-						$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
-						// Delete shoppingCartHasProducts-Entry from Database
-						$deletedShoppingCartHasProducts = new ShoppingCart_has_product($updateShoppingCartHasProducts);
-						$deletedShoppingCartHasProducts->delete();
-					}
-					elseif(isset($_POST["quantity".$id]) && !empty($_POST["quantity".$id])) // Change Quantity
-					{
-						$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
-						// Update Quantity
-						$updateShoppingCartHasProducts['quantity'] = htmlspecialchars($_POST["quantity".$id]);
-						$updatedShoppingCart = new ShoppingCart_has_product($updateShoppingCartHasProducts);
-						$updatedShoppingCart->save();
+						$id = strval($product['product_id']);
+						// Delete or change quantity?
+						if(isset($_POST["remove".$id]) || (isset($_POST["update".$id]) && htmlspecialchars($_POST["quantity".$id]) <= 0))	// Delete
+						{
+							$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
+							// Delete shoppingCartHasProducts-Entry from Database
+							$deletedShoppingCartHasProducts = new ShoppingCart_has_product($updateShoppingCartHasProducts);
+							$deletedShoppingCartHasProducts->delete();
+						}
+						elseif(isset($_POST["update".$id])) // Change Quantity
+						{
+							$stockCheckProduct = Product::findOne('id = ' .$id);
+							if(htmlspecialchars($_POST["quantity".$id]) > $stockCheckProduct['numberInStock'])
+							{
+								$this->_params['errors'][] = "Quantity selected for &raquo;".$stockCheckProduct['name']."&laquo; exceeded Maximum in Stock. <br>Set to Max of ".$stockCheckProduct['numberInStock'];
+								$_POST["quantity".$id] = $stockCheckProduct['numberInStock'];
+							}
+							$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
+							// Update Quantity
+							$updateShoppingCartHasProducts['quantity'] = $_POST["quantity".$id];
+							$updatedShoppingCart = new ShoppingCart_has_product($updateShoppingCartHasProducts);
+							$updatedShoppingCart->save();
+						}
 					}
 				}
-			}
-			elseif(thereAreShoppingCartItemsInSession())	// Update Session
-			{
-				foreach($_SESSION['shoppingCartItems'] as $key => &$sessionItem)
+				elseif(thereAreShoppingCartItemsInSession())	// Update Session
 				{
-					$id = $sessionItem['product_id'];
-					// Delete or change quantity?
-					if(isset($_POST["remove".$id]) && !empty($_POST["remove".$id]))	// Delete
+					foreach($_SESSION['shoppingCartItems'] as $key => &$sessionItem)
 					{
-						unset($_SESSION['shoppingCartItems'][$key]);	
+						$id = $sessionItem['product_id'];
+						// Delete or change quantity?
+						if(isset($_POST["remove".$id]) || (isset($_POST["update".$id]) && htmlspecialchars($_POST["quantity".$id]) <= 0))	// Delete
+						{
+							unset($_SESSION['shoppingCartItems'][$key]);	
+						}
+						elseif(isset($_POST["update".$id])) // Change Quantity
+						{
+							$stockCheckProduct = Product::findOne('id = ' .$id);
+							if(htmlspecialchars($_POST["quantity".$id]) > $stockCheckProduct['numberInStock'])
+							{
+								$this->_params['errors'][] = "Quantity selected for &raquo;".$stockCheckProduct['name']."&laquo; exceeded Maximum in Stock. <br>Set to Max of ".$stockCheckProduct['numberInStock'];
+								$_POST["quantity".$id] = $stockCheckProduct['numberInStock'];
+							}
+							$sessionItem['quantity'] = htmlspecialchars($_POST["quantity".$id]);
+						}
 					}
-					elseif(isset($_POST["quantity".$id]) && !empty($_POST["quantity".$id])) // Change Quantity
+					if(empty($_SESSION['shoppingCartItems']))
 					{
-						$sessionItem['quantity'] = htmlspecialchars($_POST["quantity".$id]);
+						unset($_SESSION['shoppingCartItems']);
 					}
 				}
-				if(empty($_SESSION['shoppingCartItems']))
-				{
-					unset($_SESSION['shoppingCartItems']);
-				}
-			}
-		}
+			// }	
+		// }
+		
 
 		// Choosing the correct Items to display
 		$shoppingCartItems = array();

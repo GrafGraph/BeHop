@@ -171,6 +171,12 @@ class ProductsController extends Controller
 		{
 			$quantity = htmlspecialchars($_POST['quantity']);
 			$cartItem['product_id'] = $product['id'];
+			if($quantity > $product['numberInStock'])
+			{
+				$this->_params['errors'][] = "Quantity selected for &raquo;".$product['name']."&laquo; exceeded Maximum in Stock. <br>Set to Max of ".$product['numberInStock'];
+				$_POST["quantity"] = $product['numberInStock'];
+				$quantity = $product['numberInStock'];
+			}
 			$cartItem['quantity'] = $quantity;
 			if(isLoggedIn())	// New or Updated Entry in table shoppingcart_has_product
 			{

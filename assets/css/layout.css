@@ -664,6 +664,22 @@ button:hover {
     font-size: 80%;
 }
 
+.shoppingcart-remove {
+    display: block;
+    float: right;
+}
+
+#shoppingCartDelete {
+    font-size: 120%;
+    border: 1px solid dimgrey;
+    width: 21px;
+    height: 22px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: block;
+}
+
 @media (min-width: 521px) and (max-width: 1123px) {
     [class*="col-"] {
         width: 100% !important;
