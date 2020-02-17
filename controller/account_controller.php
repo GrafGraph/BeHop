@@ -471,7 +471,18 @@ class AccountController extends Controller
 				];
 				$order = new Order($orderData);
 				$order->save();
-				
+
+				// TODO: Must be easier than this...
+			// Decrease amount of Items in Stock
+				$shoppingCart_has_products = ShoppingCart_has_product::find('shoppingCart_id = ' .$shoppingCart['id']);
+				foreach($shoppingCart_has_products as $entry)
+				{
+					$updatedProduct = Product::findOne('id = '.$entry['product_id']);
+					$updatedProduct['numberInStock'] -= $entry['quantity'];
+					$newProduct = new Product($updatedProduct);
+					$newProduct->save();
+				}
+
 				// TODO: Must be easier than this...
 			// "Delete" ShoppingCart for User
 				$updatedShoppingCart = new ShoppingCart($shoppingCart);
