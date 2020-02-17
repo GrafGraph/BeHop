@@ -13,7 +13,7 @@
                     <div class="success"><?=$success?></div>
                 <? endif;?>
                 <div class="container-wrap">
-                    <div class="showProduct-item">
+                    <div class="showProduct-item img-hover-zoom">
                         <img class="productImage" src="<?=$images[0]['imageUrl']?>" alt="<?=$images[0]['imageAltText']?>">
                     </div>
                     <div class="showProduct-item">

@@ -296,6 +296,7 @@
 .shoppingcartProductImage {
     max-width: 180px;
     margin-bottom: 8%;
+    background-color: #efefef;
 }
 
 .total {
@@ -678,6 +679,30 @@ button:hover {
     margin: 0;
     text-align: center;
     display: block;
+}
+
+.img-hover-zoom {
+    overflow: hidden;
+}
+
+.img-hover-zoom img {
+    transition: transform .5s ease;
+}
+
+.img-hover-zoom:hover img {
+    transform: scale(1.5);
+}
+
+.img-hover-zoom-little {
+    overflow: hidden;
+}
+
+.img-hover-zoom-little img {
+    transition: transform .5s ease;
+}
+
+.img-hover-zoom-little:hover img {
+    transform: scale(1.05);
 }
 
 @media (min-width: 521px) and (max-width: 1123px) {

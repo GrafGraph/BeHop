@@ -90,7 +90,9 @@
             <!-- TODO: Link nur auf Bild und namen? --> 
             <div class="product">
                 <a class="productLink" href="index.php?c=products&a=showProduct&productID=<?=$product['id']?>">
-                    <img class="productImage" src="<?=$product['image']['imageUrl'] ?? ''?>" alt="<?= $product['image']['altText'] ?? ''?>">
+                    <div class="img-hover-zoom">
+                        <img class="productImage" src="<?=$product['image']['imageUrl'] ?? ''?>" alt="<?= $product['image']['altText'] ?? ''?>">
+                    </div>
                     <div class="productText">
                         <?=$product['name']?>
                         <br>

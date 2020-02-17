@@ -34,7 +34,7 @@ if(empty($shoppingCartItems)) : ?>
                     $imageUrl = $item['image']['imageUrl'];
                     $imageAltText =$item['image']['altText'];?>
                         <div class="shoppingcart-container-inner" id=<?=$item['id']?>>
-                            <div>
+                            <div class="img-hover-zoom">
                                 <a href="index.php?c=products&a=showProduct&productID=<?=$item['id']?>">
                                 <img class="shoppingcartProductImage" src=<?=$imageUrl?> alt=<?=$imageAltText?>></a>
                             </div>
