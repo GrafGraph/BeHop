@@ -69,7 +69,7 @@
     </section>
 <? elseif($step === 3) : ?>
     <h1 class="headline">Checkout Complete</h1>
-    <section class="banner">
+    <section class="banner img-hover-zoom-little">
         <a href="index.php?c=products&a=products">
         <img src="assets/images/checkout/thanksForYourOrder<?=random_int(1,3)?>.png" alt="Continue Shopping"></a>
     </section>

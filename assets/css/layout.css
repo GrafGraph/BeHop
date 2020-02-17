@@ -681,24 +681,18 @@ button:hover {
     display: block;
 }
 
-.img-hover-zoom {
+.img-hover-zoom,
+.img-hover-zoom-little {
     overflow: hidden;
 }
 
-.img-hover-zoom img {
+.img-hover-zoom img,
+.img-hover-zoom-little img {
     transition: transform .5s ease;
 }
 
 .img-hover-zoom:hover img {
     transform: scale(1.5);
-}
-
-.img-hover-zoom-little {
-    overflow: hidden;
-}
-
-.img-hover-zoom-little img {
-    transition: transform .5s ease;
 }
 
 .img-hover-zoom-little:hover img {
