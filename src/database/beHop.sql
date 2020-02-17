@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 16. Feb 2020 um 11:27
+-- Erstellungszeit: 17. Feb 2020 um 16:52
 -- Server-Version: 10.4.11-MariaDB
 -- PHP-Version: 7.4.1
 
@@ -99,9 +99,9 @@ CREATE TABLE `image` (
 
 INSERT INTO `image` (`id`, `createdAt`, `updatedAt`, `imageUrl`, `altText`, `product_id`, `sales_id`) VALUES
 (1, '2020-01-12 08:14:02', NULL, 'assets/images/products/mainImage-1.png', 'Best looking Shoes', 1, NULL),
-(2, '2020-01-12 10:37:47', NULL, 'assets/images/products/mainImage-2.jpg', 'Black Harem-Joggers', 2, NULL),
+(2, '2020-01-12 10:37:47', NULL, 'assets/images/products/mainImage-2.png', 'Black Harem-Joggers', 2, NULL),
 (3, '2020-01-18 17:42:54', NULL, 'assets/images/sales/endOfSeasonSale20.png', 'End of Season Sale: 20 Percent off', NULL, 3),
-(5, '2020-01-20 18:18:10', NULL, 'assets/images/products/mainImage-3.jpg', 'Adidas NMD_R1 black', 4, NULL),
+(5, '2020-01-20 18:18:10', NULL, 'assets/images/products/mainImage-3.png', 'Adidas NMD_R1 black', 4, NULL),
 (6, '2020-01-20 18:37:17', NULL, 'assets/images/products/mainImage-4.png', 'Nike black Jacket', 5, NULL),
 (8, '2020-01-20 20:14:06', NULL, 'assets/images/sales/WinterSale.png', 'Winter Sale', NULL, 2),
 (9, '2020-01-20 18:37:17', NULL, 'assets/images/products/mainImage-5.jpg', 'White T-Shirt', 6, 2),
@@ -163,7 +163,7 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `createdAt`, `updatedAt`, `name`, `price`, `color`, `brand`, `numberInStock`, `description`, `category_id`, `sales_id`) VALUES
 (1, '2020-01-12 08:04:22', NULL, 'Jordans Supercool', '69.99', 'White', 'Jordan', 5, 'The hot and new Jordans Model SUPERCOOL: Comfort in its best looking way!', 1, 3),
-(2, '2020-01-12 10:23:28', NULL, 'Harem Joggers', '19.99', 'Black', 'BeHop', 2, 'Polyester.\r\nHarem.\r\nPerfect for an active lifestyle: Suitable for trekking, running, yoga, couchsurfing and most other sports!', 2, 2),
+(2, '2020-01-12 10:23:28', NULL, 'Camouflage Cargo', '19.99', 'Grey', 'BeHop', 4, 'Camouflage Military Cargo Pants. Hip hop Skateboard Bib Overall Pants', 2, 2),
 (4, '2020-01-20 18:20:15', NULL, 'adidas Original NMD_R1', '140.00', 'Black', 'Adidas', 45, 'The nicest black shoe on the market, everyone want this shoe. It is a special edition and extremely rare.', 1, NULL),
 (5, '2020-01-20 18:36:15', NULL, 'Nike Academy 18 Track Jacket', '39.95', 'Black', 'Nike', 12, 'Best jacket for Sports', 4, 2),
 (6, '2020-01-20 18:36:15', NULL, 'e.s. Funktions T-Shirt poly cotton', '22.99', 'White', 'Engelbert Strauß', 22, 'Nice T-Shirt for everyone', 3, 2),
@@ -171,7 +171,7 @@ INSERT INTO `product` (`id`, `createdAt`, `updatedAt`, `name`, `price`, `color`,
 (8, '2020-02-15 19:30:27', NULL, 'Stretch Jeans', '49.99', 'Grey', 'Etre-Fort', 9, 'Stretch Jeans with Cord. Parkour-Style', 2, NULL),
 (9, '2020-02-15 19:39:26', NULL, 'SDMN Hazard Hoodie', '34.99', 'Black', 'Sidemen', 7, 'SIDEMEN Hazard Hoodie. 99% Polyester, 1% Badass.', 5, NULL),
 (10, '2020-02-15 19:53:34', NULL, 'Check Shirt', '12.99', 'White', 'Urban Classics', 12, 'Check-Figures not included', 3, NULL),
-(11, '2020-02-15 19:57:38', NULL, 'Cannabis Socks', '5.99', 'Black', 'Urban Classics', 19, '100% Hemp', 7, NULL),
+(11, '2020-02-15 19:57:38', NULL, 'Cannabis Socks', '5.99', 'Purple', 'Urban Classics', 19, '100% Hemp', 7, NULL),
 (12, '2020-02-15 19:59:50', NULL, 'Taco Socks', '9.99', 'Black', 'BeHop', 99, 'Snack on the Sock', 7, 3),
 (15, '2020-02-15 20:08:55', NULL, 'Nike Basecap ', '23.99', 'Black', 'Nike', 6, 'Urban Outdoor Baseball Cap', 6, NULL);
 
@@ -248,8 +248,7 @@ INSERT INTO `shoppingcart_has_product` (`id`, `shoppingCart_id`, `product_id`, `
 (9, 9, 9, 1),
 (10, 9, 6, 1),
 (11, 9, 11, 1),
-(12, 10, 5, 1),
-(15, 11, 2, 2);
+(12, 10, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -398,7 +397,7 @@ ALTER TABLE `shoppingcart`
 -- AUTO_INCREMENT für Tabelle `shoppingcart_has_product`
 --
 ALTER TABLE `shoppingcart_has_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT für Tabelle `user`
