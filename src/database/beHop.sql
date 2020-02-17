@@ -111,7 +111,12 @@ INSERT INTO `image` (`id`, `createdAt`, `updatedAt`, `imageUrl`, `altText`, `pro
 (14, '2020-02-15 19:55:42', NULL, 'assets/images/products/mainImage-9.png', 'Checked T-Shirt', 10, NULL),
 (15, '2020-02-15 19:59:00', NULL, 'assets/images/products/mainImage-10.png', 'Cannabis Socks', 11, NULL),
 (16, '2020-02-15 20:00:16', NULL, 'assets/images/products/mainImage-11.png', 'Taco Sock, yay!', 12, NULL),
-(19, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-12.png', 'Black Urban Nike Cap', 15, NULL);
+(19, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-12.png', 'Black Urban Nike Cap', 15, NULL),
+(21, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-14.png', 'Balenciaga SPEED TRAINER', 17, NULL),
+(22, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-15.png', 'BALENCIAGA TRIPPLE S', 18, NULL),
+(23, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-16.png', 'Givenchy Hoodie with a red stripe', 19, NULL),
+(24, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-17.png', 'Gucci Hoodie with a tiger on the back', 20, NULL),
+(25, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-18.png', 'Grey Nike jacket', 21, NULL);
 
 -- --------------------------------------------------------
 
@@ -173,7 +178,12 @@ INSERT INTO `product` (`id`, `createdAt`, `updatedAt`, `name`, `price`, `color`,
 (10, '2020-02-15 19:53:34', NULL, 'Check Shirt', '12.99', 'White', 'Urban Classics', 12, 'Check-Figures not included', 3, NULL),
 (11, '2020-02-15 19:57:38', NULL, 'Cannabis Socks', '5.99', 'Purple', 'Urban Classics', 19, '100% Hemp', 7, NULL),
 (12, '2020-02-15 19:59:50', NULL, 'Taco Socks', '9.99', 'Black', 'BeHop', 99, 'Snack on the Sock', 7, 3),
-(15, '2020-02-15 20:08:55', NULL, 'Nike Basecap ', '23.99', 'Black', 'Nike', 6, 'Urban Outdoor Baseball Cap', 6, NULL);
+(15, '2020-02-15 20:08:55', NULL, 'Nike Basecap ', '23.99', 'Black', 'Nike', 6, 'Urban Outdoor Baseball Cap', 6, NULL),
+(17, '2020-02-15 20:08:55', NULL, 'Balenciaga SPEED TRAINER', '585', 'Black', 'Balenciaga', 23, "The ultimate black SPEED TRAINER whith this shoe u can jump two times higher!!!!" , 1, NULL),
+(18, '2020-02-15 20:08:55', NULL, 'BALENCIAGA Triple S Sneakers', '745', 'Black', 'Balenciaga', 2, "This limited shoe is really pretty" , 1, NULL),
+(19, '2020-02-15 20:08:55', NULL, 'GIVENCHY Oversize-Hoodie', '950', 'Black', 'Givenchy', 2, 'This black hoodie is 100% cotton with a briliant design!' , 5, NULL),
+(20, '2020-02-15 20:08:55', NULL, 'GUCCI Oversize-Hoodie', '1500', 'Black', 'Gucci', 7, 'Pretty Gucci Logo on the front site and a tiger on the back.' , 5, NULL),
+(21, '2020-02-15 20:08:55', NULL, 'Grey Nike Jacket', '55', 'Grey', 'Nike', 55, 'A Grey jacket from Nike, this jacket is really warm and soft' , 4, 2);
 
 -- --------------------------------------------------------
 

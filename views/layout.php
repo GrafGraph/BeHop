@@ -89,7 +89,7 @@
 						</a>
 					</li>
 					<li id="searchClick">
-						<i class="fas fa-search invidualSearch" style="width: 40px; height: 40px; margin-left: -80%"></i>
+						<i id="searchIcon" class="fas fa-search invidualSearch" style="width: 35px; height: 35px; margin-left: -80%;"></i>
 					</li>
 					<div class="dropdown">
 						<li>
@@ -114,7 +114,7 @@
 				<input class="inputSearch" type="text" name="search" placeholder="Search..." id="mainSearch" style="float: left;">
 				<button id="searchButton" style="all:initial; display:inline; position:relative; cursor:pointer; float: left; width: 10%; height: 40px; margin-top: 20px;"><img style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
 			</form>
-			<div id="backToNav"><i class="fas fa-times" style=" width: 100%; height: 100%; margin-left: -80%"></i></div>
+			<div id="backToNav"><i class="fas fa-times" style=" width: 35px; height: 35px; margin-left: -80%; margin-top: 2px"></i></div>
 				<div class="clear"></div>
 			</div>
 			<nav class="BeHopGrey3" id="fullListMin2">

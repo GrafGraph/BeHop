@@ -343,6 +343,7 @@ input[type=number] {
 
 nav {
     background-color: #333333;
+    color: white !important;
 }
 
 nav ul {
@@ -426,8 +427,17 @@ footer {
     position: relative;
 }
 
-body,
 body * {
+    outline: 0 none;
+}
+
+main * {
+    /* border: 0; */
+    outline: 0 none;
+    color: dimgray;
+}
+
+footer * {
     /* border: 0; */
     outline: 0 none;
     color: dimgray;
