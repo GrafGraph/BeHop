@@ -178,20 +178,31 @@ class ProductsController extends Controller
 				$quantity = $product['numberInStock'];
 			}
 			$cartItem['quantity'] = $quantity;
+
+			// Success-Alert Box contents
+			$this->_params['success'] = "Added $quantity to Shopping Cart";
+
 			if(isLoggedIn())	// New or Updated Entry in table shoppingcart_has_product
 			{
-				// include 'core/updateShoppingcart.php';
 				$shoppingCart = ShoppingCart::findOne('user_id = '.$_SESSION['userID']);
 				// Find existing shoppingCart_has_product Entry
 				$shoppingCart_has_product = ShoppingCart_has_product::findOne(
 					'shoppingCart_id = '.$shoppingCart['id'].' and product_id ='.$product['id']);
 				if(!empty($shoppingCart_has_product))	// Udate existing Entry
 				{
+					$newQuantity = $shoppingCart_has_product['quantity'] + $quantity;
+					if($newQuantity > $product['numberInStock'])
+					{
+						$newQuantity = $product['numberInStock'];
+						$this->_params['errors'][] = "Quantity selected for &raquo;".$product['name']."&laquo; exceeded Maximum in Stock. <br>Set to Max of ".$product['numberInStock'];
+						unset($this->_params['success']);
+					}
+
 					$shoppingCart_has_productData = [
 						'id' => $shoppingCart_has_product['id'],
 						'shoppingCart_id' => $shoppingCart['id'],
 						'product_id' => $cartItem['product_id'],
-						'quantity' => ($shoppingCart_has_product['quantity'] + $quantity)
+						'quantity' => $newQuantity
 						];
 				}
 				else	// Create new Entry: id => null
@@ -213,7 +224,14 @@ class ProductsController extends Controller
 				{
 					if($item['product_id'] === $product['id'])	// Update quantity in Entry
 					{
-						$item['quantity'] += $quantity;
+						$newQuantity = $item['quantity'] + $quantity;
+						if($newQuantity > $product['numberInStock'])
+						{
+							$newQuantity = $product['numberInStock'];
+							$this->_params['errors'][] = "Quantity selected for &raquo;".$product['name']."&laquo; exceeded Maximum in Stock. <br>Set to Max of ".$product['numberInStock'];
+							unset($this->_params['success']);
+						}
+						$item['quantity'] = $newQuantity;
 						$alreadyExisting = true;
 						break;
 					}
@@ -222,14 +240,11 @@ class ProductsController extends Controller
 				{
 					array_push($_SESSION['shoppingCartItems'], $cartItem);	
 				}
-				
 			}
 			else	// Create new Session-ShoppingCart
 			{
 				$_SESSION['shoppingCartItems'] = array($cartItem);
 			}
-			// Success-Alert Box contents
-			$this->_params['success'] = "Added $quantity to Shopping Cart";
 		}
 	}
 }
