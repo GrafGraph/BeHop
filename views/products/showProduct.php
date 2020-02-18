@@ -14,7 +14,7 @@
                 <? endif;?>
                 <div class="container-wrap">
                     <div class="showProduct-item img-hover-zoom">
-                        <img class="productImage" src="<?=$images[0]['imageUrl']?>" alt="<?=$images[0]['imageAltText']?>">
+                        <img class="showProductImage" src="<?=$images[0]['imageUrl']?>" alt="<?=$images[0]['imageAltText']?>">
                     </div>
                     <div class="showProduct-item">
                         <p><strong><?=$product['name']?></strong></p>

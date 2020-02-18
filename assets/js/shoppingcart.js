@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var deleteButtons = document.getElementsByName('shoppingCartDelete');
-    var submits = document.getElementById('submits');
+    // var deleteButtons = document.getElementsByName('shoppingCartDelete');
+    // var submits = document.getElementById('submits');
 })
 
 function remove(ID) {

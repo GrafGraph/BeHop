@@ -89,23 +89,25 @@
         <? foreach($products as $product) : ?>
             <!-- TODO: Link nur auf Bild und namen? --> 
             <div class="product">
-                <a class="productLink" href="index.php?c=products&a=showProduct&productID=<?=$product['id']?>">
-                    <div class="img-hover-zoom">
-                        <img class="productImage" src="<?=$product['image']['imageUrl'] ?? ''?>" alt="<?= $product['image']['altText'] ?? ''?>">
-                    </div>
-                    <div class="productText">
-                        <?=$product['name']?>
-                        <br>
-                        <span class="price">
-                        <? if(isset($product['discountPrice'])) : ?>
-                            <span class="priceOld"> <?=$product['price']?>&euro;</span>
-                            <span class="priceNew">  <?=$product['discountPrice']?>&euro;</span>
-                        <? else : ?> 
-                            <?=$product['price']?> &euro;
-                        <? endif;?>
-                        </span>
-                    </div>
-                </a>
+                <div class="productLink">
+                    <a class="noDecoration" href="index.php?c=products&a=showProduct&productID=<?=$product['id']?>">
+                        <div class="img-hover-zoom productImage">
+                            <img src="<?=$product['image']['imageUrl'] ?? ''?>" alt="<?= $product['image']['altText'] ?? ''?>">
+                        </div>
+                        <div class="productText">
+                            <?=$product['name']?>
+                            <br>
+                            <span class="price">
+                            <? if(isset($product['discountPrice'])) : ?>
+                                <span class="priceOld"> <?=$product['price']?>&euro;</span>
+                                <span class="priceNew">  <?=$product['discountPrice']?>&euro;</span>
+                            <? else : ?> 
+                                <?=$product['price']?> &euro;
+                            <? endif;?>
+                            </span>
+                        </div>
+                    </a>
+                </div>
             </div>
         <? endforeach; ?>
     </div>
