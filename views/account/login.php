@@ -3,10 +3,16 @@
 	<div class="form-wrap">
 		<div class="account-form">
 			<form method="post">
+			<?php if(!empty($errors)) : ?>
+                  <div class= "error">
+                     <?php foreach($errors as $error){echo $error."<br>";}?>
+				  </div>
+				  <br>
+               <?php endif; ?><br>
 				<label for="email">E-Mail</label> <br>
-				<input id="emailInput" type="email" name="email" required id="email" /><br>
+				<input type="email" name="email" required id="email"/><br>
 				<label for="password">Password</label> <br />
-				<input type="password" name="password" id="password" /><br>
+				<input class="passwordInput" type="password" name="password" id="password" /><br>
 				<br />
 				<input type="submit" name="loginSubmit" value="Login now!" /><br>
 			</form>

@@ -66,17 +66,20 @@ class AccountController extends Controller
 						else
 						{
 							$_SESSION['loggedIn'] = false;
-							$this->params['registerError]'] = 'Email und Passwort stimmen nicht überein.';
+							$error[] = "Email and password does not match!";
+							$this->_params['errors'] = $error;
 						}
 					}
 					else
 					{
-						$this->params['registerError]'] = 'Email und Passwort stimmen nicht überein.';	// Email unbekannt...
+						$error[] = "Email and password does not match!";
+						$this->_params['errors'] = $error;	// Email unbekannt...
 					}
 				}
 				else
 				{
-					$this->params['registerError]'] = 'Bitte Email und Passwort eingeben.';
+					$error[] = "Enter a valid email and password!";
+					$this->_params['errors'] = $error;
 				}
 			}
 		}

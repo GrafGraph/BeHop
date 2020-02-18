@@ -21,9 +21,9 @@
 
             <fieldset>
             <legend>Login data</legend>
-               <input type="email"id="emailInput"  name="email" required value = "<?=isset($_POST['email']) ? $_POST['email'] : ''?>" placeholder="E-Mail"><br><br>
-               <input type="password" name="password1"required placeholder =" password"><br><br>
-               <input type="password" name="password2"required placeholder =" repeat the password"><br><br>
+               <input type="email" id="emailInput"  name="email" required value = "<?=isset($_POST['email']) ? $_POST['email'] : ''?>" placeholder="E-Mail"><br><br>
+               <input class="passwordInput" type="password" name="password1"required placeholder =" password"><br><br>
+               <input class="passwordInput" type="password" name="password2"required placeholder =" repeat the password"><br><br>
             </fieldset>
             <br>
             <button type="submit" name="submit">register</button>
