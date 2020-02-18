@@ -186,7 +186,7 @@
 .logo {
     float: left;
     max-height: 80px;
-    /* margin-left: 1%; */
+    margin-left: 1%;
     z-index: 10;
 }
 
