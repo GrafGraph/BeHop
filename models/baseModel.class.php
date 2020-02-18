@@ -252,20 +252,26 @@ abstract class BaseModel
         return $result;
     }
 
-        // specialization of find which selects given attributes instead of everything.
-        public static function findAttributes($attributes, $where = '')
+        // specialization of find which selects given attributes instead of everything and orders by attribute asc unless desc is true.
+        public static function findAttributes($attributes, $where = '', $descending = false)
         {
             $database  = $GLOBALS['database'];
             $result = null;
     
             try
             {
-                $sql = 'SELECT '.$attributes.' FROM ' . self::tablename();
+                $sql = 'SELECT DISTINCT '.$attributes.' FROM ' . self::tablename();
                     
                 if(!empty($where))
                 {
-                    $sql .= ' WHERE ' . $where .  ';';
+                    $sql .= ' WHERE ' . $where;
                 }
+                $sql .= ' ORDER BY ' . $attributes;
+                if($descending)
+                {
+                    $sql .= ' DESC';
+                }
+                $sql .= ';';
                 $result = $database->query($sql)->fetchAll();
             }
             catch(\PDOException $e)

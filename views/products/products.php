@@ -105,6 +105,11 @@
                                 <?=$product['price']?> &euro;
                             <? endif;?>
                             </span>
+                            <? if($product['numberInStock'] <= 0) :?>
+                                <div class="priceNew">
+                                    SOLD OUT
+                                </div>
+                            <? endif;?>
                         </div>
                     </a>
                 </div>

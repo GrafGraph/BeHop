@@ -349,7 +349,7 @@ class AccountController extends Controller
 							$stockCheckProduct = Product::findOne('id = ' .$id);
 							if(htmlspecialchars($_POST["quantity".$id]) > $stockCheckProduct['numberInStock'])
 							{
-								$this->_params['errors'][] = "Quantity selected for &raquo;".$stockCheckProduct['name']."&laquo; exceeded Maximum in Stock. <br>Set to Max of ".$stockCheckProduct['numberInStock'];
+								$this->_params['errors'][] = quantityExceededMaxInStockError($stockCheckProduct['name'])."<br>Set to Max of ".$stockCheckProduct['numberInStock'];
 								$_POST["quantity".$id] = $stockCheckProduct['numberInStock'];
 							}
 							$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
@@ -375,7 +375,7 @@ class AccountController extends Controller
 							$stockCheckProduct = Product::findOne('id = ' .$id);
 							if(htmlspecialchars($_POST["quantity".$id]) > $stockCheckProduct['numberInStock'])
 							{
-								$this->_params['errors'][] = "Quantity selected for &raquo;".$stockCheckProduct['name']."&laquo; exceeded Maximum in Stock. <br>Set to Max of ".$stockCheckProduct['numberInStock'];
+								$this->_params['errors'][] = quantityExceededMaxInStockError($stockCheckProduct['name'])."<br>Set to Max of ".$stockCheckProduct['numberInStock'];
 								$_POST["quantity".$id] = $stockCheckProduct['numberInStock'];
 							}
 							$sessionItem['quantity'] = htmlspecialchars($_POST["quantity".$id]);
