@@ -4,7 +4,7 @@
 		<div class="account-form">
 			<form method="post">
 				<label for="email">E-Mail</label> <br>
-				<input type="email" name="email" required id="email" /><br>
+				<input id="emailInput" type="email" name="email" required id="email" /><br>
 				<label for="password">Password</label> <br />
 				<input type="password" name="password" id="password" /><br>
 				<br />
@@ -15,6 +15,7 @@
 		</div>
 		<br>
 	</div>
+	<script src="assets/js/validation.js"></script>
 </section>
 
 
