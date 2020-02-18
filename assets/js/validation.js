@@ -3,7 +3,7 @@ var cityRegEx = /^[A-Za-z -]*$/;
 var streetRegEx = /^[A-Za-zß -]*$/;
 var numberRegEx = /^[1-9][0-9]*[a-z]?$/;
 var zipRegEx = /^[0-9]*$/;
-var emailRegEx = /[0-9A-Za-z_.]*[@][0-9A-Za-z-.]+[.][a-z]*/;
+var emailRegEx = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 var firstName = document.getElementById('firstNameInput');
 firstName.addEventListener('focusout', function() {
@@ -73,7 +73,7 @@ zipName.addEventListener('focusout', function() {
 var emailName = document.getElementById('emailInput');
 emailName.addEventListener('focusout', function() {
     emailName.style.backgroundColor = "white";
-    if (emailName.value.includes(emailRegEx)) {
+    if (emailName.value.match(emailRegEx)) {
         emailName.style.backgroundColor = "white";
         return;
     } else {
