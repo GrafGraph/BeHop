@@ -15,61 +15,68 @@ class AccountController extends Controller
 					$email    = $_POST['email'];
 					$password = $_POST['password'];
 					$user = User::findOne('email = ' . "'".$email."'");
-					if(password_verify($password, $user['password']))
+					if(!empty($user))
 					{
-						$_SESSION['loggedIn'] = true;
-						$_SESSION['userMail'] = $user['email'];
-						$_SESSION['userID'] = $user['id'];
-						// 	TODO: Bei Login den Warenkorb der Session nicht verwerfen, falls der Datenbank-Warenkorb leer ist.
-						// 	Merge Shoppingcarts
-						if(thereAreShoppingCartItemsInSession())
+						if(password_verify($password, $user['password']))
 						{
-							foreach($_SESSION['shoppingCartItems'] as $item)
+							$_SESSION['loggedIn'] = true;
+							$_SESSION['userMail'] = $user['email'];
+							$_SESSION['userID'] = $user['id'];
+							// 	TODO: Bei Login den Warenkorb der Session nicht verwerfen, falls der Datenbank-Warenkorb leer ist.
+							// 	Merge Shoppingcarts
+							if(thereAreShoppingCartItemsInSession())
 							{
-								$quantity = $item['quantity'];
-								$product['id'] = $item['product_id'];
-								$cartItem['product_id'] = $item['product_id'];
-								$cartItem['quantity'] = $quantity;
-
-								// include 'core/updateShoppingcart.php';
-								$shoppingCart = ShoppingCart::findOne('user_id = '.$_SESSION['userID']);
-								// Find existing shoppingCart_has_product Entry
-								$shoppingCart_has_product = ShoppingCart_has_product::findOne(
-									'shoppingCart_id = '.$shoppingCart['id'].' and product_id ='.$product['id']);
-								if(!empty($shoppingCart_has_product))	// Udate existing Entry
+								foreach($_SESSION['shoppingCartItems'] as $item)
 								{
-									$shoppingCart_has_productData = [
-										'id' => $shoppingCart_has_product['id'],
+									$quantity = $item['quantity'];
+									$product['id'] = $item['product_id'];
+									$cartItem['product_id'] = $item['product_id'];
+									$cartItem['quantity'] = $quantity;
+
+									// include 'core/updateShoppingcart.php';
+									$shoppingCart = ShoppingCart::findOne('user_id = '.$_SESSION['userID']);
+									// Find existing shoppingCart_has_product Entry
+									$shoppingCart_has_product = ShoppingCart_has_product::findOne(
+										'shoppingCart_id = '.$shoppingCart['id'].' and product_id ='.$product['id']);
+									if(!empty($shoppingCart_has_product))	// Udate existing Entry
+									{
+										$shoppingCart_has_productData = [
+											'id' => $shoppingCart_has_product['id'],
+											'shoppingCart_id' => $shoppingCart['id'],
+											'product_id' => $cartItem['product_id'],
+											'quantity' => ($shoppingCart_has_product['quantity'] + $quantity)
+											];
+									}
+									else	// Create new Entry: id => null
+									{
+										$shoppingCart_has_productData = [
 										'shoppingCart_id' => $shoppingCart['id'],
 										'product_id' => $cartItem['product_id'],
-										'quantity' => ($shoppingCart_has_product['quantity'] + $quantity)
+										'quantity' => $quantity
 										];
+									}
+									$newShoppingCart_has_product = new ShoppingCart_has_product($shoppingCart_has_productData);
+									$newShoppingCart_has_product->save();
 								}
-								else	// Create new Entry: id => null
-								{
-									$shoppingCart_has_productData = [
-									'shoppingCart_id' => $shoppingCart['id'],
-									'product_id' => $cartItem['product_id'],
-									'quantity' => $quantity
-									];
-								}
-								$newShoppingCart_has_product = new ShoppingCart_has_product($shoppingCart_has_productData);
-								$newShoppingCart_has_product->save();
+								unset($_SESSION['shoppingCartItems']);
+								
 							}
-							unset($_SESSION['shoppingCartItems']);
-							
+							header('Location: index.php');
 						}
-						header('Location: index.php');
+						else
+						{
+							$_SESSION['loggedIn'] = false;
+							$this->params['registerError]'] = 'Email und Passwort stimmen nicht überein.';
+						}
 					}
 					else
 					{
-						$_SESSION['loggedIn'] = false;
-						$this->params['registerError]'] = ('Email und Passwort stimmen nicht überein.');
+						$this->params['registerError]'] = 'Email und Passwort stimmen nicht überein.';	// Email unbekannt...
 					}
 				}
 				else
 				{
-					$this->params['registerError]'] = ('Bitte Email und Passwort eingeben.');
+					$this->params['registerError]'] = 'Bitte Email und Passwort eingeben.';
 				}
 			}
 		}
