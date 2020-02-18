@@ -39,11 +39,11 @@ class User extends BaseModel
     public static function validateUser($newUser, &$insertError){
         $newUser->validate($insertError);
 
-        if (!preg_match('/^[A-Za-z]*$/', $newUser->__get('firstName'))) {
+        if (!preg_match('/^[A-Za-zßäöü]*$/', $newUser->__get('firstName'))) {
             array_push($insertError, 'First Name may only consist of Letters');
         }
 
-        if (!preg_match('/^[A-Za-z]*$/', $newUser->__get('lastName'))) {
+        if (!preg_match('/^[A-Za-zßäöü]*$/', $newUser->__get('lastName'))) {
             array_push($insertError, 'Last Name may only consist of Letters');
         }
 
