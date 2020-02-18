@@ -124,6 +124,10 @@ function calculateDiscountPrice($standardPrice, $discountInPercent)
     return round( ($standardPrice * (1 - ($discountInPercent / 100))), 2);
 }
 
+// Error Message for Quantity Errors in add-to-cart Routine
+function quantityExceededMaxInStockError($name){
+    return "Quantity selected for &raquo;".$name."&laquo; exceeded Maximum in Stock.";
+}
 // filterOptions is array of possible options. attribute is needed key for filterOption
 // Example: getFilterOptions($categories, 'name', 'cat');
 function printFilterOptions($filterOptions, $attribute, $urlAttribute)

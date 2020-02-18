@@ -7,6 +7,7 @@
                     <div class="error">
                         <?=$error?>
                     </div>
+                    <br>
                 <? endforeach;
             endif;?>
                 <? if(isset($success) && !empty($success)) :?>

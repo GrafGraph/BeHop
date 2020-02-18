@@ -173,7 +173,7 @@ class ProductsController extends Controller
 			$cartItem['product_id'] = $product['id'];
 			if($quantity > $product['numberInStock'])
 			{
-				$this->_params['errors'][] = "Quantity selected for &raquo;".$product['name']."&laquo; exceeded Maximum in Stock. <br>Set to Max of ".$product['numberInStock'];
+				$this->_params['errors'][] = "Quantity-Selected was higher than allowed. <br>Set to Max of ".$product['numberInStock'];
 				$_POST["quantity"] = $product['numberInStock'];
 				$quantity = $product['numberInStock'];
 			}
@@ -194,8 +194,9 @@ class ProductsController extends Controller
 					if($newQuantity > $product['numberInStock'])
 					{
 						$newQuantity = $product['numberInStock'];
-						$this->_params['errors'][] = "Quantity selected for &raquo;".$product['name']."&laquo; exceeded Maximum in Stock. <br>Set to Max of ".$product['numberInStock'];
-						unset($this->_params['success']);
+						$this->_params['errors'][] = quantityExceededMaxInStockError($product['name']);
+						// unset($this->_params['success']);
+						$this->_params['success'] = "Added maximum of ".$product['numberInStock'];
 					}
 
 					$shoppingCart_has_productData = [
@@ -228,8 +229,9 @@ class ProductsController extends Controller
 						if($newQuantity > $product['numberInStock'])
 						{
 							$newQuantity = $product['numberInStock'];
-							$this->_params['errors'][] = "Quantity selected for &raquo;".$product['name']."&laquo; exceeded Maximum in Stock. <br>Set to Max of ".$product['numberInStock'];
-							unset($this->_params['success']);
+							$this->_params['errors'][] = quantityExceededMaxInStockError($product['name']);
+							// unset($this->_params['success']);
+							$this->_params['success'] = "Added maximum of ".$product['numberInStock'];
 						}
 						$item['quantity'] = $newQuantity;
 						$alreadyExisting = true;
