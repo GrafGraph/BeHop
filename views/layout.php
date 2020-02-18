@@ -86,6 +86,7 @@
 					<li>
 						<a href="index.php?c=account&a=shoppingcart" title="Shopping Cart">
 							<img id="icons" src="assets/images/layout/shoppingCart<?= highlightNavIcon('shoppingcart'); ?>.png" alt="Einkaufswagen Bild" class="navIcon" style="margin-right:50px;">
+							<div class="shoppingcartQuantity"><?=shoppingcartContent();?></div>
 						</a>
 					</li>
 					<li id="searchClick">
