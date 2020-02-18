@@ -8,14 +8,13 @@ if(empty($shoppingCartItems)) : ?>
         <? if(!isLoggedIn()) : ?>
             <div>
                 <a href="index.php?c=account&a=login">
-                    <button class="disabled" title="Log in to be able to check out">Log in to see your Shopping Cart</button>
+                    <button title="Log in to be able to check out">Log in to see your Shopping Cart</button>
                 </a>
             </div>
         <? endif;?>
     </div>
 <? else :
-    $priceTotal = 0.0;
-    ?>
+    $priceTotal = 0.0; ?>
     <? if(isset($errors)) : 
             foreach($errors as $error) : ?>
                 <div class="error">
@@ -36,7 +35,8 @@ if(empty($shoppingCartItems)) : ?>
                         <div class="shoppingcart-container-inner" id=<?=$item['id']?>>
                             <div class="img-hover-zoom">
                                 <a href="index.php?c=products&a=showProduct&productID=<?=$item['id']?>">
-                                <img class="shoppingcartProductImage" src=<?=$imageUrl?> alt=<?=$imageAltText?>></a>
+                                    <img class="shoppingcartProductImage" src=<?=$imageUrl?> alt=<?=$imageAltText?>>
+                                </a>
                             </div>
                             <div class="shoppingcart-item-right">  
                                 <div id="name">
@@ -83,7 +83,7 @@ if(empty($shoppingCartItems)) : ?>
                 <? else : ?>
                         <div>
                             <a href="index.php?c=account&a=login">
-                            <button class="disabled" title="Log in to be able to check out">Log in to Checkout</button>
+                                <button title="Log in to be able to check out">Log in to Checkout</button>
                             </a>
                         </div>
                 <? endif;?>

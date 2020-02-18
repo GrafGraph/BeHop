@@ -2,14 +2,14 @@
 <section class="form-background">
         <div class="form-wrap">
             <div class="account-form">
-            <? if(isset($errors)) : 
-                foreach($errors as $error) : ?>
-                    <div class="error">
-                        <?=$error?>
-                    </div>
-                    <br>
-                <? endforeach;
-            endif;?>
+                <? if(isset($errors)) : 
+                    foreach($errors as $error) : ?>
+                        <div class="error">
+                            <?=$error?>
+                        </div>
+                        <br>
+                    <? endforeach;
+                endif;?>
                 <? if(isset($success) && !empty($success)) :?>
                     <div class="success"><?=$success?></div>
                 <? endif;?>
