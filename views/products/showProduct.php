@@ -27,7 +27,13 @@
                             <? endif;?>
                         </p>
                         <p><strong>Color:</strong> <?=$product['color']?></p>
-                        <p><strong>In Stock:</strong> <?=$product['numberInStock']?></p>
+                        <p><strong>In Stock:</strong>
+                            <? if($product['numberInStock'] <= 0):?>
+                                    <strong class="priceNew">SOLD OUT</strong>
+                            <? else: ?>
+                                    <?=$product['numberInStock']?>
+                            <? endif;?>
+                        </p>
 
                         <p><strong>Description:</strong></br>
                         <q><?=$product['description']?></q></p>
@@ -36,7 +42,14 @@
                             <label style="display:inline;" for="quantity"><strong>Amount:</strong></label>
                             <input style="width:77px;" type="number" name="quantity" min="1" max=<?=$product['numberInStock']?> value="1">
                             <br>
-                            <button type="submit" name="addToCartSubmit">Add to Cart</button>
+                            <button type="submit" name="addToCartSubmit"
+                                <? if($product['numberInStock'] <= 0):?>
+                                     class="disabled" disabled>
+                                    <strong class="priceNew">SOLD OUT</strong>
+                                <? else:?>
+                                    >Add to Cart
+                                <? endif;?>
+                            </button>
                         </form>
                     </div>
                 </div>

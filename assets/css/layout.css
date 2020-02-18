@@ -537,12 +537,6 @@ img {
     height: auto;
 }
 
-
-/* .disabled {
-    background-color: #ff5757;
-    transition: none;
-} */
-
 button {
     width: 150px;
     /* Test */
@@ -775,4 +769,13 @@ button:hover {
 #backToProducts:hover {
     text-decoration: none;
     color: white !important;
+}
+
+.disabled {
+    transition: none;
+    border-color: #ff5757;
+}
+
+.disabled:hover {
+    background-color: #ffffff;
 }
