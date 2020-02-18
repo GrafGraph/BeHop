@@ -49,6 +49,13 @@
     .product {
         width: 150px;
     }
+    .productImage {
+        max-height: 23em;
+        background-color: #efefef;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .productText {
         font-size: 90%;
     }
@@ -759,4 +766,13 @@ button:hover {
     #searchMin {
         display: none !important;
     }
+}
+
+#backToProducts {
+    text-decoration: none;
+}
+
+#backToProducts:hover {
+    text-decoration: none;
+    color: white !important;
 }
