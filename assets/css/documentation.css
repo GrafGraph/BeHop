@@ -26,3 +26,12 @@ table td {
 .docu-wrap h4 {
     margin-top: 1%;
 }
+
+.legalNotice {
+    text-align: left;
+    background-color: #ffffff;
+    margin: auto;
+    padding: 1%;
+    min-width: 70%;
+    max-width: 900px;
+}

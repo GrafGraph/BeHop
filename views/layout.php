@@ -94,7 +94,7 @@
 					</li>
 					<div class="dropdown">
 						<li>
-							<button class="dropbtn"><i class="fas fa-bars dropDownbtnIcon" style="width: 25%; height: 25%; "></i></button>
+							<button class="dropbtn"><img id="icons"src="assets/images/layout/menuRed.png" style="width: 40px; height: 40px;" alt="Menu" class="navIcon"></button>
 						</li>
 						<div class="dropdown-content">
 							<li><a href="index.php?c=products&a=products">Products</a></li>
@@ -161,7 +161,7 @@
 	</div>
 	<footer>
 		<a href="?a=index" title="Home" class="noDecoration">BEHOP</a> &copy;
-		<a href="index.php?a=impressum">Imprint</a>
+		<a href="index.php?a=legalNotice">Legal Notice</a>
 	</footer>
 </body>
 <script src="assets/js/listenerLayout.js"></script>
