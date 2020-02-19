@@ -89,7 +89,7 @@
 						</a>
 					</li>
 					<li id="searchClick">
-						<button id="searchIcon" style="all:initial; display:inline; position:relative; cursor:pointer; float: left; "><img style="height: 50px; margin-top: 0px;" type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
+						<button id="searchIcon" style="all:initial; display:inline; position:relative; cursor:pointer; float: left; "><img type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search" class="navIcon"></img></button>
 						
 					</li>
 					<div class="dropdown">
@@ -124,11 +124,11 @@
 						</a>
 				<ul class="navList">
 					<li id="searchClick2">
-					<button id="searchIcon" style="all:initial; display:inline; position:relative; cursor:pointer; float: right; margin-left: auto; margin-right: auto;"><img style="height: 50px; width: 50px; margin-top: 0px;" type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
+					<button id="searchIcon" style="all:initial; display:inline; position:relative; cursor:pointer; float: right; margin-left: auto; margin-right: auto;"><img style="height: 50px; width: 50px; margin-top: 0px;" type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search" class="navIcon"></img></button>
 					</li>
 					<div class="dropdown">
 						<li>
-							<button class="dropbtn"><i class="fas fa-bars dropDownbtnIcon" style="width: 25%; height: 25%; "></i></button>
+							<button class="dropbtn"><img id="icons"src="assets/images/layout/menuRed.png" style="width: 40px; height: 40px;" alt="Menu" class="navIcon"></button>
 						</li>
 						<div class="dropdown-content">
 							<li><a href="index.php?c=products&a=products">Products</a></li>

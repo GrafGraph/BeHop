@@ -202,7 +202,12 @@
 }
 
 .navIcon {
-    max-height: 40px;
+    height: 40px;
+    width: 40px;
+}
+
+.navIcon:hover {
+    opacity: 0.7;
 }
 
 .noDecoration {
