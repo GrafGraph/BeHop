@@ -71,7 +71,11 @@
             <td>Michael</td>
         </tr>
         <tr>
-            <td>...</td>
+            <td>Login,
+                Registrierung, 
+                Validierung, 
+                Design, 
+                responsive Navigations Leiste </td>
             <td>Anton</td>
         </tr>
 
@@ -84,7 +88,7 @@
             <td>Michael</td>
         </tr>
         <tr>
-            <td>...</td>
+            <td>ca. 150</td>
             <td>Anton</td>
         </tr>
     </table>
