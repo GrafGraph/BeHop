@@ -13,7 +13,6 @@
 		<?php endforeach; ?>
 	<?php endif; ?>
 </head>
-
 <body>
 	<div class="content-wrap">
 		<header>

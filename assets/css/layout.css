@@ -779,3 +779,29 @@ button:hover {
 .disabled:hover {
     background-color: #ffffff;
 }
+
+html {
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.color-picker-main-container {
+    width: 100%;
+    font-size: 22px;
+    padding-bottom: 110px;
+}
+
+footer {
+    position: fixed;
+}
