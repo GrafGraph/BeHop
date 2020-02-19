@@ -113,9 +113,9 @@
 				<input type="hidden" name="c" value="products">
 				<input type="hidden" name="a" value="products">
 				<input class="inputSearch" type="text" name="search" placeholder="Search..." id="mainSearch" style="float: left;">
-				<button id="searchButton" style="all:initial; display:inline; position:relative; cursor:pointer; float: left; width: 10%; height: 40px; margin-top: 20px;"><img style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
+				<button id= "searchIconButton" style="all:initial; display:inline; position:relative; cursor:pointer; float: left; width: 10%; height: 40px; margin-top: 20px;"><img  style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
 			</form>
-			<div id="backToNav"><img src="assets/images/layout/smallXWhite.png" style="width: 40px; height: 40px; margin-right: 20%;" alt="X" class="navIcon"></div>
+			<div id="backToNav"><img src="assets/images/layout/smallXWhite.png"  alt="X" class="navIcon"></div>
 				<div class="clear"></div>
 			</div>
 			<nav class="BeHopGrey3" id="fullListMin2">
@@ -124,11 +124,11 @@
 						</a>
 				<ul class="navList">
 					<li id="searchClick2">
-					<button id="searchIcon" style="all:initial; display:inline; position:relative; cursor:pointer; float: right; margin-left: auto; margin-right: auto;"><img style="height: 50px; width: 50px; margin-top: 0px;" type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search" class="navIcon"></img></button>
+					<button id="searchIcon" style="all:initial; display:inline; position:relative; cursor:pointer;"><img  style="height: 40px; width: 40px; margin-top: 0px; float: left; margin-right: 50px"type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
 					</li>
 					<div class="dropdown">
 						<li>
-							<button class="dropbtn"><img id="icons"src="assets/images/layout/menuRed.png" style="width: 40px; height: 40px;" alt="Menu" class="navIcon"></button>
+							<button class="dropbtn"><img id="icons"src="assets/images/layout/menuRed.png" style="width: 40px; height: 40px; margin-left: 60px" alt="Menu" class="navIcon"></button>
 						</li>
 						<div class="dropdown-content">
 							<li><a href="index.php?c=products&a=products">Products</a></li>
@@ -149,9 +149,9 @@
 				<input type="hidden" name="c" value="products">
 				<input type="hidden" name="a" value="products">
 				<input class="inputSearch2" type="text" name="search" placeholder="Search..." id="mainSearch" style="float: left;">
-				<button id="searchButton" style="all:initial; display:inline; position:relative; cursor:pointer;float: left; width: 10%; height: 40px; margin-top: 20px; "><img style="height: 45px;  " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
+				<button id= "searchIconButton2" style="all:initial; display:inline; position:relative; cursor:pointer;"><img style="float: left; width: 36px; height: 36px; margin-top: 22px;"  type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
 			</form>
-				<div id="backToNav2"><i class="fas fa-times" style=" width: 40px; height: 40px; margin-left: 5%"></i></div>
+			<div id="backToNav2"><img src="assets/images/layout/smallXWhite.png" style="width: 36px; height: 36px;  margin-left: 88%; margin-top: -55px;" alt="X"></div>
 				<div class="clear"></div>
 			</div>
 		</header>
