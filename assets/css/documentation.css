@@ -1,5 +1,19 @@
+.docu-wrap {
+    max-width: 1400px;
+    margin: auto;
+    background-color: #ffffff;
+    text-align: left;
+    padding: 1%;
+}
+
+.docu-wrap * {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
 table {
     text-align: left;
+    vertical-align: text-top;
     max-width: 100%;
     border: 1px solid;
     border-collapse: collapse;
@@ -11,13 +25,16 @@ table td {
     padding: 10px;
 }
 
-.docu-wrap {
-    max-width: 1400px;
-    margin: auto;
+.flex-docu {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: left;
 }
 
-.docu-wrap * {
-    margin: 5px 1%;
+.flex-docu-item {
+    max-width: 650px;
+    min-width: 200px;
+    border: 0;
 }
 
 .legalDetails {
