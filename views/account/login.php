@@ -17,11 +17,11 @@
 				<input type="submit" name="loginSubmit" value="Login now!" /><br>
 			</form>
 			<br>
-			<a href="index.php?c=account&a=signUp"><button>  Create Account</button></a>
+			<a href="index.php?c=account&a=signUp"><button>Create Account</button></a>
 		</div>
 		<br>
 	</div>
-	<script src="assets/js/validation.js"></script>
+	<script src="assets/js/validationLogin.js"></script>
 </section>
 
 
