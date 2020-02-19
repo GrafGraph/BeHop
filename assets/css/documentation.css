@@ -1,0 +1,28 @@
+table {
+    text-align: left;
+    max-width: 100%;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    border: 1px solid;
+    padding: 1%;
+}
+
+.docu-wrap {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.docu-wrap * {
+    margin: 5px 1%;
+}
+
+.docu-wrap h1,
+.docu-wrap h2,
+.docu-wrap h3,
+.docu-wrap h4 {
+    margin-top: 1%;
+}
