@@ -89,7 +89,8 @@
 						</a>
 					</li>
 					<li id="searchClick">
-						<i id="searchIcon" class="fas fa-search invidualSearch" style="width: 35px; height: 35px; margin-left: -80%;"></i>
+						<button id="searchIcon" style="all:initial; display:inline; position:relative; cursor:pointer; float: left; "><img style="height: 50px; margin-top: 0px;" type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
+						
 					</li>
 					<div class="dropdown">
 						<li>
@@ -123,7 +124,7 @@
 						</a>
 				<ul class="navList">
 					<li id="searchClick2">
-						<i class="fas fa-search invidualSearch" style="width: 40px; height: 40px; margin-left:-80%;"></i>
+					<button id="searchIcon" style="all:initial; display:inline; position:relative; cursor:pointer; float: right; margin-left: auto; margin-right: auto;"><img style="height: 50px; width: 50px; margin-top: 0px;" type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
 					</li>
 					<div class="dropdown">
 						<li>
