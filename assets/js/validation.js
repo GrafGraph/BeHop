@@ -8,7 +8,7 @@ var emailRegEx = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\")
 var firstName = document.getElementById('firstNameInput');
 firstName.addEventListener('focusout', function() {
     if (firstName.value.match(nameRegEx)) {
-        firstName.style.borderColor = "dimgray";
+        firstName.style.borderColor = "green";
         return;
     } else {
         firstName.style.borderColor = "red";
@@ -18,9 +18,9 @@ firstName.addEventListener('focusout', function() {
 });
 var lastName = document.getElementById('lastNameInput');
 lastName.addEventListener('focusout', function() {
-    lastName.style.borderColor = "dimgray";
+    lastName.style.borderColor = "green";
     if (lastName.value.match(nameRegEx)) {
-        lastName.style.borderColor = "dimgray";
+        lastName.style.borderColor = "green";
         return;
     } else {
         lastName.style.borderColor = "red";
@@ -30,9 +30,9 @@ lastName.addEventListener('focusout', function() {
 });
 var streetName = document.getElementById('streetInput');
 streetName.addEventListener('focusout', function() {
-    streetName.style.borderColor = "dimgray";
+    streetName.style.borderColor = "green";
     if (streetName.value.match(streetRegEx)) {
-        streetName.style.borderColor = "dimgray";
+        streetName.style.borderColor = "green";
         return;
     } else {
         streetName.style.borderColor = "red";
@@ -42,9 +42,9 @@ streetName.addEventListener('focusout', function() {
 });
 var numberName = document.getElementById('numberInput');
 numberName.addEventListener('focusout', function() {
-    numberName.style.borderColor = "dimgray";
+    numberName.style.borderColor = "green";
     if (numberName.value.match(numberRegEx)) {
-        numberName.style.borderColor = "dimgray";
+        numberName.style.borderColor = "green";
         return;
     } else {
         numberName.style.borderColor = "red";
@@ -54,9 +54,9 @@ numberName.addEventListener('focusout', function() {
 });
 var cityName = document.getElementById('cityInput');
 cityName.addEventListener('focusout', function() {
-    cityName.style.borderColor = "dimgray";
+    cityName.style.borderColor = "green";
     if (cityName.value.match(cityRegEx)) {
-        cityName.style.borderColor = "dimgray";
+        cityName.style.borderColor = "green";
         return;
     } else {
         cityName.style.borderColor = "red";
@@ -66,9 +66,9 @@ cityName.addEventListener('focusout', function() {
 });
 var zipName = document.getElementById('zipInput');
 zipName.addEventListener('focusout', function() {
-    zipName.style.borderColor = "dimgray";
+    zipName.style.borderColor = "green";
     if (zipName.value.match(zipRegEx)) {
-        zipName.style.borderColor = "dimgray";
+        zipName.style.borderColor = "green";
         return;
     } else {
         zipName.style.borderColor = "red";
@@ -78,9 +78,9 @@ zipName.addEventListener('focusout', function() {
 });
 var emailName = document.getElementById('emailInput');
 emailName.addEventListener('focusout', function() {
-    emailName.style.borderColor = "dimgray";
+    emailName.style.borderColor = "green";
     if (emailName.value.match(emailRegEx)) {
-        emailName.style.borderColor = "dimgray";
+        emailName.style.borderColor = "green";
         return;
     } else {
         emailName.style.borderColor = "red";
