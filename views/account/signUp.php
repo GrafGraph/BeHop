@@ -11,27 +11,27 @@
                   </div>
                <?php endif; ?><br>
                <label>Firstname: </label>
-               <input type="text" id="firstNameInput" name="firstName" required value = "<?=isset($_POST['firstName']) ? $_POST['firstName'] : ''?>" placeholder="firstname"><br><br>
+               <input type="text" id="firstNameInput" name="firstName" required value = "<?=isset($_POST['firstName']) ? $_POST['firstName'] : ''?>" ><br><br>
                <label>Lastname: </label>
-               <input type="text" id="lastNameInput" name="lastName" required value = "<?=isset($_POST['lastName']) ? $_POST['lastName'] : ''?>" placeholder="lastname"><br><br>
+               <input type="text" id="lastNameInput" name="lastName" required value = "<?=isset($_POST['lastName']) ? $_POST['lastName'] : ''?>" ><br><br>
                <label>Street: </label>
-               <input type="text" id="streetInput" name="street" required value = "<?=isset($_POST['street']) ? $_POST['street'] : ''?>" placeholder="street"><br>
+               <input type="text" id="streetInput" name="street" required value = "<?=isset($_POST['street']) ? $_POST['street'] : ''?>" ><br>
                <label>Number: </label>
-               <input type="text" id="numberInput" name="number" required value = "<?=isset($_POST['number']) ? $_POST['number'] : ''?>"placeholder="housnumber"><br>
+               <input type="text" id="numberInput" name="number" required value = "<?=isset($_POST['number']) ? $_POST['number'] : ''?>"><br>
                <label>City: </label>
-               <input type="text" id="cityInput" name="city" required value = "<?=isset($_POST['city']) ? $_POST['city'] : ''?>" placeholder="city"><br>
+               <input type="text" id="cityInput" name="city" required value = "<?=isset($_POST['city']) ? $_POST['city'] : ''?>" ><br>
                <label>ZIP: </label>
-               <input type="text" id="zipInput" name="zip" required  value = "<?=isset($_POST['zip']) ? $_POST['zip'] : ''?>" placeholder="ZIP"><br>
+               <input type="text" id="zipInput" name="zip" required  value = "<?=isset($_POST['zip']) ? $_POST['zip'] : ''?>" ><br>
             </fieldset>
 <br>
             <fieldset>
             <legend>Login data</legend>
                <label>Email:: </label>
-               <input type="email" id="emailInput"  name="email" required value = "<?=isset($_POST['email']) ? $_POST['email'] : ''?>" placeholder="E-Mail"><br><br>
+               <input type="email" id="emailInput"  name="email" required value = "<?=isset($_POST['email']) ? $_POST['email'] : ''?>" ><br><br>
                <label>Password: </label>
-               <input class="passwordInput" type="password" name="password1"required placeholder =" password"><br><br>
+               <input class="passwordInput" type="password" name="password1"required ><br><br>
                <label>Repeat the password: </label>
-               <input class="passwordInput" type="password" name="password2"required placeholder =" repeat the password"><br><br>
+               <input class="passwordInput" type="password" name="password2"required ><br><br>
             </fieldset>
             <br>
             <button type="submit" name="submit">register</button>
