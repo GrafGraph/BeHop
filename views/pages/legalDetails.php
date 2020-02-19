@@ -82,6 +82,16 @@
                 </td>
                 <td>TODO</td>
             </tr>
+            <tr>
+                <td>
+                    <a href="https://www.jdsports.de/product/schwarz-adidas-originals-nmdr1-herren/197083_jdsportsde/?istCompanyId=e508b3c4-e809-4fea-b8b7-e3b7a70e7dc6&istFeedId=457c9b2a-c04b-45e6-9e1a-260a000d948e&istItemId=iimammqxm&istBid=t&gclsrc=ds">jdsports.de</a>
+                </td>
+                <td>Black Adidas Shoes</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.vereinsexpress.de/fussball/trainingsjacken/nike/10094358-nike-academy-18-track-jacket-jacke-schwarz/">vereinsexpress.de</a></td>
+                <td>Black Nike Jacket</td>
+            </tr>
         </table>
         <br>
         <h3>Disclaimer</h3>
