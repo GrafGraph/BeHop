@@ -33,9 +33,9 @@ class PagesController extends Controller
 		$this->_params['title'] = 'BeHop - About Us' ;
 	}
 
-	public function actionLegalNotice()
+	public function actionLegalDisclosure()
 	{
-		$this->_params['title'] = 'BeHop - Legal Notice' ;
+		$this->_params['title'] = 'BeHop - Legal Disclosure' ;
 	}
 	
 	public function actionProjectDocumentation()

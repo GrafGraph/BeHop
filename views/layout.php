@@ -161,7 +161,7 @@
 	</div>
 	<footer>
 		<a href="?a=index" title="Home" class="noDecoration">BEHOP</a> &copy;
-		<a href="index.php?a=legalNotice">Legal Notice</a>
+		<a href="index.php?a=legalDisclosure">Legal Disclosure</a>
 	</footer>
 </body>
 <script src="assets/js/listenerLayout.js"></script>
