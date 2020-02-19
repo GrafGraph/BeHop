@@ -8,7 +8,7 @@ table {
 table th,
 table td {
     border: 1px solid;
-    padding: 1%;
+    padding: 10px;
 }
 
 .docu-wrap {
@@ -20,18 +20,15 @@ table td {
     margin: 5px 1%;
 }
 
-.docu-wrap h1,
-.docu-wrap h2,
-.docu-wrap h3,
-.docu-wrap h4 {
-    margin-top: 1%;
-}
-
-.legalNotice {
+.legalDetails {
     text-align: left;
     background-color: #ffffff;
     margin: auto;
     padding: 1%;
     min-width: 70%;
     max-width: 900px;
+}
+
+.legalDetails * {
+    margin-top: 10px;
 }
