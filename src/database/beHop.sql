@@ -168,7 +168,7 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `createdAt`, `updatedAt`, `name`, `price`, `color`, `brand`, `numberInStock`, `description`, `category_id`, `sales_id`) VALUES
 (1, '2020-01-12 08:04:22', NULL, 'Jordans Supercool', '69.99', 'White', 'Jordan', 5, 'The hot and new Jordans Model SUPERCOOL: Comfort in its best looking way!', 1, 3),
-(2, '2020-01-12 10:23:28', NULL, 'Camouflage Cargo', '19.99', 'Grey', 'BeHop', 4, 'Camouflage Military Cargo Pants. Hip hop Skateboard Bib Overall Pants', 2, 2),
+(2, '2020-01-12 10:23:28', NULL, 'Camouflage Cargo', '19.99', 'Grey', 'BeHop', 0, 'Camouflage Military Cargo Pants. Hip hop Skateboard Bib Overall Pants', 2, 2),
 (4, '2020-01-20 18:20:15', NULL, 'adidas Original NMD_R1', '140.00', 'Black', 'Adidas', 45, 'The nicest black shoe on the market, everyone want this shoe. It is a special edition and extremely rare.', 1, NULL),
 (5, '2020-01-20 18:36:15', NULL, 'Nike Academy 18 Track Jacket', '39.95', 'Black', 'Nike', 12, 'Best jacket for Sports', 4, 2),
 (6, '2020-01-20 18:36:15', NULL, 'e.s. Funktions T-Shirt poly cotton', '22.99', 'White', 'Engelbert Strauß', 22, 'Nice T-Shirt for everyone', 3, 2),

@@ -14,8 +14,7 @@ if(empty($shoppingCartItems)) : ?>
         <? endif;?>
     </div>
 <? else :
-    $priceTotal = 0.0; ?>
-    <? if(isset($errors)) : 
+        if(isset($errors)) : 
             foreach($errors as $error) : ?>
                 <div class="error">
                     <?=$error?>
@@ -28,8 +27,6 @@ if(empty($shoppingCartItems)) : ?>
                 <? foreach($shoppingCartItems as $item) :
                     $quantity = isset($_POST['quantity'.strval($item['id'])]) ? $_POST['quantity'.strval($item['id'])] : $item['quantity'];
                     $itemPrice = isset($item['discountPrice']) ? $item['discountPrice'] : $item['price'];
-                    $priceForPosition = $itemPrice * $quantity;
-                    $priceTotal +=  $priceForPosition;
                     $imageUrl = $item['image']['imageUrl'];
                     $imageAltText =$item['image']['altText'];?>
                         <div class="shoppingcart-container-inner" id=<?=$item['id']?>>
@@ -62,7 +59,7 @@ if(empty($shoppingCartItems)) : ?>
                                     </form> 
                                 </div>
                                 <div>
-                                    Sum: <span class="price"><?=$priceForPosition?>&euro;</span>
+                                    Sum: <span class="price"><?=$item['priceForPosition']?>&euro;</span>
                                 </div>
                             </div>
                         </div>
@@ -71,13 +68,11 @@ if(empty($shoppingCartItems)) : ?>
             <div class="shoppingcart-checkout">  
                 <div>
                     <p class="total">Total</p>
-                    <p class="price" id="priceTotal"><?=$priceTotal?>&euro;</p>
+                    <p class="price" id="priceTotal"><?=$_SESSION['priceTotal']?>&euro;</p>
                 </div>
                 <?if(isLoggedIn()) : ?>
                     <div>
                         <form action="index.php?c=account&a=checkout" method="POST">
-                            <input type="hidden" name="priceTotal" value=<?=getTotalPrice($_SESSION['userID'])?>>
-                            <!-- TODO: Submit als button realisieren? -->
                             <input type="submit" name="checkoutSubmit" value="Proceed to Checkout">
                         </form>
                     </div>

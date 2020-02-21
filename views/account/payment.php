@@ -5,7 +5,7 @@
             <? if($paymentMethod == "paypal") : ?>
                 <img src="assets/images/checkout/PayPalLogo.png" alt="PayPal Logo" class="payPalLogo">
                 <div class="price">
-                    Total: <?=$priceTotal?>&euro;
+                    Total: <?=$_SESSION['priceTotal']?>&euro;
                 </div>
             <? endif;?>
             <form method="POST" action="?c=account&a=checkout">

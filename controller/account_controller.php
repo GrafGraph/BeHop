@@ -65,7 +65,6 @@ class AccountController extends Controller
 		}
 	}
 
-	//TODO: Logout Seite interessanter gestalten? Oder auf index weiterleiten und alert anzeigen?
 	public function actionLogout()
 	{
 		$this->_params['title'] = 'BeHop - Logout';
@@ -85,8 +84,6 @@ class AccountController extends Controller
 			// Updating Account Information
 			if(isset($_POST['updateAccountSubmit']))
 			{
-				// TODO: UserID aus Session zu holen ist unsicher? -> Wenn UserID inkorrekt ist oder verändert wird,
-				// funktioniert der Rest hier nicht...
 				$insertError = [];
 				$userData = [
 					'id' => $_SESSION['userID'],
@@ -135,7 +132,7 @@ class AccountController extends Controller
 				}
 				
 			}
-			// Current Account Information
+			// Display Current Account Information
 			$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
 			$this->_params['user'] = $user;
 
@@ -336,129 +333,103 @@ class AccountController extends Controller
     public function actionShoppingcart()
 	{
 		$this->_params['title'] = 'BeHop - Shopping Cart' ;
-
-		// Changes to Items and Quantity if $_POST is set
-		// if(!empty($_POST))
-		// {
-			// if(isset($_POST['updateShoppingcartSubmit']))
-			// {
-				if(isLoggedIn())	// Update Database
-				{
-					$userID = $_SESSION['userID'];
-					// Get latest Shoppingcart-Content
-					$latestShoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
-					$shoppingCartProducts = ShoppingCart_has_product::find('shoppingCart_id = '. $latestShoppingCart['id']);
-					// Which product was changed?
-					foreach($shoppingCartProducts as $product)
-					{
-						$id = strval($product['product_id']);
-						// Delete or change quantity?
-						if(isset($_POST["remove".$id]) || (isset($_POST["update".$id]) && htmlspecialchars($_POST["quantity".$id]) <= 0) || (isset($_GET['ajax']) && $_GET['ajax']==$id))	// Delete
-						{
-							$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
-							// Delete shoppingCartHasProducts-Entry from Database
-							$deletedShoppingCartHasProducts = new ShoppingCart_has_product($updateShoppingCartHasProducts);
-							$deletedShoppingCartHasProducts->delete();
-							if(isset($_GET['ajax']))
-							{	
-								$quantity = shoppingcartContent();
-								$newTotal = getTotalPrice($userID);
-								echo json_encode([
-									'shoppingcartContent' => $quantity ?? null,
-									'total' => $newTotal ?? null
-								]);		// Update Nav counter
-								exit(0); // Valid EXIT with JSON OUTPUT
-							}
-						}
-						elseif(isset($_POST["update".$id])) // Change Quantity
-						{
-							$stockCheckProduct = Product::findOne('id = ' .$id);
-							if(htmlspecialchars($_POST["quantity".$id]) > $stockCheckProduct['numberInStock'])
-							{
-								$this->_params['errors'][] = quantityExceededMaxInStockError($stockCheckProduct['name'])."<br>Set to Max of ".$stockCheckProduct['numberInStock'];
-								$_POST["quantity".$id] = $stockCheckProduct['numberInStock'];
-							}
-							$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
-							// Update Quantity
-							$updateShoppingCartHasProducts['quantity'] = $_POST["quantity".$id];
-							$updatedShoppingCart = new ShoppingCart_has_product($updateShoppingCartHasProducts);
-							$updatedShoppingCart->save();
-						}
-					}
-				}
-				elseif(thereAreShoppingCartItemsInSession())	// Update Session
-				{
-					foreach($_SESSION['shoppingCartItems'] as $key => &$sessionItem)
-					{
-						$id = $sessionItem['product_id'];
-						// Delete or change quantity?
-						if(isset($_POST["remove".$id]) || (isset($_POST["update".$id]) && htmlspecialchars($_POST["quantity".$id]) <= 0))	// Delete
-						{
-							unset($_SESSION['shoppingCartItems'][$key]);	
-						}
-						elseif(isset($_POST["update".$id])) // Change Quantity
-						{
-							$stockCheckProduct = Product::findOne('id = ' .$id);
-							if(htmlspecialchars($_POST["quantity".$id]) > $stockCheckProduct['numberInStock'])
-							{
-								$this->_params['errors'][] = quantityExceededMaxInStockError($stockCheckProduct['name'])."<br>Set to Max of ".$stockCheckProduct['numberInStock'];
-								$_POST["quantity".$id] = $stockCheckProduct['numberInStock'];
-							}
-							$sessionItem['quantity'] = htmlspecialchars($_POST["quantity".$id]);
-						}
-					}
-					if(empty($_SESSION['shoppingCartItems']))
-					{
-						unset($_SESSION['shoppingCartItems']);
-					}
-				}
-			// }	
-		// }
-		
-
-		// Choosing the correct Items to display
-		$shoppingCartItems = array();
-		if(isLoggedIn() || thereAreShoppingCartItemsInSession())
+		// Changes to Items and Quantity?
+		if(isLoggedIn())	// Update Database
 		{
-			$shoppingCartHasProducts = array();
-			// Get ShoppingCartItems from Database
-			if(isLoggedIn())
+			$userID = $_SESSION['userID'];
+			// Get latest Shoppingcart-Content
+			$latestShoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
+			$shoppingCartProducts = ShoppingCart_has_product::find('shoppingCart_id = '. $latestShoppingCart['id']);
+			// Which product was changed?
+			foreach($shoppingCartProducts as $product)
 			{
-				$userID = $_SESSION['userID'];
-				$shoppingCart = ShoppingCart::findOne('user_id = ' . $userID);
-				$shoppingCartHasProducts = ShoppingCart_has_product::find('shoppingCart_id = '. $shoppingCart['id']);
-			}
-			//	ELSE: Shoppingcart from Session
-			else
-			{
-				$shoppingCartHasProducts = $_SESSION['shoppingCartItems'];
-			}
-
-			if(!empty($shoppingCartHasProducts))
-			{
-				foreach($shoppingCartHasProducts as $OrderItem)
+				$id = strval($product['product_id']);
+				// Delete or change quantity?
+				if(isset($_POST["remove".$id]) || (isset($_POST["update".$id]) && htmlspecialchars($_POST["quantity".$id]) <= 0) || (isset($_GET['ajax']) && $_GET['ajax']==$id))	// Delete
 				{
-					$product = Product::findOne('id = '. $OrderItem['product_id']);
-					$product['quantity'] = $OrderItem['quantity'];
-					$product['image'] = Image::findOne('product_id = '. $product['id']);
-					if($product['sales_id'] !== null)	// Product in Sale
-					{
-						// Apply Discounts
-						$sale = Sales::findOne('id ='.$product['sales_id']);
-						$product['discountPrice'] = calculateDiscountPrice($product['price'], $sale['discountPercent']);
+					$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
+					// Delete shoppingCartHasProducts-Entry from Database
+					$deletedShoppingCartHasProducts = new ShoppingCart_has_product($updateShoppingCartHasProducts);
+					$deletedShoppingCartHasProducts->delete();
+					if(isset($_GET['ajax']))
+					{	
+						$quantity = shoppingcartContent();					// Update Nav counter
+						$_SESSION['priceTotal'] = getTotalPrice();	// Update Total Cost
+						echo json_encode([
+							'shoppingcartContent' => $quantity ?? null,
+							'total' => $_SESSION['priceTotal'] ?? null
+						]);		
+						exit(0); // Send JSON to Client
 					}
-					array_push($shoppingCartItems, $product);
 				}
-			}
-			else
-			{
-				$shoppingCartItems = null;
+				elseif(isset($_POST["update".$id])) // Change Quantity
+				{
+					$stockCheckProduct = Product::findOne('id = ' .$id);
+					if(htmlspecialchars($_POST["quantity".$id]) > $stockCheckProduct['numberInStock'])
+					{
+						$this->_params['errors'][] = quantityExceededMaxInStockError($stockCheckProduct['name'])."<br>Set to Max of ".$stockCheckProduct['numberInStock'];
+						$_POST["quantity".$id] = $stockCheckProduct['numberInStock'];
+					}
+					$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
+					// Update Quantity
+					$updateShoppingCartHasProducts['quantity'] = $_POST["quantity".$id];
+					$updatedShoppingCart = new ShoppingCart_has_product($updateShoppingCartHasProducts);
+					$updatedShoppingCart->save();
+				}
 			}
 		}
-		// empty shoppingCart
+		elseif(thereAreShoppingCartItemsInSession())	// Update Session
+		{
+			foreach($_SESSION['shoppingCartItems'] as $key => &$sessionItem)
+			{
+				$id = $sessionItem['product_id'];
+				// Delete or change quantity?
+				if(isset($_POST["remove".$id]) || (isset($_POST["update".$id]) && htmlspecialchars($_POST["quantity".$id]) <= 0))	// Delete
+				{
+					unset($_SESSION['shoppingCartItems'][$key]);	
+				}
+				elseif(isset($_POST["update".$id])) // Change Quantity
+				{
+					$stockCheckProduct = Product::findOne('id = ' .$id);
+					if(htmlspecialchars($_POST["quantity".$id]) > $stockCheckProduct['numberInStock'])
+					{
+						$this->_params['errors'][] = quantityExceededMaxInStockError($stockCheckProduct['name'])."<br>Set to Max of ".$stockCheckProduct['numberInStock'];
+						$_POST["quantity".$id] = $stockCheckProduct['numberInStock'];
+					}
+					// Update Quantity
+					$sessionItem['quantity'] = htmlspecialchars($_POST["quantity".$id]);
+				}
+			}
+			if(empty($_SESSION['shoppingCartItems']))	// No Items left -> Clear Sessions "Shopping Cart"
+			{
+				unset($_SESSION['shoppingCartItems']);
+			}
+		}
+
+		// Choosing the correct Items to display
+		$shoppingCartItems = null;
+		$shoppingCartHasProducts = getShoppingCartItems();
+		if(!empty($shoppingCartHasProducts))
+		{
+			foreach($shoppingCartHasProducts as $OrderItem)
+			{
+				$product = Product::findOne('id = '. $OrderItem['product_id']);
+				$product['quantity'] = $OrderItem['quantity'];
+				$product['image'] = Image::findOne('product_id = '. $product['id']);
+				if($product['sales_id'] !== null)	// Product in Sale
+				{
+					// Apply Discounts
+					$sale = Sales::findOne('id ='.$product['sales_id']);
+					$product['discountPrice'] = calculateDiscountPrice($product['price'], $sale['discountPercent']);
+				}
+				$product['priceForPosition'] = $product['quantity'] * (isset($product['discountPrice']) ? $product['discountPrice'] : $product['price']);
+				$shoppingCartItems[] = $product;
+			}
+			$_SESSION['priceTotal'] = getTotalPrice();	// In Session for later Use in Checkout TODO: Unsafe...
+		}
 		else
 		{
-			$shoppingCartItems = null;
+			$_SESSION['priceTotal'] = 0.0;
 		}
 		$this->_params['shoppingCartItems'] = $shoppingCartItems;
 	}
@@ -468,22 +439,18 @@ class AccountController extends Controller
 		$this->_params['title'] = 'BeHop - Checkout' ;
 		// Must be logged in to place an order
 		if(isLoggedIn())
-		{		
-			// TODO: Doppelter code: Ähnlich wie actionAccount...
+		{	
 			$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
 			$this->_params['user'] = $user;
-			$address = Address::findOne('id = ' . $user['address_id']);
-			$this->_params['address'] = $address;
-
+			// $_SESSION['priceTotal'] = getTotalPrice();	// Already calculated in shoppingcart
 			if(isset($_POST['checkoutSubmit']))	// confirm data
 			{
-				$this->_params['priceTotal'] = $_POST['priceTotal'];
+				$address = Address::findOne('id = ' . $user['address_id']);
+				$this->_params['address'] = $address;
 				$this->_params['step'] = 1;
-				
 			}
 			elseif(isset($_POST['confirmedInformationSubmit']))	// select payment
 			{
-				$this->_params['priceTotal'] = $_POST['priceTotal'];
 				$this->_params['step'] = 2;
 			}
 			elseif(isset($_POST['paidSubmit']))	// create new order
@@ -537,15 +504,7 @@ class AccountController extends Controller
 		$this->_params['title'] = 'BeHop - Payment' ;
 		if(isset($_POST['placeOrderSubmit']))
 		{
-			if(isset($_POST['paymentMethod']) && isset($_POST['priceTotal']))
-			{
-				$this->_params['paymentMethod'] = $_POST['paymentMethod'];
-				$this->_params['priceTotal'] = $_POST['priceTotal']; 
-				// if($_POST['paymentMethod'] == "paypal")
-				// {
-					 
-				// }
-			}
+			$this->_params['paymentMethod'] = $_POST['paymentMethod'] ?? null;
 		}
 	}
 

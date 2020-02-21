@@ -29,7 +29,6 @@
                 <div class="center">
                     <a href="index.php?c=account&a=account"><button>Change Information</button></a>
                     <form method="POST">
-                        <input type="hidden" name="priceTotal" value=<?=$priceTotal?>>
                         <button type="submit" name="confirmedInformationSubmit">Continue</button>
                     </form>
                 </div> 
@@ -50,16 +49,15 @@
                         <label class="inline checkout-label" for="paypal">PayPal</label>
                         <input type="radio" name="paymentMethod" value="paypal" id="paypal" checked="checked">
                     <div>
-                        <label class="inline checkout-label" for="transfer">Transfer</label>
+                        <label class="inline checkout-label priceOld" for="transfer">Transfer</label>
                         <input type="radio" name="paymentMethod" value="transfer" id="transfer" disabled>
                     </div>
                     <div>
-                        <label class="inline checkout-label" for="purchaseOnAccount">Purchase on Account</label>
+                        <label class="inline checkout-label priceOld" for="purchaseOnAccount">Purchase on Account</label>
                         <input type="radio" name="paymentMethod"value="purchaseOnAccount" id="purchaseOnAccount" disabled>
                     </div>
-                    <p class="price">Total: <?=$priceTotal?>&euro;</p>
+                    <p class="price">Total: <?=$_SESSION['priceTotal']?>&euro;</p>
                     <div>
-                        <input type="hidden" name="priceTotal" value=<?=$priceTotal?>>
                         <button type="submit" name="placeOrderSubmit">Place Order</button>
                     </div>
                 </form>

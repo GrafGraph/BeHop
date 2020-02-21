@@ -118,22 +118,40 @@ function shoppingcartContent()
     return ($result<1000) ? $result : '999+';
 }
 
-function getTotalPrice($userID){
-    $latestShoppingCart = beHop\ShoppingCart::findOne('user_id = ' . $userID);
-    $shoppingCartProducts = beHop\ShoppingCart_has_product::find('shoppingCart_id = '. $latestShoppingCart['id']);
-    $sum = 0.0;
-    foreach($shoppingCartProducts as $OrderItem)
+// Returns array of Entries(Array) of Products in Shoppingcart from either Database or Session. Null if none are set.
+function getShoppingCartItems()
+{
+    $shoppingCartHasProducts = null;
+    if(isLoggedIn())	// Get ShoppingCartItems from Database
     {
-        $product = beHop\Product::findOne('id = '. $OrderItem['product_id']);
-        $product['quantity'] = $OrderItem['quantity'];
-        $price = $product['price'];
-        if($product['sales_id'] !== null)	// Product in Sale
+        $userID = $_SESSION['userID'];
+        $shoppingCart = beHop\ShoppingCart::findOne('user_id = ' . $userID);
+        $shoppingCartHasProducts = beHop\ShoppingCart_has_product::find('shoppingCart_id = '. $shoppingCart['id']);
+    }
+    elseif(thereAreShoppingCartItemsInSession())	// Shoppingcart from Session
+    {
+        $shoppingCartHasProducts = $_SESSION['shoppingCartItems'];
+    }
+    return $shoppingCartHasProducts;
+}
+// Returns the sum of prices of all products in users shoppingcart or session with applied discounts.
+function getTotalPrice(){
+    $sum = 0.0;
+    $shoppingCartProducts = getShoppingCartItems();
+    if(!empty($shoppingCartProducts))
+    {
+        foreach($shoppingCartProducts as $OrderItem)
         {
-            // Apply Discounts
-            $sale = beHop\Sales::findOne('id ='.$product['sales_id']);
-            $price = calculateDiscountPrice($product['price'], $sale['discountPercent']);
+            $product = beHop\Product::findOne('id = '. $OrderItem['product_id']);
+            $price = $product['price'];
+            if($product['sales_id'] !== null)	// Product in Sale
+            {
+                // Apply Discounts
+                $sale = beHop\Sales::findOne('id ='.$product['sales_id']);
+                $price = calculateDiscountPrice($product['price'], $sale['discountPercent']);
+            }
+            $sum += $price * $OrderItem['quantity'];
         }
-        $sum += $price;
     }
     return $sum;
 }
