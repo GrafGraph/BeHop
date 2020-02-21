@@ -88,9 +88,27 @@
 							<div class="shoppingcartQuantity"><?=shoppingcartContent();?></div>
 						</a>
 					</li>
+					<noscript>
+					<div class="dropdown">
+						<li>
+							<button class="dropbtn"><img id="icons"src="assets/images/layout/lens.png" style="width: 40px; height: 40px;" alt="Menu" class="navIcon"></button>
+						</li>
+						<div class="dropdown-content">
+						<li>
+						<form method="GET" action="index.php?c=products&a=products">
+							
+							<!-- hidden fields for controller and action location -->
+							<input type="hidden" name="c" value="products">
+							<input type="hidden" name="a" value="products">
+							<input style="width:100%;" type="text" name="search" placeholder="Search..." id="mainSearch">
+							<button style="all:initial; display:inline; position:absolute; cursor:pointer; margin-left:1%"><img style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>		
+						</form>
+					</li>
+						</div>
+					</div>
+					</noscript>
 					<li id="searchClick">
 						<button id="searchIcon" style="all:initial; display:inline; position:relative; cursor:pointer; float: left; "><img type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search" class="navIcon"></img></button>
-						
 					</li>
 					<div class="dropdown">
 						<li>
@@ -123,6 +141,25 @@
 							<img src="assets/images/layout/logo.png" alt="BeHop-Logo" class="logo" style="float: left;">
 						</a>
 				<ul class="navList">
+				<noscript>
+					<div class="dropdown">
+						<li>
+							<button class="dropbtn"><img id="icons"src="assets/images/layout/lens.png" style="width: 40px; height: 40px;" alt="Menu" class="navIcon"></button>
+						</li>
+						<div class="dropdown-content">
+						<li>
+						<form method="GET" action="index.php?c=products&a=products">
+							
+							<!-- hidden fields for controller and action location -->
+							<input type="hidden" name="c" value="products">
+							<input type="hidden" name="a" value="products">
+							<input style="width:100%;" type="text" name="search" placeholder="Search..." id="mainSearch">
+							<button style="all:initial; display:inline; position:absolute; cursor:pointer; margin-left:1%"><img style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>		
+						</form>
+					</li>
+						</div>
+					</div>
+				</noscript>
 					<li id="searchClick2">
 					<button id="searchIcon" style="all:initial; display:inline; position:relative; cursor:pointer;"><img  style="height: 40px; width: 40px; margin-top: 0px; float: left; margin-right: 50px"type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
 					</li>
