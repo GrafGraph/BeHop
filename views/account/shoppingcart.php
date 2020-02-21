@@ -24,7 +24,7 @@ if(empty($shoppingCartItems)) : ?>
         endif;?>
     <div class="form-wrap">
         <div class="shoppingcart-container-outer">
-            <section class="shoppingcart-form">
+            <section class="shoppingcart-form" id="form-shoppingcart">
                 <? foreach($shoppingCartItems as $item) :
                     $quantity = isset($_POST['quantity'.strval($item['id'])]) ? $_POST['quantity'.strval($item['id'])] : $item['quantity'];
                     $itemPrice = isset($item['discountPrice']) ? $item['discountPrice'] : $item['price'];
@@ -41,8 +41,8 @@ if(empty($shoppingCartItems)) : ?>
                             <div class="shoppingcart-item-right">  
                                 <div id="name">
                                     <?=$item['name']?>, <?=$item['color']?>
-                                    <form method="POST" class="shoppingcart-remove">
-                                        <button type="submit" name=<?="remove".strval($item['id'])?> onclick="remove(<?=$item['id']?>)" id="shoppingCartDelete">X</button>
+                                    <form method="POST" class="shoppingcart-remove" action="?c=account&a=shoppingcart">
+                                        <button type="submit" name=<?="remove".strval($item['id'])?> onclick="remove(this,<?=$item['id']?>)" class="shoppingCartDelete">X</button>
                                     </form>
                                     
                                 </div>
@@ -58,7 +58,7 @@ if(empty($shoppingCartItems)) : ?>
                                     <form method="POST">
                                         Quantity: 
                                         <input type="number" name=<?="quantity".strval($item['id'])?> min=1 max=<?=$item['numberInStock']?> value=<?=$quantity?>>
-                                        <button type="submit" name=<?="update".strval($item['id'])?> onclick="remove(<?=$item['id']?>)" style="width:60px;">Save</button>
+                                        <button type="submit" name=<?="update".strval($item['id'])?> style="width:60px;">Save</button>
                                     </form> 
                                 </div>
                                 <div>
@@ -71,12 +71,13 @@ if(empty($shoppingCartItems)) : ?>
             <div class="shoppingcart-checkout">  
                 <div>
                     <p class="total">Total</p>
-                    <p class="price"><?=$priceTotal?>&euro;</p>
+                    <p class="price" id="priceTotal"><?=$priceTotal?>&euro;</p>
                 </div>
                 <?if(isLoggedIn()) : ?>
                     <div>
                         <form action="index.php?c=account&a=checkout" method="POST">
-                            <input type="hidden" name="priceTotal" value=<?=$priceTotal?>>
+                            <input type="hidden" name="priceTotal" value=<?=getTotalPrice($_SESSION['userID'])?>>
+                            <!-- TODO: Submit als button realisieren? -->
                             <input type="submit" name="checkoutSubmit" value="Proceed to Checkout">
                         </form>
                     </div>

@@ -694,7 +694,7 @@ button:hover {
     float: right;
 }
 
-#shoppingCartDelete {
+.shoppingCartDelete {
     font-size: 120%;
     border: 1px solid dimgrey;
     width: 21px;

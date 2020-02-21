@@ -118,6 +118,25 @@ function shoppingcartContent()
     return ($result<1000) ? $result : '999+';
 }
 
+function getTotalPrice($userID){
+    $latestShoppingCart = beHop\ShoppingCart::findOne('user_id = ' . $userID);
+    $shoppingCartProducts = beHop\ShoppingCart_has_product::find('shoppingCart_id = '. $latestShoppingCart['id']);
+    $sum = 0.0;
+    foreach($shoppingCartProducts as $OrderItem)
+    {
+        $product = beHop\Product::findOne('id = '. $OrderItem['product_id']);
+        $product['quantity'] = $OrderItem['quantity'];
+        $price = $product['price'];
+        if($product['sales_id'] !== null)	// Product in Sale
+        {
+            // Apply Discounts
+            $sale = beHop\Sales::findOne('id ='.$product['sales_id']);
+            $price = calculateDiscountPrice($product['price'], $sale['discountPercent']);
+        }
+        $sum += $price;
+    }
+    return $sum;
+}
 // Calculate discountPrice for discount given in integer Percent and rounds up to second decimal
 function calculateDiscountPrice($standardPrice, $discountInPercent)
 {

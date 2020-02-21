@@ -377,12 +377,22 @@ class AccountController extends Controller
 					{
 						$id = strval($product['product_id']);
 						// Delete or change quantity?
-						if(isset($_POST["remove".$id]) || (isset($_POST["update".$id]) && htmlspecialchars($_POST["quantity".$id]) <= 0))	// Delete
+						if(isset($_POST["remove".$id]) || (isset($_POST["update".$id]) && htmlspecialchars($_POST["quantity".$id]) <= 0) || (isset($_GET['ajax']) && $_GET['ajax']==$id))	// Delete
 						{
 							$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
 							// Delete shoppingCartHasProducts-Entry from Database
 							$deletedShoppingCartHasProducts = new ShoppingCart_has_product($updateShoppingCartHasProducts);
 							$deletedShoppingCartHasProducts->delete();
+							if(isset($_GET['ajax']))
+							{	
+								$quantity = shoppingcartContent();
+								$newTotal = getTotalPrice($userID);
+								echo json_encode([
+									'shoppingcartContent' => $quantity ?? null,
+									'total' => $newTotal ?? null
+								]);		// Update Nav counter
+								exit(0); // Valid EXIT with JSON OUTPUT
+							}
 						}
 						elseif(isset($_POST["update".$id])) // Change Quantity
 						{
