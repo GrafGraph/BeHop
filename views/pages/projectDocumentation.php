@@ -19,7 +19,7 @@
         </ul> -->
         <div class="flex-docu">
             <div class="flex-docu-item">
-                <h3>Michael (200+ Stunden)</h3>
+                <h3>Michael (250+ Stunden)</h3>
                 <ul>
                     <li>
                         Logik und Design

@@ -38,3 +38,51 @@ function remove(button, ID) {
         }
     }
 }
+/* 
+ function update(button, id) {
+     event.stopPropagation(); // no send to the top element
+     event.preventDefault(); // no default action on submit
+     var request = new XMLHttpRequest();
+     var prev = button.previousSibling;
+     var quantity = prev.value;
+     var parent = button.parentNode;
+     request.open(parent.getAttribute('method'), parent.getAttribute('action') + '&ajax=update' + id + '&quantity=' + quantity, true);
+     request.send();
+     request.onreadystatechange = function() {
+         // request finished?
+         if (this.readyState == 4) // XMLHttpRequest.DONE
+         {
+             // HTTP-Status-Code is OK?
+             if (this.status == 200) {
+                 var resJson = null;
+                 try {
+                     resJson = JSON.parse(this.response);
+                 } catch (err) {
+                     console.log("Json failed");
+                 }
+                 if (resJson !== null) {
+                     if (resJson.shoppingcartContent !== null) {
+                         // if (resJson.shoppingcartContent <= 0) {
+                         //     window.location = "index.php?c=account&a=shoppingcart";
+                         // }
+                         document.getElementById("shoppingcartContent1").innerHTML = resJson.shoppingcartContent;
+                         document.getElementById("shoppingcartContent2").innerHTML = resJson.shoppingcartContent; // TODO: Workaround until Nav was updated and is unique...
+                     }
+                     if (resJson.total !== null) {
+                         document.getElementById('priceTotal').innerHTML = parseFloat(resJson.total).toFixed(2);
+                     }
+                     if (resJson.quantity !== null) {
+                         if (resJson.quantity <= 0) { // TODO: Nötig?
+                             document.getElementById(id).remove();
+                         }
+                         prev.value = parseInt(resJson.quantity);
+                     }
+                     // Create Error Boxes if needed
+                 }
+             } else {
+                 console.log('Wrong Status Code, because of: ' + this.statusText);
+             }
+         }
+     }
+ }
+ */

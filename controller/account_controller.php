@@ -333,6 +333,7 @@ class AccountController extends Controller
     public function actionShoppingcart()
 	{
 		$this->_params['title'] = 'BeHop - Shopping Cart' ;
+		$errors = null;
 		// Changes to Items and Quantity?
 		if(isLoggedIn())	// Update Database
 		{
@@ -367,7 +368,7 @@ class AccountController extends Controller
 					$stockCheckProduct = Product::findOne('id = ' .$id);
 					if(htmlspecialchars($_POST["quantity".$id]) > $stockCheckProduct['numberInStock'])
 					{
-						$this->_params['errors'][] = quantityExceededMaxInStockError($stockCheckProduct['name'])."<br>Set to Max of ".$stockCheckProduct['numberInStock'];
+						$errors[] = quantityExceededMaxInStockError($stockCheckProduct['name'])."<br>Set to Max of ".$stockCheckProduct['numberInStock'];
 						$_POST["quantity".$id] = $stockCheckProduct['numberInStock'];
 					}
 					$updateShoppingCartHasProducts = ShoppingCart_has_product::findOne('shoppingCart_id = '. $latestShoppingCart['id'].' and product_id = '.$id);
@@ -403,7 +404,7 @@ class AccountController extends Controller
 					$stockCheckProduct = Product::findOne('id = ' .$id);
 					if(htmlspecialchars($_POST["quantity".$id]) > $stockCheckProduct['numberInStock'])
 					{
-						$this->_params['errors'][] = quantityExceededMaxInStockError($stockCheckProduct['name'])."<br>Set to Max of ".$stockCheckProduct['numberInStock'];
+						$errors[] = quantityExceededMaxInStockError($stockCheckProduct['name'])."<br>Set to Max of ".$stockCheckProduct['numberInStock'];
 						$_POST["quantity".$id] = $stockCheckProduct['numberInStock'];
 					}
 					// Update Quantity
@@ -442,6 +443,7 @@ class AccountController extends Controller
 			$_SESSION['priceTotal'] = 0.0;
 		}
 		$this->_params['shoppingCartItems'] = $shoppingCartItems;
+		$this->_params['errors'] = (!empty($errors)) ? $errors : null;
 	}
 	
 	public function actionCheckout()

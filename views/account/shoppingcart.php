@@ -41,7 +41,6 @@ if(empty($shoppingCartItems)) : ?>
                                     <form method="POST" class="shoppingcart-remove" action="?c=account&a=shoppingcart">
                                         <button type="submit" name=<?="remove".strval($item['id'])?> onclick="remove(this,<?=$item['id']?>)" class="shoppingCartDelete">X</button>
                                     </form>
-                                    
                                 </div>
                                 <div>     
                                     <? if(isset($item['discountPrice'])) : ?>
@@ -52,7 +51,7 @@ if(empty($shoppingCartItems)) : ?>
                                     <? endif;?>
                                 </div> 
                                 <div>
-                                    <form method="POST">
+                                    <form method="POST" action="?c=account&a=shoppingcart">
                                         Quantity: 
                                         <input type="number" name=<?="quantity".strval($item['id'])?> min=1 max=<?=$item['numberInStock']?> value=<?=$quantity?>>
                                         <button type="submit" name=<?="update".strval($item['id'])?> style="width:60px;">Save</button>
