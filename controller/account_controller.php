@@ -353,7 +353,7 @@ class AccountController extends Controller
 					$deletedShoppingCartHasProducts->delete();
 					if(isset($_GET['ajax']))
 					{	
-						$quantity = shoppingcartContent();					// Update Nav counter
+						$quantity = shoppingcartContent();			// Update Nav counter
 						$_SESSION['priceTotal'] = getTotalPrice();	// Update Total Cost
 						echo json_encode([
 							'shoppingcartContent' => $quantity ?? null,
@@ -384,9 +384,19 @@ class AccountController extends Controller
 			{
 				$id = $sessionItem['product_id'];
 				// Delete or change quantity?
-				if(isset($_POST["remove".$id]) || (isset($_POST["update".$id]) && htmlspecialchars($_POST["quantity".$id]) <= 0))	// Delete
+				if(isset($_POST["remove".$id]) || (isset($_POST["update".$id]) && htmlspecialchars($_POST["quantity".$id]) <= 0) || (isset($_GET['ajax']) && $_GET['ajax']==$id))	// Delete
 				{
-					unset($_SESSION['shoppingCartItems'][$key]);	
+					unset($_SESSION['shoppingCartItems'][$key]);
+					if(isset($_GET['ajax']))
+					{	
+						$quantity = shoppingcartContent();				// Update Nav counter
+						$_SESSION['priceTotal'] = getTotalPrice();		// Update Total Cost
+						echo json_encode([
+							'shoppingcartContent' => $quantity ?? null,
+							'total' => $_SESSION['priceTotal'] ?? null
+						]);		
+						exit(0); // Send JSON to Client
+					}	
 				}
 				elseif(isset($_POST["update".$id])) // Change Quantity
 				{
