@@ -41,7 +41,7 @@
                <input class="passwordInput" type="password" name="password2"required ><br><br>
             </fieldset>
             <br>
-            <button type="submit" name="submit">register</button>
+            <button id="submitButtonRegister" type="submit" name="submit">Register</button>
          </form>
       </div>
       <br>

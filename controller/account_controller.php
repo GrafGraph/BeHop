@@ -230,56 +230,67 @@ class AccountController extends Controller
 				{ 
 					$error[] = "Email is already in use!";
 					$this->_params['errors'] = $error; 
+					return false;
 				}
 				if($password1 != $password2) 
 				{
 					$error[] = "Password does not match!";
 					$this->_params['errors'] = $error;
+					return false;
 				}
 				if(empty($firstName))
 				{
 					$error[] = "Firstname is missing";
 					$this->_params['errors'] = $error;
+					return false;
 				}
 				if(empty($lastName))
 				{
 					$error[] = "Lastname is missing";
 					$this->_params['errors'] = $error;
+					return false;
 				}
 				if(empty($street))
 				{
 					$error[] = "Street is missing";
 					$this->_params['errors'] = $error;
+					return false;
 				}
 				if(empty($number))
 				{
 					$error[] = "Housnumber is missing";
 					$this->_params['errors'] = $error;
+					return false;
 				}
 				if(empty($city))
 				{
 					$error[] = "City is missing";
 					$this->_params['errors'] = $error;
+					return false;
 				}
 				if(empty($zip))
 				{
 					$error[] = "ZIP is missing";
 					$this->_params['errors'] = $error;
+					return false;
 				}
 				if(empty($email))
 				{
 					$error[] = "Email is missing";
 					$this->_params['errors'] = $error;
+					return false;
 				}
 				if(empty($password1))
 				{
 					$error[] = "Password is missing";
 					$this->_params['errors'] = $error;
+					return false;
 				}
 				if(empty($password2))
 				{
 					$error[] = "Password is missing";
 					$this->_params['errors'] = $error;
+					return false;
 				}
 				else
 				{
@@ -294,20 +305,17 @@ class AccountController extends Controller
 				
 							$address = new Address($addressData);
 							$address->save();		
-					}	
-					else
-					{
-					$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
-					$address_id = $address_data['id'];
-					$password = password_hash($password1, PASSWORD_DEFAULT);
-					$userData = [
-						'email' => $email, 
-						'password' => $password, 
-						'firstName' => $firstName, 
-						'lastName' => $lastName,
-						'address_id' => $address_id
-					];
-					
+							$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
+							$address_id = $address_data['id'];
+						$password = password_hash($password1, PASSWORD_DEFAULT);
+						$userData = [
+							'email' => $email, 
+							'password' => $password, 
+							'firstName' => $firstName, 
+							'lastName' => $lastName,
+							'address_id' => $address_id
+						];
+						
 					$user = new User($userData);
 					$user->save();
 
@@ -315,9 +323,31 @@ class AccountController extends Controller
 					$user_id = User::findOne('email = "'. $email.'"');
 					$shoppingCartData = ['user_id' => $user_id['id']];
 					$shoppingCart = new ShoppingCart($shoppingCartData);
-					$shoppingCart->save();
-					header('Location: ?c=account&a=login');		
+					$shoppingCart->save();	
+					}	
+					else
+					{
+						$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
+						$address_id = $address_data['id'];
+						$password = password_hash($password1, PASSWORD_DEFAULT);
+						$userData = [
+							'email' => $email, 
+							'password' => $password, 
+							'firstName' => $firstName, 
+							'lastName' => $lastName,
+							'address_id' => $address_id
+						];
+						
+						$user = new User($userData);
+						$user->save();
+
+						// Create new ShoppingCart for User
+						$user_id = User::findOne('email = "'. $email.'"');
+						$shoppingCartData = ['user_id' => $user_id['id']];
+						$shoppingCart = new ShoppingCart($shoppingCartData);
+						$shoppingCart->save();	
 					}
+				header('Location: ?c=account&a=login');	
 				}
 			}
 		}
