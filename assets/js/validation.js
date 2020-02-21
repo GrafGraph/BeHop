@@ -91,7 +91,7 @@ emailName.addEventListener('focusout', function() {
         return;
     } else {
         emailName.style.borderColor = "red";
-        document.getElementById('wrongEmail').innerHTML = 'Email is not correct';
+        document.getElementById('wrongEmail').innerHTML = 'Email is not correct!';
         wrongEmail.style.color = "red";
         return;
     }
