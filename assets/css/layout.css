@@ -42,28 +42,6 @@
     padding: 5px;
 }
 
-
-/* Mobile-View */
-
-@media (max-width: 917px) {
-    .product {
-        width: 150px;
-    }
-    .productImage {
-        max-height: 23em;
-        background-color: #efefef;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .productText {
-        font-size: 90%;
-    }
-    .productImage {
-        height: 9.375em;
-    }
-}
-
 .showProductImage {
     max-height: 23em;
     margin-left: auto;
@@ -303,14 +281,6 @@
     max-width: 100%;
 }
 
-@media (min-width: 740px) {
-    .shoppingcart-checkout {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 60px;
-    }
-}
-
 .shoppingcartProductImage {
     max-width: 180px;
     margin-bottom: 8%;
@@ -517,7 +487,7 @@ select {
 .error {
     border: 2px solid #ff5757;
     color: #ff5757;
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
     padding: 8px;
     text-align: center;
@@ -530,7 +500,7 @@ select {
 .success {
     border: 2px solid green;
     color: green;
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
     padding: 8px;
     text-align: center;
@@ -721,52 +691,6 @@ button:hover {
 
 .img-hover-zoom-little:hover img {
     transform: scale(1.05);
-}
-
-@media (min-width: 521px) and (max-width: 1123px) {
-    [class*="col-"] {
-        width: 100% !important;
-        ;
-    }
-    .BeHopGrey {
-        display: none !important;
-    }
-    .BeHopGrey3 {
-        display: none !important;
-    }
-    #searchMin2 {
-        display: none !important;
-    }
-}
-
-@media (min-width: 1124px) {
-    .BeHopGrey2 {
-        display: none !important;
-    }
-    .BeHopGrey3 {
-        display: none !important;
-    }
-    #searchMin {
-        display: none !important;
-    }
-    #searchMin2 {
-        display: none !important;
-    }
-}
-
-@media (max-width: 520px) {
-    [class*="col-"] {
-        width: 100% !important;
-    }
-    .BeHopGrey {
-        display: none !important;
-    }
-    .BeHopGrey2 {
-        display: none !important;
-    }
-    #searchMin {
-        display: none !important;
-    }
 }
 
 #backToProducts {

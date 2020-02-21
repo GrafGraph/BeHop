@@ -1,22 +1,23 @@
 <h1 class="headline form-background">My Account</h1>
 <section class="center form-background">
-  <?if(isset($insertError))
-    {?> <div class="error"><?
-      if(is_array($insertError))
-      {
-        foreach($insertError as $error)
-        {?>
-              <?=$error?> <br>
-        <?}
-      }
-      else
-      {
-          echo $insertError;
-      }?>
+  <?if(isset($insertError)) : ?>
+      <div class="error">
+      <?if(is_array($insertError)) :
+          foreach($insertError as $error) : ?>
+            <?=$error?> 
+            <br>
+          <?endforeach;?>
+      <?else : ?>
+          <?=$insertError?>
+          <br>
+      <?endif;?>
     </div>
-  <? } ?>
+  <?endif;?>
   <? if(isset($passwordChanged) && !empty($passwordChanged)) :?>
-      <div class="success"><?=$passwordChanged?></div>
+      <div class="success">
+          <?=$passwordChanged?>
+      </div>
+      <br>
   <? endif;?>
   <form autocomplete="off" action="?c=account&a=account" method="POST" class="account-form">
       <!-- firstname -->
