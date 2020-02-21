@@ -34,3 +34,22 @@ document.getElementById('mainSearch').addEventListener('focusout', (event) => {
     document.getElementById('mainSearch').display = "block";
     document.getElementById('main').classList.remove("milky");
 });
+document.getElementById('mainSearch2').addEventListener('focusin', (event) => {
+    document.getElementById('mainSearch2').display = "block !important";
+    document.getElementById('main').classList.add("milky");
+});
+
+document.getElementById('mainSearch2').addEventListener('focusout', (event) => {
+    document.getElementById('mainSearch2').display = "block";
+    document.getElementById('main').classList.remove("milky");
+});
+document.getElementById('mainSearch3').addEventListener('focusin', (event) => {
+    document.getElementById('mainSearch3').display = "block !important";
+    document.getElementById('main').classList.add("milky");
+});
+
+document.getElementById('mainSearch3').addEventListener('focusout', (event) => {
+    document.getElementById('mainSearch3').display = "block";
+    document.getElementById('main').classList.remove("milky");
+});
+document.getElementById('searchClick').style.display = "block";

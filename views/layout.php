@@ -100,7 +100,7 @@
 							<!-- hidden fields for controller and action location -->
 							<input type="hidden" name="c" value="products">
 							<input type="hidden" name="a" value="products">
-							<input style="width:100%;" type="text" name="search" placeholder="Search..." id="mainSearch">
+							<input style="width:100%;" type="text" name="search" placeholder="Search...">
 							<button style="all:initial; display:inline; position:absolute; cursor:pointer; margin-left:1%"><img style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>		
 						</form>
 					</li>
@@ -108,7 +108,7 @@
 					</div>
 					</noscript>
 					<li id="searchClick">
-						<button id="searchIcon" style="all:initial; display:inline; position:relative; cursor:pointer; float: left; "><img type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search" class="navIcon"></img></button>
+						<button id="searchIcon" style="all:initial; display:inline; position:relative; cursor:pointer; float: left;"><img type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search" class="navIcon"></img></button>
 					</li>
 					<div class="dropdown">
 						<li>
@@ -130,7 +130,7 @@
 			<form method="GET" action="index.php?c=products&a=products">
 				<input type="hidden" name="c" value="products">
 				<input type="hidden" name="a" value="products">
-				<input class="inputSearch" type="text" name="search" placeholder="Search..." id="mainSearch" style="float: left;">
+				<input class="inputSearch" type="text" name="search" placeholder="Search..." id="mainSearch2" style="float: left;">
 				<button id= "searchIconButton" style="all:initial; display:inline; position:relative; cursor:pointer; float: left; width: 10%; height: 40px; margin-top: 20px;"><img  style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
 			</form>
 			<div id="backToNav"><img src="assets/images/layout/smallXWhite.png"  alt="X" class="navIcon"></div>
@@ -153,7 +153,7 @@
 							<!-- hidden fields for controller and action location -->
 							<input type="hidden" name="c" value="products">
 							<input type="hidden" name="a" value="products">
-							<input style="width:100%;" type="text" name="search" placeholder="Search..." id="mainSearch">
+							<input style="width:100%;" type="text" name="search" placeholder="Search...">
 							<button style="all:initial; display:inline; position:absolute; cursor:pointer; margin-left:1%"><img style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>		
 						</form>
 					</li>
@@ -185,7 +185,7 @@
 			<form method="GET" action="index.php?c=products&a=products">
 				<input type="hidden" name="c" value="products">
 				<input type="hidden" name="a" value="products">
-				<input class="inputSearch2" type="text" name="search" placeholder="Search..." id="mainSearch" style="float: left;">
+				<input class="inputSearch2" type="text" name="search" placeholder="Search..." id="mainSearch3" style="float: left;">
 				<button id= "searchIconButton2" style="all:initial; display:inline; position:relative; cursor:pointer;"><img style="float: left; width: 36px; height: 36px; margin-top: 22px;"  type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
 			</form>
 			<div id="backToNav2"><img src="assets/images/layout/smallXWhite.png" style="width: 36px; height: 36px;  margin-left: 88%; margin-top: -55px;" alt="X"></div>
