@@ -10,6 +10,7 @@
 				  <br>
                <?php endif; ?><br>
 				<label for="email">E-Mail:</label> <br>
+				<p id="wrongEmail2"></p>
 				<input type="email" name="email" required id="email"/><br><br>
 				<label for="password">Password:</label> <br />
 				<input class="passwordInput" type="password" name="password" id="password" /><br>
