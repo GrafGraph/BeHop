@@ -22,41 +22,17 @@ class AccountController extends Controller
 							$_SESSION['loggedIn'] = true;
 							$_SESSION['userMail'] = $user['email'];
 							$_SESSION['userID'] = $user['id'];
-							// 	TODO: Bei Login den Warenkorb der Session nicht verwerfen, falls der Datenbank-Warenkorb leer ist.
 							// 	Merge Shoppingcarts
 							if(thereAreShoppingCartItemsInSession())
 							{
-								foreach($_SESSION['shoppingCartItems'] as $item)
+								$shoppingCart = ShoppingCart::findOne('user_id = '.$_SESSION['userID']);
+								foreach($_SESSION['shoppingCartItems'] as $product)
 								{
-									$quantity = $item['quantity'];
-									$product['id'] = $item['product_id'];
-									$cartItem['product_id'] = $item['product_id'];
-									$cartItem['quantity'] = $quantity;
-
-									// include 'core/updateShoppingcart.php';
-									$shoppingCart = ShoppingCart::findOne('user_id = '.$_SESSION['userID']);
-									// Find existing shoppingCart_has_product Entry
-									$shoppingCart_has_product = ShoppingCart_has_product::findOne(
-										'shoppingCart_id = '.$shoppingCart['id'].' and product_id ='.$product['id']);
-									if(!empty($shoppingCart_has_product))	// Udate existing Entry
-									{
-										$shoppingCart_has_productData = [
-											'id' => $shoppingCart_has_product['id'],
-											'shoppingCart_id' => $shoppingCart['id'],
-											'product_id' => $cartItem['product_id'],
-											'quantity' => ($shoppingCart_has_product['quantity'] + $quantity)
-											];
-									}
-									else	// Create new Entry: id => null
-									{
-										$shoppingCart_has_productData = [
-										'shoppingCart_id' => $shoppingCart['id'],
-										'product_id' => $cartItem['product_id'],
-										'quantity' => $quantity
-										];
-									}
-									$newShoppingCart_has_product = new ShoppingCart_has_product($shoppingCart_has_productData);
-									$newShoppingCart_has_product->save();
+									$quantity = $product['quantity'];
+									$product['id'] = $product['product_id'];
+									$cartItem['product_id'] = $product['product_id'];
+									$product['numberInStock'] = Product::findOne('id = '. $product['id'])['numberInStock'];
+									include 'core/updateShoppingcart.php';
 								}
 								unset($_SESSION['shoppingCartItems']);
 								
@@ -66,19 +42,19 @@ class AccountController extends Controller
 						else
 						{
 							$_SESSION['loggedIn'] = false;
-							$error[] = "Email and password does not match!";
+							$error[] = "Email and Password dont match!";
 							$this->_params['errors'] = $error;
 						}
 					}
 					else
 					{
-						$error[] = "Email and password does not match!";
+						$error[] = "Email and Password dont match!";
 						$this->_params['errors'] = $error;	// Email unbekannt...
 					}
 				}
 				else
 				{
-					$error[] = "Enter a valid email and password!";
+					$error[] = "Enter a valid Email and Password!";
 					$this->_params['errors'] = $error;
 				}
 			}
