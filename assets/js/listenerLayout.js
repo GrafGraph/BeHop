@@ -52,4 +52,9 @@ document.getElementById('mainSearch3').addEventListener('focusout', (event) => {
     document.getElementById('mainSearch3').display = "block";
     document.getElementById('main').classList.remove("milky");
 });
-document.getElementById('searchClick').style.display = "block";
+
+var sIcon = document.getElementById('searchClick');
+sIcon.style.display = "block";
+
+var sIcon2 = document.getElementById('searchClick2');
+sIcon2.style.display = "block";

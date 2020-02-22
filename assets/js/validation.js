@@ -15,6 +15,8 @@ firstName.addEventListener('focusout', function() {
         firstName.style.borderColor = "red";
         document.getElementById('wrongFirstName').innerHTML = 'First Name may only consist of Letters and is required!';
         wrongFirstName.style.color = "red";
+        var x = document.getElementById("submitButtonRegister");
+        x.disabled = true;
         return;
     }
 });
@@ -28,6 +30,8 @@ lastName.addEventListener('focusout', function() {
         lastName.style.borderColor = "red";
         document.getElementById('wrongLastName').innerHTML = 'Last Name may only consist of Letters and is required!';
         wrongLastName.style.color = "red";
+        var x = document.getElementById("submitButtonRegister");
+        x.disabled = true;
         return;
     }
 });
@@ -41,6 +45,8 @@ streetName.addEventListener('focusout', function() {
         streetName.style.borderColor = "red";
         document.getElementById('wrongStreet').innerHTML = 'Street may only consist of Letters, Spaces and Hyphen and is required!';
         wrongStreet.style.color = "red";
+        var x = document.getElementById("submitButtonRegister");
+        x.disabled = true;
         return;
     }
 });
@@ -54,6 +60,8 @@ numberName.addEventListener('focusout', function() {
         numberName.style.borderColor = "red";
         document.getElementById('wrongNumber').innerHTML = 'House Number may only consist  of Numbers and Letters (A Number must be first) and is required!';
         wrongNumber.style.color = "red";
+        var x = document.getElementById("submitButtonRegister");
+        x.disabled = true;
         return;
     }
 });
@@ -67,6 +75,8 @@ cityName.addEventListener('focusout', function() {
         cityName.style.borderColor = "red";
         document.getElementById('wrongCity').innerHTML = 'City may only consist of Letters, Spaces and Hypehen and is required!';
         wrongCity.style.color = "red";
+        var x = document.getElementById("submitButtonRegister");
+        x.disabled = true;
         return;
     }
 });
@@ -80,6 +90,8 @@ zipName.addEventListener('focusout', function() {
         zipName.style.borderColor = "red";
         document.getElementById('wrongZIP').innerHTML = 'ZIP may only consist of Numbers and is required!';
         wrongZIP.style.color = "red";
+        var x = document.getElementById("submitButtonRegister");
+        x.disabled = true;
         return;
     }
 });
@@ -93,6 +105,8 @@ emailName.addEventListener('focusout', function() {
         emailName.style.borderColor = "red";
         document.getElementById('wrongEmail').innerHTML = 'Email is not correct!';
         wrongEmail.style.color = "red";
+        var x = document.getElementById("submitButtonRegister");
+        x.disabled = true;
         return;
     }
 });
