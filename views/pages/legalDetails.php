@@ -92,6 +92,34 @@
                 <td><a href="https://www.vereinsexpress.de/fussball/trainingsjacken/nike/10094358-nike-academy-18-track-jacket-jacke-schwarz/">vereinsexpress.de</a></td>
                 <td>Black Nike Jacket</td>
             </tr>
+            <tr>
+                <td><a href="https://www.engelbert-strauss.de/arbeitsshirts/e-s-funktions-t-shirt-poly-cotton-3101060-87530-2.html?refcode=DEpla28a">engelbert-strauss.de</a></td>
+                <td>Weißes T-Shirt</td>
+            </tr>
+            <tr>
+                <td><a href="https://leneescloset.com/products/balenciaga-hoodie">leneescloset.com</a></td>
+                <td>Black Hoodie</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.mrporter.com/en-de/mens/product/off-white/shoes/low-top-sneakers/suede-trimmed-canvas-sneakers/6499664598428684?ignoreRedirect=true&ppv=2&cm_mmc=Google-ProductSearch-DE--c-_-MRP_DE_DE_PLA-_-MRP%C2%A0-%C2%A0DE%C2%A0-%C2%A0GS%C2%A0-+Designer+-+Class_Shoes%C2%A0-+Type_Sneakers%C2%A0-%C2%A0Medium%C2%A0-+CSS--Sneakers+-+Low+Top_INTL&gclsrc=ds&gclsrc=ds">mrporter.com</a></td>
+                <td>Shoes</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.debijenkorf.de/-speed-trainer-sneaker-mit-logo-7668090020-766809002012430?utm_campaign=BIJ-DE-HEER-SHOP-NB&utm_content=7668090020&utm_source=google&utm_medium=cpc&utm_term=&ef_id=Cj0KCQiAkKnyBRDwARIsALtxe7g5v1UXYDVVC4j1UlXKRZUSe1Iv1QitYHtB20JRMKlz6tBFQ9cSEc0aAnEeEALw_wcB:G:s^">debijenkorf.de</a></td>
+                <td>Black Shoes</td>
+            </tr>
+            <tr>
+                <td><a href=" https://www.net-a-porter.com/de/de/product/1184920?gclsrc=aw.ds&cm_mmc=Google-ProductSearch-DE--c-_-NAP_EN_DE_PLA-_-NAP+-+DE+-+GS+-+Designer+-+Class_Shoes+-+High+-+CSS--Shoes+-+Sneakers_INTL&gclsrc=ds">net-a-porter.com</a></td>
+                <td>Shoes</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.engelhorn.de/f/produkte/P1006479N.html?dwvar_P1006479N_color=15&dwvar_P1006479N_size=L&wt_mc=amc137451515418834">engelhorn.de</a></td>
+                <td>Hoodie</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.gucci.com/de/de/pr/women/ready-to-wear-for-women/sweatshirts-and-t-shirts-for-women/sweatshirts-for-women/oversize-sweatshirt-with-gucci-logo-p-469250XJASL1226?gclsrc=ds&gclsrc=ds">gucci.com</a></td>
+                <td>Hoodie</td>
+            </tr>
         </table>
         <br>
         <h3>Disclaimer</h3>

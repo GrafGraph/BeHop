@@ -84,6 +84,15 @@ class AccountController extends Controller
 			// Updating Account Information
 			if(isset($_POST['updateAccountSubmit']))
 			{
+				$email    = $_POST['email'];
+				$user_data = User::findOne('email = "' . $email . '"');
+				if($user_data != null)
+				{ 
+					$error[] = "Email is already in use!";
+					$this->_params['errors'] = $error; 
+					return false;
+				}
+				else{
 				$insertError = [];
 				$userData = [
 					'id' => $_SESSION['userID'],
@@ -130,7 +139,7 @@ class AccountController extends Controller
 				{
 					$newUser->save();
 				}
-				
+			}
 			}
 			// Display Current Account Information
 			$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");

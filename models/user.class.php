@@ -47,8 +47,8 @@ class User extends BaseModel
             array_push($insertError, 'Last Name may only consist of Letters');
         }
 
-        if (!preg_match('/[0-9A-Za-z_.]*[@][0-9A-Za-z-.]+[.][a-z]*/', $newUser->__get('email'))) {
-            array_push($insertError, 'Email must contain a Domain!');
+        if (!preg_match('/[0-9A-Za-z_.]+[@][0-9A-Za-z-.]+[.][a-z]*/', $newUser->__get('email'))) {
+            array_push($insertError, 'Email is not valid!');
         }
 
         if(count($insertError) == 0){
