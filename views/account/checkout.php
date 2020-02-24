@@ -1,4 +1,4 @@
-<? if($step === 1) : ?>
+<? if($step === 1) : ?> <!-- Confirm User and Address Information -->
     <h1 class="headline form-background">Checkout</h1>
     <section class="center form-background fullheight">
         <div class="form-wrap">
@@ -36,7 +36,7 @@
             <br>
         </div>
     </section>
-<? elseif($step === 2) : ?>
+<? elseif($step === 2) : ?> <!-- Select Payment Method -->
     <h1 class="headline form-background">Checkout</h1>
     <section class="center form-background fullheight">
         <div class="form-wrap">
@@ -65,13 +65,13 @@
         </div>
         <br> 
     </section>
-<? elseif($step === 3) : ?>
+<? elseif($step === 3) : ?> <!-- Checkout Complete -->
     <h1 class="headline">Checkout Complete</h1>
     <section class="banner img-hover-zoom-little">
         <a href="index.php?c=products&a=products">
         <img src="assets/images/checkout/thanksForYourOrder<?=random_int(1,3)?>.png" alt="Continue Shopping"></a>
     </section>
-<? else : ?>
+<? else : ?>    <!-- Catching anonmalies -->
     <h1 class="headline">Checkout</h1>
     <h2 class="headline">OOPS... We could not find your Order...</h2>
 <? endif; ?>

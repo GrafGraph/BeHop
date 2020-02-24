@@ -13,7 +13,7 @@ class Controller
 	{
 		$this->_action         = $action;
 		$this->_controllerName = $controllerName;
-		$this->_params['categories'] = Category::findAttributes('name','id is not null');
+		$this->_params['categories'] = Category::findAttributes('name','id is not null');	// Passing Category-names for dynamical display in Products-Submenu in Layout
 	}
 
 	public function renderHTML()

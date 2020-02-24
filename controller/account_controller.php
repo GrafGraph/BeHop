@@ -3,6 +3,7 @@ namespace beHop;
 
 class AccountController extends Controller
 {
+	// @author Michael Hopp
 	public function actionLogin()
 	{
 		$this->_params['title'] = 'BeHop - Login' ;
@@ -65,6 +66,7 @@ class AccountController extends Controller
 		}
 	}
 
+	// @author Michael Hopp
 	public function actionLogout()
 	{
 		$this->_params['title'] = 'BeHop - Logout';
@@ -75,7 +77,7 @@ class AccountController extends Controller
 		session_destroy();
 	}
 
-
+	// @author Michael Hopp
 	public function actionAccount()
 	{
 		$this->_params['title'] = 'BeHop - Mein Account' ;
@@ -165,6 +167,7 @@ class AccountController extends Controller
 		}
 	}
 
+	// @author Anton Bespalov
 	public function actionSignUp()
 	{
 		$this->_params['title'] = 'BeHop - Registration' ;
@@ -339,6 +342,7 @@ class AccountController extends Controller
 		}
 	}
 
+	// @author Michael Hopp
     public function actionShoppingcart()
 	{
 		$this->_params['title'] = 'BeHop - Shopping Cart' ;
@@ -455,6 +459,7 @@ class AccountController extends Controller
 		$this->_params['errors'] = (!empty($errors)) ? $errors : null;
 	}
 	
+	// @author Michael Hopp
 	public function actionCheckout()
 	{
 		$this->_params['title'] = 'BeHop - Checkout' ;
@@ -520,6 +525,7 @@ class AccountController extends Controller
 		}
 	}
 
+	// @author Michael Hopp
 	public function actionPayment()
 	{
 		$this->_params['title'] = 'BeHop - Payment' ;
@@ -529,6 +535,7 @@ class AccountController extends Controller
 		}
 	}
 
+	// @author Anton Bespalov
 	public function actionChangePassword()
 	{
 		$this->_params['title'] = 'BeHop - Change password' ;
@@ -593,11 +600,6 @@ class AccountController extends Controller
 				}
 			}
 
-	}
-
-	public function actionPasswordChanged()
-	{
-		$this->_params['title'] = 'BeHop - Password changed!' ;
 	}
 }
 

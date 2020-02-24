@@ -11,6 +11,9 @@ class ShoppingCart extends BaseModel
         'user_id' => ['type' => BaseModel::TYPE_INT]
     ];
 
+    // Sets user_id in Shoppingcart null upon Order so that the user can get 
+    // a new and unique shoppingcart while this one is saved in the new Order.
+    // @author: Michael Hopp
     public function setUserIDNull(&$errors = null)
     {
         $database = $GLOBALS['database'];

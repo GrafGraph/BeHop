@@ -229,6 +229,7 @@ abstract class BaseModel
     }
 
     // Specialization of method find, which returns only one DataRow/tuple
+    // @author: Michael Hopp
     public static function findOne($where = '')
     {
         $database  = $GLOBALS['database'];
@@ -252,39 +253,41 @@ abstract class BaseModel
         return $result;
     }
 
-        // specialization of find which selects given attributes instead of everything and orders by attribute asc unless desc is true.
-        public static function findAttributes($attributes, $where = '', $descending = false)
+    // Specialization of find which selects given attributes instead of everything and orders by attribute asc unless desc is true.
+    // @author: Michael Hopp
+    public static function findAttributes($attributes, $where = '', $descending = false)
+    {
+        $database  = $GLOBALS['database'];
+        $result = null;
+
+        try
         {
-            $database  = $GLOBALS['database'];
-            $result = null;
-    
-            try
+            $sql = 'SELECT DISTINCT '.$attributes.' FROM ' . self::tablename();
+                
+            if(!empty($where))
             {
-                $sql = 'SELECT DISTINCT '.$attributes.' FROM ' . self::tablename();
-                    
-                if(!empty($where))
-                {
-                    $sql .= ' WHERE ' . $where;
-                }
-                $sql .= ' ORDER BY ' . $attributes;
-                if($descending)
-                {
-                    $sql .= ' DESC';
-                }
-                $sql .= ';';
-                $result = $database->query($sql)->fetchAll();
+                $sql .= ' WHERE ' . $where;
             }
-            catch(\PDOException $e)
+            $sql .= ' ORDER BY ' . $attributes;
+            if($descending)
             {
-                die('Select statement failed: ' . $e->getMessage());
+                $sql .= ' DESC';
             }
-    
-            return $result;
+            $sql .= ';';
+            $result = $database->query($sql)->fetchAll();
         }
+        catch(\PDOException $e)
+        {
+            die('Select statement failed: ' . $e->getMessage());
+        }
+
+        return $result;
+    }
         
     /* Specialization of method find. Sorts List of DB entries by parameter String $sortby
     in either ascending or descending order, given by bool $descending.
     If $descending is false, the list will by default be orderd ascending.
+    @author: Michael Hopp
     */
     public static function findSorted($sortBy, $where = '', $descending = false)
     {

@@ -36,8 +36,11 @@
                             <? endif;?>
                         </p>
 
-                        <p><strong>Description:</strong></br>
-                        <q><?=$product['description']?></q></p>
+                        <p>
+                            <strong>Description:</strong>
+                            </br>
+                            <q><?=$product['description']?></q>
+                        </p>
                         </br>
                         <form method="POST" style="margin:1%; max-width:152px;">
                             <label style="display:inline;" for="quantity"><strong>Amount:</strong></label>

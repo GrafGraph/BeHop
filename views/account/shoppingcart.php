@@ -1,8 +1,7 @@
 <h1 class="headline form-background">My Shopping Cart</h1>
 <section class="form-background fullheight">
 <?php 
-// Empty shoppingCart
-if(empty($shoppingCartItems)) : ?>
+if(empty($shoppingCartItems)) : ?>  <!-- Empty shoppingCart -->
     <div class="center">
         <h2>Your Shopping Cart is Empty</h2>
         <? if(!isLoggedIn()) : ?>
@@ -14,22 +13,22 @@ if(empty($shoppingCartItems)) : ?>
         <? endif;?>
     </div>
 <? else :
-        if(isset($errors)) : 
+        if(isset($errors)) : // Print Errors
             foreach($errors as $error) : ?>
                 <div class="error">
                     <?=$error?>
                 </div>
             <? endforeach;
         endif;?>
-    <div class="form-wrap">
-        <div class="shoppingcart-container-outer">
+    <div class="form-wrap"> <!-- Left and right border -->
+        <div class="shoppingcart-container-outer">  <!-- Outer Flex Container for Items -->
             <section class="shoppingcart-form" id="form-shoppingcart">
                 <? foreach($shoppingCartItems as $item) :
                     $quantity = isset($_POST['quantity'.strval($item['id'])]) ? $_POST['quantity'.strval($item['id'])] : $item['quantity'];
                     $itemPrice = isset($item['discountPrice']) ? $item['discountPrice'] : $item['price'];
                     $imageUrl = $item['image']['imageUrl'];
                     $imageAltText =$item['image']['altText'];?>
-                        <div class="shoppingcart-container-inner" id=<?=$item['id']?>>
+                        <div class="shoppingcart-container-inner" id=<?=$item['id']?>> <!-- Inner Flex Container for Image and Text -->
                             <div class="img-hover-zoom">
                                 <a href="index.php?c=products&a=showProduct&productID=<?=$item['id']?>">
                                     <img class="shoppingcartProductImage" src=<?=$imageUrl?> alt=<?=$imageAltText?>>

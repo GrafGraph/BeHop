@@ -15,17 +15,16 @@ class Address extends BaseModel
         'country' => ['type' => BaseModel::TYPE_STRING, 'max' => 50]            // Default: Germany
     ];
 
-    // returns already existing Address with given Data or null
+    // Returns already existing Address with given Data or null
     public static function findAddress($addressData)
     {
         $where = 'city ="'.$addressData['city'].'" and street ="'
         .$addressData['street'].'" and number ="'.$addressData['number']
         .'" and zip ="'.$addressData['zip'].'"';
-        // foreach($addressData as $key => $attribute)
-        // {
-        // } 
         return self::findOne($where);
     }
+
+    // Checks Reg-Exes for Address and returns Errors if invalid
     public static function validateAddress($newAddress, &$insertError){
         $newAddress->validate($insertError);
 

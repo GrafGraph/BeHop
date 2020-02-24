@@ -15,6 +15,7 @@ class User extends BaseModel
         'address_id' => ['type' => BaseModel::TYPE_INT]
     ];
 
+    // Checks Reg-Exes for Password and returns Errors if invalid
     public static function checkPassword($password, &$error){
 
         if(!preg_match('/[!@#$%&?.]/',$password)) {
@@ -36,6 +37,7 @@ class User extends BaseModel
         return true;
     }
 
+    // Checks Reg-Exes for Names and Email and returns Errors if invalid
     public static function validateUser($newUser, &$insertError){
         $newUser->validate($insertError);
 

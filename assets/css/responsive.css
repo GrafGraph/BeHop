@@ -1,3 +1,5 @@
+/* Media Queries for different Screen Sizes. */
+
 @media (max-width: 917px) {
     .product {
         width: 150px;

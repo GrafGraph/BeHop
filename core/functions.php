@@ -1,7 +1,7 @@
 <?php
-const DEBUG =true;
-// const ERROR =true;
+const DEBUG = true;
  
+// Debug Function for logging messages to textfile.
 function debug_to_logFile($message, $class = null)
 {
     if(DEBUG){
@@ -11,6 +11,8 @@ function debug_to_logFile($message, $class = null)
     }
 }
 
+// Checks whether or not Session has a logged in User.
+// @author Michael Hopp
 function isLoggedIn()
 {
     $result = false;
@@ -21,6 +23,8 @@ function isLoggedIn()
     return $result;
 }
 
+// Checks if Session contains Shoppingcart-Items.
+// @author Michael Hopp
 function thereAreShoppingCartItemsInSession()
 {   
     $result = false;
@@ -29,24 +33,28 @@ function thereAreShoppingCartItemsInSession()
     return $result;
 }
 
+// TODO: Rebuild as Method of Image.class
+// @author Michael Hopp
 function getImagesToProductID($productID)
 {
     return Image::find('product_id = ' . $productID);
 }
 
-// prints selected to display which filter option on products was used
+// Prints 'selected' to display which filter option on products was used
+// @author Michael Hopp
 function printSelectedIfSet($filterOption, $option)
 {
     if(isset($_GET[$filterOption]) && $_GET[$filterOption] === $option) : ?>selected <? endif;
 }
 
-// Prints Content for Products Dropdown menu in Nav
+// Prints Content for Products Dropdown menu in Nav. Needs Category-Array from controller, so it can be used on any site.
+// @author Michael Hopp
 function productsMenu($categories)
 {
     ?>
         <div class="flex-container">
             <div class="flex-item">
-                <a href="index.php?c=products&a=products&sale=all">Sale <span style="color:#ff5757">%</span></a>
+                <a href="index.php?c=products&a=products&sale=all">Sale <span style="color:#ff5757">%</span></a>    <!-- Red '%' as Eyecatcher -->
                 <a href="index.php?c=products&a=products&sortBy=newestFirst">New In</a>
             </div>
             <div class="flex-container-half">
@@ -64,7 +72,9 @@ function productsMenu($categories)
         </div>    
     <?
 }
-// Changes Nav Text-color if site is active
+
+// Changes Nav Text-color to beHop-Red if site is active
+// @author Michael Hopp
 function highlightNavText($action)
 {
     $result = '';
@@ -79,7 +89,8 @@ function highlightNavText($action)
     return $result;
 }
 
-// Changes Nav color of Icon if site is active
+// Changes Nav color of Icon if site is active. Needs two Images of each Icon with name-Endings 'Red' or 'White'.
+// @author Michael Hopp
 function highlightNavIcon($action)
 {
     $result = '';
@@ -94,7 +105,8 @@ function highlightNavIcon($action)
     return $result;
 }
 
-// returns string, containing quantity of items and total price of shoppingcart for nav-display
+// Returns string, containing quantity of items of shoppingcart for display next to Shoppingcart-Icon in Nav.
+// @author Michael Hopp
 function shoppingcartContent()
 {
     $sum = 0;
@@ -119,6 +131,7 @@ function shoppingcartContent()
 }
 
 // Returns array of Entries(Array) of Products in Shoppingcart from either Database or Session. Null if none are set.
+// @author Michael Hopp
 function getShoppingCartItems()
 {
     $shoppingCartHasProducts = null;
@@ -134,7 +147,9 @@ function getShoppingCartItems()
     }
     return $shoppingCartHasProducts;
 }
+
 // Returns the sum of prices of all products in users shoppingcart or session with applied discounts.
+// @author Michael Hopp
 function getTotalPrice(){
     $sum = 0.0;
     $shoppingCartProducts = getShoppingCartItems();
@@ -155,7 +170,9 @@ function getTotalPrice(){
     }
     return $sum;
 }
-// Calculate discountPrice for discount given in integer Percent and rounds up to second decimal
+
+// Calculate discountPrice for discount given in integer Percent and rounds up to second decimal.
+// @author Michael Hopp
 function calculateDiscountPrice($standardPrice, $discountInPercent)
 {
     return round( ($standardPrice * (1 - ($discountInPercent / 100))), 2);
@@ -165,28 +182,20 @@ function calculateDiscountPrice($standardPrice, $discountInPercent)
 function quantityExceededMaxInStockError($name){
     return "Quantity selected for &raquo;".$name."&laquo; exceeded Maximum in Stock.";
 }
-// filterOptions is array of possible options. attribute is needed key for filterOption
-// Example: getFilterOptions($categories, 'name', 'cat');
+
+// Prints Filteroptions for Products.
+// filterOptions is array of possible options (from Database). attribute is the value for filterOption
+// Example: getFilterOptions($categories, 'name', 'cat'); -> Prints the Names of Categories as Options for
+// a HTML select and adds 'selected' if the URL contains 'cat=name'.
+// @author Michael Hopp
 function printFilterOptions($filterOptions, $attribute, $urlAttribute)
 {
     foreach($filterOptions as $filterOption) : ?>
-
     <option value=<?=$filterOption[$attribute]?>
                 <?// Remember which option was selected
                 printSelectedIfSet($urlAttribute, $filterOption[$attribute]);?>
 				>
                 <?=$filterOption[$attribute]?></option>
     <? endforeach;
-    // ------ Based on: ---------
-    // foreach($categories as $category)
-    // {
-    // 		$html .= '<option value="'.$category['name'].'"';
-    // 		if(isset($_GET['cat']) && htmlspecialchars($_GET['cat']) == $category)
-    // 		{
-    // 		   $html .=' selected ';
-    // 		}
-    // 		$html .= '>'.$category['name'].'</option>';
-    // 
-    
 }
 ?>

@@ -1,14 +1,9 @@
 <?php
 namespace beHop;
-// require_once 'models/baseModel.class.php';
-// require_once 'models/address.class.php';
-// require_once 'models/user.class.php';
-// require_once 'models/order.class.php';
-
 
 class PagesController extends Controller
 {
-
+	// @author Michael Hopp
 	public function actionIndex()
 	{
 		$this->_params['title'] = 'BeHop - Home' ;
@@ -23,21 +18,25 @@ class PagesController extends Controller
 		$this->_params['sales'] = $sales;
 	}
 
+	// @author Michael Hopp
 	public function actionError404()
 	{
 		$this->_params['title'] = 'BeHop - Error404: Not Found' ;
 	}
 
+	// @author Michael Hopp
 	public function actionAboutUs()
 	{
 		$this->_params['title'] = 'BeHop - About Us' ;
 	}
 
+	// @author Michael Hopp
 	public function actionlegalDetails()
 	{
 		$this->_params['title'] = 'BeHop - Legal Details' ;
 	}
 	
+	// @author Michael Hopp, Anton Bespalov
 	public function actionProjectDocumentation()
 	{
 		$this->_params['title'] = 'BeHop - Projectdocumentation' ;

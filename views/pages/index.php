@@ -1,4 +1,3 @@
-<? // var_dump($_SESSION);?>
 <div class="start-wrap">
     <div class="banner img-hover-zoom-little">
         <a href="index.php?c=products&a=products&sale=all">

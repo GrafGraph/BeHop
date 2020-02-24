@@ -9,13 +9,19 @@
 				  </div>
 				  <br>
                <?php endif; ?><br>
-				<label for="email">E-Mail:</label> <br>
+				<label for="email">E-Mail:</label>
+				<br>
 				<p id="wrongEmail2"></p>
-				<input type="email" name="email" required id="email"/><br><br>
-				<label for="password">Password:</label> <br />
-				<input class="passwordInput" type="password" name="password" id="password" /><br>
-				<br />
-				<input type="submit" name="loginSubmit" value="Login now!" /><br>
+				<input type="email" name="email" required id="email"/>
+				<br>
+				<br>
+				<label for="password">Password:</label> 
+				<br/>
+				<input class="passwordInput" type="password" name="password" id="password" />
+				<br>
+				<br/>
+				<input type="submit" name="loginSubmit" value="Login now!" />
+				<br>
 			</form>
 			<br>
 			<a href="index.php?c=account&a=signUp"><button>Create Account</button></a>

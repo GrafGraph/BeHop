@@ -8,9 +8,10 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
 
+	<!-- TODO: Not used... -->
 	<?php if (isset($css) && is_array($css)) : ?>
 		<?php foreach ($css as $index => $file) : ?>
-			<link rel="stylesheet" type="text/css" href="assets/css/<?= $file ?>.css">
+			<link rel="stylesheet" type="text/css" href="assets/css/<?=$file?>.css">
 		<?php endforeach; ?>
 	<?php endif; ?>
 </head>
@@ -33,7 +34,6 @@
 					</li>
 					<li>
 						<form method="GET" action="index.php?c=products&a=products">
-							
 							<!-- hidden fields for controller and action location -->
 							<input type="hidden" name="c" value="products">
 							<input type="hidden" name="a" value="products">
@@ -97,7 +97,6 @@
 						<div class="dropdown-content">
 						<li>
 						<form method="GET" action="index.php?c=products&a=products">
-							
 							<!-- hidden fields for controller and action location -->
 							<input type="hidden" name="c" value="products">
 							<input type="hidden" name="a" value="products">

@@ -18,6 +18,8 @@ class Product extends BaseModel
         'sales_id' => ['type' => BaseModel::TYPE_INT]
     ];
    
+    // For use in finding the price-range for Filter-Options in Products
+    // @author: Michael Hopp
     public function getMinOrMaxPrice($minOrMax)
     {
         $database  = $GLOBALS['database'];

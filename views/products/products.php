@@ -87,7 +87,6 @@
 <? if(!empty($products)) : ?>
     <div class="products">
         <? foreach($products as $product) : ?>
-            <!-- TODO: Link nur auf Bild und namen? --> 
             <div class="product">
                 <div class="productLink">
                     <a class="noDecoration" href="index.php?c=products&a=showProduct&productID=<?=$product['id']?>">

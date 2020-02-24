@@ -1,9 +1,9 @@
 <?php
 namespace beHop;
 
-
 class ProductsController extends Controller
 {
+	// @author Michael Hopp
 	public function actionProducts()
 	{
 		$this->_params['title'] = 'BeHop - Products' ;
@@ -25,7 +25,7 @@ class ProductsController extends Controller
 
 		// Which products to display regarding filters
 		$where ='';	
-		// Searchbar-Filters
+		// Search-Filters
 		if(isset($_GET['search']) && !empty($_GET['search']))
 		{
 			$searchFilters = explode ('+',htmlspecialchars($_GET['search']));
@@ -85,8 +85,9 @@ class ProductsController extends Controller
 				$where .= ' price >= '.htmlspecialchars($_GET['minPrice']).' and';
 			}
 		}
-		$where .= ' id is not null';
+		$where .= ' id is not null';	// Catch remaining ' and' or default no filters.
 		
+		// Sort Products
 		if(isset($_GET['sortBy']) && !empty($_GET['sortBy']))
 		{
 			$descending = false;
@@ -129,7 +130,6 @@ class ProductsController extends Controller
 		}
 		
 		// Image and Discount to Product...
-		// TODO: Mehrere Images berücksichtigen. MainImage usw. 
 		foreach($products as &$product)
 		{
 			$product['image'] = Image::findOne('product_id = ' . $product['id']);
@@ -149,6 +149,7 @@ class ProductsController extends Controller
 		// }
 	}
 
+	// @author Michael Hopp
 	public function actionShowProduct()
 	{
 		$product = Product::findOne('id = '. htmlspecialchars($_GET['productID']));

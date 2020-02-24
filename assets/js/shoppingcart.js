@@ -4,7 +4,7 @@ function remove(button, ID) {
 
     var request = new XMLHttpRequest();
     var parent = button.parentNode;
-    request.open(parent.getAttribute('method'), parent.getAttribute('action') + '&ajax=' + ID, true);
+    request.open(parent.getAttribute('method'), parent.getAttribute('action') + '&ajax=' + ID, true); // Passing Product ID via URL to identify it
     request.send();
     request.onreadystatechange = function() {
         // request finished?
@@ -21,13 +21,13 @@ function remove(button, ID) {
                 }
                 if (resJson !== null) {
                     if (resJson.shoppingcartContent !== null) {
-                        if (resJson.shoppingcartContent <= 0) {
+                        if (resJson.shoppingcartContent <= 0) { // Set new Quantity for Shoppingcart-Icon
                             window.location = "index.php?c=account&a=shoppingcart";
                         }
                         document.getElementById("shoppingcartContent1").innerHTML = resJson.shoppingcartContent;
-                        document.getElementById("shoppingcartContent2").innerHTML = resJson.shoppingcartContent; // TODO: Workaround until Nav was updated and is unique...
+                        document.getElementById("shoppingcartContent2").innerHTML = resJson.shoppingcartContent; // TODO: Workaround until Multiple-Nav was updated and is unique...
                     }
-                    if (resJson.total) {
+                    if (resJson.total) { // Set new Total
                         console.log(resJson.total);
                         document.getElementById('priceTotal').innerHTML = parseFloat(resJson.total);
                     }
@@ -38,6 +38,8 @@ function remove(button, ID) {
         }
     }
 }
+
+// AJAX for Updating the Quantity of Products in Shopping Cart won't be featured in this release.
 /* 
  function update(button, id) {
      event.stopPropagation(); // no send to the top element
