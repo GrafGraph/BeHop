@@ -2,6 +2,13 @@
 <h1 class="headline form-background">Projektdokumentation</h1>
 <section class="center form-background">
     <section class="docu-wrap">
+    <div class="flex-docu-item">
+        <p>
+            Erstellt von Anton Bespalov und Michael Hopp im Rahmen des Website-Projekts in GWP und DWP an der 
+            Fachhochschule Erfurt. Prüfer: Prof. R. Kruse und K. Friess
+        </p>
+    </div>
+
         <a href="WEB-WS1920-Projektaufgabe-1.pdf" title="Aufgaben"><h2>Aufgabe</h2></a>
         <h2>Arbeitsteilung und Gesamtaufwand</h2>
         <h3>Gemeinsam</h3>
@@ -426,6 +433,28 @@
             In unserem Projekt hatten beide Entwickler die Rolle des Designers und Entwicklers übernommen, alle Designentscheidungen wurden
             gemeinsam getroffen. Ebenso hatten beide Entwickler ihre eigenen Baustellen an der Entwicklungs des ganzen Systems. 
         </p>
+        <h2>Flussbilddiagramme</h2>
+        <br>
+                    <img src="assets/images/documentation/flowChartBestellung.png">
+        <br>
+        <br>
+                    <img src="assets/images/documentation/FulssdiagrammRegistrierung.png">
+        <br>
+        <h2>Herausforderungen und Lösungen</h2>
+        <div class="flex-docu-item">
+            <p>
+                Eine Herausforderung war, dass wir uns in neue Programmiersprachen einarbeiten mussten, aber nach dem einarbeiten in die ganzen 
+                Programmiersprachen war es keine große Herausforderungen mehr. Weiterhin hat die Seite <a href="https://stackoverflow.com/">stackoverflow.com</a> 
+                bei viele Problemen geholfen.
+                Ein großes Problem ist, dass das responsive Design der Navigationsleiste nicht mit CSS gemacht wurde, die Navigationsleiste
+                wird zur Zeit mithilfe von ein und ausblenden von verschiedenen Naviagtionsleisten realisiert. Dadurch sind ca. 150 Zeilen Code
+                redundant und unnötig. Jedoch wurde es so designed und die Erleuchtung, dass das durch CSS realisiert werden muss kam viel zu spät. 
+                Leider hat die Zeit nicht gereicht, damit das geändert werden kann. 
+            </p>
+        </div>
+        <h2>Genutzte Technologien</h2>
+        <li>HTML5, CSS3</li>
+        <li>XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22</li>
     </section>
     <br>
 </section>
