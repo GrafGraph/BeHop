@@ -1,4 +1,21 @@
-# HOWTO BeHop
+# HowTo BeHop
+
+## Vorraussetzungen
+- XAMPP (TODO: Versionshinweis)
+- PHP-Shorttag muss in XAMPP aktiviert sein!
+- Browser (Optimiert für Chrome!)
+
+## Installation
+1. Repository nach *xampp/htdocs* klonen (Ggfs. noch Unterordner **Git** dazwischenschieben...)
+2. In PHP-MyAdmin den Datenbank-dump **beHop** aus *BeHop/src/database/beHop* Importieren
+
+## Getting Started
+3. Im Browser http://localhost/BeHop/index.php?a=index aufrufen oder über den Localhost zu BeHop navigieren. 
+
+### Bereits vordefinierte Account-Zugangsdaten
+- Email: "admin@fh-erfurt.de" Password: "root"
+
+# *DELETE*
 ![CodeFactor](https://img.shields.io/badge/PHP-5.4.22-purple)
 ![CodeFactor](https://img.shields.io/badge/xampp-1.8.3-orange)
 ![CodeFactor](https://img.shields.io/badge/MySQL-5.6.16-blue)
@@ -8,11 +25,6 @@ Erstellt von [Anton Bespalov](https://github.com/kanton1998) und [Michael Hopp](
 [Aufgabenstellung](WEB-WS1920-Projektaufgabe-1.pdf)
 Prüfer: Prof. R. Kruse und K. Friess
 
-## Getting Started / HowTo
-Bereits vordefinierte Account-Zugangsdaten: 
-- email: "admin@fh-erfurt.de" password: "root"
-
-*DELETE*
 ## Über das Produkt
 BeHop ist ein HipHop Online-Shop
 ### [SiteMap](https://www.lucidchart.com/invitations/accept/48120419-dd6e-4d54-b51b-972ed3d3a95a)
