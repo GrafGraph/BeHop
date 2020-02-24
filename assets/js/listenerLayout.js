@@ -5,10 +5,10 @@ document.getElementById("searchClick").addEventListener('click', function() {
     searchFull.style.display = "block";
 });
 document.getElementById("searchClick2").addEventListener('click', function() {
-    var nav = document.getElementById('fullListMin2');
-    var searchFull = document.getElementById('searchMin2');
-    nav.style.display = "none";
-    searchFull.style.display = "block";
+    var nav2 = document.getElementById('fullListMin2');
+    var searchFull2 = document.getElementById('searchMin2');
+    nav2.style.display = "none";
+    searchFull2.style.display = "block";
 });
 
 document.getElementById('backToNav').addEventListener('click', function() {
@@ -19,10 +19,10 @@ document.getElementById('backToNav').addEventListener('click', function() {
 });
 
 document.getElementById('backToNav2').addEventListener('click', function() {
-    var nav = document.getElementById('fullListMin2');
-    var searchFull = document.getElementById('searchMin2');
-    nav.style.display = "block";
-    searchFull.style.display = "none";
+    var nav2 = document.getElementById('fullListMin2');
+    var searchFull2 = document.getElementById('searchMin2');
+    nav2.style.display = "block";
+    searchFull2.style.display = "none";
 });
 
 document.getElementById('mainSearch').addEventListener('focusin', (event) => {

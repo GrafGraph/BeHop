@@ -13,6 +13,7 @@
     margin-bottom: 1%;
     margin-top: 1%;
     text-align: center;
+    min-width: 100%;
 }
 
 .products {
@@ -734,10 +735,6 @@ body {
     font-size: 22px;
     padding-bottom: 110px;
 }
-
-#searchIconButton {}
-
-#searchIconButton2 {}
 
 #searchIconButton:hover {
     color: dimgrey;
