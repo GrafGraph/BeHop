@@ -108,14 +108,14 @@
             <h2>Inhalt</h2>
                 <h3>Fiktiver Kunde</h3>
                     <p>
-                        Der Kunde für dieses Produkt wäre ein Händler oder ein Laden, der Hip-Hop-Klamottenverkäuft.
+                        Der Kunde für dieses Produkt wäre ein Händler oder ein Laden, der Hip-Hop-Klamotten verkauft.
                         Mit der Website soll die Möglichkeit geboten werden, dass die Artikel von dem Kunden Online veröffentlicht werden 
                         und durch die Website auch verkauft werden können. Der Websitename entsprang aus den Nachnamen der Entwickler
                         Anton (Be)spalov und Michael (Hop)p.  
                     </p>
                 <h3>Endgültigen Websitenutzer</h3>
                 <p>
-                    Die endgültigen Websitenutzer sind durchschnittliche Verbraucher, die Online Klamotten bestellen wollen.
+                    Die endgültigen Websitenutzer sind durchschnittliche Verbraucher, die online Klamotten bestellen wollen.
                 </p>
         </div>
         <div class="flex-docu-item">
@@ -142,7 +142,7 @@
                 <h3>Layouts</h3>
                     <p>
                         Bei den Layouts wurde sich sehr stark an den Layouts von <a href="https://www.asos.com/">asos.com</a>, <a href="https://www.def-shop.com/">def-shop.com</a>
-                        und <a href="https://www.snipes.com/">snipes.com</a> orientiert, weil das die erfolgreichen Seiten, in dieser Branche,  zur Zeit sind.
+                        und <a href="https://www.snipes.com/">snipes.com</a> orientiert, weil das die erfolgreichen Seiten, in dieser Branche, sind.
                     </p>
                 <h3>Farben</h3>
                     <p>
@@ -152,7 +152,7 @@
                         Die Schriftfarbe auf der website, ist ein heller Grauton. Dieser hat eine sehr große Ähnlichkeit 
                         mit der Farbe von Beton und ist ebenfalls ein typisches Element der Hip-Hop-Szene. 
                         Die Farbe, der Schrift und "Styleelemente", auf der Startseite sind in einem Orange-Rot, weil das einen sehr
-                        angenehmen Kontrast hat und auffällig ist.
+                        angenehmen Kontrast mit den Grautönen hat und auffällig ist.
                         Ansonsten sind die Bilder auf der Startseite in Schwarz-Weiß, weil das sehr gut mit den Grautönen zusammenspielt und die Schrift
                         gut dazu passt.    
                     </p>
@@ -172,8 +172,8 @@
                 <P>
                     Diese Navigationsleiste ist die standart für Laptops und Bildschirme, die eine Breite von mindestens 1124 Pixeln 
                     haben. Links ist das Logo von unserer Website zu sehen, wenn man auf das Logo klickt, dann wird man auf die Startseite
-                    weitergeleitet. Wenn man auf "Products" drückt, dann wird zu allen unseren Produkten weitergeleitet  oder man kann direkt 
-                    filtern was man sucht.
+                    weitergeleitet. Wenn "Products" gedrückt wird, dann werden alle unsere Produkte angezeigt oder es wird mithilfe des Dropdownmenüs
+                    direkt gefiltert wonach gesucht wird.
                 </P>
         </div>
         <br>
@@ -181,28 +181,28 @@
         <br>
         <div class="flex-docu-item">
                 <P>
-                    Beim Drücken auf "About Us" wird man auf die About Us Seite weitergeleitet, das ist die Seite, auf der das Wichtigste 
+                    Beim drücken auf "About Us" wird man auf die ""About Us"-Seite weitergeleitet, das ist die Seite, auf der das Wichtigste 
                     über den Besitzer und seine Philosophie stehen soll.
                 </P>
                 <br>
                 <img src="assets/images/documentation/aboutUs.png">
                 <br>
                 <p>
-                    Wenn man in das Suchfeld klickt, dann wird der Rest der Website verschwommen angezeigt und regiert, solange es verschwommen
-                    ist, nicht mehr auf die Klicks auf die Bilder. Wenn man einmal aus der Suchleiste rausklickt, dann wird es wieder normal angezeigt.
+                    Wenn das Suchfeld angeklickt wird, dann wird der Rest der Website verschwommen angezeigt und regiert, solange es verschwommen
+                    ist, können die Bilder nicht angeklickt werden. Wenn einmal aus der Suchleiste rausgeklickt wird, dann wird die Anzeige normal.
                     Dieser Effekt funktioniert auf jeder Seite.
                 </p>
                 <br>
                 <img src="assets/images/documentation/navigationListSaerchJSfocusin.png">
                 <br>
                 <p>
-                    Wenn man auf das Icon mit dem "Männchen" drückt, dann kommt man auf die Login Seite. 
+                    Wenn das Icon mit dem "Männchen" gedrückt wird, dann wird er Nutzer auf die Login Seite weitergeleitet. 
                 </p>
                 <br>
                 <img src="assets/images/documentation/login.png">
                 <br>
                 <p>
-                    Wenn man auf das Icon mit dem Einkaufswagen drückt, dann kommt man auf seine Einkaufswagenliste. 
+                    Wenn das Icon mit dem Einkaufswagen gedrückt wird, dann wird der Nutzer auf seine Einkaufswagenliste weitergeleitet. 
                     Momentan ist sie leer.
                 </p>
                 <br>
@@ -213,20 +213,20 @@
                 <br>
                 <p>
                     Diese Navigationsleiste ist die Ansicht für Tablets, für eine Breite von 521 Pixeln bis 1123 Pixeln. 
-                    Das Logo, das "Männchen"-Icon und der Einkaufswagen haben die gleiche Funktionen, wie in der Desktopansicht. 
-                    Wenn man auf das Lupen-Icon drückt, dann werden alle Icons in der Navigationsleiste ausgeblendet und es erscheint ein
-                    Eingabefeld. 
+                    Das Logo, das "Männchen"-Icon und der Einkaufswagen haben die gleichen Funktionen, wie in der Desktopansicht. 
+                    Wenn das Lupen-Icon gedrückt wird, dann werden alle Icons in der Navigationsleiste ausgeblendet und es erscheint ein
+                    Eingabefeld zur Produktsuche. 
                 </p>
                 <br>
                 <img src="assets/images/documentation/navigationListTabletSaerchJS.png">
                 <br>
                 <p>
-                   In dem Eingabefeld kann man nach Produkten suchen, wenn man auf das Lupen-Icon drückt, dann wird nach dem Artikel gesucht.
-                   Um aus der Suchleiste rauszukommen muss das X-Icon gedrückt werden. 
+                   In dem Eingabefeld kann der Nutzer nach Produkten suchen, wenn er auf das Lupen-Icon drückt, dann wird nach dem Artikel gesucht.
+                   Um aus der Suchleiste rauszukommen muss das "X"-Icon gedrückt werden. 
                 </p>
                 <br>
                 <p>
-                    Wenn man auf das Icon ganz rechts drückt, dann erscheint ein Dropdownmenü, mit dem die restlichen Seiten
+                    Wenn das Icon ganz rechts gedrückt wird, dann erscheint ein Dropdownmenü, mit dem die restlichen Seiten
                     erreicht werden können. 
                 </p>
                 <br>
@@ -243,14 +243,14 @@
                 <img src="assets/images/documentation/navigationListSmartPhoneSaerchJS.png">
                 <br>
                 <p>
-                    Wenn man auf das Icon ganz rechts drückt, dann erscheint ein Dropdownmenü, mit dem die restlichen Seiten
+                    Wenn das Icon ganz rechts gedrückt wird, dann erscheint ein Dropdownmenü, mit dem die restlichen Seiten
                     erreicht werden können. 
                 </p>
                 <br>
                 <img src="assets/images/documentation/navigationListSmartPhoneDropdown.png">
                 <br>
                 <p>
-                    Die Funktion, dass alles außer der Navigationsleiste verschwommen wird, wenn man in der Suchleiste
+                    Die Funktion, dass alles außer der Navigationsleiste verschwommen wird, wenn die Suchleiste angeklickt wird
                     funktioniert in der Tabletansicht und Smartphoneansicht auch.  
                 </p>
         </div>
@@ -262,7 +262,7 @@
                 <p>
                     Auf der "Login"-Seite sind zwei Eingabefelder, eins für die Email und das andere für das dazugehörige Passwort.
                     Wenn eine nicht korrekte Email eingetippt wird, dann wird ein Fehler angezeigt, dass die Email nicht korrekt ist. 
-                    Wenn eine korrkete Emaiadresse und das passende Passwort eingegeben wurden und der "Login now!"-Button gedrückt wurde,
+                    Wenn eine korrkete Emaiadresse und das passende Passwort eingegeben wurde und der "Login now!"-Button gedrückt wurde,
                     dann wir der Nutzer eingelogt. Wenn die Eingaben nicht korrekt sind, dann wird eine Fehlermeldung ausgegeben. 
                 </p>
                 <br>
@@ -275,7 +275,7 @@
                 <img src="assets/images/documentation/registration.png">
                 <br>
                 <p>
-                Für die Registrierung müssen die persönlichen Daten eingegeben werden.
+                    Für die Registrierung müssen die persönlichen Daten eingegeben werden.
                     Wenn falsche Daten eingegeben werden, dann werden die Eingabefelder rot und es wird ein Hinweis gegeben, wie die
                     Eingabedaten sein müssen.
                 </p>
@@ -300,9 +300,9 @@
                 <br>
         <div class="flex-docu-item">
                     <p>
-                        Wenn sich der Nutzer eingeloggt hat, dann verändert sich die Navigationsleiste und man hat ein Feld mehr auf der Navigationsleiste
-                        "Logout", wenn man da drauf drückt, dann wird man aus dem Account ausgeloggt. Eine weitere Veränderung ist, wenn man auf das Symbol 
-                        mit dem "Männchen" drückt, dann wird man auf die "My Account" Seite weitergeleitet.
+                        Wenn sich der Nutzer eingeloggt hat, dann verändert sich die Navigationsleiste und er hat ein Feld mehr auf der Navigationsleiste
+                        "Logout", wenn er da drauf drückt, dann wird er aus dem Account ausgeloggt. Eine weitere Veränderung ist, wenn man auf das Symbol 
+                        mit dem "Männchen" drückt, dann wird man auf die "My Account"-Seite weitergeleitet.
                     </p>
                     <br>
                     <img src="assets/images/documentation/account.png">
@@ -321,10 +321,10 @@
         <br>
         <div class="flex-docu-item">
                     <p>
-                        Hier sieht man die Anzeige der Produkte, ganz oben ist eine Leiste zum Filtern der Artikel. 
+                        Hier wird die Anzeige der Produkte angezeigt, ganz oben ist eine Leiste zum Filtern der Artikel. 
                         Es können die Wunschkriterien eingetragen werden und wenn dann auf den "Filter Now!"-Button gedrückt wird,
-                        dann werden alle Artikel nach den passenden Krieterien ausgesucht. Jedoch kann noch den "Reset Filters"-Button
-                        drücken, dann werden alle Filter zurückgesetzt.
+                        dann werden alle Artikel nach den passenden Krieterien ausgesucht. Jedoch kann noch der "Reset Filters"-Button
+                        gedrückt werden, dann werden alle Filter zurückgesetzt.
                     </p>
         </div>
         <h3>About Us</h3>
@@ -334,7 +334,7 @@
         <img src="assets/images/documentation/aboutUs.png">
         <br>
                     <p>
-                        Auf der "About Us"-Seite sieht man ein Bild und darunter ist ein Text, der die Website ausmachen soll.
+                        Auf der "About Us"-Seite wird ein Bild angezeigt und darunter ist ein Text, der die Website ausmachen soll.
                     </p>
         </div>
         <h3> My Account</h3>
@@ -343,18 +343,17 @@
         <img src="assets/images/documentation/account.png">
         <br>
                     <p>
-                        Auf der "My Account"-Seite werden die Daten, des zurzeit eingeloggten Teilnehmers, angezeigt. 
+                        Auf der "My Account"-Seite werden die Daten, des zurzeit eingeloggten Nutzers, angezeigt. 
                         In den Felder, die mit den persönlichen Daten ausgefüllt sind, können neue Daten eingetragen werden und 
                         dann werden diese, falls sie korrekt sind, geändert. Nachdem neue Daten eingetragen wurden, aber die Daten doch 
                         nicht geändert werden sollen, kann der "Reset-Changes"-Button gedrückt werden und dann werden die Daten zurückgesetzt.
-                        Ganz unten auf der Seite ist noch ein "Change Password"-Button, wenn der Button hedrückt wird, dann wird die 
+                        Ganz unten auf der Seite ist noch ein "Change Password"-Button, wenn der Button gedrückt wird, dann wird die 
                         "Change-Password"-Seite geladen.
                     </p>
                     <br>
                     <img src="assets/images/documentation/changePassword.png">
                     <br>
                     <p>
-
                         Auf dieser Seite kann das Passwort geändert werden. Wenn das Aktuelle Passwort eingegeben wird und danach 2 mal das 
                         neue Passwort, dann kann das Passwort, mit dem "Change Passwort"-Button, geändert werden. 
                     </p>
@@ -413,7 +412,7 @@
                     <img src="assets/images/documentation/checkoutPaymentMethod.png">
                     <br>
                     <p>
-                        Zur Zeit ist nur die Bezahlmethode "Paypal" möglich, die Bezahlung erfolgt über Paypal. 
+                        Zur Zeit ist nur die Bezahlmethode "Paypal" möglich. 
                     </p>
                     <br>
                     <img src="assets/images/documentation/checkoutPaymentMethodPaypal.png">
@@ -449,7 +448,7 @@
                     bei viele Problemen geholfen.
                     Ein großes Problem ist, dass das responsive Design der Navigationsleiste nicht mit CSS gemacht wurde, die Navigationsleiste
                     wird zur Zeit mithilfe von ein und ausblenden von verschiedenen Naviagtionsleisten realisiert. Dadurch sind ca. 150 Zeilen Code
-                    redundant und unnötig. Jedoch wurde es so designed und die Erleuchtung, dass das durch CSS realisiert werden muss kam viel zu spät. 
+                    redundant. Jedoch wurde es so designed und die Erleuchtung, dass das durch CSS realisiert werden muss kam viel zu spät. 
                     Leider hat die Zeit nicht gereicht, damit das geändert werden kann. 
                 </p>
             </div>
