@@ -1,4 +1,5 @@
 <?php
+// @author Anton Bespalov
 namespace beHop;
 require_once 'core/functions.php';
 

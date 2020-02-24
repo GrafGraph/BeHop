@@ -1,4 +1,5 @@
 <?php
+// @author Anton Bespalov
 namespace beHop;
 class User extends BaseModel
 {
@@ -15,6 +16,7 @@ class User extends BaseModel
         'address_id' => ['type' => BaseModel::TYPE_INT]
     ];
 
+    // @author Michael Hopp & Anton Bespalov
     // Checks Reg-Exes for Password and returns Errors if invalid
     public static function checkPassword($password, &$error){
 

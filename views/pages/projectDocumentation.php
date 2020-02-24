@@ -1,3 +1,4 @@
+<!-- @author Anton Bespalov -->
 <link rel="stylesheet" type="text/css" href="assets/css/documentation.css">
 <h1 class="headline form-background">Projektdokumentation</h1>
 <section class="center form-background">
@@ -138,28 +139,28 @@
         </div>
         <div class="flex-docu-item">
             <h2>Design</h2>
-                    <h3>Layouts</h3>
-                        <p>
-                            Bei den Layouts wurde sich sehr stark an den Layouts von <a href="https://www.asos.com/">asos.com</a>, <a href="https://www.def-shop.com/">def-shop.com</a>
-                            und <a href="https://www.snipes.com/">snipes.com</a> orientiert, weil das die erfolgreichen Seiten, in dieser Branche,  zur Zeit sind.
-                        </p>
-                    <h3>Farben</h3>
-                        <p>
-                            Da unsere Website nicht nur eine normale Website ist, sondern auch den Hip-hop-Lifestyle widerspiegeln soll,
-                            haben wir uns bei so gut wie allen Elementen für einen dunklen Grauton entschieden. Dieser hat eine sehr große Ähnlichkeit 
-                            mit der Farbe von As­phalt und das ist ein klassisches Element der Hip-Hop-Szene. 
-                            Die Schriftfarbe auf der website, ist ein heller Grauton. Dieser hat eine sehr große Ähnlichkeit 
-                            mit der Farbe von Beton und ist ebenfalls ein typisches Element der Hip-Hop-Szene. 
-                            Die Farbe, der Schrift und "Styleelemente", auf der Startseite sind in einem Orange-Rot, weil das einen sehr
-                            angenehmen Kontrast hat und auffällig ist.
-                            Ansonsten sind die Bilder auf der Startseite in Schwarz-Weiß, weil das sehr gut mit den Grautönen zusammenspielt und die Schrift
-                            gut dazu passt.    
-                        </p>
-                        <h3>Schriften</h3>
-                        <p>
-                            Die Schriftart auf der Startseite wurde so gewählt, dass Sie möglichst viele junge Menschen anspricht. 
-                            Die restliche Schriftart wurde so gewählt, dass Sie nicht zu langweilig und anschaulich aussieht.
-                        </p>
+                <h3>Layouts</h3>
+                    <p>
+                        Bei den Layouts wurde sich sehr stark an den Layouts von <a href="https://www.asos.com/">asos.com</a>, <a href="https://www.def-shop.com/">def-shop.com</a>
+                        und <a href="https://www.snipes.com/">snipes.com</a> orientiert, weil das die erfolgreichen Seiten, in dieser Branche,  zur Zeit sind.
+                    </p>
+                <h3>Farben</h3>
+                    <p>
+                        Da unsere Website nicht nur eine normale Website ist, sondern auch den Hip-hop-Lifestyle widerspiegeln soll,
+                        haben wir uns bei so gut wie allen Elementen für einen dunklen Grauton entschieden. Dieser hat eine sehr große Ähnlichkeit 
+                        mit der Farbe von As­phalt und das ist ein klassisches Element der Hip-Hop-Szene. 
+                        Die Schriftfarbe auf der website, ist ein heller Grauton. Dieser hat eine sehr große Ähnlichkeit 
+                        mit der Farbe von Beton und ist ebenfalls ein typisches Element der Hip-Hop-Szene. 
+                        Die Farbe, der Schrift und "Styleelemente", auf der Startseite sind in einem Orange-Rot, weil das einen sehr
+                        angenehmen Kontrast hat und auffällig ist.
+                        Ansonsten sind die Bilder auf der Startseite in Schwarz-Weiß, weil das sehr gut mit den Grautönen zusammenspielt und die Schrift
+                        gut dazu passt.    
+                    </p>
+                    <h3>Schriften</h3>
+                    <p>
+                        Die Schriftart auf der Startseite wurde so gewählt, dass Sie möglichst viele junge Menschen anspricht. 
+                        Die restliche Schriftart wurde so gewählt, dass Sie nicht zu langweilig und anschaulich aussieht.
+                    </p>
         </div>
         <div class="flex-docu-item">
                 <h2>Funktionalitäten</h2>
@@ -255,42 +256,42 @@
         </div>
         <h3>Login and Registration</h3>
         <div class="flex-docu-item">
-                    <br>
-                    <img src="assets/images/documentation/login.png">
-                    <br>
-                    <p>
-                        Auf der "Login"-Seite sind zwei Eingabefelder, eins für die Email und das andere für das dazugehörige Passwort.
-                        Wenn eine nicht korrekte Email eingetippt wird, dann wird ein Fehler angezeigt, dass die Email nicht korrekt ist. 
-                        Wenn eine korrkete Emaiadresse und das passende Passwort eingegeben wurden und der "Login now!"-Button gedrückt wurde,
-                        dann wir der Nutzer eingelogt. Wenn die Eingaben nicht korrekt sind, dann wird eine Fehlermeldung ausgegeben. 
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/loginError.png">
-                    <br>
-                    <p>
-                        Falls noch kein Account vorhanden ist, dann kann der Nutzer auf den "Create Account"-Button drücken und sich registrieren.
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/registration.png">
-                    <br>
-                    <p>
-                    Für die Registrierung müssen die persönlichen Daten eingegeben werden.
-                        Wenn falsche Daten eingegeben werden, dann werden die Eingabefelder rot und es wird ein Hinweis gegeben, wie die
-                        Eingabedaten sein müssen.
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/registrationRedWithJS.png">
-                    <br>
-                    <p>
-                        Wenn die Daten richtig eingegeben werden, dann werden die Eingabefelder grün.
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/registrationGreenWithJS.png">
-                    <br>
-                    <p>
-                        Zum registrieren muss der "Register"-Button gedrückt werden. Wenn der Accunt erstellt wurde, wird die "Login"-Seite
-                        automatisch angezeigt.
-                    </p>
+                <br>
+                <img src="assets/images/documentation/login.png">
+                <br>
+                <p>
+                    Auf der "Login"-Seite sind zwei Eingabefelder, eins für die Email und das andere für das dazugehörige Passwort.
+                    Wenn eine nicht korrekte Email eingetippt wird, dann wird ein Fehler angezeigt, dass die Email nicht korrekt ist. 
+                    Wenn eine korrkete Emaiadresse und das passende Passwort eingegeben wurden und der "Login now!"-Button gedrückt wurde,
+                    dann wir der Nutzer eingelogt. Wenn die Eingaben nicht korrekt sind, dann wird eine Fehlermeldung ausgegeben. 
+                </p>
+                <br>
+                <img src="assets/images/documentation/loginError.png">
+                <br>
+                <p>
+                    Falls noch kein Account vorhanden ist, dann kann der Nutzer auf den "Create Account"-Button drücken und sich registrieren.
+                </p>
+                <br>
+                <img src="assets/images/documentation/registration.png">
+                <br>
+                <p>
+                Für die Registrierung müssen die persönlichen Daten eingegeben werden.
+                    Wenn falsche Daten eingegeben werden, dann werden die Eingabefelder rot und es wird ein Hinweis gegeben, wie die
+                    Eingabedaten sein müssen.
+                </p>
+                <br>
+                <img src="assets/images/documentation/registrationRedWithJS.png">
+                <br>
+                <p>
+                    Wenn die Daten richtig eingegeben werden, dann werden die Eingabefelder grün.
+                </p>
+                <br>
+                <img src="assets/images/documentation/registrationGreenWithJS.png">
+                <br>
+                <p>
+                    Zum registrieren muss der "Register"-Button gedrückt werden. Wenn der Accunt erstellt wurde, wird die "Login"-Seite
+                    automatisch angezeigt.
+                </p>
         </div>
                 <h3>Navigationsleiste eingeloggt</h3>
                 <br>
@@ -425,36 +426,36 @@
                     <br>
         </div>
         <h2>ER-Modell</h2>
-        <br>
-                    <img src="assets/images/documentation/ER-Modell.png">
-        <br>
+            <br>
+                <img src="assets/images/documentation/ER-Modell.png">
+            <br>
         <h2>Rollenmodell</h2>
-        <p>
-            In unserem Projekt hatten beide Entwickler die Rolle des Designers und Entwicklers übernommen, alle Designentscheidungen wurden
-            gemeinsam getroffen. Ebenso hatten beide Entwickler ihre eigenen Baustellen an der Entwicklungs des ganzen Systems. 
-        </p>
-        <h2>Flussbilddiagramme</h2>
-        <br>
-                    <img src="assets/images/documentation/flowChartBestellung.png">
-        <br>
-        <br>
-                    <img src="assets/images/documentation/FulssdiagrammRegistrierung.png">
-        <br>
-        <h2>Herausforderungen und Lösungen</h2>
-        <div class="flex-docu-item">
             <p>
-                Eine Herausforderung war, dass wir uns in neue Programmiersprachen einarbeiten mussten, aber nach dem einarbeiten in die ganzen 
-                Programmiersprachen war es keine große Herausforderungen mehr. Weiterhin hat die Seite <a href="https://stackoverflow.com/">stackoverflow.com</a> 
-                bei viele Problemen geholfen.
-                Ein großes Problem ist, dass das responsive Design der Navigationsleiste nicht mit CSS gemacht wurde, die Navigationsleiste
-                wird zur Zeit mithilfe von ein und ausblenden von verschiedenen Naviagtionsleisten realisiert. Dadurch sind ca. 150 Zeilen Code
-                redundant und unnötig. Jedoch wurde es so designed und die Erleuchtung, dass das durch CSS realisiert werden muss kam viel zu spät. 
-                Leider hat die Zeit nicht gereicht, damit das geändert werden kann. 
+                In unserem Projekt hatten beide Entwickler die Rolle des Designers und Entwicklers übernommen, alle Designentscheidungen wurden
+                gemeinsam getroffen. Ebenso hatten beide Entwickler ihre eigenen Baustellen an der Entwicklungs des ganzen Systems. 
             </p>
-        </div>
+        <h2>Flussbilddiagramme</h2>
+            <br>
+                        <img src="assets/images/documentation/flowChartBestellung.png">
+            <br>
+            <br>
+                        <img src="assets/images/documentation/FulssdiagrammRegistrierung.png">
+            <br>
+        <h2>Herausforderungen und Lösungen</h2>
+            <div class="flex-docu-item">
+                <p>
+                    Eine Herausforderung war, dass wir uns in neue Programmiersprachen einarbeiten mussten, aber nach dem einarbeiten in die ganzen 
+                    Programmiersprachen war es keine große Herausforderungen mehr. Weiterhin hat die Seite <a href="https://stackoverflow.com/">stackoverflow.com</a> 
+                    bei viele Problemen geholfen.
+                    Ein großes Problem ist, dass das responsive Design der Navigationsleiste nicht mit CSS gemacht wurde, die Navigationsleiste
+                    wird zur Zeit mithilfe von ein und ausblenden von verschiedenen Naviagtionsleisten realisiert. Dadurch sind ca. 150 Zeilen Code
+                    redundant und unnötig. Jedoch wurde es so designed und die Erleuchtung, dass das durch CSS realisiert werden muss kam viel zu spät. 
+                    Leider hat die Zeit nicht gereicht, damit das geändert werden kann. 
+                </p>
+            </div>
         <h2>Genutzte Technologien</h2>
-        <li>HTML5, CSS3</li>
-        <li>XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22</li>
+            <li>HTML5, CSS3</li>
+            <li>XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22</li>
     </section>
     <br>
 </section>

@@ -3,7 +3,7 @@ namespace beHop;
 
 class AccountController extends Controller
 {
-	// @author Michael Hopp
+	// @author Michael Hopp & Anton Bespalov
 	public function actionLogin()
 	{
 		$this->_params['title'] = 'BeHop - Login' ;
@@ -77,7 +77,7 @@ class AccountController extends Controller
 		session_destroy();
 	}
 
-	// @author Michael Hopp
+	// @author Michael Hopp & Anton Bespalov
 	public function actionAccount()
 	{
 		$this->_params['title'] = 'BeHop - Mein Account' ;
@@ -227,16 +227,16 @@ class AccountController extends Controller
 		{
 			if(isset($_POST['submit']))
 			{
-				$firstName = $_POST['firstName'] ?? null;
-				$lastName = $_POST['lastName'] ?? null;
-				$street = $_POST['street'] ?? null;
-				$number = $_POST['number'] ?? null;
-				$city = $_POST['city'] ?? null;
-				$zip = $_POST['zip'] ?? null;
-				$email    = $_POST['email'] ?? null;
-				$password1 = $_POST['password1'] ?? null;
-				$password2 = $_POST['password2'] ?? null;
-				$error = [];
+				$firstName 		= $_POST['firstName'] ?? null;
+				$lastName 		= $_POST['lastName'] ?? null;
+				$street 		= $_POST['street'] ?? null;
+				$number 		= $_POST['number'] ?? null;
+				$city 			= $_POST['city'] ?? null;
+				$zip 			= $_POST['zip'] ?? null;
+				$email   		= $_POST['email'] ?? null;
+				$password1 		= $_POST['password1'] ?? null;
+				$password2 		= $_POST['password2'] ?? null;
+				$error 			= [];
 
 				$userData = [
 					'email' => $_POST['email'],
@@ -344,6 +344,7 @@ class AccountController extends Controller
 							$address->save();		
 							$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');
 							$address_id = $address_data['id'];
+
 						$password = password_hash($password1, PASSWORD_DEFAULT);
 						$userData = [
 							'email' => $email, 
