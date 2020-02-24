@@ -491,7 +491,6 @@ class AccountController extends Controller
 				$order = new Order($orderData);
 				$order->save();
 
-				// TODO: Must be easier than this...
 			// Decrease amount of Items in Stock
 				$shoppingCart_has_products = ShoppingCart_has_product::find('shoppingCart_id = ' .$shoppingCart['id']);
 				foreach($shoppingCart_has_products as $entry)
@@ -502,7 +501,6 @@ class AccountController extends Controller
 					$newProduct->save();
 				}
 
-				// TODO: Must be easier than this...
 			// "Delete" ShoppingCart for User
 				$updatedShoppingCart = new ShoppingCart($shoppingCart);
 				$updatedShoppingCart->setUserIDNull();
@@ -516,7 +514,7 @@ class AccountController extends Controller
 			}
 			else
 			{
-				// TODO: What else?
+				header('Location: ?c=account&a=shoppingcart');
 			}
 		}
 		else

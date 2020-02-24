@@ -7,12 +7,8 @@
             <input type="hidden" name="c" value="products">
             <input type="hidden" name="a" value="products">
 
-    <!--    <label for="productName">NameSearchfield</label>
-            <input type="text" name="productName" id="productName" placeholder="Product Name"> -->
-            
             <div class="filter-item">
                 <!-- <label for="minPrice">Min-Price</label> -->
-                <!-- TODO: Create it more intuitive -->
                 <input type="number" min="0" max=<?=$maxPrice?> step="1" name="minPrice" placeholder=" Min-Price...">
             </div>
             
