@@ -89,7 +89,7 @@ zipName.addEventListener('focusout', function() {
         return;
     } else {
         zipName.style.borderColor = "red";
-        document.getElementById('wrongZIP').innerHTML = 'ZIP may only consist of Numbers and is required!';
+        document.getElementById('wrongZIP').innerHTML = 'ZIP may only consist of Numbers(five numbers) and is required!';
         wrongZIP.style.color = "red";
         x.disabled = true;
         return;
