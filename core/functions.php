@@ -46,7 +46,7 @@ function productsMenu($categories)
     ?>
         <div class="flex-container">
             <div class="flex-item">
-                <a style="color:#ff5757;" href="index.php?c=products&a=products&sale=all">Sale</a>
+                <a href="index.php?c=products&a=products&sale=all">Sale <span style="color:#ff5757">%</span></a>
                 <a href="index.php?c=products&a=products&sortBy=newestFirst">New In</a>
             </div>
             <div class="flex-container-half">

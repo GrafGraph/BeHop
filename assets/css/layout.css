@@ -744,3 +744,7 @@ body {
 #searchIconButton2:hover {
     color: dimgrey;
 }
+
+.fullheight {
+    min-height: 80%;
+}

@@ -1,5 +1,5 @@
 <h1 class="headline form-background">My Shopping Cart</h1>
-<section class="form-background">
+<section class="form-background fullheight">
 <?php 
 // Empty shoppingCart
 if(empty($shoppingCartItems)) : ?>

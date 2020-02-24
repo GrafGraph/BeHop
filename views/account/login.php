@@ -1,5 +1,5 @@
 <h1 class="headline form-background">Login</h1>
-<section class="center form-background">
+<section class="center form-background fullheight">
 	<div class="form-wrap">
 		<div class="account-form">
 			<form method="post">

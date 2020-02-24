@@ -1,5 +1,5 @@
 <h1 class="headline form-background">My Account</h1>
-<section class="center form-background">
+<section class="center form-background fullheight">
 <?php if(!empty($errors)) : ?>
                   <div class= "error">
                      <?php foreach($errors as $error){echo $error."<br>";}?>

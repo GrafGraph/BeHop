@@ -196,6 +196,7 @@
 		</main>
 	</div>
 	<footer>
+	<hr>
 		<a href="?a=index" title="Home" class="noDecoration">BEHOP</a> &copy;
 		<a href="index.php?a=legalDetails">Legal Details</a>
 	</footer>

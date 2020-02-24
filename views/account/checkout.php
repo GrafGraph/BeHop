@@ -1,6 +1,6 @@
 <? if($step === 1) : ?>
     <h1 class="headline form-background">Checkout</h1>
-    <section class="center form-background">
+    <section class="center form-background fullheight">
         <div class="form-wrap">
             <div class="account-form">
                 <h2>Step 1 of 2: Confirm your Information</h2>
@@ -38,7 +38,7 @@
     </section>
 <? elseif($step === 2) : ?>
     <h1 class="headline form-background">Checkout</h1>
-    <section class="center form-background">
+    <section class="center form-background fullheight">
         <div class="form-wrap">
             <div class="account-form">
                 <h2>Step 2 of 2: Payment</h2>
