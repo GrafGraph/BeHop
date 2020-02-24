@@ -1,4 +1,4 @@
-# README des HipHop Online-Shops BeHop 
+# HOWTO BeHop
 ![CodeFactor](https://img.shields.io/badge/PHP-5.4.22-purple)
 ![CodeFactor](https://img.shields.io/badge/xampp-1.8.3-orange)
 ![CodeFactor](https://img.shields.io/badge/MySQL-5.6.16-blue)
@@ -12,7 +12,7 @@ Prüfer: Prof. R. Kruse und K. Friess
 Bereits vordefinierte Account-Zugangsdaten: 
 - email: "admin@fh-erfurt.de" password: "root"
 
-
+*DELETE*
 ## Über das Produkt
 BeHop ist ein HipHop Online-Shop
 ### [SiteMap](https://www.lucidchart.com/invitations/accept/48120419-dd6e-4d54-b51b-972ed3d3a95a)
