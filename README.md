@@ -1,4 +1,7 @@
 # HowTo BeHop
+![CodeFactor](https://img.shields.io/badge/PHP-5.4.22-purple)
+![CodeFactor](https://img.shields.io/badge/xampp-1.8.3-orange)
+![CodeFactor](https://img.shields.io/badge/MySQL-5.6.16-blue)
 
 ## Vorraussetzungen
 - XAMPP (TODO: Versionshinweis)
@@ -6,11 +9,11 @@
 - Browser (Optimiert für Chrome!)
 
 ## Installation
-1. Repository nach *xampp/htdocs* klonen (Ggfs. noch Unterordner **Git** dazwischenschieben...)
+1. Repository nach *xampp/htdocs/* klonen (Ggfs. noch Ordner **Git** zwischen htdocs und BeHop schieben...)
 2. In PHP-MyAdmin den Datenbank-dump **beHop** aus *BeHop/src/database/beHop* Importieren
 
 ## Getting Started
-3. Im Browser http://localhost/BeHop/index.php?a=index aufrufen oder über den Localhost zu BeHop navigieren. 
+- Im Browser http://localhost/BeHop/index.php?a=index aufrufen oder über den Localhost zu BeHop navigieren. 
 
 ### Bereits vordefinierte Account-Zugangsdaten
 - Email: "admin@fh-erfurt.de" Password: "root"
