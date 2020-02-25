@@ -1,4 +1,3 @@
-<!-- @author Anton Bespalov -->
 <h1 class="headline form-background">Change Password</h1>
 <section class="center form-background fullheight">
    <div class="form-wrap">

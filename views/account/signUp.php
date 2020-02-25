@@ -1,4 +1,3 @@
-<!-- @author Anton Bespalov -->
 <h1 class="headline form-background">Registration</h1>
 <section class="center form-background">
 <div class="form-wrap">
