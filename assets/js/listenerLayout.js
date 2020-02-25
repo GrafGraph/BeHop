@@ -1,3 +1,4 @@
+// @author Anton Bespalov
 document.getElementById("searchClick").addEventListener('click', function() {
     var nav = document.getElementById('fullListMin');
     var searchFull = document.getElementById('searchMin');

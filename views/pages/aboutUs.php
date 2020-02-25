@@ -2,7 +2,7 @@
 <section class="banner">
     <img src="assets/images/aboutUs/fashionForThePeople1.png" alt="Fashion for the People">
 </section>
-<article>
+<article id= "articleAboutUs">
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing 
         elit. Aenean commodo ligula eget dolor. Aenean massa 
         <strong>strong</strong>. Cum sociis natoque penatibus 

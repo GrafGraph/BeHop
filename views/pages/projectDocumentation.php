@@ -98,6 +98,7 @@
                         Design
                         <ul>
                             <li>Search</li>
+                            <li>About Us</li>
                             <li>...</li>
                         </ul>
                     </li>
@@ -452,9 +453,28 @@
                     Leider hat die Zeit nicht gereicht, damit das geändert werden kann. 
                 </p>
             </div>
+        <h2>Besonderheiten</h2>
+            <div class="flex-docu-item">
+                <ul><li>ER-Modell: Shoppingcart wird bei User ausgehangen, wenn er bestellt und in Order eingehangen. 
+                    Der Nutzer bekommt dann einen neuen Shoppingcart, während der alte in Order bestehen bleibt.</li>
+                <li>Checkout ist unser mehrseitiges Formular</li>
+                <li>Der Shop und der Code sind auf Englisch, jedoch ist die Dokumentation auf Deutsch und der Shop liefert nur nach Deutschland</li>
+                <li>Das Land in der Datenbank ist immer auf Deutschland</li> 
+                <li>Bis jetzt gibts es noch keine Trennung der Geschlechter, somit sind alle Artikel noch Unisex.</li>
+                <li>Es können noch keine Größen gewählt werden.</li>
+                <li>Momentan gibt es pro Produkt nur ein Bild.</li></ul>
+            
+            <h3>Besondere Features</h3>
+            <ul><li>Wenn ein Suchfeld angeklickt wird, dann wird alles außer der Suchleiste verschwommen.</li>
+                <li>Validierung der Registrierung mit JS, entweder die Eingabefelder werden rot und es erscheint ein Nachricht, die Tipps gibt, oder die Eingabefelder werden grün.</li>
+                <li>Shoppingcart-Counter zeigt an wieviele Produkte im Einkaufswagen sind.</li>
+                <li>Bilder auf der Startseite leiten den Nutzer zu Sales und Produkten weiter.</li>
+                <li>Die Vorratsmechanik, wenn keine Produkte mehr auf Vorrat sind, dann können keine Produkte mehr in den Einkaufswagen gelegt werden</li></ul>
+            </div>
         <h2>Genutzte Technologien</h2>
-            <li>HTML5, CSS3</li>
-            <li>XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22</li>
+        <ul><li>HTML5, CSS3</li>
+            <li>XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22</li></ul>
+            
     </section>
     <br>
 </section>

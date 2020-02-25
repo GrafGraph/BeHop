@@ -747,3 +747,10 @@ body {
 .fullheight {
     min-height: 80%;
 }
+
+#articleAboutUs {
+    max-width: 71%;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
