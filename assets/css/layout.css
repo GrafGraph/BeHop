@@ -1,5 +1,16 @@
 /* Core Layout for all major BeHop-Sites */
 
+@font-face {
+    font-family: OpenSans;
+    src: url('assets/webFonts/OpenSans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url('assets/webFonts/OpenSans/OpenSans-Bold.ttf');
+    font-weight: 600;
+}
+
 .center {
     text-align: center;
 }
@@ -412,7 +423,7 @@ footer {
 }
 
 * {
-    font-family: "Open Sans", sans-serif;
+    font-family: OpenSans, sans-serif;
     box-sizing: border-box;
     margin: 0;
     position: relative;
@@ -721,7 +732,6 @@ html {
 }
 
 body {
-    font-family: sans-serif;
     margin: 0;
     width: 100vw;
     height: 100vh;
