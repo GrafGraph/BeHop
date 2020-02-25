@@ -7,14 +7,8 @@
 	<link rel="shortcut icon" type="image/x-icon" href="assets/images/layout/logo.png">
 	<link rel="stylesheet" type="text/css" href="assets/css/layout.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
 
-	<!-- TODO: Not used... -->
-	<?php if (isset($css) && is_array($css)) : ?>
-		<?php foreach ($css as $index => $file) : ?>
-			<link rel="stylesheet" type="text/css" href="assets/css/<?=$file?>.css">
-		<?php endforeach; ?>
-	<?php endif; ?>
+
 </head>
 <body>
 	<div class="content-wrap">
