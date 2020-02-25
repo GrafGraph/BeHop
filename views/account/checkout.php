@@ -45,9 +45,8 @@
                 <h2>Select Payment Method</h2>
                 <form method="POST" action="?c=account&a=payment">
                     <div>
-                        <!-- TODO: Required machen -->
                         <label class="inline checkout-label" for="paypal">PayPal</label>
-                        <input type="radio" name="paymentMethod" value="paypal" id="paypal" checked="checked">
+                        <input type="radio" name="paymentMethod" value="paypal" id="paypal" checked="checked" required>
                     <div>
                         <label class="inline checkout-label priceOld" for="transfer">Transfer</label>
                         <input type="radio" name="paymentMethod" value="transfer" id="transfer" disabled>

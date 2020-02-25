@@ -503,7 +503,7 @@ class AccountController extends Controller
 				$product['priceForPosition'] = $product['quantity'] * (isset($product['discountPrice']) ? $product['discountPrice'] : $product['price']);
 				$shoppingCartItems[] = $product;
 			}
-			$_SESSION['priceTotal'] = getTotalPrice();	// In Session for later Use in Checkout TODO: Unsafe...
+			$_SESSION['priceTotal'] = getTotalPrice();	// In Session for later Use in Checkout 	WORKAROUND: Satisfies our needs for now but is considered unsafe...
 		}
 		else
 		{

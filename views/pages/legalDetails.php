@@ -37,7 +37,7 @@
         </table>
         <br>
         <h3>Graphics and Image Sources</h3>
-        TODO:
+        TODO: Weitere Bildquellen einfügen
         <table>
             <tr>     
                 <th>Quelle</th>

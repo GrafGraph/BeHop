@@ -18,11 +18,6 @@ class ProductsController extends Controller
 		$this->_params['minPrice'] = floor($minPrice['price']);
 		$this->_params['sales'] = Sales::findAttributes('name', 'id is not null');
 
-		// TODO: catch MaxPrice lower than MinPrice 
-		// if(!((isset($_GET['maxPrice']) && isset($_GET['minPrice'])) && (htmlspecialchars($_GET['maxPrice']) < htmlspecialchars($_GET['minPrice']))))
-		// {
-
-
 		// Which products to display regarding filters
 		$where ='';	
 		// Search-Filters
@@ -142,11 +137,6 @@ class ProductsController extends Controller
 			}
 		}
 		$this->_params['products'] = $products;
-		// }
-		// else
-		// {
-		// 	$this->_params['priceError'] = 'Max Price must be higher than Min Price...';
-		// }
 	}
 
 	// @author Michael Hopp

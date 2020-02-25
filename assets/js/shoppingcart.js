@@ -25,7 +25,7 @@ function remove(button, ID) {
                             window.location = "index.php?c=account&a=shoppingcart";
                         }
                         document.getElementById("shoppingcartContent1").innerHTML = resJson.shoppingcartContent;
-                        document.getElementById("shoppingcartContent2").innerHTML = resJson.shoppingcartContent; // TODO: Workaround until Multiple-Nav was updated and is unique...
+                        document.getElementById("shoppingcartContent2").innerHTML = resJson.shoppingcartContent; // WORKAROUND: Workaround until Multiple-Nav was updated and is unique...
                     }
                     if (resJson.total) { // Set new Total
                         console.log(resJson.total);
@@ -69,13 +69,13 @@ inputBoxSearch.style.display = "block";
                          //     window.location = "index.php?c=account&a=shoppingcart";
                          // }
                          document.getElementById("shoppingcartContent1").innerHTML = resJson.shoppingcartContent;
-                         document.getElementById("shoppingcartContent2").innerHTML = resJson.shoppingcartContent; // TODO: Workaround until Nav was updated and is unique...
+                         document.getElementById("shoppingcartContent2").innerHTML = resJson.shoppingcartContent; // WORKAROUND: Workaround until Nav was updated and is unique...
                      }
                      if (resJson.total !== null) {
                          document.getElementById('priceTotal').innerHTML = parseFloat(resJson.total).toFixed(2);
                      }
                      if (resJson.quantity !== null) {
-                         if (resJson.quantity <= 0) { // TODO: Nötig?
+                         if (resJson.quantity <= 0) {
                              document.getElementById(id).remove();
                          }
                          prev.value = parseInt(resJson.quantity);
