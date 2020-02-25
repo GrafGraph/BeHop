@@ -1,8 +1,6 @@
 <?php
 // @author Anton Bespalov
 // namespace beHop\database;
-// public static function getConnection()
-// {
     $dbName = 'behop';
     $dns = 'mysql:dbname='.$dbName.';host=localhost';
     $dbuser = 'root';
