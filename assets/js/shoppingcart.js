@@ -38,7 +38,8 @@ function remove(button, ID) {
         }
     }
 }
-
+var inputBoxSearch = document.getElementById('InputSearchFieldForFilter');
+inputBoxSearch.style.display = "block";
 // AJAX for Updating the Quantity of Products in Shopping Cart won't be featured in this release.
 /* 
  function update(button, id) {

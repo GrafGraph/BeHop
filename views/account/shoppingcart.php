@@ -1,5 +1,17 @@
 <h1 class="headline form-background">My Shopping Cart</h1>
 <section class="form-background fullheight">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+// @author Anton Bespalov
+$(document).ready(function(){
+  $("#InputSearchFieldForFilter").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".shoppingcart-container-inner").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 <?php 
 if(empty($shoppingCartItems)) : ?>  <!-- Empty shoppingCart -->
     <div class="center">
@@ -20,8 +32,10 @@ if(empty($shoppingCartItems)) : ?>  <!-- Empty shoppingCart -->
                 </div>
             <? endforeach;
         endif;?>
+        
     <div class="form-wrap"> <!-- Left and right border -->
         <div class="shoppingcart-container-outer">  <!-- Outer Flex Container for Items -->
+        <input style= "display: none" id="InputSearchFieldForFilter" type="text" placeholder="Search..">
             <section class="shoppingcart-form" id="form-shoppingcart">
                 <? foreach($shoppingCartItems as $item) :
                     $quantity = isset($_POST['quantity'.strval($item['id'])]) ? $_POST['quantity'.strval($item['id'])] : $item['quantity'];
