@@ -38,6 +38,17 @@ function remove(button, ID) {
         }
     }
 }
+src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+
+// @author Anton Bespalov
+$(document).ready(function() {
+    $("#InputSearchFieldForFilter").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".shoppingcart-container-inner").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
 var inputBoxSearch = document.getElementById('InputSearchFieldForFilter');
 inputBoxSearch.style.display = "block";
 // AJAX for Updating the Quantity of Products in Shopping Cart won't be featured in this release.
