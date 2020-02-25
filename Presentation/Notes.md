@@ -31,7 +31,6 @@
 - Wont fix-Issues
 - Mehr Bilder
 - Größen zu den Produkten
-- Geschlechtertrennung?
 - ...
 
 ## Besonderheiten
@@ -47,3 +46,15 @@
 - Unisex
 - Nur ein Bild pro Produkt
 - ...
+
+## Was haben wir zur Ursprünglichen Idee geändert?
+- Keine Slider, weil die unruhig wirken -> Accessability
+- Weniger Bunt als geplant -> Accessability
+- Keine Geschlechtertrennung, weil es ein veraltetes Konzept ist. -> Abheben von Konkurrenz. Eigene progressive Marke
+- Mehr Inspiration bei anderen Mode-Genres als HipHop gesucht. -> Asos, Zalando
+- HipHop vom Klischee entfernt und eher Richtung Urban und Streetwear + Hipster gegangen.
+- Die Farbe Rot stärker vertreten als geplant -> Logo
+
+## Design
+- Kontraste Entschärft und viel Grau verwendet -> Könnte Farbenblinden das Erlebnis erschweren, beruhight aber die Seite und lässt sie angenehmer wirken
+- 
