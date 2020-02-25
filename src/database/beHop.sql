@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 17. Feb 2020 um 16:52
+-- Erstellungszeit: 25. Feb 2020 um 16:58
 -- Server-Version: 10.4.11-MariaDB
 -- PHP-Version: 7.4.1
 
@@ -49,7 +49,8 @@ INSERT INTO `address` (`id`, `createdAt`, `updatedAt`, `city`, `street`, `number
 (1, '2020-01-12 07:50:28', NULL, 'Erfurt', 'Altonaer Straße', '25', '99085', 'Germany'),
 (2, '2020-01-13 16:39:12', NULL, 'Erfurt', 'Grolmannstraße', '13', '99085', 'Germany'),
 (5, '2020-02-15 19:05:39', NULL, 'Erfurt', 'Altonaer Straße', '25', '99085', NULL),
-(6, '2020-02-15 22:29:40', NULL, 'Erfurt', 'Altonaer Straße', '24', '99085', NULL);
+(6, '2020-02-15 22:29:40', NULL, 'Erfurt', 'Altonaer Straße', '24', '99085', NULL),
+(7, '2020-02-25 15:58:28', NULL, 'Erfurt', 'Altonaer Straße', '13', '99085', NULL);
 
 -- --------------------------------------------------------
 
@@ -103,20 +104,20 @@ INSERT INTO `image` (`id`, `createdAt`, `updatedAt`, `imageUrl`, `altText`, `pro
 (3, '2020-01-18 17:42:54', NULL, 'assets/images/sales/endOfSeasonSale20.png', 'End of Season Sale: 20 Percent off', NULL, 3),
 (5, '2020-01-20 18:18:10', NULL, 'assets/images/products/mainImage-3.png', 'Adidas NMD_R1 black', 4, NULL),
 (6, '2020-01-20 18:37:17', NULL, 'assets/images/products/mainImage-4.png', 'Nike black Jacket', 5, NULL),
-(8, '2020-01-20 20:14:06', NULL, 'assets/images/sales/WinterSale.png', 'Winter Sale', NULL, 2),
+(8, '2020-01-20 20:14:06', NULL, 'assets/images/sales/WinterSale.png', 'Winter Sale: 15 Percent off', NULL, 2),
 (9, '2020-01-20 18:37:17', NULL, 'assets/images/products/mainImage-5.jpg', 'White T-Shirt', 6, 2),
 (10, '2020-01-20 18:37:17', NULL, 'assets/images/products/mainImage-6.png', 'Black Balenciaga Hoodie', 7, NULL),
 (11, '2020-02-15 19:31:55', NULL, 'assets/images/products/mainImage-7.png', 'Grey Stretch Jeans with Cord', 8, NULL),
 (12, '2020-02-15 19:40:07', NULL, 'assets/images/products/mainImage-8.png', 'Sidemen Hazard Hoodie in Black', 9, NULL),
-(14, '2020-02-15 19:55:42', NULL, 'assets/images/products/mainImage-9.png', 'Checked T-Shirt', 10, NULL),
-(15, '2020-02-15 19:59:00', NULL, 'assets/images/products/mainImage-10.png', 'Cannabis Socks', 11, NULL),
-(16, '2020-02-15 20:00:16', NULL, 'assets/images/products/mainImage-11.png', 'Taco Sock, yay!', 12, NULL),
+(14, '2020-02-15 19:55:42', NULL, 'assets/images/products/mainImage-9.png', 'White Checked T-Shirt', 10, NULL),
+(15, '2020-02-15 19:59:00', NULL, 'assets/images/products/mainImage-10.png', 'Purple Cannabis Socks', 11, NULL),
+(16, '2020-02-15 20:00:16', NULL, 'assets/images/products/mainImage-11.png', 'Taco Socks, yay!', 12, NULL),
 (19, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-12.png', 'Black Urban Nike Cap', 15, NULL),
-(21, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-14.png', 'Balenciaga SPEED TRAINER', 17, NULL),
-(22, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-15.png', 'BALENCIAGA TRIPPLE S', 18, NULL),
-(23, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-16.png', 'Givenchy Hoodie with a red stripe', 19, NULL),
-(24, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-17.png', 'Gucci Hoodie with a tiger on the back', 20, NULL),
-(25, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-18.png', 'Grey Nike jacket', 21, NULL);
+(21, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-14.png', 'Black Balenciaga SPEED TRAINER', 17, NULL),
+(22, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-15.png', 'BALENCIAGA TRIPPLE S Shoes', 18, NULL),
+(23, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-16.png', 'Red Givenchy Hoodie', 19, NULL),
+(24, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-17.png', 'Green Gucci Pullover with Logo and Deadpool Illustration', 20, NULL),
+(25, '2020-02-15 20:09:39', NULL, 'assets/images/products/mainImage-18.png', 'Grey soft Nike jacket', 21, NULL);
 
 -- --------------------------------------------------------
 
@@ -169,21 +170,21 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`id`, `createdAt`, `updatedAt`, `name`, `price`, `color`, `brand`, `numberInStock`, `description`, `category_id`, `sales_id`) VALUES
 (1, '2020-01-12 08:04:22', NULL, 'Jordans Supercool', '69.99', 'White', 'Jordan', 5, 'The hot and new Jordans Model SUPERCOOL: Comfort in its best looking way!', 1, 3),
 (2, '2020-01-12 10:23:28', NULL, 'Camouflage Cargo', '19.99', 'Grey', 'BeHop', 0, 'Camouflage Military Cargo Pants. Hip hop Skateboard Bib Overall Pants', 2, 2),
-(4, '2020-01-20 18:20:15', NULL, 'adidas Original NMD_R1', '140.00', 'Black', 'Adidas', 45, 'The nicest black shoe on the market, everyone want this shoe. It is a special edition and extremely rare.', 1, NULL),
-(5, '2020-01-20 18:36:15', NULL, 'Nike Academy 18 Track Jacket', '39.95', 'Black', 'Nike', 12, 'Best jacket for Sports', 4, 2),
-(6, '2020-01-20 18:36:15', NULL, 'e.s. Funktions T-Shirt poly cotton', '22.99', 'White', 'Engelbert Strauß', 22, 'Nice T-Shirt for everyone', 3, 2),
-(7, '2020-01-20 18:36:15', NULL, 'Balenciaga Mode Hoodie', '359.99', 'Black', 'Balenciaga', 22, 'The best Hoodie on the Market', 5, NULL),
-(8, '2020-02-15 19:30:27', NULL, 'Stretch Jeans', '49.99', 'Grey', 'Etre-Fort', 9, 'Stretch Jeans with Cord. Parkour-Style', 2, NULL),
+(4, '2020-01-20 18:20:15', NULL, 'adidas Original NMD_R1', '140.00', 'Black', 'Adidas', 45, 'Special edition. Made in Germany.', 1, NULL),
+(5, '2020-01-20 18:36:15', NULL, 'Nike Academy 18 Track Jacket', '39.95', 'Black', 'Nike', 12, 'Water-Resistent. Good for Outdoor Sports.', 4, 2),
+(6, '2020-01-20 18:36:15', NULL, 'e.s. Funktions T-Shirt poly cotton', '22.99', 'White', 'Engelbert Strauß', 22, 'Resilient T-Shirt for everyday Use.', 3, 2),
+(7, '2020-01-20 18:36:15', NULL, 'Balenciaga Mode Hoodie', '359.99', 'Black', 'Balenciaga', 22, 'Simple Design for lots of Money.', 5, NULL),
+(8, '2020-02-15 19:30:27', NULL, 'Stretch Jeans', '49.99', 'Grey', 'Etre-Fort', 9, 'Stretch Jeans with Cord. Parkour-Style.', 2, NULL),
 (9, '2020-02-15 19:39:26', NULL, 'SDMN Hazard Hoodie', '34.99', 'Black', 'Sidemen', 7, 'SIDEMEN Hazard Hoodie. 99% Polyester, 1% Badass.', 5, NULL),
-(10, '2020-02-15 19:53:34', NULL, 'Check Shirt', '12.99', 'White', 'Urban Classics', 12, 'Check-Figures not included', 3, NULL),
-(11, '2020-02-15 19:57:38', NULL, 'Cannabis Socks', '5.99', 'Purple', 'Urban Classics', 19, '100% Hemp', 7, NULL),
-(12, '2020-02-15 19:59:50', NULL, 'Taco Socks', '9.99', 'Black', 'BeHop', 99, 'Snack on the Sock', 7, 3),
-(15, '2020-02-15 20:08:55', NULL, 'Nike Basecap ', '23.99', 'Black', 'Nike', 6, 'Urban Outdoor Baseball Cap', 6, NULL),
-(17, '2020-02-15 20:08:55', NULL, 'Balenciaga SPEED TRAINER', '585', 'Black', 'Balenciaga', 23, "The ultimate black SPEED TRAINER whith this shoe u can jump two times higher!!!!" , 1, NULL),
-(18, '2020-02-15 20:08:55', NULL, 'BALENCIAGA Triple S Sneakers', '745', 'Black', 'Balenciaga', 2, "This limited shoe is really pretty" , 1, NULL),
-(19, '2020-02-15 20:08:55', NULL, 'GIVENCHY Oversize-Hoodie', '950', 'Black', 'Givenchy', 2, 'This black hoodie is 100% cotton with a briliant design!' , 5, NULL),
-(20, '2020-02-15 20:08:55', NULL, 'GUCCI Oversize-Hoodie', '1500', 'Black', 'Gucci', 7, 'Pretty Gucci Logo on the front site and a tiger on the back.' , 5, NULL),
-(21, '2020-02-15 20:08:55', NULL, 'Grey Nike Jacket', '55', 'Grey', 'Nike', 55, 'A Grey jacket from Nike, this jacket is really warm and soft' , 4, 2);
+(10, '2020-02-15 19:53:34', NULL, 'Check Shirt', '12.99', 'White', 'Urban Classics', 12, 'Chess-Figures not included.', 3, NULL),
+(11, '2020-02-15 19:57:38', NULL, 'Cannabis Socks', '5.99', 'Purple', 'Urban Classics', 19, '100% Fairtrade Hemp.', 7, NULL),
+(12, '2020-02-15 19:59:50', NULL, 'Taco Socks', '9.99', 'Black', 'BeHop', 99, 'Snack on the Sock.', 7, 3),
+(15, '2020-02-15 20:08:55', NULL, 'Nike Basecap ', '23.99', 'Black', 'Nike', 6, 'Urban Outdoor Baseball Cap.', 6, NULL),
+(17, '2020-02-15 20:08:55', NULL, 'Balenciaga SPEED TRAINER', '585.00', 'Black', 'Balenciaga', 23, 'Speed Trainer for soft steps. Half Sock half Shoe means extra Comfort?', 1, NULL),
+(18, '2020-02-15 20:08:55', NULL, 'BALENCIAGA Triple S Sneakers', '745.00', 'Black', 'Balenciaga', 2, 'Rugged style. Streetwear Skater.', 1, NULL),
+(19, '2020-02-15 20:08:55', NULL, 'GIVENCHY Oversize-Hoodie', '950.00', 'Red', 'Givenchy', 2, '99% cotton. Girlfriend/Wife approves this Gift.', 5, NULL),
+(20, '2020-02-15 20:08:55', NULL, 'Deadpool GUCCI-Pullover', '1500.00', 'Green', 'Gucci', 7, 'Green Gucci Pullover with Logo and Deadpool Illustration.', 5, NULL),
+(21, '2020-02-15 20:08:55', NULL, 'Grey Nike Jacket', '55.00', 'Grey', 'Nike', 55, 'A Grey jacket from Nike, warm and soft.', 4, 2);
 
 -- --------------------------------------------------------
 
@@ -231,7 +232,8 @@ INSERT INTO `shoppingcart` (`id`, `createdAt`, `updatedAt`, `user_id`) VALUES
 (8, '2020-01-19 09:13:46', NULL, 6),
 (9, '2020-02-15 19:07:07', '2020-02-15 22:27:41', NULL),
 (10, '2020-02-15 22:27:41', '2020-02-15 22:28:33', NULL),
-(11, '2020-02-15 22:28:33', NULL, 5);
+(11, '2020-02-15 22:28:33', NULL, 5),
+(12, '2020-02-25 15:58:28', NULL, 7);
 
 -- --------------------------------------------------------
 
@@ -284,7 +286,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `createdAt`, `updatedAt`, `email`, `password`, `firstName`, `lastName`, `address_id`) VALUES
 (3, '2020-01-13 16:39:12', NULL, 'MarieS.H@web.de', '$2y$10$Xj1rNHe6SHS20ptb1HbL2Oq4yXXGnFuHA2Qi4r5IEIwIzDSGsgzqe', 'Marie', 'Hartmann', 2),
 (5, '2020-01-13 19:00:33', NULL, 'admin@fh-erfurt.de', '$2y$10$Y6.w6mpMlZioRLUrlw/ETOj7AhktY4ajnWX3TTD/f7D7S.hN9Z76C', 'admin', 'root', 1),
-(6, '2020-01-19 09:13:46', '2020-01-19 11:05:04', 'marie.hartmann@uni-erfurt.de', '$2y$10$dCkDEAV4thuxSt.RC7XW9e74p9xWXvdUc3UohnGWYWRXZ0luRYKyG', 'Marie', 'Hartmann', 2);
+(6, '2020-01-19 09:13:46', '2020-01-19 11:05:04', 'marie.hartmann@uni-erfurt.de', '$2y$10$dCkDEAV4thuxSt.RC7XW9e74p9xWXvdUc3UohnGWYWRXZ0luRYKyG', 'Marie', 'Hartmann', 2),
+(7, '2020-02-25 15:58:28', NULL, 'kristoff.kruse@fh-erfurt.de', '$2y$10$8GU4bbj8tL9lOAm8Fzee4e45XVIIxfpeLE6Ej3lsZP5z1sANz7XZy', 'Kristoff', 'Kruse', 7);
 
 --
 -- Indizes der exportierten Tabellen
@@ -365,7 +368,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT für Tabelle `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT für Tabelle `category`
@@ -377,7 +380,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT für Tabelle `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT für Tabelle `order`
@@ -389,7 +392,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT für Tabelle `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT für Tabelle `sales`
@@ -401,7 +404,7 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT für Tabelle `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT für Tabelle `shoppingcart_has_product`
@@ -413,7 +416,7 @@ ALTER TABLE `shoppingcart_has_product`
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints der exportierten Tabellen
