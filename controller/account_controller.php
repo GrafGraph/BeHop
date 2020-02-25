@@ -237,7 +237,7 @@ class AccountController extends Controller
 				$password1 		= $_POST['password1'] ?? null;
 				$password2 		= $_POST['password2'] ?? null;
 				$error 			= [];
-				// Testing if all data are valid
+				// Testing if data is valid
 				$userData = [
 					'email' => $_POST['email'],
 					'firstName' => $_POST['firstName'],

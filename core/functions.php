@@ -33,13 +33,6 @@ function thereAreShoppingCartItemsInSession()
     return $result;
 }
 
-// TODO: Rebuild as Method of Image.class
-// @author Michael Hopp
-function getImagesToProductID($productID)
-{
-    return Image::find('product_id = ' . $productID);
-}
-
 // Prints 'selected' to display which filter option on products was used
 // @author Michael Hopp
 function printSelectedIfSet($filterOption, $option)
