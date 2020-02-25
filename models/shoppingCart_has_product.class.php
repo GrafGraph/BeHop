@@ -1,4 +1,5 @@
 <?php
+// @author Anton Bespalov
 namespace beHop;
 class ShoppingCart_has_product extends BaseModel
 {

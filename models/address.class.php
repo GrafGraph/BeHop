@@ -1,5 +1,6 @@
 <?php
 namespace beHop;
+// @author Anton Bespalov
 class Address extends BaseModel
 {
     const TABLENAME ='`address`';
@@ -24,6 +25,7 @@ class Address extends BaseModel
         return self::findOne($where);
     }
 
+    // @author Michael Hopp & Anton Bespalov(minimale Fehlerkorrektur)
     // Checks Reg-Exes for Address and returns Errors if invalid
     public static function validateAddress($newAddress, &$insertError){
         $newAddress->validate($insertError);

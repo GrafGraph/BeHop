@@ -1,4 +1,5 @@
 <?php
+// @author Anton Bespalov
 namespace beHop;
 class Product extends BaseModel
 {
