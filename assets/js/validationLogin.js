@@ -1,3 +1,4 @@
+// @author Anton Bespalov
 var emailRegEx = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 var emailName2 = document.getElementById('email');
 emailName2.addEventListener('focusout', function() {

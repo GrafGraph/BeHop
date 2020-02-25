@@ -72,15 +72,26 @@
             <tr>
                 <td>
                     <a href="https://de.cleanpng.com/png-3wxi02/">Cleanpng.com</a>
-                    <br>
-                    <a href="https://www.nicepng.com/ourpic/u2y3q8y3a9r5y3u2_urban-outdoor-snapback-cap-baseball-cap/">Nicepng.com</a>
-                    <br>
-                    <a href="http://www.pngmart.com/image/92210">Pngmart.com</a>
-                    <br>
-                    <a href="https://www.pngfuel.com/free-png/oczup">Pngfuel.com</a>
-                    <br>
                 </td>
-                <td>TODO</td>
+                <td>Baseball Cap</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://www.nicepng.com/ourpic/u2y3q8y3a9r5y3u2_urban-outdoor-snapback-cap-baseball-cap/">nicepng.com</a>
+                </td>
+                <td>Baseball Cap</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="http://www.pngmart.com/image/92210">pngmart.com</a>
+                </td>
+                <td>Taco Socks</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://www.pngfuel.com/free-png/oczup">pngfuel.com</a>
+                </td>
+                <td>Socks</td>
             </tr>
             <tr>
                 <td>

@@ -38,7 +38,7 @@
 							<!-- hidden fields for controller and action location -->
 							<input type="hidden" name="c" value="products">
 							<input type="hidden" name="a" value="products">
-							<input style="width:100%;" type="text" name="search" placeholder="Search..." id="mainSearch">
+							<input style="width:100%;" title="SearchField" type="text" name="search" placeholder="Search..." id="mainSearch">
 							<button style="all:initial; display:inline; position:absolute; cursor:pointer; margin-left:1%"><img style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>		
 						</form>
 					</li>
@@ -101,7 +101,7 @@
 							<!-- hidden fields for controller and action location -->
 							<input type="hidden" name="c" value="products">
 							<input type="hidden" name="a" value="products">
-							<input style="width:100%; height: 35px" type="text" name="search" placeholder="Search...">
+							<input style="width:100%; height: 35px" title="SearchField" type="text" name="search" placeholder="Search...">
 							<button style="all:initial; display:inline; position:absolute; cursor:pointer;"><img style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>		
 						</form>
 					</li>
@@ -131,10 +131,10 @@
 			<form method="GET" action="index.php?c=products&a=products">
 				<input type="hidden" name="c" value="products">
 				<input type="hidden" name="a" value="products">
-				<input class="inputSearch" type="text" name="search" placeholder="Search..." id="mainSearch2" style="float: left; padding: 0;">
+				<input class="inputSearch" title="SearchField" type="text" name="search" placeholder="Search..." id="mainSearch2" style="float: left; padding: 0;">
 				<button id= "searchIconButton" style="all:initial; display:inline; position:relative; cursor:pointer; float: left; width: 10%; height: 40px; margin-top: 20px;"><img  style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
 			</form>
-			<div id="backToNav"><img src="assets/images/layout/smallXWhite.png"  alt="X" class="navIcon"></div>
+			<div id="backToNav"><img src="assets/images/layout/smallXWhite.png"  alt="X-for closing the search field" class="navIcon"></div>
 				<div class="clear"></div>
 			</div>
 			<nav class="BeHopGrey3" id="fullListMin2">
@@ -152,7 +152,7 @@
 						<form method="GET" action="index.php?c=products&a=products">
 							<input type="hidden" name="c" value="products">
 							<input type="hidden" name="a" value="products">
-							<input style="width:100%; height: 35px;" type="text" name="search" placeholder="Search...">
+							<input style="width:100%; height: 35px;" title="SearchField" type="text" name="search" placeholder="Search...">
 							<button style="all:initial; display:inline; position:absolute; cursor:pointer;"><img style="height:35px; " type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>		
 						</form>
 					</li>
@@ -184,10 +184,10 @@
 			<form method="GET" action="index.php?c=products&a=products">
 				<input type="hidden" name="c" value="products">
 				<input type="hidden" name="a" value="products">
-				<input class="inputSearch2" type="text" name="search" placeholder="Search..." id="mainSearch3" style="float: left;">
+				<input class="inputSearch2" title="SearchField" type="text" name="search" placeholder="Search..." id="mainSearch3" style="float: left;">
 				<button id= "searchIconButton2" style="all:initial; display:inline; position:relative; cursor:pointer;"><img style="float: left; width: 36px; height: 36px; margin-top: 22px;"  type="submit"src="assets/images/layout/lens.png" alt="Lens Icon for Search"></img></button>
 			</form>
-			<div id="backToNav2"><img src="assets/images/layout/smallXWhite.png" style="width: 36px; height: 36px;  margin-left: 88%; margin-top: -55px;" alt="X"></div>
+			<div id="backToNav2"><img src="assets/images/layout/smallXWhite.png" style="width: 36px; height: 36px;  margin-left: 88%; margin-top: -55px;" alt="X-for closing the search field"></div>
 				<div class="clear"></div>
 			</div>
 		</header>

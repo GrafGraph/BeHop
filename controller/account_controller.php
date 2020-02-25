@@ -237,7 +237,7 @@ class AccountController extends Controller
 				$password1 		= $_POST['password1'] ?? null;
 				$password2 		= $_POST['password2'] ?? null;
 				$error 			= [];
-
+				// Testing if data is valid
 				$userData = [
 					'email' => $_POST['email'],
 					'firstName' => $_POST['firstName'],
@@ -329,6 +329,7 @@ class AccountController extends Controller
 					$this->_params['errors'] = $error;
 					return false;
 				}
+				// if everything ok -> saving data
 				else
 				{
 					$address_data = Address::findOne('city = "' . $city . '" and street = "' . $street . '" and number = "' . $number . '" and zip = "' . $zip . '";');

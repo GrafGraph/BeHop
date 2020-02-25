@@ -757,3 +757,10 @@ body {
 .fullheight {
     min-height: 80%;
 }
+
+#InputSearchFieldForFilter {
+    max-width: 30%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
