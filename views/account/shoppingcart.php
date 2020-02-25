@@ -23,7 +23,6 @@ if(empty($shoppingCartItems)) : ?>  <!-- Empty shoppingCart -->
         
     <div class="form-wrap"> <!-- Left and right border -->
         <div class="shoppingcart-container-outer">  <!-- Outer Flex Container for Items -->
-        <input style= "display: none" id="InputSearchFieldForFilter" type="text" placeholder="Search..">
             <section class="shoppingcart-form" id="form-shoppingcart">
                 <? foreach($shoppingCartItems as $item) :
                     $quantity = isset($_POST['quantity'.strval($item['id'])]) ? $_POST['quantity'.strval($item['id'])] : $item['quantity'];
