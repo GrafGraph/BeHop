@@ -4,7 +4,8 @@
                   <div class= "error">
                      <?php foreach($errors as $error){echo $error."<br>";}?>
                   </div>
-               <?php endif; ?><br>
+                  <br>
+               <?php endif; ?>
   <?if(isset($insertError)) : ?>
       <div class="error">
       <?if(is_array($insertError)) :
@@ -17,6 +18,7 @@
           <br>
       <?endif;?>
     </div>
+    <br>
   <?endif;?>
   <? if(isset($passwordChanged) && !empty($passwordChanged)) :?>
       <div class="success">

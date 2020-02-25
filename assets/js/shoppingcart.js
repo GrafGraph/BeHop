@@ -1,3 +1,4 @@
+// @author Michael Hopp
 function remove(button, ID) {
     event.stopPropagation(); // no send to the top element
     event.preventDefault(); // no default action on submit

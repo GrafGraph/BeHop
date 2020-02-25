@@ -764,3 +764,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+.aboutUs * {
+    line-height: 170%;
+}
