@@ -2,10 +2,13 @@
 <h1 class="headline form-background">Projektdokumentation</h1>
 <section class="center form-background">
     <section class="docu-wrap">
-    <div class="flex-docu-item">
+    <div >
         <p>
             Erstellt von Anton Bespalov und Michael Hopp im Rahmen des Website-Projekts in GWP und DWP an der 
-            Fachhochschule Erfurt. Prüfer: Prof. R. Kruse und K. Friess
+            Fachhochschule Erfurt.
+        </p>
+        <p>
+            Prüfer: Prof. R. Kruse und K. Friess
         </p>
     </div>
 
@@ -40,7 +43,7 @@
                             <li>Legal Details</li>
                             <li>Landing/Starting Page</li>
                             <li>Banner, Icons, Startseiten Kachel</li>
-                            <li>...</li>
+                            <li>Lektorat Projektdokumentation</li>
                         </ul>
                     </li>
 
@@ -104,105 +107,108 @@
                 </ul>
             </div>
         </div>
-        <div class="flex-docu-item">
+        <div >
             <h2>Inhalt</h2>
+            <br>
                 <h3>Fiktiver Kunde</h3>
                     <p>
-                        Der Kunde für dieses Produkt wäre ein Händler oder ein Laden, der Hip-Hop-Klamotten verkauft.
-                        Mit der Website soll die Möglichkeit geboten werden, dass die Artikel von dem Kunden Online veröffentlicht werden 
-                        und durch die Website auch verkauft werden können. Der Websitename entsprang aus den Nachnamen der Entwickler
-                        Anton (Be)spalov und Michael (Hop)p.  
+                        Der Kunde für dieses Produkt wäre ein Händler oder ein Laden, der Hip-Hop-Kleidung verkauft.
+                        Mit der Website soll die Möglichkeit geboten werden, dass die Artikel von dem Kunden online veröffentlicht werden 
+                        und durch die Website auch verkauft werden können. Der Website-name entstand aus der Kombination der Nachnamen beider Entwickler:
+                        Anton <strong>Be</strong>spalov und Michael <strong>Hop</strong>p.  
                     </p>
-                <h3>Endgültigen Websitenutzer</h3>
+                <h3>Die endgültigen Website-nutzer</h3>
                 <p>
-                    Die endgültigen Websitenutzer sind durchschnittliche Verbraucher, die online Klamotten bestellen wollen.
+                    Die endgültigen Website-nutzer sind an HipHop-Fashion interessierte Verbraucher, die online Kleidung bestellen wollen.
                 </p>
         </div>
-        <div class="flex-docu-item">
-            <h2>Ergebnis der Recherchen</h2>
+        <div >
+            <h3>Ergebnis der Recherchen</h3>
                     <p>
-                        Viele Websiten, die ein ähnliches Angebot haben, haben einen weißen Hintergrund, deswegen haben wir uns auch für einen 
-                        weißen Hintergrund entschieden.(siehe <a href="https://www.asos.com/">asos.com</a> oder <a href="https://www.def-shop.com/">def-shop.com</a>)
-                        Für das Design unserer Landingpage haben wir uns entschieden, weil <a href="https://www.def-shop.com/">def-shop.com</a> ein ähnliches Design hat 
-                        und es uns am meisten zugesagt hat.
-                        Es war von Anfang an geplant, dass ein Schlichtes/Minimalistisches Menü implementiert wird. (sowie bei <a href="https://www.asos.com/">asos.com</a>)
-                        Wir haben uns dafür entschieden, da wir kein überladenes Menü haben wollten. 
-                        Ebenso haben wir ein selbst entwickeltes Logo, das als Homebutton in jeder Ansicht und auf jeder Seite Verwendet wird. (Ebenso wie bei <a href="https://www.asos.com/">asos.com</a> und <a href="https://www.def-shop.com/">def-shop.com</a>)
-                        Weiterhin haben wir die Produktdarstellung an die Produktdarstellung von der Seite <a href="https://www.snipes.com/">snipes.com</a> angelehnt.
-                        Das Login und die Registrierung wurden auf unserer Website schlicht gehalten, sowie auf der Seite <a href="https://www.def-shop.com/">def-shop.com</a>.
+                        Unser Design lehnt an ein gängiges Design von beliebten Onlineshops in der Street-Fashion-Branche an: Hier dominiert ein weißer Hintergrund und ein 
+                        minimalistisches, oftmals in Grautönen gehaltenes Design 
+                        (siehe zum Beispiel <a href="https://www.asos.com/">asos.com</a> oder <a href="https://www.def-shop.com/">def-shop.com</a>).
+                        Die Landingpage ist von <a href="https://www.def-shop.com/">def-shop.com</a> inspiriert, die mit ihrer Modernität und gleichzeitigen Schlichheit überzeugt.
+                        Darüber hinaus waren wir vom minimalistischen Menü von <a href="https://www.def-shop.com/">def-shop.com</a> sehr angetan. 
+                        Ebenso entwickelten wir ein eigenes Logo, das als Homebutton in jeder Ansicht und auf jeder Seite verwendet wird 
+                        (orientiert sich an <a href="https://www.asos.com/">asos.com</a> und <a href="https://www.def-shop.com/">def-shop.com</a>).
+                        Weiterhin haben wir die Produktdarstellung an <a href="https://www.snipes.com/">snipes.com</a> angelehnt.
+                        Login und Registrierung wurden auf unserer Website schlicht gehalten, ähnlich zu <a href="https://www.def-shop.com/">def-shop.com</a>.
                     </p>
+                    <br>
         </div>
         <div>
             <h2>Sitemap</h2>
             <br>
             <img src="assets/images/documentation/Sitemap.png">
         </div>
-        <div class="flex-docu-item">
+        <div >
             <h2>Design</h2>
+            <br>
                 <h3>Layouts</h3>
                     <p>
                         Bei den Layouts wurde sich sehr stark an den Layouts von <a href="https://www.asos.com/">asos.com</a>, <a href="https://www.def-shop.com/">def-shop.com</a>
-                        und <a href="https://www.snipes.com/">snipes.com</a> orientiert, weil das die erfolgreichen Seiten, in dieser Branche, sind.
+                        und <a href="https://www.snipes.com/">snipes.com</a> orientiert, weil das die erfolgreichen Seiten in dieser Branche sind.
                     </p>
                 <h3>Farben</h3>
                     <p>
-                        Da unsere Website nicht nur eine normale Website ist, sondern auch den Hip-hop-Lifestyle widerspiegeln soll,
-                        haben wir uns bei so gut wie allen Elementen für einen dunklen Grauton entschieden. Dieser hat eine sehr große Ähnlichkeit 
-                        mit der Farbe von As­phalt und das ist ein klassisches Element der Hip-Hop-Szene. 
-                        Die Schriftfarbe auf der website, ist ein heller Grauton. Dieser hat eine sehr große Ähnlichkeit 
-                        mit der Farbe von Beton und ist ebenfalls ein typisches Element der Hip-Hop-Szene. 
-                        Die Farbe, der Schrift und "Styleelemente", auf der Startseite sind in einem Orange-Rot, weil das einen sehr
-                        angenehmen Kontrast mit den Grautönen hat und auffällig ist.
-                        Ansonsten sind die Bilder auf der Startseite in Schwarz-Weiß, weil das sehr gut mit den Grautönen zusammenspielt und die Schrift
-                        gut dazu passt.    
+                        Da unsere Website den Hip-hop-Lifestyle widerspiegeln soll,
+                        haben wir uns bei vielen Elementen für einen dunklen Grauton entschieden. Dieser hat eine sehr große Ähnlichkeit 
+                        mit der Farbe von As­phalt und das ist ein klassisches Element der Hip-Hop-Szene. Zudem ist der Farbton nicht zu aufdringlich, sodass der Fokus auf dem Rot der Sales 
+                        und den Produkten an sich liegt. Aus diesem Grund heraus wählten wir auch ein helles Grau als Schriftfarbe.
+                        Die Farben der Schrift und "Styleelemente", unter anderem auf der Startseite, sind in einem Orange-Rot gehalten, da diese einen sehr
+                        angenehmen Kontrast mit den Grautönen bilden und zugleich auffällig sind.
+                        Darüber hinaus sind die Bilder der Startseite graustufig dargestellt, da diese zum einen die Coolness des HipHop-Lifestyles widerspiegeln und darüber hinaus sehr 
+                        gut mit dem restlichen Erscheinungsbild der Seite harmonieren.
                     </p>
                     <h3>Schriften</h3>
                     <p>
-                        Die Schriftart auf der Startseite wurde so gewählt, dass Sie möglichst viele junge Menschen anspricht. 
-                        Die restliche Schriftart wurde so gewählt, dass Sie nicht zu langweilig und anschaulich aussieht.
+                        Die Schriftart OpenSans, die wir für Texte verwendet haben, wirkt zugleich modern und zeitlos. In unseren Bildern verwenden wir die Schriftart Edo, die den 
+                        ungezwungenen, freien Lifestyle von HipHop resembliert.
                     </p>
+                    <br>
         </div>
-        <div class="flex-docu-item">
+        <div >
                 <h2>Funktionalitäten</h2>
+                <br>
                 <h3>Navigationsleiste nicht eingeloggt</h3>
         </div>
                 <img src="assets/images/documentation/navigationList.png">
                 <br>
-        <div class="flex-docu-item">
+        <div >
                 <P>
-                    Diese Navigationsleiste ist die standart für Laptops und Bildschirme, die eine Breite von mindestens 1124 Pixeln 
-                    haben. Links ist das Logo von unserer Website zu sehen, wenn man auf das Logo klickt, dann wird man auf die Startseite
-                    weitergeleitet. Wenn "Products" gedrückt wird, dann werden alle unsere Produkte angezeigt oder es wird mithilfe des Dropdownmenüs
-                    direkt gefiltert wonach gesucht wird.
+                    Diese Navigationsleiste ist der Standard für Bildschirme, die eine Breite von mindestens 1124 Pixeln 
+                    aufweisen. Am linken Seitenrand ist das Logo von BeHop zu sehen - Wird auf dieses geklickt, so wird der User auf die Startseite
+                    weitergeleitet. Wird "Products" gedrückt, dann zeigt die Seite alle unsere Produkte an. Mithilfe eines Dropdownmenüs
+                    können diese direkt über Kategorien selektiert werden. 
                 </P>
         </div>
         <br>
         <img src="assets/images/documentation/navigationListProductsDropdownJSfocusin.png">
         <br>
-        <div class="flex-docu-item">
+        <div >
                 <P>
-                    Beim drücken auf "About Us" wird man auf die ""About Us"-Seite weitergeleitet, das ist die Seite, auf der das Wichtigste 
-                    über den Besitzer und seine Philosophie stehen soll.
+                    Über den Link "About Us" wird der User entsprechend auf die "About Us"-Seite von BeHop weitergeleitet: Hier finden User die Firmenphilosophie.
                 </P>
                 <br>
                 <img src="assets/images/documentation/aboutUs.png">
                 <br>
                 <p>
-                    Wenn das Suchfeld angeklickt wird, dann wird der Rest der Website verschwommen angezeigt und regiert, solange es verschwommen
-                    ist, können die Bilder nicht angeklickt werden. Wenn einmal aus der Suchleiste rausgeklickt wird, dann wird die Anzeige normal.
+                    Bei Auswahl des Suchfeldes wird der Rest der Website verschwommen angezeigt. Bilder können währenddessen nicht angeklickt werden. 
+                    Diese Anzeige stellt sich beim Klicken außerhalb der Suchleiste zurück. 
                     Dieser Effekt funktioniert auf jeder Seite.
                 </p>
                 <br>
                 <img src="assets/images/documentation/navigationListSaerchJSfocusin.png">
                 <br>
                 <p>
-                    Wenn das Icon mit dem "Männchen" gedrückt wird, dann wird er Nutzer auf die Login Seite weitergeleitet. 
+                    Über das Icon mit dem "Nutzerprofil" wird der User auf die Login-Seite weitergeleitet. 
                 </p>
                 <br>
                 <img src="assets/images/documentation/login.png">
                 <br>
                 <p>
-                    Wenn das Icon mit dem Einkaufswagen gedrückt wird, dann wird der Nutzer auf seine Einkaufswagenliste weitergeleitet. 
+                   Über Icon mit dem Einkaufswagen wird der Nutzer auf seine Einkaufswagenliste weitergeleitet. 
                     Momentan ist sie leer.
                 </p>
                 <br>
@@ -212,29 +218,29 @@
                 <img src="assets/images/documentation/navigationListTablet.png">
                 <br>
                 <p>
-                    Diese Navigationsleiste ist die Ansicht für Tablets, für eine Breite von 521 Pixeln bis 1123 Pixeln. 
-                    Das Logo, das "Männchen"-Icon und der Einkaufswagen haben die gleichen Funktionen, wie in der Desktopansicht. 
-                    Wenn das Lupen-Icon gedrückt wird, dann werden alle Icons in der Navigationsleiste ausgeblendet und es erscheint ein
-                    Eingabefeld zur Produktsuche. 
+                    Diese Navigationsleiste ist für Bildschirme einer Breite von 521 Pixeln bis 1123 Pixeln (Tablets).
+                    Das Logo, das "Nutzerprofil"-Icon und der Einkaufswagen haben die gleichen Funktionen wie in der Desktopansicht. 
+                    Wird das Lupen-Icon gedrückt, dann werden alle Icons in der Navigationsleiste ausgeblendet und es erscheint ein
+                    Eingabefeld zur Produktsuche.
                 </p>
                 <br>
                 <img src="assets/images/documentation/navigationListTabletSaerchJS.png">
                 <br>
                 <p>
-                   In dem Eingabefeld kann der Nutzer nach Produkten suchen, wenn er auf das Lupen-Icon drückt, dann wird nach dem Artikel gesucht.
-                   Um aus der Suchleiste rauszukommen muss das "X"-Icon gedrückt werden. 
+                   In dem Eingabefeld kann der Nutzer über das Lupen-Icon nach Produkten suchen.
+                   Um aus der Suchleiste rauszukommen, muss das "X"-Icon gedrückt werden.
                 </p>
                 <br>
                 <p>
-                    Wenn das Icon ganz rechts gedrückt wird, dann erscheint ein Dropdownmenü, mit dem die restlichen Seiten
-                    erreicht werden können. 
+                    Über das rechte Icon erscheint ein Dropdownmenü, mit dem die restlichen Seiten
+                    erreicht werden können.
                 </p>
                 <br>
                 <img src="assets/images/documentation/navigationListTabletDropdown.png">
                 <br>
                 <p>
-                    Diese Navigationsleiste ist die Ansicht für Smartphones, für eine Breite bis 520 Pixel. 
-                    Das Logo und die Lupe haben die selben Funktionen wie bei der Tabletansicht. 
+                    Diese Navigationsleiste ist die Ansicht für Bildschirme für eine Breite bis 520 Pixel (Smartphones).
+                    Das Logo und die Lupe haben dieselben Funktionen wie bei der Tabletansicht. 
                 </p>
                 <br>
                 <img src="assets/images/documentation/navigationListSmartPhone.png">
@@ -243,53 +249,53 @@
                 <img src="assets/images/documentation/navigationListSmartPhoneSaerchJS.png">
                 <br>
                 <p>
-                    Wenn das Icon ganz rechts gedrückt wird, dann erscheint ein Dropdownmenü, mit dem die restlichen Seiten
+                    Über Klick auf das rechte Icon erscheint ein Dropdownmenü, mit dem die restlichen Seiten
                     erreicht werden können. 
                 </p>
                 <br>
                 <img src="assets/images/documentation/navigationListSmartPhoneDropdown.png">
                 <br>
                 <p>
-                    Die Funktion, dass alles außer der Navigationsleiste verschwommen wird, wenn die Suchleiste angeklickt wird
+                    Die Funktion, dass alles außer der Navigationsleiste verschwommen wird, sobald die Suchleiste angeklickt wird,
                     funktioniert in der Tabletansicht und Smartphoneansicht auch.  
                 </p>
         </div>
         <h3>Login and Registration</h3>
-        <div class="flex-docu-item">
+        <div >
                 <br>
                 <img src="assets/images/documentation/login.png">
                 <br>
                 <p>
-                    Auf der "Login"-Seite sind zwei Eingabefelder, eins für die Email und das andere für das dazugehörige Passwort.
-                    Wenn eine nicht korrekte Email eingetippt wird, dann wird ein Fehler angezeigt, dass die Email nicht korrekt ist. 
-                    Wenn eine korrkete Emaiadresse und das passende Passwort eingegeben wurde und der "Login now!"-Button gedrückt wurde,
-                    dann wir der Nutzer eingelogt. Wenn die Eingaben nicht korrekt sind, dann wird eine Fehlermeldung ausgegeben. 
+                    Auf der "Login"-Seite sind zwei Eingabefelder: Eines für die Email und das andere für das dazugehörige Passwort.
+                    Wenn eine nicht-korrekte Email eingetippt wird, so wird eine Fehlermeldung angezeigt, dass die Email nicht korrekt ist. 
+                    Werden eine korrekte Emailadresse und das passende Passwort eingegeben sowie der "Login now!"-Button gedrückt,
+                    dann wir der Nutzer eingeloggt. Sind die Eingaben nicht korrekt, so wird eine Fehlermeldung ausgegeben. 
                 </p>
                 <br>
                 <img src="assets/images/documentation/loginError.png">
                 <br>
                 <p>
-                    Falls noch kein Account vorhanden ist, dann kann der Nutzer auf den "Create Account"-Button drücken und sich registrieren.
+                    Falls noch kein Account vorhanden ist, dann kann der Nutzer auf den "Create Account"-Button klicken und sich registrieren.
                 </p>
                 <br>
                 <img src="assets/images/documentation/registration.png">
                 <br>
                 <p>
-                    Für die Registrierung müssen die persönlichen Daten eingegeben werden.
-                    Wenn falsche Daten eingegeben werden, dann werden die Eingabefelder rot und es wird ein Hinweis gegeben, wie die
+                    Für die Registrierung müssen die angeforderten persönlichen Daten eingegeben werden.
+                    Wenn falsche Daten eingegeben werden, so färben sich die Eingabefelder rot und ein Hinweis wird gegeben, wie die
                     Eingabedaten sein müssen.
                 </p>
                 <br>
                 <img src="assets/images/documentation/registrationRedWithJS.png">
                 <br>
                 <p>
-                    Wenn die Daten richtig eingegeben werden, dann werden die Eingabefelder grün.
+                    Wenn die Daten richtig eingegeben werden, dann erscheinen die Eingabefelder grün.
                 </p>
                 <br>
                 <img src="assets/images/documentation/registrationGreenWithJS.png">
                 <br>
                 <p>
-                    Zum registrieren muss der "Register"-Button gedrückt werden. Wenn der Accunt erstellt wurde, wird die "Login"-Seite
+                    Zum Registrieren muss der "Register"-Button gedrückt werden. Wenn der Accunt erstellt wurde, wird die "Login"-Seite
                     automatisch angezeigt.
                 </p>
         </div>
@@ -298,17 +304,17 @@
                 <br>
                 <img src="assets/images/documentation/navigationListLoggedIn.png">
                 <br>
-        <div class="flex-docu-item">
+        <div >
                     <p>
                         Wenn sich der Nutzer eingeloggt hat, dann verändert sich die Navigationsleiste und er hat ein Feld mehr auf der Navigationsleiste
-                        "Logout", wenn er da drauf drückt, dann wird er aus dem Account ausgeloggt. Eine weitere Veränderung ist, wenn man auf das Symbol 
-                        mit dem "Männchen" drückt, dann wird man auf die "My Account"-Seite weitergeleitet.
+                        "Logout". Wird hier drauf geklickt, so wird er aus dem Account ausgeloggt. Über das Symbol 
+                        mit dem "Nutzerprofil" wird man nun auf die "My Account"-Seite weitergeleitet.
                     </p>
                     <br>
                     <img src="assets/images/documentation/account.png">
                     <br>
                     <p>
-                        Die Navigationsleisten haben sich in der Tablet-Ansicht und Smartphone-Ansicht nicht geändert, jedoch kommen in den Dropdownmenüs 
+                        Die Navigationsleisten haben sich in der Tablet- und Smartphone-Ansicht nicht geändert, jedoch kommen in den Dropdownmenüs 
                         noch ein Button für den Loggout dazu. 
                     </p>
                     <br>
@@ -319,161 +325,187 @@
         <br>
         <img src="assets/images/documentation/productsAnzeigeKomplett.png">
         <br>
-        <div class="flex-docu-item">
+        <div >
                     <p>
-                        Hier wird die Anzeige der Produkte angezeigt, ganz oben ist eine Leiste zum Filtern der Artikel. 
-                        Es können die Wunschkriterien eingetragen werden und wenn dann auf den "Filter Now!"-Button gedrückt wird,
-                        dann werden alle Artikel nach den passenden Krieterien ausgesucht. Jedoch kann noch der "Reset Filters"-Button
-                        gedrückt werden, dann werden alle Filter zurückgesetzt.
+                        Hier werden die Produkte angezeigt. Ganz oben ist eine Leiste zum Filtern der Artikel. Hier können Wunschkriterien ausgewählt werden.  
+                        Über den "Filter Now!"-Button werden die ausgewählten Filter anschließend angewandt. Zum Zurücksetzen der Filter fungiert der "Reset Filters"-Button.
                     </p>
         </div>
         <h3>About Us</h3>
         
-        <div class="flex-docu-item">
+        <div >
         <br>
         <img src="assets/images/documentation/aboutUs.png">
         <br>
                     <p>
-                        Auf der "About Us"-Seite wird ein Bild angezeigt und darunter ist ein Text, der die Website ausmachen soll.
+                        Auf der "About Us"-Seite finden User die Firmenphilosphie von BeHop.
                     </p>
         </div>
         <h3> My Account</h3>
-        <div class="flex-docu-item">
+        <div >
         <br>
         <img src="assets/images/documentation/account.png">
         <br>
-                    <p>
-                        Auf der "My Account"-Seite werden die Daten, des zurzeit eingeloggten Nutzers, angezeigt. 
-                        In den Felder, die mit den persönlichen Daten ausgefüllt sind, können neue Daten eingetragen werden und 
-                        dann werden diese, falls sie korrekt sind, geändert. Nachdem neue Daten eingetragen wurden, aber die Daten doch 
-                        nicht geändert werden sollen, kann der "Reset-Changes"-Button gedrückt werden und dann werden die Daten zurückgesetzt.
-                        Ganz unten auf der Seite ist noch ein "Change Password"-Button, wenn der Button gedrückt wird, dann wird die 
-                        "Change-Password"-Seite geladen.
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/changePassword.png">
-                    <br>
-                    <p>
-                        Auf dieser Seite kann das Passwort geändert werden. Wenn das Aktuelle Passwort eingegeben wird und danach 2 mal das 
-                        neue Passwort, dann kann das Passwort, mit dem "Change Passwort"-Button, geändert werden. 
-                    </p>
+        <p>
+            Auf der "My Account"-Seite werden die Daten des zurzeit eingeloggten Nutzers angezeigt. 
+            In den Felder, die mit den persönlichen Daten ausgefüllt sind, können neue Daten eingetragen werden geändert werden, 
+            wenn diese korrekt sind. Über den "Save"-Button werden diese gespeichert. Der "Reset-Changes"-Button setzt die 
+            temporären Änderungen zurück. Ganz unten auf der Seite ist noch ein "Change Password"-Button, durch den das
+            "Change-Password"-Formular geladen wird.
+        </p>
+        <br>
+        <img src="assets/images/documentation/changePassword.png">
+        <br>
+        <p>
+            Auf dieser Seite kann das Passwort geändert werden. Hierfür muss das aktuelle Passwort sowie zweimal das neue Passwort eingegeben werden.
+            Mit dem "Change Passwort"-Button wird das neue Passwort gespeichert.
+        </p>
         </div>
         <h3>Produkte kaufen</h3>
-        <div class="flex-docu-item">
-                    <br>
-                    <img src="assets/images/documentation/productsAnzeige.png">
-                    <br>
-                    <p>
-                        Zuerst muss ein Produkt in der Produktansicht angegklickt werden und wird dann auf eine Seite weitergeleitet,
-                        auf der das Produkt mit mehreren Infos angezeigt wird.
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/addProductToShoppingCart.png">
-                    <br>
-                    <p>
-                        Falls das Produkt in den Einkaufswagen gelegt werden soll, dann muss der "Add to Cart"-Button gedrückt werden. Danach wird eine 
-                        Bestätigung angezeigt, falls das Produkt zur Shopping Cart hinzugefügt wurde. 
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/addedProductToShoppingCart.png">
-                    <br>
-                    <p>
-                        Es ist nicht möglich das Produkt in den Einkaufswagen zu legen, falls die Anzahl der Vorräte erreicht wurde. Es werden 
-                        dann Fehlermeldungen angezeigt. 
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/addProductsMaxInStock.png">
-                    <br>
-                    <p>
-                        Nachdem Produkte zu dem Einkaufswagen hinzugefügt wurden und die Produkte bestellt werden sollen, muss das 
-                        Einkaufswagen-Icon gedrückt werden. Es werden nochmal alle Produkte aufgezeigt, die in den Einkaufswagen gelegt 
-                        wurden.
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/shoppingCartWithProducts.png">
-                    <br>
-                    <p>
-                        Es besteht die Möglichkeit, in dem Einkaufswagen, die Anzahl der zu bestellenden Produkte zu ändern. In dem Eingabefeld
-                        kann die gewünschte Anzahl eingetragen werden und mit dem "Save"-Button gespeichert werden. 
-                        Wenn ein Artikel aus der Liste gelöscht werden soll, dann muss der "X"-Button gedrückt werden und das Produkt wird 
-                        aus dem Einkaufswagen gelöscht. Zum vollenden der Bestellung wird der "Proceed to Checkout"-Button gedrückt. Danach 
-                        werden die persönlichen Daten zur bestätigung nochmal angezeigt.
-                        Wenn die Daten nicht korrekt sind, dann kann der "Change Information"-Button gedrückt werden und es wird die "My Account"-Seite
-                        aufgerufen.
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/checkout.png">
-                    <br>
-                    <p>
-                        Wenn die Daten Korrekt sind und der "Continue"-Button gedrückt wird, wird eine Seite aufgerufen, auf der die
-                        Bezahlmethode ausgewählt werden kann. 
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/checkoutPaymentMethod.png">
-                    <br>
-                    <p>
-                        Zur Zeit ist nur die Bezahlmethode "Paypal" möglich. 
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/checkoutPaymentMethodPaypal.png">
-                    <br>
-                    <p>
-                        Nachdem die Bezahlung vollendet wurde, wird eine Bestätigung angezeigt, dass die Bezahlung vollendet ist.
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/checkoutComplete.png">
-                    <br>
+        <div >
+            <br>
+            <img src="assets/images/documentation/productsAnzeige.png">
+            <br>
+            <p>
+                Wird ein Produkt in der Produktansicht angegklickt, so wird der User auf die entsprechene Detailansicht des Produktes weitergeleitet. 
+                Hier werden dem User weitere Informationen zum Produkt offeriert.
+            </p>
+            <br>
+            <img src="assets/images/documentation/addProductToShoppingCart.png">
+            <br>
+            <p>
+                Ein Produkt wird über Anklicken des "Add to Cart"-Buttons in den Einkaufswagen gelegt. Wurde das Produkt zur Shopping Cart hinzugefügt,
+                so wird eine Bestätigung mit der Anzahl angezeigt.
+            </p>
+            <br>
+            <img src="assets/images/documentation/addedProductToShoppingCart.png">
+            <br>
+            <p>
+                Es ist nicht möglich, das Produkt in den Einkaufswagen zu legen, wenn die maximale Anzahl der Vorräte erreicht wurde. In diesem Fall wird eine
+                Fehlermeldung angezeigt. 
+            </p>
+            <br>
+            <img src="assets/images/documentation/addProductsMaxInStock.png">
+            <br>
+            <p>
+                Möchte der User die - dem Warenkorb hinzugefügten - Produkte bestellen, 
+                so muss dieser zunächst das Einkaufswagen-Icon anwählen. Hier werden alle Produkte aufgezeigt, die in den Einkaufswagen gelegt 
+                wurden.
+            </p>
+            <br>
+            <img src="assets/images/documentation/shoppingCartWithProducts.png">
+            <br>
+            <p>
+                Es besteht die Möglichkeit, die Anzahl der zu bestellenden Produkte im Warenkorb zu ändern. In dem Eingabefeld
+                kann die gewünschte Anzahl eingetragen und mit dem "Save"-Button gespeichert werden. 
+                Über den "X"-Button können Artikel im Warenkorb auch wieder gelöscht werden. Zum Vollenden der Bestellung wird bei einem eingeloggten User
+                der "Proceed to Checkout"-Button gedrückt. Sollte der Nutzer noch nicht eingeloggt ein, so erscheint statt des "Proceed to Checkout"-Buttons 
+                hier der "Log In"-Button, der ihn zum Log In weiterführt. 
+            </p>
+            <br>
+            <img src="assets/images/documentation/checkout.png">
+            <br>
+            <p> Hier werden die persönlichen Daten zur Bestätigung noch einmal angezeigt. Sind die Daten korrekt und wird der "Continue"-Button gedrückt, 
+                so wird eine Seite aufgerufen, auf der die Bezahlmethode ausgewählt werden kann. Sind die Daten nicht korrekt oder aktuell, 
+                dann kann der "Change Information"-Button gedrückt werden und es wird die "My Account"-Seite aufgerufen.
+            </p>
+            <br>
+            <img src="assets/images/documentation/checkoutPaymentMethod.png">
+            <br>
+            <p>
+                Zur Zeit ist nur die Bezahlmethode "Paypal" möglich. 
+            </p>
+            <br>
+            <img src="assets/images/documentation/checkoutPaymentMethodPaypal.png">
+            <br>
+            <p>
+                Bei Beendigung der Bezahlung wird eine Bestätigung darüber angezeigt.
+            </p>
+            <br>
+            <img src="assets/images/documentation/checkoutComplete.png">
+            <br>
         </div>
-        <h2>ER-Modell</h2>
+        <h3>ER-Modell</h3>
             <br>
                 <img src="assets/images/documentation/ER-Modell.png">
             <br>
-        <h2>Rollenmodell</h2>
+        <h3>Rollenmodell</h3>
             <p>
-                In unserem Projekt hatten beide Entwickler die Rolle des Designers und Entwicklers übernommen, alle Designentscheidungen wurden
-                gemeinsam getroffen. Ebenso hatten beide Entwickler ihre eigenen Baustellen an der Entwicklungs des ganzen Systems. 
+                In unserem Projekt haben beide Entwickler die Rolle des Designers und Entwicklers übernommen, alle Designentscheidungen wurden
+                gemeinsam getroffen. Ebenso arbeiteten beide Entwickler an verschiedenen Bereichen des gesamten Systems. 
             </p>
-        <h2>Flussbilddiagramme</h2>
+        <h3>Flussbilddiagramme</h3>
             <br>
-                        <img src="assets/images/documentation/flowChartBestellung.png">
+                <img src="assets/images/documentation/flowChartBestellung.png">
             <br>
             <br>
-                        <img src="assets/images/documentation/FulssdiagrammRegistrierung.png">
+                <img src="assets/images/documentation/FulssdiagrammRegistrierung.png">
             <br>
-        <h2>Herausforderungen und Lösungen</h2>
-            <div class="flex-docu-item">
+        <h3>Herausforderungen und Lösungen</h3>
+            <div >
                 <p>
-                    Eine Herausforderung war, dass wir uns in neue Programmiersprachen einarbeiten mussten, aber nach dem einarbeiten in die ganzen 
-                    Programmiersprachen war es keine große Herausforderungen mehr. Weiterhin hat die Seite <a href="https://stackoverflow.com/">stackoverflow.com</a> 
-                    bei viele Problemen geholfen.
-                    Ein großes Problem ist, dass das responsive Design der Navigationsleiste nicht mit CSS gemacht wurde, die Navigationsleiste
-                    wird zur Zeit mithilfe von ein und ausblenden von verschiedenen Naviagtionsleisten realisiert. Dadurch sind ca. 150 Zeilen Code
-                    redundant. Jedoch wurde es so designed und die Erleuchtung, dass das durch CSS realisiert werden muss kam viel zu spät. 
-                    Leider hat die Zeit nicht gereicht, damit das geändert werden kann. 
+                    Eine Herausforderung war, dass wir uns in neue Programmiersprachen einarbeiten mussten. Hier hat die Seite <a href="https://stackoverflow.com/">stackoverflow.com</a> 
+                    bei viele Problemen geholfen. 
+                    Ungenügend ist zudem, dass das responsive Design der Navigationsleiste nicht mit CSS gemacht wurde. Die Navigationsleiste
+                    wird zur Zeit über das Ein- und Ausblenden verschiedener Naviagtionsleisten realisiert. Dadurch sind ca. 150 Zeilen Code im Layout
+                    redundant. Das hätte mithilfe von CSS realisiert werden müssen, konnte durch Zeitdruck aber nicht realisiert werden. 
+                    Insgesamt wurde das Projekt zu einer ungeahnten Herausforderung, da nicht nur die Komplexität des Projektes zu Beginn, sondern auch das Zeitmanagement im Allgemeinen 
+                    neue Aspekte in unserer Arbeit darstellten. Auch viele Best-practices waren uns während einiger Problemstellungen noch unbekannt. 
                 </p>
             </div>
-        <h2>Besonderheiten</h2>
-            <div class="flex-docu-item">
-                <ul><li>ER-Modell: Shoppingcart wird bei User ausgehangen, wenn er bestellt und in Order eingehangen. 
-                    Der Nutzer bekommt dann einen neuen Shoppingcart, während der alte in Order bestehen bleibt.</li>
-                <li>Checkout ist unser mehrseitiges Formular</li>
-                <li>Der Shop und der Code sind auf Englisch, jedoch ist die Dokumentation auf Deutsch und der Shop liefert nur nach Deutschland</li>
-                <li>Das Land in der Datenbank ist immer auf Deutschland</li> 
-                <li>Bis jetzt gibts es noch keine Trennung der Geschlechter, somit sind alle Artikel noch Unisex.</li>
-                <li>Es können noch keine Größen gewählt werden.</li>
-                <li>Momentan gibt es pro Produkt nur ein Bild.</li></ul>
+        <h3>Besonderheiten</h3>
+            <div >
+                <ul>
+                    <li>ER-Modell: Shoppingcart wird bei User ausgehangen. Wenn er bestellt, wird die Shoppingcart in Order eingehangen. 
+                        Der Nutzer bekommt dann einen neuen Shoppingcart, während der alte in Order bestehen bleibt.</li>
+                    <li>Images können zu Produkten oder Sales gehören</li>
+                    <li>Checkout ist unser mehrseitiges Formular</li>
+                    <li>Der Shop und der Code sind auf Englisch, jedoch ist die Dokumentation auf Deutsch und der Shop liefert nur nach Deutschland</li>
+                    <li>Das Land in der Datenbank ist immer auf Deutschland</li> 
+                    <li>Es gibt keine Trennung der Geschlechter, somit sind alle Artikel unisex.</li>
+                    <li>Es können noch keine Größen gewählt werden.</li>
+                    <li>Momentan gibt es pro Produkt nur ein Bild.</li>
+                </ul>
             
             <h3>Besondere Features</h3>
-            <ul><li>Wenn ein Suchfeld angeklickt wird, dann wird alles außer der Suchleiste verschwommen.</li>
-                <li>Validierung der Registrierung mit JS, entweder die Eingabefelder werden rot und es erscheint ein Nachricht, die Tipps gibt, oder die Eingabefelder werden grün.</li>
-                <li>Shoppingcart-Counter zeigt an wieviele Produkte im Einkaufswagen sind.</li>
-                <li>Bilder auf der Startseite leiten den Nutzer zu Sales und Produkten weiter.</li>
-                <li>Die Vorratsmechanik, wenn keine Produkte mehr auf Vorrat sind, dann können keine Produkte mehr in den Einkaufswagen gelegt werden</li></ul>
+            <ul>
+                <li>Wenn das Suchfeld angeklickt wird, dann erscheint alles außer der Suchleiste verschwommen.</li>
+                <li>Validierung der Registrierung mit JS, entweder die Eingabefelder werden rot und es erscheint eine Nachricht, die Hinweise gibt, oder die Eingabefelder werden grün.</li>
+                <li>Shoppingcart-Counter neben dem dazugehörigen Icon zeigt an, wie viele Produkte sich im Einkaufswagen befinden.</li>
+                <li>Bilder auf der Startseite leiten den Nutzer zu Sales und Produkten mit angewandten Filtern weiter.</li>
+                <li>Vorratsmechanik: Wenn ein Produkt nicht mehr auf Vorrat ist, kann es nicht mehr in den Einkaufswagen gelegt werden. Die vorrätige Anzahl eines Produktes kann
+                    beim Kauf nicht überschritten werden.</li>
+                <li>Das Entfernen von Gegenständen aus dem Warenkorb erfolgt über AJAX ohne Nachladen der kompletten Seite. Dabei wird auch der Shoppingcart-Counter sowie der Gesamtpreis
+                    aktualisiert.
+                </li>
+                <li>Filteroptionen für Produkte werden dynamisch aus der Datenbank generiert</li>
+                <li>Die Session kann wesentliche Informationen für eine Shopping-Cart speichern, ohne dass der Nutzer eingeloggt sein 
+                    muss. Beim Login werden die Inhalte aus Session und Datenbank vereint.
+                </li>
+            </ul>
             </div>
-        <h2>Genutzte Technologien</h2>
+
+        <h3>Ideen der Weiterführung</h3>
+            <ul>
+                <li>Verschiedene Größen für Produkte anbieten</li>
+                <li>Mehr Bilder zu den Produkten</li>
+                <li>Weitere Zahlungsmethoden implementieren (richtige API für Paypal einbauen)</li>
+                <li>Responisve-Nav mithilfe von CSS realisieren</li>
+                <li>AJAX zum Nachladen der Produktliste beim Scrollen</li>
+            </ul>
+
+        <h3>Was haben wir zur ursprünglichen Idee geändert?</h3>
+            <ul>
+                <li>Keine Slider, weil die unruhig wirken -> Accessability</li>
+                <li>Keine Geschlechtertrennung, weil es ein veraltetes Konzept ist -> Abheben von Konkurrenz + Eigene progressive Marke</li>
+                <li>Mehr Inspiration bei anderen Mode-Genres als HipHop gesucht -> Asos, Zalando</li>
+                <li>HipHop vom Klischee entfernt und eher an dessen Grundprinzipien orientiert</li>
+            </ul>
+
+        <h3>Genutzte Technologien</h3>
         <ul><li>HTML5, CSS3</li>
-            <li>XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22</li></ul>
-            
+            <li>XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22</li>
+        </ul>   
     </section>
     <br>
 </section>
