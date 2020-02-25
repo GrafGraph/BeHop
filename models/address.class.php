@@ -25,7 +25,6 @@ class Address extends BaseModel
         return self::findOne($where);
     }
 
-    // @author Michael Hopp & Anton Bespalov(minimal error correction)
     // Checks Reg-Exes for Address and returns Errors if invalid
     public static function validateAddress($newAddress, &$insertError){
         $newAddress->validate($insertError);

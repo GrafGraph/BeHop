@@ -1,4 +1,3 @@
-<!-- @author Anton Bespalov -->
 <link rel="stylesheet" type="text/css" href="assets/css/documentation.css">
 <h1 class="headline form-background">Projektdokumentation</h1>
 <section class="center form-background">
