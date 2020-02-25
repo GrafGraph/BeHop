@@ -1,17 +1,5 @@
 <h1 class="headline form-background">My Shopping Cart</h1>
 <section class="form-background fullheight">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-// @author Anton Bespalov
-$(document).ready(function(){
-  $("#InputSearchFieldForFilter").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $(".shoppingcart-container-inner").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
 <?php 
 if(empty($shoppingCartItems)) : ?>  <!-- Empty shoppingCart -->
     <div class="center">
