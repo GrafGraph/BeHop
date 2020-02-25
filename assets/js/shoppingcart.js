@@ -1,3 +1,4 @@
+// @author Michael Hopp
 function remove(button, ID) {
     event.stopPropagation(); // no send to the top element
     event.preventDefault(); // no default action on submit
@@ -38,9 +39,10 @@ function remove(button, ID) {
         }
     }
 }
-src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 
 // @author Anton Bespalov
+src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+
 $(document).ready(function() {
     $("#InputSearchFieldForFilter").on("keyup", function() {
         var value = $(this).val().toLowerCase();

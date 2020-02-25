@@ -1,71 +1,56 @@
 <div class="start-wrap">
     <h1 class="headline">About BeHop</h1>
-    <div style="width:50%;">
-        <img src="assets/images/aboutUs/fashionForThePeople1.png" alt="Fashion for the People">
-    </div>
-    <div class="start-wrap start-container">
-        <div>
+    <article class="aboutUs">
+        <div class="center">
             <h2>Back to the Idea of HipHop</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer free 
-                elit. Aenean commodo ligula eget dolor. Aenean massa 
-                <strong>HipHop</strong>. Cum sociis natoque penatibus 
-                et magnis dis parturient montes, nascetur ridiculus 
-                mus. Donec quam felis, ultricies nec, pellentesque 
-                eu, pretium quis, sem. Nulla consequat massa quis 
-                enim. Donec pede justo, fringilla vel, aliquet nec, 
-                vulputate eget, arcu. In enim justo, rhoncus ut, 
-                imperdiet a, venenatis vitae, justo. Nullam dictum 
-                felis eu pede.
-            </p>
-            <br>    
-        </div>
-        
-        <div class="start-item">
-            <h3>Gender Neutrality as a Brand</h3>
             <p>
-                Mollis pretium. Integer tincidunt. Cras dapibus. 
-                Vivamus elementum semper nisi. Aenean vulputate 
-                eleifend tellus. Aenean leo ligula, porttitor eu, 
-                consequat vitae, eleifend ac, enim. Aliquam lorem ante, 
-                dapibus in, viverra quis, feugiat a, tellus. Phasellus 
-                viverra nulla ut metus varius laoreet. Quisque rutrum. 
-                Aenean imperdiet. Etiam ultricies nisi vel augue. 
-                Curabitur ullamcorper ultricies nisi.
-            </p>
-            <br>    
-        </div>
-        
-        <div class="start-item">
-            <h3>Focus on the People</h3>
-            <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Beatae, quis nisi pariatur mollitia officia magnam itaque
-            rem sunt? Officiis cum laboriosam omnis, harum laborum 
-            doloremque natus. Illum assumenda rerum adipisci!
-            </p>
-            <br>    
+                <strong>Peace. Love. Unity. Having Fun.</strong> We at BeHop believe in the very basics of HipHop. 
+                When we talk about HipHop, we are talking about the whole culture. 
+                A culture that inspires us to always thrive for keeping our standards high. 
+                Our Mission: To embrace youth empowerment, diversity and creativity within our fashion. 
+            </p> 
         </div>
 
-        <div class="start-item">
-            <h3>Fashion for Everybody</h3>
-            <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Beatae, quis nisi pariatur mollitia officia magnam itaque
-            rem sunt? Officiis cum laboriosam omnis, harum laborum 
-            doloremque natus. Illum assumenda rerum adipisci!
-            </p>
-            <br>    
+        <br>
+        <div>
+            <img src="assets/images/aboutUs/fashionForThePeople1.png" alt="Fashion for the People">
         </div>
+        <br>
         
         <div>
-            <h2>The Creators</h2>
+            <h3>Gender Neutrality as a Brand</h3>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolor consequuntur quibusdam nemo maxime, esse id, quos iure 
-                recusandae ratione accusamus eaque et mollitia cupiditate 
-                voluptas tempora quam adipisci eveniet laudantium?
+                We at BeHop believe in diversity– That’s why we make sure everyone has an equal 
+                chance to express themselves through fashion. We want fashion to reflect on your personality, 
+                not your body. That’s why our clothes resemble who you really are inside – Colorful, confident 
+                and true to yourself. Our clothes are gender neutral. 
             </p>
             <br>    
         </div>
+             
+        <div>
+            <h3>Fashion for Everybody</h3>
+            <p>
+                It’s important for us to promote a healthy body image. 
+                We’re not about conforming to any stereotypes, so we work with models of any race, 
+                gender and size to represent our audience. Thus, our photographers at BeHop do not believe in digitally altering, 
+                reshaping or retouching either. After all, we care about making our website accessible for people with special needs. 
+            </p>
+            <br>    
+        </div>
+      
+        <div>
+            <h3>The Creators</h3>
+            <p>
+                Empowered, diverse and inclusive – Our team of employees resemble our mission as a brand. 
+                Founded by two young, inexperienced entrepreneurs Anton Bespalov and Michael Hopp, we are not afraid to be innovative 
+                while being provocative as we dare to make big leaps and take big risks to achieve our mission in diminishing gender segregation. 
+            </p>
+            <br>    
+        </div>
+        <div>
+            <img src="assets/images/aboutUs/logo.png" alt="Logo Bar">
+        </div>
+        <br>
     </article>
 </div>
