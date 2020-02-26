@@ -43,7 +43,7 @@
                         </p>
                         </br>
                         <form method="POST" style="margin:1%; max-width:152px;">
-                            <label style="display:inline;" for="quantity"><strong>Amount:</strong></label>
+                            <label style="display:inline;" for="quantity"><strong>Quantity:</strong></label>
                             <input style="width:77px;" type="number" name="quantity" min="1" max=<?=$product['numberInStock']?> value="1">
                             <br>
                             <button type="submit" name="addToCartSubmit"
