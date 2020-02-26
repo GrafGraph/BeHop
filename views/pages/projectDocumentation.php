@@ -569,7 +569,7 @@
                     <li>Images können zu Produkten oder Sales gehören</li>
                     <li>Checkout ist unser mehrseitiges Formular</li>
                     <li>Der Shop und der Code sind auf Englisch, jedoch ist die Dokumentation auf Deutsch und der Shop liefert nur nach Deutschland</li>
-                    <li>Das Land in der Datenbank ist immer auf Deutschland</li> 
+                    <li>Das Land in der Datenbank ist standardmäßig Deutschland</li> 
                     <li>Es gibt keine Trennung der Geschlechter, somit sind alle Artikel unisex.</li>
                     <li>Es können noch keine Größen gewählt werden.</li>
                     <li>Momentan gibt es pro Produkt nur ein Bild.</li>
