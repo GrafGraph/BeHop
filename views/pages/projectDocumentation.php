@@ -22,7 +22,8 @@
                     <li>Produkte einpflegen</li>
                     <li>Datenbank Konzept</li>
                     <li>Nav-Desktop</li>
-                    <li>...</li>
+                    <li>Projektdokumentation</li>
+                    <li>Account</li>
                 </ul>
             </li>
         </ul>
@@ -38,12 +39,15 @@
                             <li>Shopping Cart</li>
                             <li>Checkout</li>
                             <li>Login</li>
-                            <li>Account</li>
+                            <li>About Us</li>
                             <li>Nav-Products Dropdown</li>
                             <li>Legal Details</li>
                             <li>Landing/Starting Page</li>
                             <li>Banner, Icons, Startseiten Kachel</li>
-                            <li>Lektorat Projektdokumentation</li>
+                            <li>Lektorat und Feinschliff der Projektdokumentation</li>
+                            <li>AJAX für Remove from Shopping Cart</li>
+                            <li>Produkt-Vorrats-Mechanik</li>
+                            <li>Shoppingcart-Counter</li>
                         </ul>
                     </li>
 
@@ -53,16 +57,14 @@
                             <li>Search</li>
                             <li>Functions</li>
                             <li>Spezialisierte Basemodel-Methoden</li>
-                            <li>Validierungs-Methoden für Klassen Address und User</li>
-                            <li>...</li>
+                            <li>Shoppingcart-Merge zwischen Session und User</li>
                         </ul>
                     </li>
 
                     <li>
                         Design
                         <ul>
-                            <li>Changed Password</li>
-                            <li>...</li>
+                            <li>Logo</li>
                         </ul>
                     </li>
                 </ul>
@@ -77,7 +79,8 @@
                             <li>Nav Tablet- und Mobile-Screen</li>
                             <li>Errors bei Login und Registrierung</li>
                             <li>Layout</li>
-                            <li>Projektdokumentation</li>
+                            <li>Change Password</li>
+                            <li>Projektdokumentation: Inhalt(Rohfassung) und Bilder</li>
                             <li>...</li>
                         </ul>
                     </li>
@@ -87,7 +90,6 @@
                         <ul>
                             <li>Datenbankanbindung</li>
                             <li>Basemodel Primitives</li>
-                            <li>Change Password</li>
                             <li>Login (Fehlermeldungen)</li>
                             <li>Validierungs-Methoden für Klassen Address und User</li>
                             <li>Validierungs-Methoden für Klassen Address und User (mit JS)</li>
@@ -487,11 +489,25 @@
 
         <h3>Ideen der Weiterführung</h3>
             <ul>
-                <li>Verschiedene Größen für Produkte anbieten</li>
-                <li>Mehr Bilder zu den Produkten</li>
-                <li>Weitere Zahlungsmethoden implementieren (richtige API für Paypal einbauen)</li>
-                <li>Responisve-Nav mithilfe von CSS realisieren</li>
-                <li>AJAX zum Nachladen der Produktliste beim Scrollen</li>
+                <li>Verschiedene Größen für Produkte anbieten. (Aktuell müssten die selben Produkte mehrmals mit 
+                    verschiedenen Größenangaben <strong>im Namen</strong> versehen werden...)
+                </li>
+                <li>Mehr Bilder zu den Produkten darstellen.</li>
+                <li>Weitere Zahlungsmethoden implementieren (richtige API für Paypal einbauen).</li>
+                <li>Responisve-Nav mithilfe von CSS realisieren.</li>
+                <li>AJAX zum Nachladen der Produktliste beim Scrollen.</li>
+                <li>AJAX für das Anpassen der Quantity im Shopping Cart (Bereits JS-seitig angefangen).</li>
+                <li>User unterstützen indem MaxPrice geringer als MinPrice (und umgekehrt) in Products-Filtern abgefangen wird.</li>
+                <li>In Products die Sortierung als Buttons mit auf- und ab-Pfeilen realisieren.</li>
+                <li>Einen "Add to Cart"-Button in der Produktliste zur Verfügung stellen, sodass nicht immer die Detailansicht aufgerufen werden muss. 
+                    Alternativ die Detailansicht als leichtgewichtiges Pop-Up realisieren.
+                </li>
+                <li>In der Detailansicht der Produkte unterhalb noch ähnliche/verwandte Produkte anzeigen.</li>
+                <li>Sortierung des Preises so umsetzen, dass Sales berücksichtigt werden.</li>
+                <li>Empfindliche Informationen nicht in der Session, sondern der Datenbank speichern. In Session nurnoch die ID des Datensatzes hinterlegen. 
+                    -> Betrifft Gesamtpreis beim Checkout und Boolean Logged-In</li>
+                <li>Eine weitere Unterseite für einen Wunschzettel bzw. eine Merkliste des Users einführen.</li>
+                <li>Transitions zwischen den Seiten einführen</li>
             </ul>
 
         <h3>Was haben wir zur ursprünglichen Idee geändert?</h3>
@@ -503,7 +519,9 @@
             </ul>
 
         <h3>Genutzte Technologien</h3>
-        <ul><li>HTML5, CSS3</li>
+        <ul>
+            <li>Optimiert für Chrome</li>
+            <li>HTML5, CSS3</li>
             <li>XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22</li>
         </ul>   
     </section>
