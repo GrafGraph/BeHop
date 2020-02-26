@@ -83,6 +83,23 @@ class AccountController extends Controller
 		$this->_params['title'] = 'BeHop - Mein Account' ;
 		if(isLoggedIn() && isset($_SESSION['userID']))
 		{
+			// Display Current Account Information
+			$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
+			$this->_params['user'] = $user;
+
+			$address = Address::findOne('id = ' . $user['address_id']);
+			$this->_params['address'] = $address;
+
+			$latestOrder = Order::findSorted('createdAt', 'user_id = '.$_SESSION['userID'], true);
+			if(!empty($latestOrder))
+			{
+				$this->_params['latestOrder'] = $latestOrder[0];
+			}
+		
+			if(isset($_GET['changedPassword']) && htmlspecialchars($_GET['changedPassword']) == 'true' )
+			{
+				$this->_params['passwordChanged'] = "Successfully changed Password!";
+			}
 			// Updating Account Information
 			if(isset($_POST['updateAccountSubmit']))
 			{
@@ -196,23 +213,6 @@ class AccountController extends Controller
 					}
 					}
 				}
-			}
-			// Display Current Account Information
-			$user = User::findOne('ID =' . "'".$_SESSION['userID']."'");
-			$this->_params['user'] = $user;
-
-			$address = Address::findOne('id = ' . $user['address_id']);
-			$this->_params['address'] = $address;
-
-			$latestOrder = Order::findSorted('createdAt', 'user_id = '.$_SESSION['userID'], true);
-			if(!empty($latestOrder))
-			{
-				$this->_params['latestOrder'] = $latestOrder[0];
-			}
-
-			if(isset($_GET['changedPassword']) && htmlspecialchars($_GET['changedPassword']) == 'true' )
-			{
-				$this->_params['passwordChanged'] = "Successfully changed Password!";
 			}
 		}
 		else

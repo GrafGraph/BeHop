@@ -81,7 +81,6 @@
                             <li>Layout</li>
                             <li>Change Password</li>
                             <li>Projektdokumentation: Inhalt(Rohfassung) und Bilder</li>
-                            <li>...</li>
                         </ul>
                     </li>
 
@@ -94,7 +93,6 @@
                             <li>Validierungs-Methoden für Klassen Address und User</li>
                             <li>Validierungs-Methoden für Klassen Address und User (mit JS)</li>
                             <li>My Account</li>
-                            <li>...</li>
                         </ul>
                     </li>
 
@@ -103,7 +101,6 @@
                         <ul>
                             <li>Search</li>
                             <li>About Us</li>
-                            <li>...</li>
                         </ul>
                     </li>
                 </ul>
@@ -630,6 +627,7 @@
         <h3>Genutzte Technologien</h3>
         <ul>
             <li>Optimiert für Chrome</li>
+            <li>Mobileansicht ist optimiert für das iPhone 5/SE</li>
             <li>HTML5, CSS3</li>
             <li>XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22</li>
         </ul>   
