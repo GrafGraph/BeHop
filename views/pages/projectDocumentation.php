@@ -173,228 +173,319 @@
                 <br>
                 <h3>Navigationsleiste nicht eingeloggt</h3>
         </div>
-                <img src="assets/images/documentation/navigationList.png">
-                <br>
         <div >
                 <P>
                     Diese Navigationsleiste ist der Standard für Bildschirme, die eine Breite von mindestens 1124 Pixeln 
                     aufweisen. Am linken Seitenrand ist das Logo von BeHop zu sehen - Wird auf dieses geklickt, so wird der User auf die Startseite
-                    weitergeleitet. Wird "Products" gedrückt, dann zeigt die Seite alle unsere Produkte an. Mithilfe eines Dropdownmenüs
-                    können diese direkt über Kategorien selektiert werden. 
+                    weitergeleitet.
                 </P>
+        </div>
+                <img src="assets/images/documentation/navigationList.png">
+                <br>
+        <div>
+                <p>
+                        Wird "Products" gedrückt, dann zeigt die Seite alle unsere Produkte an. Mithilfe eines Dropdownmenüs
+                        können diese direkt über Kategorien selektiert werden. 
+                </p>
         </div>
         <br>
         <img src="assets/images/documentation/navigationListProductsDropdownJSfocusin.png">
         <br>
-        <div >
+        <div>
                 <P>
                     Über den Link "About Us" wird der User entsprechend auf die "About Us"-Seite von BeHop weitergeleitet: Hier finden User die Firmenphilosophie.
                 </P>
+        </div>
+        <div class="flex-docu-item">
                 <br>
                 <img src="assets/images/documentation/aboutUs.png">
                 <br>
+        </div>
+        <div >
                 <p>
                     Bei Auswahl des Suchfeldes wird der Rest der Website verschwommen angezeigt. Bilder können währenddessen nicht angeklickt werden. 
                     Diese Anzeige stellt sich beim Klicken außerhalb der Suchleiste zurück. 
                     Dieser Effekt funktioniert auf jeder Seite.
                 </p>
-                <br>
-                <img src="assets/images/documentation/navigationListSaerchJSfocusin.png">
-                <br>
-                <p>
-                    Über das Icon mit dem "Nutzerprofil" wird der User auf die Login-Seite weitergeleitet. 
-                </p>
-                <br>
+        <div class="flex-docu-item">
+            <br>
+            <img src="assets/images/documentation/navigationListSaerchJSfocusin.png">
+            <br>
+        </div>
+        </div>
+        <div>
+            <p>
+                Über das Icon mit dem "Nutzerprofil" wird der User auf die Login-Seite weitergeleitet. 
+            </p>
+        <div class ="flex-docu-item">
+            <br>
                 <img src="assets/images/documentation/login.png">
+            <br>
+        </div>
+        </div>
+        <div>
+            <p>
+            Über Icon mit dem Einkaufswagen wird der Nutzer auf seine Einkaufswagenliste weitergeleitet. 
+                Momentan ist sie leer.
+            </p>
+            <div class="flex-docu-item">
                 <br>
-                <p>
-                   Über Icon mit dem Einkaufswagen wird der Nutzer auf seine Einkaufswagenliste weitergeleitet. 
-                    Momentan ist sie leer.
-                </p>
+                    <img src="assets/images/documentation/shoppingCartNotLoggedIn.png">
                 <br>
-                <img src="assets/images/documentation/shoppingCartNotLoggedIn.png">
-                <br>
-                <br>
+            </div>
+        </div>    
+        <div>
+            <p>
+                Diese Navigationsleiste ist für Bildschirme einer Breite von 521 Pixeln bis 1123 Pixeln (Tablets).
+                Das Logo, das "Nutzerprofil"-Icon und der Einkaufswagen haben die gleichen Funktionen wie in der Desktopansicht. 
+                Wird das Lupen-Icon gedrückt, dann werden alle Icons in der Navigationsleiste ausgeblendet und es erscheint ein
+                Eingabefeld zur Produktsuche.
+            </p>
+        <div class="flex-docu-item">
+            <br>
                 <img src="assets/images/documentation/navigationListTablet.png">
-                <br>
-                <p>
-                    Diese Navigationsleiste ist für Bildschirme einer Breite von 521 Pixeln bis 1123 Pixeln (Tablets).
-                    Das Logo, das "Nutzerprofil"-Icon und der Einkaufswagen haben die gleichen Funktionen wie in der Desktopansicht. 
-                    Wird das Lupen-Icon gedrückt, dann werden alle Icons in der Navigationsleiste ausgeblendet und es erscheint ein
-                    Eingabefeld zur Produktsuche.
-                </p>
-                <br>
+            <br>
+        </div>
+        </div>        
+        <div>
+            <p>
+                In dem Eingabefeld kann der Nutzer über das Lupen-Icon nach Produkten suchen.
+                Um aus der Suchleiste rauszukommen, muss das "X"-Icon gedrückt werden.
+            </p>
+        <div class="flex-docu-item">
+            <br>
                 <img src="assets/images/documentation/navigationListTabletSaerchJS.png">
-                <br>
-                <p>
-                   In dem Eingabefeld kann der Nutzer über das Lupen-Icon nach Produkten suchen.
-                   Um aus der Suchleiste rauszukommen, muss das "X"-Icon gedrückt werden.
-                </p>
-                <br>
-                <p>
-                    Über das rechte Icon erscheint ein Dropdownmenü, mit dem die restlichen Seiten
-                    erreicht werden können.
-                </p>
-                <br>
+            <br>
+        </div>     
+        </div>
+        <div>
+            <p>
+                Über das rechte Icon erscheint ein Dropdownmenü, mit dem die restlichen Seiten
+                erreicht werden können.
+            </p>
+        <div class="flex-docu-item">
+            <br>
                 <img src="assets/images/documentation/navigationListTabletDropdown.png">
-                <br>
-                <p>
-                    Diese Navigationsleiste ist die Ansicht für Bildschirme für eine Breite bis 520 Pixel (Smartphones).
-                    Das Logo und die Lupe haben dieselben Funktionen wie bei der Tabletansicht. 
-                </p>
-                <br>
+            <br>
+        </div>  
+        </div>
+        <div>
+            <p>
+                Diese Navigationsleiste ist die Ansicht für Bildschirme für eine Breite bis 520 Pixel (Smartphones).
+                Das Logo und die Lupe haben dieselben Funktionen wie bei der Tabletansicht. 
+            </p>
+        <div class="flex-docu-item">
+            <br>
                 <img src="assets/images/documentation/navigationListSmartPhone.png">
-                <br>
-                <br>
+            <br>
+        </div>
+        </div>        
+        <div>
+            <p>
+                Über Klick auf das rechte Icon erscheint ein Dropdownmenü, mit dem die restlichen Seiten
+                erreicht werden können. 
+            </p>
+        <div class="flex-docu-item">
+            <br>
                 <img src="assets/images/documentation/navigationListSmartPhoneSaerchJS.png">
-                <br>
-                <p>
-                    Über Klick auf das rechte Icon erscheint ein Dropdownmenü, mit dem die restlichen Seiten
-                    erreicht werden können. 
-                </p>
-                <br>
+            <br>
+        </div>    
+        </div>   
+        <div>
+            <p>
+                Die Funktion, dass alles außer der Navigationsleiste verschwommen wird, sobald die Suchleiste angeklickt wird,
+                funktioniert in der Tabletansicht und Smartphoneansicht auch.  
+            </p>
+        <div class="flex-docu-item">
+            <br>
                 <img src="assets/images/documentation/navigationListSmartPhoneDropdown.png">
-                <br>
-                <p>
-                    Die Funktion, dass alles außer der Navigationsleiste verschwommen wird, sobald die Suchleiste angeklickt wird,
-                    funktioniert in der Tabletansicht und Smartphoneansicht auch.  
-                </p>
+            <br>
         </div>
+        </div> 
         <h3>Login and Registration</h3>
-        <div >
-                <br>
+        <div>
+            <p>
+                Auf der "Login"-Seite sind zwei Eingabefelder: Eines für die Email und das andere für das dazugehörige Passwort.
+                Wenn eine nicht-korrekte Email eingetippt wird, so wird eine Fehlermeldung angezeigt, dass die Email nicht korrekt ist. 
+                Werden eine korrekte Emailadresse und das passende Passwort eingegeben sowie der "Login now!"-Button gedrückt,
+                dann wir der Nutzer eingeloggt. 
+            </p>
+        <div class="flex-docu-item">
+            <br>
                 <img src="assets/images/documentation/login.png">
-                <br>
-                <p>
-                    Auf der "Login"-Seite sind zwei Eingabefelder: Eines für die Email und das andere für das dazugehörige Passwort.
-                    Wenn eine nicht-korrekte Email eingetippt wird, so wird eine Fehlermeldung angezeigt, dass die Email nicht korrekt ist. 
-                    Werden eine korrekte Emailadresse und das passende Passwort eingegeben sowie der "Login now!"-Button gedrückt,
-                    dann wir der Nutzer eingeloggt. Sind die Eingaben nicht korrekt, so wird eine Fehlermeldung ausgegeben. 
-                </p>
-                <br>
+            <br>
+        </div>
+        </div>
+        <div>
+            <p>
+                Sind die Eingaben nicht korrekt, so wird eine Fehlermeldung ausgegeben. 
+                Falls noch kein Account vorhanden ist, dann kann der Nutzer auf den "Create Account"-Button klicken und sich registrieren.
+            </p>
+        <div class="flex-docu-item">
+            <br>
                 <img src="assets/images/documentation/loginError.png">
-                <br>
-                <p>
-                    Falls noch kein Account vorhanden ist, dann kann der Nutzer auf den "Create Account"-Button klicken und sich registrieren.
-                </p>
-                <br>
+            <br>
+        </div>
+        </div>
+        <div>
+            <p>
+                Für die Registrierung müssen die angeforderten persönlichen Daten eingegeben werden.
+            </p>
+        <div class="flex-docu-item">
+            <br>
                 <img src="assets/images/documentation/registration.png">
-                <br>
-                <p>
-                    Für die Registrierung müssen die angeforderten persönlichen Daten eingegeben werden.
-                    Wenn falsche Daten eingegeben werden, so färben sich die Eingabefelder rot und ein Hinweis wird gegeben, wie die
-                    Eingabedaten sein müssen.
-                </p>
-                <br>
+            <br>
+        </div>        
+        </div>   
+        <div>
+            <p>
+                Wenn falsche Daten eingegeben werden, so färben sich die Eingabefelder rot und ein Hinweis wird gegeben, wie die
+                Eingabedaten sein müssen.
+            </p>
+        <div class="flex-docu-item">
+            <br>
                 <img src="assets/images/documentation/registrationRedWithJS.png">
-                <br>
-                <p>
-                    Wenn die Daten richtig eingegeben werden, dann erscheinen die Eingabefelder grün.
-                </p>
-                <br>
+            <br>
+        </div>
+        </div>   
+        <div>
+            <p>
+                Wenn die Daten richtig eingegeben werden, dann erscheinen die Eingabefelder grün. Zum Registrieren muss der "Register"-Button gedrückt werden. Wenn der Accunt erstellt wurde, wird die "Login"-Seite
+                automatisch angezeigt.
+            </p>
+        <div class="flex-docu-item">
+            <br>
                 <img src="assets/images/documentation/registrationGreenWithJS.png">
-                <br>
-                <p>
-                    Zum Registrieren muss der "Register"-Button gedrückt werden. Wenn der Accunt erstellt wurde, wird die "Login"-Seite
-                    automatisch angezeigt.
-                </p>
+            <br>
         </div>
-                <h3>Navigationsleiste eingeloggt</h3>
-                <br>
-                <br>
+        </div>          
+    <h3>Navigationsleiste eingeloggt</h3>   
+        <div>
+            <p>
+                Wenn sich der Nutzer eingeloggt hat, dann verändert sich die Navigationsleiste und er hat ein Feld mehr auf der Navigationsleiste
+                "Logout". Wird hier drauf geklickt, so wird er aus dem Account ausgeloggt. 
+            </p>
+        </div>   
+            <br>
                 <img src="assets/images/documentation/navigationListLoggedIn.png">
-                <br>
-        <div >
-                    <p>
-                        Wenn sich der Nutzer eingeloggt hat, dann verändert sich die Navigationsleiste und er hat ein Feld mehr auf der Navigationsleiste
-                        "Logout". Wird hier drauf geklickt, so wird er aus dem Account ausgeloggt. Über das Symbol 
-                        mit dem "Nutzerprofil" wird man nun auf die "My Account"-Seite weitergeleitet.
-                    </p>
-                    <br>
-                    <img src="assets/images/documentation/account.png">
-                    <br>
-                    <p>
-                        Die Navigationsleisten haben sich in der Tablet- und Smartphone-Ansicht nicht geändert, jedoch kommen in den Dropdownmenüs 
-                        noch ein Button für den Loggout dazu. 
-                    </p>
-                    <br>
+            <br>
+            <div>
+            <p>
+                Über das Symbol mit dem "Nutzerprofil" wird man nun auf die "My Account"-Seite weitergeleitet.
+            </p>
+        <div class="flex-docu-item">
+            <br>
+                <img src="assets/images/documentation/account.png">
+            <br>
+        </div>
+        </div>
+        <div>
+            <p>
+                Die Navigationsleisten haben sich in der Tablet- und Smartphone-Ansicht nicht geändert, jedoch kommen in den Dropdownmenüs 
+                noch ein Button für den Loggout dazu. 
+            </p>
+        <div class="flex-docu-item">
+            <br>
                     <img src="assets/images/documentation/navigationListSmartPhoneDropDownLoggedIn.png">
-                    <br>
-        </div>
-        <h3>Products</h3>
-        <br>
-        <img src="assets/images/documentation/productsAnzeigeKomplett.png">
-        <br>
-        <div >
-                    <p>
-                        Hier werden die Produkte angezeigt. Ganz oben ist eine Leiste zum Filtern der Artikel. Hier können Wunschkriterien ausgewählt werden.  
-                        Über den "Filter Now!"-Button werden die ausgewählten Filter anschließend angewandt. Zum Zurücksetzen der Filter fungiert der "Reset Filters"-Button.
-                    </p>
-        </div>
-        <h3>About Us</h3>
-        
-        <div >
-        <br>
-        <img src="assets/images/documentation/aboutUs.png">
-        <br>
-                    <p>
-                        Auf der "About Us"-Seite finden User die Firmenphilosphie von BeHop.
-                    </p>
-        </div>
-        <h3> My Account</h3>
-        <div >
-        <br>
-        <img src="assets/images/documentation/account.png">
-        <br>
-        <p>
-            Auf der "My Account"-Seite werden die Daten des zurzeit eingeloggten Nutzers angezeigt. 
-            In den Felder, die mit den persönlichen Daten ausgefüllt sind, können neue Daten eingetragen werden geändert werden, 
-            wenn diese korrekt sind. Über den "Save"-Button werden diese gespeichert. Der "Reset-Changes"-Button setzt die 
-            temporären Änderungen zurück. Ganz unten auf der Seite ist noch ein "Change Password"-Button, durch den das
-            "Change-Password"-Formular geladen wird.
-        </p>
-        <br>
-        <img src="assets/images/documentation/changePassword.png">
-        <br>
-        <p>
-            Auf dieser Seite kann das Passwort geändert werden. Hierfür muss das aktuelle Passwort sowie zweimal das neue Passwort eingegeben werden.
-            Mit dem "Change Passwort"-Button wird das neue Passwort gespeichert.
-        </p>
-        </div>
-        <h3>Produkte kaufen</h3>
-        <div >
             <br>
-            <img src="assets/images/documentation/productsAnzeige.png">
+        </div>    
+        </div>     
+    <h3>Products</h3>
+        <div>
+            <p>
+                Hier werden die Produkte angezeigt. Ganz oben ist eine Leiste zum Filtern der Artikel. Hier können Wunschkriterien ausgewählt werden.  
+                Über den "Filter Now!"-Button werden die ausgewählten Filter anschließend angewandt. Zum Zurücksetzen der Filter fungiert der "Reset Filters"-Button.
+            </p>
+            <div class="flex-docu-item">
+                <br>
+                    <img src="assets/images/documentation/productsAnzeigeKomplett.png">
+                <br>
+            </div>      
+        </div>
+    <h3>About Us</h3>
+        <div>
+            <p>
+                Auf der "About Us"-Seite finden User die Firmenphilosphie von BeHop.
+            </p>
+        <div class="flex-docu-item">
             <br>
+                <img src="assets/images/documentation/aboutUs.png">
+            <br>
+        </div>      
+        </div>
+    <h3> My Account</h3>
+        <div>
+            <p>
+                Auf der "My Account"-Seite werden die Daten des zurzeit eingeloggten Nutzers angezeigt. 
+                In den Felder, die mit den persönlichen Daten ausgefüllt sind, können neue Daten eingetragen werden geändert werden, 
+                wenn diese korrekt sind. Über den "Save"-Button werden diese gespeichert. Der "Reset-Changes"-Button setzt die 
+                temporären Änderungen zurück. Ganz unten auf der Seite ist noch ein "Change Password"-Button, durch den das
+                "Change-Password"-Formular geladen wird.
+            </p>
+        <div class="flex-docu-item">
+            <br>
+                <img src="assets/images/documentation/account.png">
+            <br>
+        </div>
+        </div>
+        <div>
+            <p>
+                Auf dieser Seite kann das Passwort geändert werden. Hierfür muss das aktuelle Passwort sowie zweimal das neue Passwort eingegeben werden.
+                Mit dem "Change Passwort"-Button wird das neue Passwort gespeichert.
+            </p>
+        <div class="flex-docu-item">
+            <br>
+                <img src="assets/images/documentation/changePassword.png">
+            <br>
+        </div>
+        </div>
+    <h3>Produkte kaufen</h3>
+        <div>
             <p>
                 Wird ein Produkt in der Produktansicht angegklickt, so wird der User auf die entsprechene Detailansicht des Produktes weitergeleitet. 
                 Hier werden dem User weitere Informationen zum Produkt offeriert.
             </p>
+        <div class="flex-docu-item">
             <br>
-            <img src="assets/images/documentation/addProductToShoppingCart.png">
+                <img src="assets/images/documentation/productsAnzeige.png">
             <br>
+        </div>
+        </div>
+        <div>
             <p>
                 Ein Produkt wird über Anklicken des "Add to Cart"-Buttons in den Einkaufswagen gelegt. Wurde das Produkt zur Shopping Cart hinzugefügt,
                 so wird eine Bestätigung mit der Anzahl angezeigt.
             </p>
+        <div class="flex-docu-item">
             <br>
-            <img src="assets/images/documentation/addedProductToShoppingCart.png">
+                <img src="assets/images/documentation/addProductToShoppingCart.png">
             <br>
+        </div>
+        </div>
+        <div>
             <p>
                 Es ist nicht möglich, das Produkt in den Einkaufswagen zu legen, wenn die maximale Anzahl der Vorräte erreicht wurde. In diesem Fall wird eine
                 Fehlermeldung angezeigt. 
             </p>
+        <div class="flex-docu-item">
             <br>
-            <img src="assets/images/documentation/addProductsMaxInStock.png">
+                <img src="assets/images/documentation/addedProductToShoppingCart.png">
             <br>
+        </div>
+        </div>
+        <div>
             <p>
                 Möchte der User die - dem Warenkorb hinzugefügten - Produkte bestellen, 
                 so muss dieser zunächst das Einkaufswagen-Icon anwählen. Hier werden alle Produkte aufgezeigt, die in den Einkaufswagen gelegt 
                 wurden.
             </p>
+        <div class="flex-docu-item">
             <br>
-            <img src="assets/images/documentation/shoppingCartWithProducts.png">
+                <img src="assets/images/documentation/addProductsMaxInStock.png">
             <br>
+        </div>
+        </div>  
+        <div>
             <p>
                 Es besteht die Möglichkeit, die Anzahl der zu bestellenden Produkte im Warenkorb zu ändern. In dem Eingabefeld
                 kann die gewünschte Anzahl eingetragen und mit dem "Save"-Button gespeichert werden. 
@@ -402,46 +493,64 @@
                 der "Proceed to Checkout"-Button gedrückt. Sollte der Nutzer noch nicht eingeloggt ein, so erscheint statt des "Proceed to Checkout"-Buttons 
                 hier der "Log In"-Button, der ihn zum Log In weiterführt. 
             </p>
+        <div class="flex-docu-item">
             <br>
-            <img src="assets/images/documentation/checkout.png">
+                <img src="assets/images/documentation/shoppingCartWithProducts.png">
             <br>
-            <p> Hier werden die persönlichen Daten zur Bestätigung noch einmal angezeigt. Sind die Daten korrekt und wird der "Continue"-Button gedrückt, 
+        </div>
+        </div>  
+        <div>
+            <p> 
+                Hier werden die persönlichen Daten zur Bestätigung noch einmal angezeigt. Sind die Daten korrekt und wird der "Continue"-Button gedrückt, 
                 so wird eine Seite aufgerufen, auf der die Bezahlmethode ausgewählt werden kann. Sind die Daten nicht korrekt oder aktuell, 
                 dann kann der "Change Information"-Button gedrückt werden und es wird die "My Account"-Seite aufgerufen.
             </p>
+        <div class="flex-docu-item">
             <br>
-            <img src="assets/images/documentation/checkoutPaymentMethod.png">
+                <img src="assets/images/documentation/checkout.png">
             <br>
+        </div>
+        </div>    
+        <div>
             <p>
                 Zur Zeit ist nur die Bezahlmethode "Paypal" möglich. 
             </p>
+        <div class="flex-docu-item">
             <br>
-            <img src="assets/images/documentation/checkoutPaymentMethodPaypal.png">
+                <img src="assets/images/documentation/checkoutPaymentMethod.png">
             <br>
+            <br>
+                <img src="assets/images/documentation/checkoutPaymentMethodPaypal.png">
+            <br>
+        </div>
+        </div>    
+        <div>
             <p>
                 Bei Beendigung der Bezahlung wird eine Bestätigung darüber angezeigt.
             </p>
+        <div class="flex-docu-item">
             <br>
-            <img src="assets/images/documentation/checkoutComplete.png">
+                <img src="assets/images/documentation/checkoutComplete.png">
             <br>
         </div>
-        <h3>ER-Modell</h3>
+        </div>   
+    <h3>ER-Modell</h3>
             <br>
                 <img src="assets/images/documentation/ER-Modell.png">
             <br>
-        <h3>Rollenmodell</h3>
+    <h3>Rollenmodell</h3>
             <p>
                 In unserem Projekt haben beide Entwickler die Rolle des Designers und Entwicklers übernommen, alle Designentscheidungen wurden
                 gemeinsam getroffen. Ebenso arbeiteten beide Entwickler an verschiedenen Bereichen des gesamten Systems. 
             </p>
-        <h3>Flussbilddiagramme</h3>
+    <h3>Flussbilddiagramme</h3>
             <br>
                 <img src="assets/images/documentation/flowChartBestellung.png">
             <br>
             <br>
                 <img src="assets/images/documentation/FulssdiagrammRegistrierung.png">
             <br>
-        <h3>Herausforderungen und Lösungen</h3>
+    <h3>Herausforderungen und Lösungen</h3>
             <div >
                 <p>
                     Eine Herausforderung war, dass wir uns in neue Programmiersprachen einarbeiten mussten. Hier hat die Seite <a href="https://stackoverflow.com/">stackoverflow.com</a> 
@@ -453,7 +562,7 @@
                     neue Aspekte in unserer Arbeit darstellten. Auch viele Best-practices waren uns während einiger Problemstellungen noch unbekannt. 
                 </p>
             </div>
-        <h3>Besonderheiten</h3>
+    <h3>Besonderheiten</h3>
             <div >
                 <ul>
                     <li>ER-Modell: Shoppingcart wird bei User ausgehangen. Wenn er bestellt, wird die Shoppingcart in Order eingehangen. 
@@ -467,7 +576,7 @@
                     <li>Momentan gibt es pro Produkt nur ein Bild.</li>
                 </ul>
             
-            <h3>Besondere Features</h3>
+    <h3>Besondere Features</h3>
             <ul>
                 <li>Wenn das Suchfeld angeklickt wird, dann erscheint alles außer der Suchleiste verschwommen.</li>
                 <li>Validierung der Registrierung mit JS, entweder die Eingabefelder werden rot und es erscheint eine Nachricht, die Hinweise gibt, oder die Eingabefelder werden grün.</li>
@@ -485,7 +594,7 @@
             </ul>
             </div>
 
-        <h3>Ideen der Weiterführung</h3>
+    <h3>Ideen der Weiterführung</h3>
             <ul>
                 <li>Verschiedene Größen für Produkte anbieten</li>
                 <li>Mehr Bilder zu den Produkten</li>
@@ -494,7 +603,7 @@
                 <li>AJAX zum Nachladen der Produktliste beim Scrollen</li>
             </ul>
 
-        <h3>Was haben wir zur ursprünglichen Idee geändert?</h3>
+    <h3>Was haben wir zur ursprünglichen Idee geändert?</h3>
             <ul>
                 <li>Keine Slider, weil die unruhig wirken -> Accessability</li>
                 <li>Keine Geschlechtertrennung, weil es ein veraltetes Konzept ist -> Abheben von Konkurrenz + Eigene progressive Marke</li>
@@ -502,7 +611,7 @@
                 <li>HipHop vom Klischee entfernt und eher an dessen Grundprinzipien orientiert</li>
             </ul>
 
-        <h3>Genutzte Technologien</h3>
+    <h3>Genutzte Technologien</h3>
         <ul><li>HTML5, CSS3</li>
             <li>XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22</li>
         </ul>   
