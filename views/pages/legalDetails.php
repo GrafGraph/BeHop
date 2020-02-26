@@ -37,7 +37,6 @@
         </table>
         <br>
         <h3>Graphics and Image Sources</h3>
-        TODO: Weitere Bildquellen einfügen
         <table>
             <tr>     
                 <th>Quelle</th>
@@ -73,7 +72,7 @@
                 <td>
                     <a href="https://de.cleanpng.com/png-3wxi02/">Cleanpng.com</a>
                 </td>
-                <td>Baseball Cap</td>
+                <td>Givenchy, Balenciaga Items</td>
             </tr>
             <tr>
                 <td>

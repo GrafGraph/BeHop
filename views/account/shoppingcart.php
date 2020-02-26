@@ -53,7 +53,7 @@ if(empty($shoppingCartItems)) : ?>  <!-- Empty shoppingCart -->
                                 <div>
                                     <form method="POST" action="?c=account&a=shoppingcart">
                                         Quantity: 
-                                        <input type="number" name=<?="quantity".strval($item['id'])?> min=1 max=<?=$item['numberInStock']?> value=<?=$quantity?>>
+                                        <input type="number" class="quantityButton" name=<?="quantity".strval($item['id'])?> min=1 max=<?=$item['numberInStock']?> value=<?=$quantity?>>
                                         <button type="submit" name=<?="update".strval($item['id'])?> style="width:60px;">Save</button>
                                     </form> 
                                 </div>

@@ -77,4 +77,7 @@
     #searchMin {
         display: none !important;
     }
+    .quantityButton {
+        width: 60px !important;
+    }
 }
