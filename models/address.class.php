@@ -41,7 +41,7 @@ class Address extends BaseModel
             array_push($insertError, 'ZIP may only consist of Numbers!');
         }
 
-        if (!preg_match('/^[A-Za-z -]*$/', $newAddress->__get('city'))) {
+        if (!preg_match('/^[A-Za-z -äöü]*$/', $newAddress->__get('city'))) {
             array_push($insertError, 'City may only consist of Letters, Spaces and Hypehen!');
         }
 

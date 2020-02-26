@@ -492,7 +492,7 @@
                 Es besteht die Möglichkeit, die Anzahl der zu bestellenden Produkte im Warenkorb zu ändern. In dem Eingabefeld
                 kann die gewünschte Anzahl eingetragen und mit dem "Save"-Button gespeichert werden. 
                 Über den "X"-Button können Artikel im Warenkorb auch wieder gelöscht werden. Zum Vollenden der Bestellung wird bei einem eingeloggten User
-                der "Proceed to Checkout"-Button gedrückt. Sollte der Nutzer noch nicht eingeloggt ein, so erscheint statt des "Proceed to Checkout"-Buttons 
+                der "Proceed to Checkout"-Button gedrückt. Sollte der Nutzer noch nicht eingeloggt sein, so erscheint statt des "Proceed to Checkout"-Buttons 
                 hier der "Log In"-Button, der ihn zum Log In weiterführt. 
             </p>
         <div class="flex-docu-item">

@@ -1,6 +1,6 @@
 // @author Anton Bespalov
 var nameRegEx = /^[A-Za-zßäöü]+$/;
-var cityRegEx = /^[A-Za-z -]+$/;
+var cityRegEx = /^[A-Za-z -äöü]+$/;
 var streetRegEx = /^[A-Za-zß -]+$/;
 var numberRegEx = /^[1-9][0-9]*[a-z]?$/;
 var zipRegEx = /^[0-9][0-9][0-9][0-9][0-9]$/;
