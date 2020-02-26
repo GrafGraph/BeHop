@@ -10,14 +10,15 @@
 1. Einleitung
   - (Vorstellung)
   - Projektthema: HipHop - Online Shop. Philosophie orientiert an den Grundprinzipien des HipHops
-  - Design orient an der direkten Konkurrenz sowie anderen beliebten Online-Shops.
+  - Design orientiert an der direkten Konkurrenz sowie anderen beliebten Online-Shops.
   - MVC von Herrn Friess erweitert
   - DB simpel gehalten. Logik außer Constraints auf server-/JS-Ebene realisiert
 
 2. Besonderheiten(Nicht in der Tour)
   - Der Shop ist auf Englisch.
   - Responsive Design für Desktop über Tablet bis zu aktuellen Smartphones.
-  - Bei Login Merge des Warenkorbs aus Session und Datenbank: Vorratsmechanik beachten -> Wenn ein Produkt nicht mehr auf Vorrat ist, kann es nicht mehr in den Einkaufswagen gelegt werden (Sold Out). Die vorrätige Anzahl eines Produktes kann beim Kauf nicht überschritten werden (auch nicht durch HTML Manipulation, da Serverseitig abgesichert).
+  - Bei Login Merge des Warenkorbs aus Session und Datenbank
+  - Vorratsmechanik beachten -> Wenn ein Produkt nicht mehr auf Vorrat ist, kann es nicht mehr in den Einkaufswagen gelegt werden (Sold Out). Die vorrätige Anzahl eines Produktes kann beim Kauf nicht überschritten werden (auch nicht durch HTML Manipulation, da Serverseitig abgesichert).
 
 3. Eigenarten
    - Wir liefern aktuell nur nach Deutschland (Keinen Internationalen ZIP-Code integriert).
