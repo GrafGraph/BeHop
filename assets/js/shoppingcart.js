@@ -30,7 +30,7 @@ function remove(button, ID) {
                     }
                     if (resJson.total) { // Set new Total
                         console.log(resJson.total);
-                        document.getElementById('priceTotal').innerHTML = parseFloat(resJson.total);
+                        document.getElementById('priceTotal').innerHTML = resJson.total + '&euro;';
                     }
                 }
             } else {

@@ -161,7 +161,7 @@ function getTotalPrice(){
             $sum += $price * $OrderItem['quantity'];
         }
     }
-    return $sum;
+    return number_format($sum, 2);
 }
 
 // Calculate discountPrice for discount given in integer Percent and rounds up to second decimal.
