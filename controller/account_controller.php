@@ -626,9 +626,11 @@ class AccountController extends Controller
 					$firstName = $userData['firstName'];
 					$lastName = $userData['lastName'];
 					$address_id = $userData['address_id'];
-					$userPassword = password_verify($password1, $userData['password']);
 
-					if($password1 == $userPassword)
+					$user_temp = User::findOne('ID =' . "'".$_SESSION['userID']."'");
+					$userPassword = $user_temp['password'];
+					
+					if(password_verify($password1, $userPassword))
 					{
 						$password = password_hash($password3, PASSWORD_DEFAULT);
 						$userData = [
