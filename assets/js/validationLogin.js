@@ -8,7 +8,7 @@ emailName2.addEventListener('focusout', function() {
         return;
     } else {
         emailName2.style.borderColor = "red";
-        document.getElementById('wrongEmail2').innerHTML = 'Email is not correct!';
+        document.getElementById('wrongEmail2').innerHTML = 'Email is not correct and is required!';
         wrongEmail2.style.color = "red";
         return;
     }

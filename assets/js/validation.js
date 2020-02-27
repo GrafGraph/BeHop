@@ -105,7 +105,7 @@ emailName.addEventListener('focusout', function() {
         return;
     } else {
         emailName.style.borderColor = "red";
-        document.getElementById('wrongEmail').innerHTML = 'Email is not correct!';
+        document.getElementById('wrongEmail').innerHTML = 'Email is not correct and is required!';
         wrongEmail.style.color = "red";
         x.disabled = true;
         return;
