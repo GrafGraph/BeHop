@@ -1,5 +1,9 @@
 /* Css for Documentation and Legal Details */
 
+main * {
+    font-family: OpenSans, sans-serif;
+}
+
 .docu-wrap {
     max-width: 1400px;
     margin: auto;

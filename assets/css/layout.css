@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: OpenSans;
-    src: url('assets/webFonts/OpenSans/OpenSans-Regular.ttf');
+    src: url('../webFonts/OpenSans/OpenSans-Regular.ttf');
 }
 
 @font-face {
     font-family: OpenSans;
-    src: url('assets/webFonts/OpenSans/OpenSans-Bold.ttf');
+    src: url('../webFonts/OpenSans/OpenSans-Bold.ttf');
     font-weight: 600;
 }
 
@@ -423,7 +423,7 @@ footer {
 }
 
 * {
-    font-family: OpenSans, sans-serif;
+    font-family: sans-serif, OpenSans;
     box-sizing: border-box;
     margin: 0;
     position: relative;
