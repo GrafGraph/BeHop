@@ -614,6 +614,7 @@
                     -> Betrifft Gesamtpreis beim Checkout und Boolean Logged-In</li>
                 <li>Eine weitere Unterseite für einen Wunschzettel bzw. eine Merkliste des Users einführen.</li>
                 <li>Transitions zwischen den Seiten einführen</li>
+                <li>Lieferung auch außerhalb Deutschlands</li>
             </ul>
 
     <h3>Was haben wir zur ursprünglichen Idee geändert?</h3>
