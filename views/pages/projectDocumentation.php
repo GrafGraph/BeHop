@@ -155,17 +155,32 @@
                         haben wir uns bei vielen Elementen für einen dunklen Grauton entschieden. Dieser hat eine sehr große Ähnlichkeit 
                         mit der Farbe von As­phalt und das ist ein klassisches Element der Hip-Hop-Szene. Zudem ist der Farbton nicht zu aufdringlich, sodass der Fokus auf dem Rot der Sales 
                         und den Produkten an sich liegt. Aus diesem Grund heraus wählten wir auch ein helles Grau als Schriftfarbe.
-                        Die Farben der Schrift und "Styleelemente", unter anderem auf der Startseite, sind in einem Orange-Rot gehalten, da diese einen sehr
+                        Die Farben der Schrift und "Styleelemente", unter anderem auf der Startseite, sind in einem Hellrosa gehalten, da diese einen sehr
                         angenehmen Kontrast mit den Grautönen bilden und zugleich auffällig sind.
                         Darüber hinaus sind die Bilder der Startseite graustufig dargestellt, da diese zum einen die Coolness des HipHop-Lifestyles widerspiegeln und darüber hinaus sehr 
                         gut mit dem restlichen Erscheinungsbild der Seite harmonieren.
                     </p>
-                    <h3>Schriften</h3>
+                <h3>Schriften</h3>
                     <p>
-                        Die Schriftart OpenSans, die wir für Texte verwendet haben, wirkt zugleich modern und zeitlos. In unseren Bildern verwenden wir die Schriftart Edo, die den 
-                        ungezwungenen, freien Lifestyle von HipHop resembliert.
+                        Die Schriftart Open Sans Sans-serif, die wir für Texte verwendet haben, wirkt zugleich modern und zeitlos. In unseren Bildern verwenden wir die Schriftart Edo, die den 
+                        ungezwungenen, freien Lifestyle von HipHop resembliert. Für die Legal Details und die Dokumentation verwenden wir OpenSans als Web-Font.
                     </p>
-                    <br>
+                <h3>Logo</h3>
+                    <p>
+                        Bei genauerer Betrachtung des Logos fallen <small>(mindestens)</small> zwei Besonderheiten auf:
+                        <ol>
+                            <li>
+                                Die Navigation zeigt die aktuelle Position durch das rote Einfärben des Links/Reiters an, 
+                                genauso wie "Hop" im Logo eingefärbt ist. Damit suggerieren wir dem Kunden, dass er bei uns im HipHop angekommen ist.
+                            </li>
+                            <li>
+                                Das Balkenmotiv im unteren Teil des Logos ist ein Farbverlauf von Hellrosa, einer "typisch femininen" Farbe zu Königsblau, 
+                                einer "typisch maskulinen" Farbe. Da wir bei BeHop dieses veraltete Geschlechtermodell nicht vertreten, haben wir uns für
+                                diesen <strong>flüssigen Übergang</strong> zwischen den Farben <strong>inklusive der Lücken</strong> entschieden.
+                            </li>
+                        </ol>
+                    </p>
+            <br>
         </div>
         <div >
                 <h2>Funktionalitäten</h2>
@@ -537,7 +552,7 @@
             <br>
                 <img src="assets/images/documentation/ER-Modell.png">
             <br>
-    <h3>Rollenmodell</h3>
+    <h3>Entwickler-Rollen</h3>
             <p>
                 In unserem Projekt haben beide Entwickler die Rolle des Designers und Entwicklers übernommen, alle Designentscheidungen wurden
                 gemeinsam getroffen. Ebenso arbeiteten beide Entwickler an verschiedenen Bereichen des gesamten Systems. 
@@ -627,9 +642,9 @@
         <h3>Genutzte Technologien</h3>
         <ul>
             <li>Optimiert für Chrome</li>
-            <li>Mobileansicht ist optimiert für das iPhone 5/SE</li>
+            <li>Mobile-Ansicht optimiert für Galaxy S5 und iPhone 5/SE</li>
             <li>HTML5, CSS3</li>
-            <li>XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22</li>
+            <li>XAMPP 1.8.3, Apache Server 2.4.9, MySQL 5.6.16, PHP 5.4.22, JS</li>
         </ul>   
     </section>
     <br>
