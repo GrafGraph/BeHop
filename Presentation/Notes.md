@@ -64,5 +64,7 @@
     - kurz drüberscrollen
     - Hinweis auf Link zu Legal Details im **Footer** (gilt für jede Seite)
     - Ende hier oder auf Startseite...
-
-    - *Wenn die Zeit es hergibt: Registrierung mit Validierung zeigen*
+    
+5. Zusatz
+  - *Wenn die Zeit es hergibt: Registrierung mit Validierung zeigen*
+  - Ergänzung zu Herausforderungen: Reworks und Refactoring naiver Lösungen -> Bsp. Shopping Cart 3 mal umgebaut...
