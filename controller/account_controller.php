@@ -100,12 +100,14 @@ class AccountController extends Controller
 			{
 				$this->_params['passwordChanged'] = "Successfully changed Password!";
 			}
+
 			// Updating Account Information
 			if(isset($_POST['updateAccountSubmit']))
 			{
 				$user_temp = User::findOne('ID =' . "'".$_SESSION['userID']."'");
 				$usermail = $user_temp['email'];
-				if($usermail == $_POST['email']){
+				if($usermail == $_POST['email'])
+				{
 					$insertError = [];
 					$userData = [
 						'id' => $_SESSION['userID'],
@@ -127,30 +129,20 @@ class AccountController extends Controller
 						$userData['address_id'] = $existingAddress['id'];
 					}
 					else
-						{
-							// Create new Address
-							$newAddress = new Address($addressData);
-							if(!Address::validateAddress($newAddress, $insertError)){
-								$this->_params['insertError'] = $insertError;
-								return false;
-							}
-							else
-							{
-								$newAddress->save();
-								$newAddress = Address::findAddress($addressData);
-								$userData['address_id'] = $newAddress['id'];
-							}
-						}
-
-					// Updating User
-					$newUser = new User($userData);
-					if(!User::validateUser($newUser, $insertError)){
-						$this->_params['insertError'] = $insertError;
-						return false;
-					}
-					else
 					{
-						$newUser->save();
+						// Create new Address
+						$newAddress = new Address($addressData);
+						if(!Address::validateAddress($newAddress, $insertError))
+						{
+							$this->_params['insertError'] = $insertError;
+							return false;
+						}
+						else
+						{
+							$newAddress->save();
+							$newAddress = Address::findAddress($addressData);
+							$userData['address_id'] = $newAddress['id'];
+						}
 					}
 				}
 				else
@@ -165,23 +157,23 @@ class AccountController extends Controller
 					}
 					else
 					{
-					$insertError = [];
-					$userData = [
-						'id' => $_SESSION['userID'],
-						'email' => $_POST['email'],
-						'firstName' => $_POST['firstName'],
-						'lastName' => $_POST['lastName'],
-					];
+						$insertError = [];
+						$userData = [
+							'id' => $_SESSION['userID'],
+							'email' => $_POST['email'],
+							'firstName' => $_POST['firstName'],
+							'lastName' => $_POST['lastName'],
+						];
 
-					// Address already in Database?
-					$addressData = [
-						'city' => $_POST['city'],
-						'street' => $_POST['street'],
-						'number' => $_POST['number'],
-						'zip' => $_POST['zip']
-					];
-					$existingAddress = Address::findAddress($addressData);
-					if($existingAddress != null)
+						// Address already in Database?
+						$addressData = [
+							'city' => $_POST['city'],
+							'street' => $_POST['street'],
+							'number' => $_POST['number'],
+							'zip' => $_POST['zip']
+						];
+						$existingAddress = Address::findAddress($addressData);
+						if($existingAddress != null)
 						{
 							$userData['address_id'] = $existingAddress['id'];
 						}
@@ -200,18 +192,19 @@ class AccountController extends Controller
 								$userData['address_id'] = $newAddress['id'];
 							}
 						}
-
-					// Updating User
-					$newUser = new User($userData);
-					if(!User::validateUser($newUser, $insertError)){
-						$this->_params['insertError'] = $insertError;
-						return false;
 					}
-					else
-					{
-						$newUser->save();
-					}
-					}
+				}
+				// Updating User
+				$newUser = new User($userData);
+				if(!User::validateUser($newUser, $insertError))
+				{
+					$this->_params['insertError'] = $insertError;
+					return false;
+				}
+				else
+				{
+					$newUser->save();
+					$this->_params['user']['updatedAt'] = User::findOne('ID =' . "'".$_SESSION['userID']."'")['updatedAt'];
 				}
 			}
 		}
