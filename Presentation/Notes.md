@@ -7,25 +7,26 @@
 4. Tour
 
 ## Inhalt
-1. Einleitung
+### 1. Einleitung
   - (Vorstellung)
   - Projektthema: HipHop - Online Shop. Philosophie orientiert an den Grundprinzipien des HipHops
   - Design orientiert an der direkten Konkurrenz sowie anderen beliebten Online-Shops.
   - MVC von Herrn Friess erweitert
   - DB simpel gehalten. Logik außer Constraints auf server-/JS-Ebene realisiert
 
-2. Besonderheiten(Nicht in der Tour)
+### 2. Besonderheiten(Nicht in der Tour)
   - Der Shop ist auf Englisch.
+  - Nirgends auf der Seite nur Dummy-Texte (Kein Lorem Ipsum)
   - Responsive Design für Desktop über Tablet bis zu aktuellen Smartphones.
   - Bei Login Merge des Warenkorbs aus Session und Datenbank
   - Vorratsmechanik beachten -> Wenn ein Produkt nicht mehr auf Vorrat ist, kann es nicht mehr in den Einkaufswagen gelegt werden (Sold Out). Die vorrätige Anzahl eines Produktes kann beim Kauf nicht überschritten werden (auch nicht durch HTML Manipulation, da Serverseitig abgesichert).
 
-3. Eigenarten
+### 3. Eigenarten
    - Wir liefern aktuell nur nach Deutschland (Keinen Internationalen ZIP-Code integriert).
    - Keine verschiedenen Größen und Bilder zu den Produkten.
    - Es gibt keine Trennung der Geschlechter, somit sind alle Artikel unisex. -> Progressiv.
 
-4. Tour(Fokus auf Funktionalitäten!)
+### 4. Tour(Fokus auf Funktionalitäten!)
   - Startseite 
     - ansehen und auf eine Kachel klicken -> Bilder auf der Startseite leiten den Nutzer zu Sales und Produkten **mit angewandten Filtern** weiter.
   - Products
@@ -46,11 +47,11 @@
     - Change password extern
     - Zum Warenkorb gehen (Hinweis auf Shoppingcart-Counter Anzahl -> selbe wie zuvor: **Shoppingcart aus Session wird beim Login berücksichtigt!**)
   - Shopping Cart
+    - Wenn genug Produkte zum Scrollen vorliegen, durch Scrollen Zeigen, dass Total Sticky ist. (Kruse freut sich) 
     - Änderungen tätigen:
       - Quantity ändern und kurzen Hinweis auf Shoppingcart-Counter und Total geben
-      - Wenn genug Produkte zum Scrollen vorliegen, durch Scrollen Zeigen, dass Total Sticky ist. (Kruse freut sich) 
       - **AJAX** ankündigen -> Produkt (ggfs. mehrere) entfernen. Seite lädt nicht neu und Counter, sowie Total werden angepasst!
-      - Proceed to Checkout (Falls der Nutzer nicht eingeloggt ist, verweist der Button auf den Login).
+    - Proceed to Checkout (Falls der Nutzer nicht eingeloggt ist, verweist der Button auf den Login).
   - Checkout 
     - Mehrseitiges Formular
     - Kontrolle der Nutzer-Informationen -> Link zurück auf Account.
@@ -65,6 +66,6 @@
     - Hinweis auf Link zu Legal Details im **Footer** (gilt für jede Seite)
     - Ende hier oder auf Startseite...
     
-5. Zusatz
+### 5. Zusatz
   - *Wenn die Zeit es hergibt: Registrierung mit Validierung zeigen*
   - Ergänzung zu Herausforderungen: Reworks und Refactoring naiver Lösungen -> Bsp. Shopping Cart 3 mal umgebaut...
